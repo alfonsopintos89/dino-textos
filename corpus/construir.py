@@ -30,7 +30,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(AQUI), 'tools'))
 import textosaurio as dino
 
-AGENTE = 'dino-textos/0.1 (corpus de calibración; +https://github.com/alfonsopintos89/dino-textos)'
+AGENTE = 'textosaurio/1.0 (corpus de calibración; +https://github.com/alfonsopintos89/textosaurio)'
 PAUSA = 1.5          # segundos entre pedidos: ir despacio es parte del trato
 # Cien y no más: la diaria tiene paywall, así que lo público de cada nota es la
 # bajada, unas 100-150 palabras de prosa real. El mínimo se aplica DESPUÉS de
@@ -487,7 +487,7 @@ def _generar_openrouter(tarea):
     pedido = urllib.request.Request(OPENROUTER_URL, data=datos, headers={
         'Authorization': 'Bearer ' + clave,
         'Content-Type': 'application/json',
-        'X-Title': 'dino-textos corpus'})
+        'X-Title': 'textosaurio corpus'})
     try:
         respuesta = json.loads(urllib.request.urlopen(pedido, timeout=300).read().decode('utf-8'))
         texto = respuesta['choices'][0]['message']['content'].strip()
