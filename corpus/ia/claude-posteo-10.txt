@@ -1,0 +1,67 @@
+# Por qué fallan las entregas de última milla (y qué se puede hacer)
+
+Un paquete puede cruzar un océano, pasar por aduanas, dormir en un centro de distribución y recorrer cientos de kilómetros en camión sin ningún problema. Y aun así, fallar en las últimas cuadras.
+
+La última milla es el tramo final: el que va del depósito hasta la puerta del cliente. Es el más corto, pero también el más caro y el más difícil de controlar. Según distintas estimaciones del sector, puede llevarse cerca de la mitad del costo logístico total de un envío. Y es el único tramo que el cliente ve de verdad. Nadie recuerda por qué centro de distribución pasó su pedido, pero todos recuerdan el día que esperaron en casa a un repartidor que nunca llegó.
+
+Hoy vamos a ver por qué fallan estas entregas. Casi nunca hay una sola causa: los problemas se acumulan y se refuerzan entre sí.
+
+## 1. Direcciones que no llevan a ningún lado
+
+Es la causa más común y la más subestimada. Una dirección puede estar bien escrita y aun así no servir: números de calle que no siguen un orden lógico, barrios sin nomenclatura formal, edificios con varias entradas, complejos cerrados, "casa con portón verde al fondo del pasillo".
+
+A eso se suman los errores de carga: números invertidos, calles con nombres parecidos, códigos postales equivocados, pisos y departamentos que faltan. El sistema acepta la dirección, la ruta se arma y el problema aparece recién cuando el repartidor está en el lugar, mirando una puerta que no corresponde.
+
+**Lo que ayuda:** validar la dirección en el momento en que se carga, pedir referencias y geolocalización cuando se puede, y aprovechar lo que cada entrega enseña. Si un repartidor encontró la entrada correcta de un edificio complicado, esa información tendría que quedar guardada para el próximo.
+
+## 2. Nadie en casa
+
+El cliente compró, pagó y esperó... pero justo cuando llegó el repartidor había salido a hacer un trámite. Pasa todo el tiempo, y cada entrega fallida cuesta caro: hay que reprogramarla, volver a cargarla en otra ruta, guardar el paquete y, muchas veces, atender un reclamo.
+
+El problema de fondo no es el cliente. Son las ventanas de entrega demasiado amplias. Decirle a alguien "llega entre las 8 y las 20" es pedirle que se quede un día entero en casa.
+
+**Lo que ayuda:** ventanas horarias más cortas y confiables, avisos cuando el repartidor está cerca, la opción de reprogramar o redirigir el envío antes de que salga, y alternativas como puntos de retiro, lockers o entregar a un vecino o en portería con autorización.
+
+## 3. Rutas planificadas para un mundo que no existe
+
+Muchas rutas se siguen armando a mano o con herramientas que ven el mapa como una grilla perfecta. En la calle la realidad es otra: tránsito que cambia según la hora, calles cortadas, restricciones para vehículos de carga, lugares donde no hay dónde estacionar, zonas donde conviene entregar temprano.
+
+Una ruta mal planificada no solo hace perder tiempo. Genera un efecto dominó: si el repartidor se atrasa a media mañana, las entregas de la tarde quedan fuera de su ventana y la tasa de éxito se cae en cadena.
+
+**Lo que ayuda:** planificar con datos reales de tiempos de viaje y de parada, y poder reoptimizar durante el día cuando algo cambia. También sirve medir cuánto tarda de verdad cada tipo de entrega: dejar un sobre en una casa no es lo mismo que subir una heladera a un cuarto piso sin ascensor.
+
+## 4. Información que no fluye
+
+Muchas veces la entrega falla por un problema de comunicación, aunque la operación esté bien. El cliente no sabe cuándo llega su pedido. El repartidor no puede avisar que está afuera. El centro de operaciones no se entera de que algo salió mal hasta que el día terminó.
+
+Cuando la información está repartida entre planillas, llamadas y chats sueltos, nadie tiene el panorama completo y los problemas se descubren tarde, cuando ya no se pueden solucionar.
+
+**Lo que ayuda:** seguimiento en tiempo real, un canal directo entre cliente y repartidor que proteja los datos de ambos, y paneles que muestren los problemas mientras pasan, no al día siguiente.
+
+## 5. Pruebas de entrega débiles
+
+"El sistema dice entregado, pero yo no recibí nada." Cuando no hay una prueba de entrega sólida, cada reclamo se vuelve la palabra de uno contra la del otro. Eso trae costos directos (reenvíos y reembolsos) y un costo más difícil de medir: la confianza del cliente.
+
+**Lo que ayuda:** fotos geolocalizadas, firma digital, códigos de confirmación para envíos de valor y registros con fecha, hora y ubicación de cada intento.
+
+## 6. Picos de demanda sin margen
+
+Días de ofertas, fiestas de fin de año, lanzamientos: el volumen se multiplica, pero la flota, el personal y los procesos siguen siendo los mismos. Los repartidores nuevos no conocen las zonas, los depósitos se saturan y los errores que en un día normal serían excepciones se vuelven rutina.
+
+**Lo que ayuda:** anticipar la demanda con los datos históricos, sumar capacidad flexible con tiempo y tener procesos lo bastante simples para que alguien nuevo pueda seguirlos desde el primer día.
+
+## 7. Operar sin medir
+
+Esta es la causa que está detrás de todas las demás. Muchas operaciones saben cuántos paquetes salieron, pero no por qué falló cada uno de los que volvieron. Sin ese dato, cada problema se trata como un caso aislado y nunca se ataca la raíz.
+
+No es lo mismo tener una tasa de fallos del 8% por "cliente ausente" que por "dirección no encontrada". Son problemas distintos y se resuelven de forma distinta.
+
+**Lo que ayuda:** registrar cada fallo con un motivo claro y estandarizado, y revisar esos datos con regularidad por zona, franja horaria, tipo de producto y repartidor. Los patrones aparecen enseguida.
+
+## La última milla se gana con detalles
+
+Ninguna de estas causas se resuelve con una sola herramienta ni de un día para el otro. Pero todas tienen algo en común: son mucho más fáciles de manejar cuando la operación tiene buena información, la usa a tiempo y aprende de cada entrega.
+
+La buena noticia es que cada punto que se mejora en la tasa de entregas exitosas se nota enseguida: menos kilómetros repetidos, menos reclamos, repartidores menos frustrados y clientes que vuelven a comprar.
+
+En los próximos artículos vamos a profundizar en cada uno de estos puntos, con ejemplos concretos y métricas para empezar a medir tu propia operación.

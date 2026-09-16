@@ -1,0 +1,170 @@
+# Bienvenido a [Nombre de la App]
+
+Esta guía te acompaña en tus primeros pasos, desde que creás tu cuenta hasta que emitís tu primera factura. Lleva unos 15 minutos.
+
+---
+
+## 1. Creá tu cuenta
+
+1. Entrá a [URL de la app] y hacé clic en **Registrarme**.
+2. Ingresá tu email y una contraseña de al menos 8 caracteres.
+3. Te vamos a mandar un email de confirmación. Abrilo y hacé clic en **Verificar cuenta**.
+
+> Si no ves el email, revisá la carpeta de spam o pedí que te lo reenviemos desde la pantalla de inicio de sesión.
+
+---
+
+## 2. Configurá los datos de tu empresa
+
+Estos datos aparecen en todas tus facturas, así que conviene revisarlos con cuidado.
+
+Andá a **Configuración → Empresa** y completá:
+
+- **Razón social o nombre**
+- **Identificación fiscal** (CUIT, RFC, NIF o la que corresponda en tu país)
+- **Condición frente al impuesto** (por ejemplo, responsable inscripto, monotributista o exento)
+- **Domicilio fiscal**
+- **Email y teléfono de contacto**
+- **Logo** (opcional, en PNG o JPG, de hasta 2 MB)
+
+---
+
+## 3. Conectá tu cuenta con el organismo fiscal
+
+Para emitir facturas electrónicas válidas, la app tiene que estar autorizada ante el organismo fiscal.
+
+1. Andá a **Configuración → Facturación electrónica**.
+2. Elegí tu **punto de venta** o serie de numeración.
+3. Subí tu **certificado digital** o seguí el asistente para generarlo.
+4. Hacé clic en **Probar conexión**.
+
+Cuando la conexión funciona, vas a ver el estado **Conectado** en verde.
+
+> **Importante:** hasta que completes este paso, solo vas a poder emitir comprobantes de prueba, que no tienen validez fiscal.
+
+---
+
+## 4. Cargá tus clientes
+
+Tenés dos formas de hacerlo:
+
+**Uno por uno**
+1. Andá a **Clientes → Nuevo cliente**.
+2. Completá el nombre, la identificación fiscal, la condición frente al impuesto, el email y el domicilio.
+
+**En forma masiva**
+1. Andá a **Clientes → Importar**.
+2. Descargá la plantilla de Excel.
+3. Completala y subila. Antes de confirmar vas a ver una vista previa con los errores que haya.
+
+---
+
+## 5. Cargá tus productos y servicios
+
+Tener un catálogo te ahorra tiempo al facturar.
+
+1. Andá a **Productos → Nuevo producto**.
+2. Completá:
+   - Nombre y descripción
+   - Código interno (opcional)
+   - Precio unitario
+   - Alícuota de impuesto (por ejemplo, IVA 21 %, 10,5 % o exento)
+   - Unidad de medida
+
+También los podés importar con la misma plantilla que usaste para los clientes.
+
+---
+
+## 6. Emití tu primera factura
+
+1. Hacé clic en **Nueva factura**.
+2. Elegí el **tipo de comprobante**. La app te sugiere el correcto según tu condición fiscal y la del cliente.
+3. Seleccioná el **cliente**.
+4. Agregá los **productos o servicios** y ajustá las cantidades o los descuentos.
+5. Revisá la **fecha**, las **condiciones de pago** y la **fecha de vencimiento**.
+6. Hacé clic en **Emitir**.
+
+La app envía el comprobante al organismo fiscal y, una vez aprobado, le asigna el número y el código de autorización.
+
+Después podés:
+- **Descargar el PDF**
+- **Enviarla por email** directamente al cliente
+- **Compartir un link de pago**, si tenés los cobros activados
+
+> Una factura emitida no se puede modificar ni borrar. Si te equivocaste, emití una **nota de crédito** desde el detalle de la factura.
+
+---
+
+## 7. Registrá los cobros
+
+Cuando un cliente te paga:
+
+1. Abrí la factura desde **Ventas → Facturas**.
+2. Hacé clic en **Registrar cobro**.
+3. Indicá el monto, la fecha y el medio de pago.
+
+La factura cambia de estado automáticamente: **Pendiente**, **Pagada parcialmente** o **Pagada**.
+
+---
+
+## 8. Sumá a tu equipo
+
+Andá a **Configuración → Usuarios → Invitar** y elegí el rol de cada persona:
+
+| Rol | Qué puede hacer |
+|---|---|
+| **Administrador** | Todo, incluida la configuración y la facturación de la cuenta |
+| **Facturador** | Emitir comprobantes y administrar clientes y productos |
+| **Contador** | Ver y exportar reportes, sin emitir comprobantes |
+| **Solo lectura** | Consultar información sin hacer cambios |
+
+---
+
+## 9. Conocé el tablero
+
+En la pantalla de inicio vas a encontrar:
+
+- **Facturado del mes**, con la comparación contra el mes anterior
+- **Cuentas por cobrar** y facturas vencidas
+- **Mejores clientes** según el monto facturado
+- **Accesos rápidos** para crear facturas, presupuestos y clientes
+
+Desde **Reportes** podés exportar el libro de ventas, el resumen de impuestos y el detalle de cobros en Excel o PDF.
+
+---
+
+## Checklist para arrancar
+
+- [ ] Verifiqué mi email
+- [ ] Completé los datos de mi empresa
+- [ ] Conecté la facturación electrónica
+- [ ] Cargué al menos un cliente
+- [ ] Cargué al menos un producto o servicio
+- [ ] Emití mi primera factura
+- [ ] Invité a mi equipo (opcional)
+
+---
+
+## Preguntas frecuentes
+
+**¿Puedo probar la app sin emitir facturas reales?**
+Sí. Activá el **Modo prueba** desde **Configuración → Facturación electrónica**. Los comprobantes que emitas así no tienen validez fiscal.
+
+**¿Qué hago si el organismo fiscal rechaza una factura?**
+El detalle de la factura muestra el motivo del rechazo. Por lo general es un dato mal cargado del cliente o del producto. Corregilo y volvé a emitirla.
+
+**¿Puedo facturar en otra moneda?**
+Sí. Al crear la factura, elegí la moneda y la app completa la cotización del día, que podés modificar.
+
+**¿Puedo automatizar las facturas que se repiten todos los meses?**
+Sí. Usá **Ventas → Facturas recurrentes** para programar la emisión y el envío automáticos.
+
+---
+
+## ¿Necesitás ayuda?
+
+- **Centro de ayuda:** [URL]
+- **Email:** [email de soporte]
+- **Chat:** desde el ícono de ayuda, abajo a la derecha, de lunes a viernes de 9 a 18 h
+
+¡Listo! Ya podés empezar a facturar.

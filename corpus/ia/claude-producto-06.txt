@@ -1,0 +1,27 @@
+**Errores**
+
+- Completá este campo.
+- Ingresá tu nombre.
+- Ingresá un correo electrónico válido. Por ejemplo: nombre@correo.com
+- Ya hay una cuenta con este correo. ¿Querés iniciar sesión?
+- La contraseña tiene que tener al menos 8 caracteres.
+- La contraseña tiene que incluir al menos una letra y un número.
+- Las contraseñas no coinciden.
+- Ingresá una fecha de nacimiento válida.
+- Tenés que ser mayor de 18 años para registrarte.
+- Ingresá un número de teléfono válido, sin espacios ni guiones.
+- Ese nombre de usuario ya está en uso. Probá con otro.
+- Para continuar, aceptá los términos y condiciones.
+- No pudimos crear tu cuenta. Revisá tu conexión y volvé a intentarlo.
+- Algo salió mal de nuestro lado. Intentá de nuevo en unos minutos.
+- Hiciste demasiados intentos. Esperá unos minutos y volvé a probar.
+- El enlace de verificación venció. Pedí uno nuevo.
+
+**Confirmaciones**
+
+- ¡Listo! Tu cuenta está creada.
+- Te enviamos un correo a [correo]. Abrí el enlace para activar tu cuenta.
+- ¿No te llegó el correo? Revisá la carpeta de spam o pedí que te lo reenviemos.
+- Te reenviamos el correo de verificación.
+- Verificamos tu correo. Ya podés iniciar sesión.
+- ¡Bienvenido/a, [nombre]! Ya podés empezar.

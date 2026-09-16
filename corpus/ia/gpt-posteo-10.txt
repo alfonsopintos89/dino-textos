@@ -1,0 +1,85 @@
+Por qué fallan las entregas de última milla
+
+La última milla es el tramo final del proceso logístico: el recorrido que realiza un pedido desde un centro de distribución, una tienda o un punto de despacho hasta las manos del cliente. Aunque suele representar la distancia más corta de toda la cadena, también es una de las etapas más complejas y costosas.
+
+Una entrega puede atravesar cientos de kilómetros sin inconvenientes y, sin embargo, fracasar durante los últimos diez. Un domicilio mal identificado, un cliente ausente, una dirección inaccesible o una ruta mal planificada pueden convertir una operación aparentemente simple en una experiencia frustrante y costosa.
+
+Pero ¿por qué fallan las entregas de última milla?
+
+Direcciones incompletas o imprecisas
+
+Uno de los principales motivos de entrega fallida es la mala calidad de la información de destino. En muchas ciudades, las direcciones no siguen un formato uniforme, existen calles con nombres similares o faltan datos esenciales como el número de departamento, el piso, la torre o una referencia adicional.
+
+Además, los clientes suelen ingresar sus datos rápidamente y pueden cometer errores de escritura. Una dirección incompleta obliga al repartidor a llamar, enviar mensajes o buscar referencias en el momento, lo que retrasa la ruta y aumenta las probabilidades de que el pedido no llegue.
+
+La falta de estandarización también dificulta la planificación automática de recorridos. Si el sistema no logra interpretar correctamente una dirección, puede asignar una ruta ineficiente o enviar al conductor a una ubicación incorrecta.
+
+Ausencia del cliente
+
+Otra causa frecuente es que el destinatario no se encuentre en el domicilio cuando llega el repartidor. Esto ocurre especialmente en zonas residenciales donde las personas trabajan fuera de casa o no cuentan con recepción, portería o un lugar seguro para dejar el paquete.
+
+Cuando no existen instrucciones claras sobre qué hacer en caso de ausencia, el repartidor debe decidir entre esperar, contactar al cliente, dejar el pedido con un vecino o reprogramar la entrega. Cada alternativa implica tiempo adicional, costos operativos y una posible pérdida de confianza.
+
+La situación se vuelve aún más compleja cuando el cliente recibe una ventana de entrega demasiado amplia o información poco precisa sobre la hora estimada de llegada. Si debe esperar durante varias horas sin actualizaciones confiables, es más probable que abandone el domicilio antes de que llegue el pedido.
+
+Tráfico y restricciones urbanas
+
+La congestión vehicular tiene un impacto directo en la última milla. Un recorrido que normalmente toma veinte minutos puede extenderse durante una hora debido a embotellamientos, obras, accidentes o eventos especiales.
+
+A esto se suman las restricciones de circulación, las zonas peatonales, la falta de espacios para estacionar y las limitaciones de acceso a determinados edificios o barrios. En algunas ciudades, los vehículos de reparto solo pueden ingresar en ciertos horarios, mientras que en otras deben utilizar zonas específicas de carga y descarga.
+
+Cuando la planificación no contempla estas variables, las rutas se vuelven poco realistas. El repartidor acumula retrasos durante el día y termina incumpliendo varias entregas, incluso si comenzó la jornada con un cronograma adecuado.
+
+Planificación deficiente de rutas
+
+La cantidad de pedidos no es el único factor que determina la dificultad de una ruta. También importan la ubicación de cada destino, las prioridades de entrega, los horarios prometidos, el tamaño de los paquetes, la capacidad del vehículo y las condiciones del tráfico.
+
+Una ruta diseñada manualmente o con información limitada puede generar recorridos innecesarios, cruces repetidos por las mismas calles y tiempos muertos. En consecuencia, el conductor realiza menos entregas por jornada y aumenta el costo promedio de cada pedido.
+
+La planificación debe ser dinámica. Las condiciones cambian constantemente: un cliente puede cancelar, una calle puede quedar bloqueada o un vehículo puede sufrir una avería. Sin herramientas que permitan actualizar las rutas en tiempo real, la operación pierde capacidad de reacción.
+
+Falta de comunicación con el cliente
+
+La incertidumbre es uno de los mayores problemas de la última milla. Cuando el cliente no sabe dónde está su pedido, quién lo entrega o cuándo llegará, aumenta la cantidad de consultas y disminuye la percepción de calidad del servicio.
+
+Los mensajes genéricos, como “tu pedido está en camino”, no siempre son suficientes. Una comunicación útil debería informar el estado real de la entrega, ofrecer una hora estimada razonable y alertar sobre cualquier cambio o demora.
+
+También es importante establecer canales de contacto eficientes. Si el repartidor no puede comunicarse con el destinatario o el cliente no logra obtener una respuesta, una situación sencilla puede terminar en una entrega fallida.
+
+Errores en la preparación del pedido
+
+No todos los problemas ocurren durante el recorrido. Una entrega puede fallar antes de salir del depósito debido a errores en la preparación del pedido: productos equivocados, paquetes incompletos, etiquetas incorrectas o mercancía dañada.
+
+Si la información del sistema no coincide con el contenido del paquete, el repartidor puede llegar al domicilio con un pedido que el cliente no acepta. Además del costo de la devolución o el reenvío, estos errores afectan directamente la confianza en la marca.
+
+La coordinación entre inventario, preparación, despacho y distribución es fundamental para evitar que los problemas se trasladen de una etapa a otra.
+
+Condiciones climáticas y factores imprevistos
+
+La lluvia intensa, las inundaciones, las olas de calor, la nieve o los fuertes vientos pueden alterar por completo una operación de reparto. También pueden surgir situaciones inesperadas, como accidentes, cortes de calles, protestas, fallas mecánicas o problemas de seguridad.
+
+Una operación que no cuenta con protocolos de contingencia suele reaccionar tarde. Esto provoca acumulación de retrasos, reprogramaciones desordenadas y una comunicación deficiente con los clientes.
+
+La flexibilidad operativa es clave para responder a estos escenarios. Contar con rutas alternativas, capacidad de reprogramación y reglas claras para priorizar pedidos permite reducir el impacto de los imprevistos.
+
+El costo de una entrega fallida
+
+Una entrega fallida no representa únicamente un inconveniente puntual. Implica un segundo intento, más combustible, mayor uso del vehículo, horas adicionales de trabajo y posibles costos de almacenamiento o devolución.
+
+También afecta la experiencia del cliente. Una persona que recibe tarde su pedido, debe comunicarse varias veces con la empresa o no obtiene información clara probablemente tendrá menos probabilidades de volver a comprar.
+
+Para las empresas, estos problemas pueden traducirse en reseñas negativas, pérdida de clientes y una mayor presión sobre los equipos de atención. En mercados donde la entrega es parte central de la propuesta de valor, una mala experiencia logística puede perjudicar incluso a un producto excelente.
+
+Cómo mejorar la última milla
+
+Reducir las fallas requiere combinar tecnología, procesos y comunicación. La validación automática de direcciones puede detectar errores antes de que el pedido salga del depósito. Los sistemas de optimización de rutas pueden ordenar las paradas teniendo en cuenta tráfico, horarios y restricciones.
+
+El seguimiento en tiempo real permite conocer la ubicación del vehículo y compartir información más precisa con el cliente. Las notificaciones proactivas ayudan a anticipar retrasos y ofrecen alternativas, como cambiar el horario, modificar el domicilio o elegir un punto de retiro.
+
+También es importante recopilar datos sobre cada entrega: motivos de fallas, tiempos de espera, zonas problemáticas y rendimiento por ruta. Con esta información, la empresa puede identificar patrones y tomar decisiones basadas en evidencia.
+
+Por último, la última milla necesita procesos simples y coordinados. Una buena experiencia depende de que el pedido correcto sea preparado, asignado, transportado y entregado en el momento adecuado, con información clara en cada etapa.
+
+Las entregas de última milla fallan por una combinación de factores: datos incorrectos, ausencia del cliente, tráfico, mala planificación, falta de comunicación y eventos imprevistos. Resolver el problema no consiste únicamente en enviar más vehículos, sino en construir una operación capaz de anticiparse, adaptarse y mantener informado al cliente.
+
+En un contexto donde las expectativas de entrega son cada vez más altas, mejorar la última milla no es solo una cuestión de eficiencia. Es una forma concreta de ofrecer un mejor servicio, reducir costos y construir relaciones más duraderas con los clientes.

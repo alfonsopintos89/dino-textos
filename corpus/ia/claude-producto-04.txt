@@ -1,0 +1,97 @@
+# Preguntas frecuentes
+
+## Planes y contratación
+
+**¿Qué plan me conviene?**
+Depende de lo que quieras publicar. Si tenés un sitio personal, un blog o la página de un emprendimiento, el plan Básico alcanza. Si manejás una tienda online o varios sitios, te recomendamos el plan Profesional. Para proyectos con mucho tráfico o que necesitan recursos dedicados, está el plan Empresa. Si no estás seguro, escribinos y te ayudamos a elegir.
+
+**¿Puedo cambiar de plan más adelante?**
+Sí. Podés pasar a un plan superior en cualquier momento desde tu panel de control y el cambio se aplica al instante, sin perder datos. Solo pagás la diferencia proporcional al tiempo que queda de tu período. También podés bajar de plan al terminar el período vigente.
+
+**¿Hay contrato de permanencia?**
+No. Podés cancelar cuando quieras. Si pagaste por adelantado un período anual, la cancelación se aplica al final de ese período, salvo que corresponda la garantía de reembolso.
+
+**¿Tienen garantía de devolución?**
+Sí. Si cancelás dentro de los primeros 30 días, te devolvemos el importe del hosting. El registro de dominios y otros servicios de terceros no son reembolsables.
+
+**¿Qué medios de pago aceptan?**
+Tarjetas de crédito y débito, transferencia bancaria y los principales medios de pago digitales. Emitimos factura por cada pago.
+
+## Dominios
+
+**¿Necesito tener un dominio para contratar el hosting?**
+No es obligatorio. Podés registrar uno nuevo con nosotros al contratar, usar un dominio que ya tengas o empezar con una dirección temporal y agregar el dominio después.
+
+**Ya tengo un dominio registrado en otra empresa. ¿Puedo usarlo?**
+Sí. Tenés dos opciones: apuntar los DNS de tu dominio a nuestros servidores (el dominio sigue registrado donde está) o transferirlo a nosotros para administrar todo desde un solo lugar. En el panel encontrás los datos de DNS y una guía paso a paso.
+
+**¿Cuánto tarda en funcionar un dominio después de cambiar los DNS?**
+Normalmente unas pocas horas, aunque la propagación puede demorar hasta 48 horas según el proveedor de internet de cada usuario.
+
+## Migración
+
+**Tengo mi sitio en otro hosting. ¿Me ayudan a mudarlo?**
+Sí, la migración es gratuita en todos los planes. Nuestro equipo copia tus archivos, bases de datos y cuentas de correo, y verifica que todo funcione antes de que cambies los DNS. Así tu sitio no queda fuera de línea durante la mudanza.
+
+**¿Cuánto tarda una migración?**
+La mayoría se completa en 24 a 48 horas hábiles. Los sitios muy grandes o con configuraciones especiales pueden llevar un poco más; en ese caso te avisamos con anticipación.
+
+## Funciones técnicas
+
+**¿Puedo instalar WordPress?**
+Sí. Desde el panel podés instalar WordPress, Joomla, PrestaShop y muchas otras aplicaciones con un clic. También podés subir cualquier sitio propio en PHP, HTML u otras tecnologías compatibles.
+
+**¿Incluye certificado SSL?**
+Sí. Todos los planes incluyen certificados SSL gratuitos que se instalan y renuevan automáticamente, así tu sitio carga con HTTPS desde el primer día.
+
+**¿Qué versiones de PHP y bases de datos ofrecen?**
+Ofrecemos varias versiones de PHP con soporte vigente, y podés elegir cuál usar para cada sitio desde el panel. Las bases de datos son MySQL/MariaDB y se administran con phpMyAdmin.
+
+**¿Tengo acceso por SSH?**
+Sí, en los planes Profesional y Empresa. También tenés acceso por FTP/SFTP en todos los planes.
+
+**¿Qué pasa si supero los recursos de mi plan?**
+Te avisamos por correo antes de que eso afecte a tu sitio. No suspendemos cuentas sin previo aviso. Si tu proyecto creció, te sugerimos pasar a un plan superior.
+
+## Correo electrónico
+
+**¿Puedo crear cuentas de correo con mi dominio?**
+Sí. Podés crear direcciones del tipo nombre@tudominio.com y usarlas desde el webmail o configurarlas en Outlook, Gmail, Apple Mail o en tu celular.
+
+**Mis correos llegan a la carpeta de spam. ¿Qué hago?**
+Revisá que tu dominio tenga bien configurados los registros SPF, DKIM y DMARC. En la mayoría de los casos los configuramos automáticamente, pero si tu dominio usa DNS externos tal vez tengas que agregarlos a mano. Si el problema sigue, contactá a soporte y lo revisamos.
+
+## Seguridad y copias de seguridad
+
+**¿Hacen copias de seguridad?**
+Sí. Hacemos copias automáticas diarias de tus archivos y bases de datos, y las guardamos por un período que depende de tu plan. Podés restaurarlas vos mismo desde el panel. De todas formas, te recomendamos guardar también tus propias copias.
+
+**¿Cómo protegen mi sitio?**
+Nuestros servidores tienen firewall, protección contra ataques de fuerza bruta, análisis de malware y monitoreo constante. Además, podés activar la verificación en dos pasos para tu cuenta.
+
+**Creo que hackearon mi sitio. ¿Qué hago?**
+Contactá a soporte cuanto antes. Te ayudamos a identificar el problema, restaurar una copia limpia y reforzar la seguridad para que no vuelva a pasar.
+
+## Disponibilidad y rendimiento
+
+**¿Qué garantía de disponibilidad ofrecen?**
+Garantizamos una disponibilidad del 99,9 %. Si no la cumplimos en un mes, te compensamos con crédito en tu cuenta según lo que indican nuestros términos del servicio.
+
+**¿Dónde están ubicados los servidores?**
+Tenemos centros de datos en distintas regiones. Al contratar podés elegir la ubicación más cercana a tus visitantes para que tu sitio cargue más rápido.
+
+## Soporte
+
+**¿Cómo me comunico con soporte?**
+Por chat en vivo, por correo o abriendo un ticket desde el panel. El soporte técnico está disponible las 24 horas, los 365 días del año.
+
+**¿El soporte tiene costo adicional?**
+No, está incluido en todos los planes. Solo los trabajos a medida, como desarrollar funciones nuevas para tu sitio, se cotizan aparte.
+
+**¿Tienen guías o tutoriales?**
+Sí. En nuestro Centro de Ayuda encontrás artículos y videos paso a paso sobre los temas más consultados: configurar el correo, instalar WordPress, manejar los DNS y mucho más.
+
+---
+
+**¿No encontraste lo que buscabas?**
+Escribinos y te respondemos lo antes posible.

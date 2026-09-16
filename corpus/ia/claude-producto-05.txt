@@ -1,0 +1,384 @@
+# API de Reservas de Restaurantes
+
+API REST para gestionar restaurantes, mesas y reservas. Permite consultar disponibilidad, crear y modificar reservas, y administrar la capacidad de cada local.
+
+## Tabla de contenidos
+
+- [Características](#características)
+- [Requisitos](#requisitos)
+- [Instalación](#instalación)
+- [Configuración](#configuración)
+- [Autenticación](#autenticación)
+- [Convenciones](#convenciones)
+- [Endpoints](#endpoints)
+  - [Restaurantes](#restaurantes)
+  - [Mesas](#mesas)
+  - [Disponibilidad](#disponibilidad)
+  - [Reservas](#reservas)
+- [Estados de una reserva](#estados-de-una-reserva)
+- [Errores](#errores)
+- [Límite de solicitudes](#límite-de-solicitudes)
+- [Pruebas](#pruebas)
+- [Licencia](#licencia)
+
+---
+
+## Características
+
+- Alta, consulta, modificación y baja de restaurantes y mesas.
+- Consulta de disponibilidad por fecha, horario y cantidad de comensales.
+- Creación, modificación y cancelación de reservas.
+- Validación de horarios de atención y control de superposición de reservas.
+- Autenticación con tokens JWT y permisos por rol (`cliente`, `restaurante`, `admin`).
+- Paginación, filtros y ordenamiento en los listados.
+
+## Requisitos
+
+- Node.js 20 o superior
+- PostgreSQL 15 o superior
+- npm 10 o superior
+
+## Instalación
+
+```bash
+git clone https://github.com/tu-organizacion/api-reservas.git
+cd api-reservas
+npm install
+cp .env.example .env
+npm run db:migrate
+npm run db:seed    # opcional: carga datos de ejemplo
+npm run dev
+```
+
+Por defecto, la API queda disponible en `http://localhost:3000/api/v1`.
+
+## Configuración
+
+Las variables de entorno se definen en el archivo `.env`:
+
+| Variable | Descripción | Valor por defecto |
+|---|---|---|
+| `PORT` | Puerto del servidor | `3000` |
+| `DATABASE_URL` | Cadena de conexión a PostgreSQL | — |
+| `JWT_SECRET` | Clave para firmar los tokens | — |
+| `JWT_EXPIRES_IN` | Duración del token de acceso | `1h` |
+| `RESERVATION_DURATION_MIN` | Duración estándar de una reserva, en minutos | `90` |
+| `CANCELLATION_WINDOW_HOURS` | Horas mínimas de anticipación para cancelar sin penalidad | `2` |
+| `TZ` | Zona horaria del servidor | `UTC` |
+
+## Autenticación
+
+Casi todos los endpoints requieren un token JWT en el encabezado `Authorization`:
+
+```http
+Authorization: Bearer <token>
+```
+
+### Registrar un usuario
+
+`POST /auth/registro`
+
+```json
+{
+  "nombre": "Lucía Fernández",
+  "email": "lucia@example.com",
+  "password": "unaClaveSegura123",
+  "telefono": "+5491155551234"
+}
+```
+
+### Iniciar sesión
+
+`POST /auth/login`
+
+```json
+{
+  "email": "lucia@example.com",
+  "password": "unaClaveSegura123"
+}
+```
+
+**Respuesta `200 OK`**
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "expiraEn": 3600
+}
+```
+
+## Convenciones
+
+- Todas las solicitudes y respuestas usan JSON (`Content-Type: application/json`).
+- Las fechas y horas siguen el formato ISO 8601 (`2026-10-03T21:30:00-03:00`).
+- Los identificadores son UUID.
+- Los listados se paginan con los parámetros `pagina` (por defecto `1`) y `limite` (por defecto `20`, máximo `100`).
+
+Estructura de una respuesta paginada:
+
+```json
+{
+  "datos": [],
+  "paginacion": {
+    "pagina": 1,
+    "limite": 20,
+    "total": 57,
+    "totalPaginas": 3
+  }
+}
+```
+
+## Endpoints
+
+### Restaurantes
+
+| Método | Ruta | Descripción | Rol requerido |
+|---|---|---|---|
+| `GET` | `/restaurantes` | Lista los restaurantes | Público |
+| `GET` | `/restaurantes/{id}` | Devuelve un restaurante | Público |
+| `POST` | `/restaurantes` | Crea un restaurante | `admin` |
+| `PATCH` | `/restaurantes/{id}` | Modifica un restaurante | `restaurante`, `admin` |
+| `DELETE` | `/restaurantes/{id}` | Da de baja un restaurante | `admin` |
+
+**Filtros disponibles en `GET /restaurantes`:** `ciudad`, `tipoCocina`, `nombre`, `orden` (`nombre`, `-creadoEn`).
+
+**Ejemplo de creación**
+
+`POST /restaurantes`
+
+```json
+{
+  "nombre": "La Parrilla del Puerto",
+  "direccion": "Av. Costanera 1234",
+  "ciudad": "Buenos Aires",
+  "telefono": "+541143210000",
+  "tipoCocina": "parrilla",
+  "horarios": [
+    { "dia": "martes", "apertura": "19:00", "cierre": "00:00" },
+    { "dia": "sabado", "apertura": "12:00", "cierre": "01:00" }
+  ]
+}
+```
+
+**Respuesta `201 Created`**
+
+```json
+{
+  "id": "3f1c2a9e-7b4d-4c8a-9e21-5d6f7a8b9c01",
+  "nombre": "La Parrilla del Puerto",
+  "direccion": "Av. Costanera 1234",
+  "ciudad": "Buenos Aires",
+  "telefono": "+541143210000",
+  "tipoCocina": "parrilla",
+  "horarios": [
+    { "dia": "martes", "apertura": "19:00", "cierre": "00:00" },
+    { "dia": "sabado", "apertura": "12:00", "cierre": "01:00" }
+  ],
+  "creadoEn": "2026-09-16T14:02:11Z"
+}
+```
+
+### Mesas
+
+| Método | Ruta | Descripción | Rol requerido |
+|---|---|---|---|
+| `GET` | `/restaurantes/{id}/mesas` | Lista las mesas de un restaurante | `restaurante`, `admin` |
+| `POST` | `/restaurantes/{id}/mesas` | Agrega una mesa | `restaurante`, `admin` |
+| `PATCH` | `/restaurantes/{id}/mesas/{mesaId}` | Modifica una mesa | `restaurante`, `admin` |
+| `DELETE` | `/restaurantes/{id}/mesas/{mesaId}` | Elimina una mesa | `restaurante`, `admin` |
+
+**Ejemplo**
+
+```json
+{
+  "numero": 12,
+  "capacidad": 4,
+  "zona": "terraza",
+  "activa": true
+}
+```
+
+No se puede eliminar una mesa con reservas futuras confirmadas. En ese caso, conviene desactivarla con `"activa": false`.
+
+### Disponibilidad
+
+`GET /restaurantes/{id}/disponibilidad`
+
+| Parámetro | Tipo | Obligatorio | Descripción |
+|---|---|---|---|
+| `fecha` | `string` (AAAA-MM-DD) | Sí | Día a consultar |
+| `personas` | `integer` | Sí | Cantidad de comensales |
+| `zona` | `string` | No | Filtra por zona (`salon`, `terraza`, etc.) |
+
+**Ejemplo**
+
+```http
+GET /restaurantes/3f1c2a9e-.../disponibilidad?fecha=2026-10-03&personas=4
+```
+
+**Respuesta `200 OK`**
+
+```json
+{
+  "fecha": "2026-10-03",
+  "personas": 4,
+  "horarios": [
+    { "hora": "20:00", "disponible": true },
+    { "hora": "20:30", "disponible": true },
+    { "hora": "21:00", "disponible": false },
+    { "hora": "21:30", "disponible": true }
+  ]
+}
+```
+
+### Reservas
+
+| Método | Ruta | Descripción | Rol requerido |
+|---|---|---|---|
+| `GET` | `/reservas` | Lista las reservas del usuario autenticado | `cliente` |
+| `GET` | `/restaurantes/{id}/reservas` | Lista las reservas de un restaurante | `restaurante`, `admin` |
+| `GET` | `/reservas/{id}` | Devuelve una reserva | Dueño de la reserva, `restaurante`, `admin` |
+| `POST` | `/reservas` | Crea una reserva | `cliente` |
+| `PATCH` | `/reservas/{id}` | Modifica una reserva | Dueño de la reserva, `restaurante` |
+| `POST` | `/reservas/{id}/cancelar` | Cancela una reserva | Dueño de la reserva, `restaurante` |
+| `POST` | `/reservas/{id}/confirmar` | Confirma una reserva pendiente | `restaurante` |
+
+**Filtros disponibles en los listados:** `estado`, `desde`, `hasta`, `orden` (`fechaHora`, `-fechaHora`).
+
+#### Crear una reserva
+
+`POST /reservas`
+
+```json
+{
+  "restauranteId": "3f1c2a9e-7b4d-4c8a-9e21-5d6f7a8b9c01",
+  "fechaHora": "2026-10-03T20:30:00-03:00",
+  "personas": 4,
+  "zona": "terraza",
+  "notas": "Festejamos un cumpleaños"
+}
+```
+
+**Respuesta `201 Created`**
+
+```json
+{
+  "id": "b7e4d2c1-9a3f-4e6b-8d20-1c2b3a4d5e6f",
+  "restauranteId": "3f1c2a9e-7b4d-4c8a-9e21-5d6f7a8b9c01",
+  "usuarioId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "mesa": { "numero": 12, "zona": "terraza" },
+  "fechaHora": "2026-10-03T20:30:00-03:00",
+  "duracionMin": 90,
+  "personas": 4,
+  "estado": "pendiente",
+  "notas": "Festejamos un cumpleaños",
+  "codigo": "RSV-8K2P4Q",
+  "creadoEn": "2026-09-16T14:10:45Z"
+}
+```
+
+La API asigna automáticamente la mesa más chica que tenga capacidad suficiente y esté libre en ese horario.
+
+#### Modificar una reserva
+
+`PATCH /reservas/{id}`
+
+```json
+{
+  "fechaHora": "2026-10-03T21:30:00-03:00",
+  "personas": 5
+}
+```
+
+Si el nuevo horario o la nueva cantidad de personas no tienen disponibilidad, la API responde `409 Conflict` y la reserva original no cambia.
+
+#### Cancelar una reserva
+
+`POST /reservas/{id}/cancelar`
+
+```json
+{
+  "motivo": "Cambio de planes"
+}
+```
+
+**Respuesta `200 OK`**
+
+```json
+{
+  "id": "b7e4d2c1-9a3f-4e6b-8d20-1c2b3a4d5e6f",
+  "estado": "cancelada",
+  "canceladaEn": "2026-09-20T10:00:00Z",
+  "fueraDePlazo": false
+}
+```
+
+## Estados de una reserva
+
+| Estado | Descripción |
+|---|---|
+| `pendiente` | Creada, a la espera de que el restaurante la confirme |
+| `confirmada` | Aceptada por el restaurante |
+| `cancelada` | Cancelada por el cliente o por el restaurante |
+| `completada` | El cliente asistió |
+| `no_asistio` | El cliente no se presentó |
+
+Transiciones permitidas:
+
+```
+pendiente  ──► confirmada ──► completada
+    │              │
+    │              ├────────► no_asistio
+    ▼              ▼
+cancelada      cancelada
+```
+
+## Errores
+
+Los errores siguen un formato uniforme:
+
+```json
+{
+  "error": {
+    "codigo": "SIN_DISPONIBILIDAD",
+    "mensaje": "No hay mesas disponibles para 4 personas a las 21:00.",
+    "detalles": []
+  }
+}
+```
+
+| Código HTTP | Código de error | Motivo |
+|---|---|---|
+| `400` | `SOLICITUD_INVALIDA` | Faltan campos o tienen un formato incorrecto |
+| `401` | `NO_AUTENTICADO` | El token falta, es inválido o está vencido |
+| `403` | `SIN_PERMISO` | El usuario no tiene permiso para esta acción |
+| `404` | `NO_ENCONTRADO` | El recurso no existe |
+| `409` | `SIN_DISPONIBILIDAD` | No hay mesas libres para el horario pedido |
+| `409` | `TRANSICION_INVALIDA` | El cambio de estado no está permitido |
+| `422` | `FUERA_DE_HORARIO` | El horario pedido está fuera del horario de atención |
+| `429` | `DEMASIADAS_SOLICITUDES` | Se superó el límite de solicitudes |
+| `500` | `ERROR_INTERNO` | Error inesperado del servidor |
+
+## Límite de solicitudes
+
+Cada token puede hacer hasta 100 solicitudes por minuto. Estos encabezados informan el consumo:
+
+```http
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 87
+X-RateLimit-Reset: 1758031260
+```
+
+## Pruebas
+
+```bash
+npm test               # pruebas unitarias
+npm run test:e2e       # pruebas de integración (requiere una base de datos de prueba)
+npm run test:coverage  # reporte de cobertura
+```
+
+La documentación interactiva (OpenAPI) está disponible en `http://localhost:3000/docs`.
+
+## Licencia
+
+Este proyecto se distribuye bajo la licencia MIT. Para más información, consultá el archivo [LICENSE](LICENSE).

@@ -1,0 +1,166 @@
+# Aprendé a programar desde cero
+
+**Sin experiencia previa. A tu ritmo. Con proyectos reales desde la primera semana.**
+
+Si alguna vez pensaste que programar no era para vos, este curso es para vos. Te acompañamos paso a paso, desde tu primera línea de código hasta tu primer proyecto terminado.
+
+**[Quiero empezar]**
+
+---
+
+## ¿Te pasa algo de esto?
+
+- Querés aprender a programar, pero no sabés por dónde empezar.
+- Probaste con tutoriales gratis y te perdiste a mitad de camino.
+- Sentís que todo está pensado para gente que ya sabe.
+- Te da miedo no ser "bueno con los números".
+
+Tranquilo: no hace falta ser un genio ni saber matemática avanzada. Hace falta un buen método y alguien que te explique las cosas con claridad.
+
+---
+
+## Lo que vas a lograr
+
+**Entender cómo piensa una computadora**
+Aprendés la lógica que está detrás de cualquier lenguaje de programación, para que no tengas que memorizar sino entender.
+
+**Escribir tus propios programas**
+Desde la primera clase escribís código que funciona. Nada de teoría eterna antes de poner las manos en el teclado.
+
+**Construir proyectos para tu portfolio**
+Terminás el curso con proyectos propios que podés mostrar.
+
+**Ganar confianza para seguir aprendiendo**
+Te llevás las bases y la autonomía para resolver problemas y seguir creciendo por tu cuenta.
+
+---
+
+## Así funciona el curso
+
+**Clases cortas y claras**
+Videos de 10 a 15 minutos. Aprendés un concepto por vez, sin abrumarte.
+
+**Práctica en cada clase**
+Cada tema tiene ejercicios para que fijes lo aprendido haciendo.
+
+**Acompañamiento real**
+Si te trabás, tenés dónde preguntar. Nadie queda solo frente a un error.
+
+**Acceso para siempre**
+Estudiás cuando puedas, desde donde quieras, y volvés a las clases las veces que necesites.
+
+---
+
+## El programa
+
+**Módulo 1 · Primeros pasos**
+Qué es programar, cómo instalar tus herramientas y tu primer programa.
+
+**Módulo 2 · Variables y tipos de datos**
+Cómo guardar y usar información dentro de un programa.
+
+**Módulo 3 · Tomar decisiones**
+Condicionales: hacer que tu programa reaccione según lo que pasa.
+
+**Módulo 4 · Repetir tareas**
+Bucles para automatizar lo que harías a mano una y otra vez.
+
+**Módulo 5 · Funciones**
+Organizar tu código en piezas reutilizables y fáciles de leer.
+
+**Módulo 6 · Listas y estructuras de datos**
+Trabajar con muchos datos a la vez.
+
+**Módulo 7 · Errores y depuración**
+Leer mensajes de error sin miedo y encontrar qué está fallando.
+
+**Módulo 8 · Proyecto final**
+Aplicás todo lo aprendido en un proyecto completo, de principio a fin.
+
+---
+
+## ¿Para quién es este curso?
+
+**Es para vos si:**
+- Nunca programaste o apenas lo intentaste.
+- Querés cambiar de carrera o sumar una habilidad con salida laboral.
+- Tenés una idea y querés aprender a construirla.
+- Preferís aprender con orden y no saltando entre videos sueltos.
+
+**No es para vos si:**
+- Ya programás con fluidez y buscás contenido avanzado.
+- Esperás aprender sin practicar.
+
+---
+
+## Quién te enseña
+
+**[Nombre del instructor]**
+[Rol / experiencia]. Hace más de [X] años que programa y enseña. Ya ayudó a más de [X] personas a escribir su primera línea de código. Su enfoque es simple: explicar como le hubiera gustado que le explicaran cuando empezó.
+
+---
+
+## Lo que dicen nuestros alumnos
+
+> "Había arrancado tres veces por mi cuenta y siempre abandonaba. Acá por fin entendí las cosas de verdad."
+> **— [Nombre], [ocupación]**
+
+> "Nunca pensé que iba a terminar un proyecto propio. Las clases son claras y la práctica hace toda la diferencia."
+> **— [Nombre], [ocupación]**
+
+> "Lo mejor es que cuando me trababa, tenía a quién preguntarle. Eso me salvó."
+> **— [Nombre], [ocupación]**
+
+---
+
+## Empezá hoy
+
+**Curso completo de Programación desde Cero**
+
+✔ [X] horas de clases en video
+✔ Ejercicios prácticos en cada módulo
+✔ Proyecto final guiado
+✔ Comunidad y soporte para dudas
+✔ Acceso de por vida y actualizaciones
+✔ Certificado de finalización
+
+~~[Precio anterior]~~
+**[Precio actual]**
+o [X] cuotas de [monto]
+
+**[Inscribirme ahora]**
+
+**Garantía de [X] días:** si el curso no es lo que esperabas, te devolvemos el dinero. Sin preguntas.
+
+---
+
+## Preguntas frecuentes
+
+**¿Necesito saber algo antes de empezar?**
+No. El curso arranca desde cero absoluto. Solo necesitás una computadora y ganas de aprender.
+
+**¿Qué lenguaje voy a aprender?**
+[Lenguaje]. Es uno de los más recomendados para empezar por su sintaxis clara y su gran demanda en el mercado.
+
+**¿Cuánto tiempo necesito por semana?**
+Con [X] horas por semana podés terminar el curso en unos [X] meses. Igual, vas a tu ritmo.
+
+**¿Sirve una computadora común?**
+Sí. No necesitás una máquina potente. Cualquier computadora con Windows, Mac o Linux alcanza.
+
+**¿Voy a poder conseguir trabajo al terminar?**
+Este curso te da las bases sólidas que necesitás para seguir formándote y dar tus primeros pasos en el mundo de la programación. Conseguir trabajo depende también de seguir practicando, pero vas a tener un punto de partida firme.
+
+**¿Qué pasa si me trabo con un ejercicio?**
+Podés dejar tu consulta en [comunidad / foro / canal], donde te responden [instructor / equipo / otros alumnos].
+
+**¿Recibo un certificado?**
+Sí, al completar el curso recibís un certificado de finalización.
+
+---
+
+## Tu primera línea de código está a un clic
+
+Cada programador que admirás empezó exactamente donde estás vos ahora. La diferencia es que en algún momento decidió empezar.
+
+**[Quiero aprender a programar]**

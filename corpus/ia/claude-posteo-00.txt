@@ -1,0 +1,91 @@
+# Cómo elegir un proveedor de software sin arrepentirte a los seis meses
+
+Elegir un proveedor de software se parece bastante a elegir socio. Al principio todo es entusiasmo: demos prolijas, presentaciones con buen diseño y promesas de que "eso lo resolvemos sin problema". El problema aparece después, cuando la implementación se atrasa, el soporte no contesta y descubrís que la función clave que te mostraron era, en realidad, una idea para el año que viene.
+
+La buena noticia es que buena parte de esos dolores de cabeza se pueden evitar. Estas son algunas pautas para tomar una decisión con más criterio y menos intuición.
+
+## 1. Antes de buscar proveedores, entendé qué problema querés resolver
+
+Parece obvio, pero es el error más común. Muchas empresas salen a buscar "un CRM" o "un ERP" sin haber definido para qué lo necesitan. El resultado es que terminan comparando listas de funciones en lugar de evaluar si la herramienta resuelve su problema.
+
+Antes de hablar con cualquier proveedor, sentate con tu equipo y respondé:
+
+- ¿Qué proceso queremos mejorar y por qué?
+- ¿Qué pasa hoy si no hacemos nada?
+- ¿Quiénes van a usar el sistema todos los días?
+- ¿Cómo vamos a saber, dentro de un año, si la inversión valió la pena?
+
+Con esas respuestas por escrito vas a poder separar lo imprescindible de lo que está bueno tener. Y esa distinción te va a salvar en cada reunión comercial.
+
+## 2. Armá una lista corta, no una lista infinita
+
+Evaluar quince opciones no te da más seguridad; te da más cansancio. Investigá el mercado, pedí recomendaciones a colegas de tu industria y leé opiniones de usuarios reales. Después quedate con tres o cuatro candidatos serios.
+
+Una lista corta te permite profundizar en cada opción en lugar de quedarte en la superficie de todas.
+
+## 3. Pedí demos con tus casos, no con los de ellos
+
+Toda demo estándar está pensada para lucirse. El proveedor sabe exactamente qué mostrar y qué esquivar. Por eso conviene tomar el control: mandá con anticipación dos o tres escenarios concretos de tu operación y pedí que te muestren cómo los resolverían.
+
+Si podés, pedí también un período de prueba con datos reales y hacé que lo usen las personas que lo van a usar de verdad, no solo los gerentes. El usuario de todos los días detecta en una tarde fricciones que en una demo no se ven.
+
+## 4. Mirá más allá del precio de la licencia
+
+El precio que figura en la propuesta casi nunca es el costo real. Para comparar en serio, calculá el costo total a tres o cinco años e incluí:
+
+- Implementación y configuración inicial.
+- Migración de datos.
+- Integraciones con los sistemas que ya usás.
+- Capacitación.
+- Soporte y mantenimiento.
+- Costos por usuario adicional o por crecimiento en el volumen de uso.
+- Módulos que hoy no necesitás pero probablemente vas a necesitar.
+
+Muchas veces la opción más barata al principio es la más cara a mediano plazo.
+
+## 5. Evaluá al proveedor, no solo al producto
+
+El software cambia; la empresa que está detrás es la que va a acompañarte. Algunas preguntas que vale la pena hacer:
+
+- **Solidez:** ¿hace cuánto existen? ¿Tienen clientes parecidos a vos, en tamaño e industria?
+- **Soporte:** ¿en qué horario atienden? ¿En qué idioma? ¿Cuáles son los tiempos de respuesta comprometidos por contrato?
+- **Hoja de ruta:** ¿hacia dónde va el producto? ¿Con qué frecuencia publican mejoras?
+- **Referencias:** pedí hablar con dos o tres clientes actuales. Y si podés, buscá por tu cuenta a alguno que no te hayan sugerido ellos.
+
+Una buena señal es un proveedor que te dice con claridad qué *no* hace su producto. La honestidad en la etapa comercial suele anticipar cómo va a ser la relación después.
+
+## 6. No descuides la seguridad ni la propiedad de tus datos
+
+Tus datos son tuyos, y el contrato tiene que dejarlo claro. Averiguá dónde se almacenan, qué certificaciones de seguridad tiene el proveedor, cómo manejan los respaldos y qué pasa si algún día decidís irte.
+
+Esta última pregunta es clave: ¿podés exportar toda tu información en un formato útil? ¿Tiene costo? Un proveedor que te complica la salida es un proveedor que te retiene por obligación, no por conveniencia.
+
+## 7. Pensá en la integración y en el crecimiento
+
+Ningún sistema vive aislado. Verificá que la herramienta se pueda conectar con lo que ya tenés (contabilidad, correo, facturación, sitio web) y que tenga una API documentada y accesible.
+
+Pensá también en tu empresa dentro de tres años. Si planeás duplicar el equipo, abrir otra sucursal o entrar en otro mercado, el software tiene que poder acompañar ese crecimiento sin obligarte a empezar de cero.
+
+## 8. Leé el contrato con lupa
+
+Antes de firmar, revisá con atención:
+
+- Duración y condiciones de renovación automática.
+- Aumentos de precio previstos.
+- Niveles de servicio (SLA) y qué compensación recibís si no se cumplen.
+- Condiciones de rescisión.
+- Confidencialidad y tratamiento de datos.
+
+Si algo no está por escrito, no existe. Las promesas verbales del equipo comercial no te van a servir de nada cuando haya un problema.
+
+## 9. Tomá la decisión con una matriz, no con una corazonada
+
+Para evitar que gane la opción con la mejor presentación, armá una matriz de evaluación simple: definí los criterios importantes (funcionalidad, costo total, soporte, seguridad, facilidad de uso, integración), asignale un peso a cada uno según tus prioridades y puntuá a cada proveedor.
+
+No se trata de que un número decida por vos, sino de que la conversación interna se base en criterios compartidos y no en impresiones sueltas.
+
+## En resumen
+
+Elegir bien un proveedor de software lleva tiempo, pero es mucho menos tiempo del que vas a perder si elegís mal. Empezá por entender tu problema, evaluá pocas opciones en profundidad, probá con casos reales, calculá el costo verdadero y fijate tanto en la empresa como en el producto.
+
+Al final, el mejor proveedor no es el que tiene más funciones ni el más barato: es el que resuelve tu problema hoy y puede crecer con vos mañana.

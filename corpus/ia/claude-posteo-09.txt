@@ -1,0 +1,59 @@
+# Tendencias de diseño web: hacia dónde va la web en 2026
+
+Durante años el diseño web avanzó a los saltos: una estética se ponía de moda, todos la copiaban y a los dieciocho meses ya parecía vieja. Hoy el panorama es otro. Las tendencias que más pesan no son solo visuales. Responden a cambios en cómo navegamos, en qué esperamos de una interfaz y en las herramientas con las que se construyen los sitios. Estas son algunas de las más importantes.
+
+## 1. Interfaces que se adaptan a quien las usa
+
+La personalización dejó de ser "Hola, Martín" en el encabezado. Cada vez más sitios reorganizan su contenido según el contexto: qué buscó la persona, desde qué dispositivo entra, si es su primera visita o la décima. Las interfaces generativas, que arman bloques de contenido o respuestas en el momento, se están volviendo comunes en tiendas, documentación técnica y plataformas de servicios.
+
+El desafío para quien diseña cambió. Ya no alcanza con diseñar pantallas fijas. Hay que diseñar sistemas: reglas, componentes y límites que garanticen que la experiencia siga siendo coherente aunque el contenido cambie para cada visitante.
+
+## 2. Tipografía como protagonista
+
+Las fuentes variables terminaron de instalarse. Permiten ajustar peso, ancho e inclinación con un solo archivo, y eso abrió la puerta a titulares enormes, expresivos y a veces animados, que ocupan el lugar que antes tenían las imágenes de portada. Muchos sitios apuestan a una tipografía con carácter como principal elemento de identidad, acompañada de pocos colores y mucho espacio en blanco.
+
+Junto con esto vuelve el gusto por las serif clásicas combinadas con sans serif geométricas. Es un contraste que transmite a la vez tradición y modernidad.
+
+## 3. El regreso de lo imperfecto
+
+Como reacción a una web cada vez más pulida y parecida a sí misma, crece una estética más humana: ilustraciones hechas a mano, texturas de papel, grano fotográfico, trazos irregulares y collages. Esta búsqueda de autenticidad tiene mucho sentido en un momento en que buena parte de las imágenes se genera de forma automática. Lo que parece hecho por una persona vuelve a tener valor.
+
+En la misma línea, el neobrutalismo sigue vigente: bordes gruesos, sombras duras, colores saturados y composiciones que se muestran sin disimulo. Funciona especialmente bien en marcas jóvenes y productos digitales que quieren diferenciarse.
+
+## 4. Movimiento con propósito
+
+Las animaciones ya no son un adorno. Las APIs nativas del navegador, como las View Transitions y las animaciones controladas por el scroll, permiten lograr transiciones fluidas entre páginas y efectos que antes exigían mucho JavaScript. El resultado son sitios que se sienten más parecidos a una aplicación.
+
+La clave está en la moderación. El movimiento bien usado orienta, marca jerarquías y da respuesta a las acciones. Mal usado, distrae y marea. Por eso respetar la preferencia de movimiento reducido del sistema operativo ya es una buena práctica básica, no un extra.
+
+## 5. Bento grids y composiciones modulares
+
+Las grillas tipo "bento", con bloques de distintos tamaños que conviven en una misma sección, se volvieron un recurso muy usado para presentar funcionalidades, portfolios y resúmenes de producto. Ordenan mucha información en poco espacio y se adaptan bien a pantallas de distintos tamaños, sobre todo gracias a las container queries, que hacen que cada componente responda al espacio que tiene disponible y no solo al ancho de la ventana.
+
+## 6. Modo oscuro, color y profundidad
+
+El modo oscuro ya no es opcional: los usuarios lo esperan. Pero la conversación sobre el color fue más allá. Los espacios de color modernos, como OKLCH, permiten paletas más vivas y consistentes, con gradientes más suaves y un mejor control del contraste.
+
+También vuelve la sensación de profundidad. Después de años de diseño completamente plano aparecen efectos de vidrio esmerilado, capas translúcidas y sombras sutiles. La idea no es imitar objetos del mundo real, sino darle a la interfaz una jerarquía espacial más clara.
+
+## 7. Accesibilidad como punto de partida
+
+Con normativas cada vez más exigentes en varios países y una mayor conciencia del tema, la accesibilidad pasó de ser una revisión de último momento a un criterio de diseño desde el primer boceto. Buen contraste, textos legibles, navegación completa con teclado, estructuras semánticas y alternativas para el contenido multimedia son la base de cualquier proyecto serio.
+
+Hay además un beneficio que muchas veces se pasa por alto: lo que se diseña pensando en la accesibilidad suele funcionar mejor para todo el mundo.
+
+## 8. Rendimiento y sostenibilidad
+
+Un sitio lento pierde visitas, posiciones en los buscadores y conversiones. La preocupación por el rendimiento hoy se suma a otra más reciente: el impacto ambiental de lo digital. Imágenes optimizadas, menos scripts de terceros, fuentes livianas y páginas más austeras forman parte de lo que se conoce como diseño web sostenible.
+
+Lo interesante es que esta tendencia empuja en la misma dirección que las anteriores: menos ruido, más foco y decisiones de diseño bien justificadas.
+
+## 9. Diseñar para personas y también para máquinas
+
+Una parte creciente del tráfico ya no llega a través de un buscador tradicional, sino de asistentes de inteligencia artificial que leen, resumen y recomiendan contenido. Eso obliga a pensar los sitios con una estructura clara, datos bien marcados y textos que se entiendan fuera de contexto. El diseño visual sigue importando, pero la arquitectura de la información recupera un lugar central.
+
+## Conclusión
+
+Si hubiera que resumir las tendencias actuales en una idea, sería esta: la web busca ser más humana e inteligente al mismo tiempo. Por un lado hay tipografías expresivas, texturas imperfectas y marcas con personalidad. Por el otro, interfaces que se adaptan, animaciones nativas y sitios preparados para convivir con la inteligencia artificial.
+
+No hace falta sumarse a todas. Lo mejor es elegir las que realmente sirvan a tu proyecto y a tu público. Las modas pasan, pero un sitio claro, rápido, accesible y con identidad propia no pierde vigencia.

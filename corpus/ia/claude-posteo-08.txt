@@ -1,0 +1,23 @@
+Hace un tiempo pasé de escribir código todo el día a liderar un equipo de desarrollo. Pensé que lo difícil iba a ser lo técnico. Me equivoqué.
+
+Esto es lo que aprendí en el camino:
+
+1. Mi trabajo dejó de ser resolver problemas. Ahora se trata de que el equipo pueda resolverlos. Al principio me costaba no meterme a arreglar yo mismo cada bug. Cada vez que lo hacía, alguien del equipo perdía la oportunidad de aprender.
+
+2. La claridad vale más que la velocidad. Un equipo que entiende el porqué de lo que construye toma mejores decisiones que uno que solo recibe tickets. Prefiero dedicar media hora más a explicar el contexto que perder dos semanas en algo que no era lo que hacía falta.
+
+3. Las reuniones uno a uno no son opcionales. Ahí aparece lo que no se ve en las dailies: la frustración, las ganas de crecer y las ideas que nadie se anima a decir en grupo.
+
+4. Decir "no sé" genera confianza, no la quita. Nadie espera que tengas todas las respuestas. Sí esperan que seas honesto y que busques la respuesta junto a ellos.
+
+5. La deuda técnica también es deuda humana. Un código difícil de mantener cansa, desmotiva y quema gente. Cuidar la calidad también es cuidar al equipo.
+
+6. Celebrar importa. Nos acostumbramos a pasar de un deploy al siguiente sin detenernos. Reconocer el trabajo bien hecho, aunque sea algo chico, cambia el clima del equipo.
+
+7. El feedback tiene que ir en las dos direcciones. Si solo lo das y nunca lo pedís, no estás liderando: estás supervisando.
+
+Todavía me queda mucho por aprender. Pero si tuviera que resumirlo en una frase, sería esta: liderar no es tener el mejor código, sino lograr que el equipo pueda hacer su mejor trabajo.
+
+¿Qué aprendiste vos liderando equipos, o qué te hubiera gustado que tu líder supiera? Te leo en los comentarios. 👇
+
+#Liderazgo #DesarrolloDeSoftware #EquiposDeTrabajo #Tecnología #Management

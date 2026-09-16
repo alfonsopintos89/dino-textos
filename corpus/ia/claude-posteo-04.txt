@@ -1,0 +1,60 @@
+# La inteligencia artificial, explicada sin vueltas
+
+Hace diez años, la inteligencia artificial sonaba a película de ciencia ficción. Hoy está en el teléfono que llevás en el bolsillo, en el correo que filtra el spam, en la aplicación que te sugiere una serie y en el asistente al que le pedís que te resuma un texto largo. Se volvió parte de la vida diaria casi sin que nos diéramos cuenta. Por eso vale la pena entender qué es, qué puede hacer, qué no puede hacer y por qué nos debería importar.
+
+## ¿Qué es la inteligencia artificial?
+
+En pocas palabras, la inteligencia artificial (IA) es un conjunto de técnicas que les permiten a las computadoras hacer tareas que antes solo podían hacer las personas: reconocer una cara en una foto, traducir un idioma, entender una pregunta o escribir un párrafo.
+
+La diferencia con los programas de siempre está en cómo aprenden. Un programa tradicional sigue instrucciones que alguien escribió paso a paso: "si pasa esto, hacé aquello". Un sistema de IA moderno, en cambio, aprende a partir de ejemplos. No le explicamos qué es un gato; le mostramos millones de fotos de gatos y el sistema descubre por su cuenta los patrones que los distinguen. Esta forma de trabajar se llama *aprendizaje automático*.
+
+## Los modelos de lenguaje: la IA que conversa
+
+La novedad que puso a la IA en boca de todos fueron los *modelos de lenguaje*, los sistemas detrás de los asistentes con los que se puede charlar. Se entrenan con enormes cantidades de texto (libros, artículos, páginas web) y así aprenden cómo se relacionan las palabras, las ideas y los razonamientos.
+
+El resultado sorprende: pueden redactar un correo, explicar un concepto de física, ayudar a programar, proponer una receta con lo que hay en la heladera o repasar con un estudiante para un examen. En los últimos años, además, empezaron a funcionar como "agentes": no solo responden, también pueden hacer tareas de varios pasos, como buscar información, organizar datos o completar trabajos en una computadora.
+
+## ¿Piensa como nosotros?
+
+Esta es una de las preguntas más comunes, y la respuesta honesta es: no del mismo modo. Una IA no tiene experiencias, no tiene cuerpo, no vivió una infancia ni sintió hambre. Lo que hace es procesar información de una manera muy sofisticada, y a veces el resultado se parece mucho al razonamiento humano.
+
+Hay debates serios entre científicos y filósofos sobre qué pasa "adentro" de estos sistemas y hasta dónde llegan sus capacidades. Lo razonable es no caer en ninguno de los dos extremos: ni pensar que es una simple calculadora con buena ortografía ni creer que es una mente igual a la nuestra.
+
+## Lo que la IA hace bien
+
+- **Ahorra tiempo en tareas repetitivas.** Resumir documentos, ordenar información, completar formularios o redactar borradores.
+- **Ayuda en la ciencia y la medicina.** Se usa para detectar enfermedades en imágenes médicas, acelerar el descubrimiento de medicamentos y analizar datos que a un equipo humano le llevarían años.
+- **Hace más accesible el conocimiento.** Alguien que no sabe programar puede crear una pequeña herramienta; alguien que no habla inglés puede leer un artículo técnico traducido al instante.
+- **Acompaña el aprendizaje.** Funciona como un tutor paciente que explica las veces que haga falta y de distintas maneras.
+
+## Lo que conviene tener en cuenta
+
+La IA también tiene límites y riesgos que no conviene esconder.
+
+**Se puede equivocar.** Los modelos de lenguaje a veces dan información falsa con mucha seguridad. En temas importantes (salud, dinero, cuestiones legales) hay que chequear siempre con fuentes confiables o con un profesional.
+
+**Puede reproducir sesgos.** Como aprende de datos producidos por personas, puede heredar prejuicios que existen en la sociedad. Si esos sistemas se usan para decidir quién accede a un crédito o a un trabajo, el problema es serio.
+
+**Plantea desafíos para la privacidad.** Conviene pensar dos veces antes de compartir datos personales o sensibles con cualquier aplicación.
+
+**Facilita el engaño.** Hoy es posible crear imágenes, audios y videos falsos muy creíbles. Aprender a desconfiar de lo que parece demasiado impactante y verificar el origen de la información es una habilidad cada vez más necesaria.
+
+**Cambia el mundo del trabajo.** Algunas tareas se van a automatizar y aparecerán otras nuevas. La historia muestra que las transiciones tecnológicas traen oportunidades, pero también costos para muchas personas, y cómo se reparten depende de las decisiones que tomemos como sociedad.
+
+## ¿Quién controla todo esto?
+
+A medida que los sistemas se vuelven más capaces, crece la discusión sobre cómo asegurar que sean seguros y que se usen para el bien. Gobiernos de distintos países trabajan en leyes y regulaciones, y las empresas que los desarrollan invierten en investigación para entender mejor cómo funcionan y evitar usos dañinos. No es un tema solo para expertos: las reglas sobre la IA van a afectar la educación, el empleo, la salud y la democracia, así que conviene que la ciudadanía participe en la conversación.
+
+## Cómo sacarle provecho sin perder el criterio
+
+Algunos consejos simples para usar la IA en el día a día:
+
+1. **Usala como asistente, no como autoridad.** Es una gran ayuda para arrancar, ordenar ideas o aprender, pero la decisión final es tuya.
+2. **Sé específico.** Cuanto más claro sea lo que pedís, mejor va a ser la respuesta.
+3. **Verificá lo importante.** Datos, cifras, citas y consejos delicados siempre merecen una segunda fuente.
+4. **Cuidá tu información.** No compartas contraseñas, datos bancarios ni información privada de otras personas.
+5. **Seguí aprendiendo.** La tecnología cambia rápido; mantenerse curioso es la mejor defensa contra el miedo y el entusiasmo desmedido.
+
+## Para cerrar
+
+La inteligencia artificial no es magia ni es una amenaza inevitable. Es una herramienta poderosa, quizás una de las más transformadoras de nuestra época, y como toda herramienta, su impacto depende de cómo la usemos. Entenderla un poco mejor es el primer paso para aprovecharla con inteligencia, la nuestra.

@@ -1,0 +1,84 @@
+**Email 1: Bienvenida**
+
+**Asunto:** ¡Bienvenido/a a [Nombre de la tienda]!
+
+Hola, [Nombre]:
+
+Gracias por crear tu cuenta en [Nombre de la tienda]. Nos alegra mucho tenerte con nosotros.
+
+Desde tu cuenta vas a poder:
+- Guardar tus productos favoritos
+- Ver el estado de tus pedidos en cualquier momento
+- Comprar más rápido, con tus datos ya cargados
+
+Como regalo de bienvenida, tenés un **[10]% de descuento** en tu primera compra con el código **[CÓDIGO]**. Vale hasta el [fecha].
+
+[Botón: Empezar a comprar]
+
+Si tenés alguna duda, respondé este email o escribinos a [email de contacto]. Estamos para ayudarte.
+
+¡Que lo disfrutes!
+El equipo de [Nombre de la tienda]
+
+---
+
+**Email 2: Compra confirmada**
+
+**Asunto:** Recibimos tu pedido #[número de pedido]
+
+Hola, [Nombre]:
+
+¡Gracias por tu compra! Ya recibimos tu pedido y lo estamos preparando.
+
+**Resumen del pedido #[número de pedido]**
+Fecha: [fecha]
+
+[Producto 1] x [cantidad] — $[precio]
+[Producto 2] x [cantidad] — $[precio]
+
+Subtotal: $[subtotal]
+Envío: $[costo de envío]
+Descuento: -$[descuento]
+**Total: $[total]**
+
+**Medio de pago:** [medio de pago]
+**Dirección de entrega:** [dirección completa]
+**Método de envío:** [método de envío]
+
+Cuando despachemos tu pedido te vamos a mandar otro email con el código de seguimiento.
+
+[Botón: Ver mi pedido]
+
+¿Necesitás cambiar algo? Escribinos lo antes posible a [email de contacto] e indicanos el número de pedido.
+
+Gracias por elegirnos,
+El equipo de [Nombre de la tienda]
+
+---
+
+**Email 3: Envío**
+
+**Asunto:** Tu pedido #[número de pedido] ya está en camino
+
+Hola, [Nombre]:
+
+¡Buenas noticias! Tu pedido ya salió y está en camino.
+
+**Empresa de envío:** [empresa de envío]
+**Código de seguimiento:** [código de seguimiento]
+**Entrega estimada:** entre el [fecha] y el [fecha]
+
+[Botón: Seguir mi envío]
+
+**Lo vas a recibir en:**
+[Dirección completa]
+
+Algunas cosas a tener en cuenta:
+- Puede pasar hasta [24 horas] hasta que el seguimiento muestre información.
+- Si no hay nadie en el domicilio, la empresa de envío va a intentar entregarlo de nuevo o te va a avisar dónde retirarlo.
+- Al recibir el paquete, revisá que esté en buen estado.
+
+Si tenés algún problema con la entrega, escribinos a [email de contacto] con tu número de pedido.
+
+¡Esperamos que lo disfrutes!
+El equipo de [Nombre de la tienda]

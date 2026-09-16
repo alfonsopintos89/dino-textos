@@ -1,0 +1,132 @@
+**Pantalla de inicio**
+
+**Título:** Hola, {nombre}
+**Subtítulo:** Esto es lo que pasa hoy en tu tienda.
+
+**Tarjetas de resumen**
+- Ventas de hoy
+- Pedidos nuevos
+- Pedidos por enviar
+- Visitas a la tienda
+- Tasa de conversión
+- Ticket promedio
+
+**Comparación:** {porcentaje} respecto de ayer
+
+**Sección "Tareas pendientes"**
+**Título:** Para resolver
+- {n} pedidos esperan preparación
+- {n} pagos están pendientes de confirmación
+- {n} productos tienen poco stock
+- {n} reseñas esperan tu respuesta
+
+**Sin tareas pendientes:** Todo al día. No tenés nada pendiente por ahora.
+
+**Sección "Últimos pedidos"**
+**Título:** Últimos pedidos
+**Enlace:** Ver todos
+
+**Sección "Productos más vendidos"**
+**Título:** Lo más vendido
+**Selector de período:** Hoy · Últimos 7 días · Últimos 30 días
+
+**Primeros pasos (tienda nueva)**
+**Título:** Poné en marcha tu tienda
+**Subtítulo:** Completá estos pasos para empezar a vender.
+1. Cargá tu primer producto
+2. Configurá los medios de pago
+3. Definí las opciones de envío
+4. Personalizá el diseño de tu tienda
+5. Conectá tu dominio
+
+**Progreso:** {n} de 5 pasos completados
+**Botón:** Continuar
+
+---
+
+**Estados vacíos**
+
+**Pedidos**
+**Título:** Todavía no hay pedidos
+**Texto:** Cuando alguien compre en tu tienda, vas a ver el pedido acá.
+**Botón:** Compartir mi tienda
+
+**Productos**
+**Título:** Cargá tu primer producto
+**Texto:** Sumá fotos, precio y stock para empezar a vender.
+**Botones:** Agregar producto · Importar desde un archivo
+
+**Clientes**
+**Título:** Todavía no tenés clientes
+**Texto:** Vas a ver acá a las personas que compren o creen una cuenta en tu tienda.
+
+**Categorías**
+**Título:** No hay categorías
+**Texto:** Organizá tus productos en categorías para que tus clientes los encuentren más fácil.
+**Botón:** Crear categoría
+
+**Inventario**
+**Título:** No hay productos en el inventario
+**Texto:** Cuando cargues productos, vas a poder controlar el stock desde acá.
+**Botón:** Agregar producto
+
+**Descuentos y cupones**
+**Título:** No creaste descuentos
+**Texto:** Armá cupones o promociones para atraer ventas.
+**Botón:** Crear descuento
+
+**Reseñas**
+**Título:** Todavía no hay reseñas
+**Texto:** Cuando tus clientes opinen sobre tus productos, las reseñas van a aparecer acá.
+
+**Envíos**
+**Título:** No hay envíos pendientes
+**Texto:** Cuando tengas pedidos listos para despachar, los vas a ver acá.
+
+**Devoluciones**
+**Título:** No hay devoluciones
+**Texto:** Acá vas a ver los pedidos que tus clientes quieran devolver o cambiar.
+
+**Reportes**
+**Título:** Todavía no hay datos
+**Texto:** Los reportes se van a completar a medida que tu tienda reciba visitas y ventas.
+
+**Notificaciones**
+**Título:** No tenés notificaciones
+**Texto:** Te avisamos acá cuando pase algo importante en tu tienda.
+
+**Mensajes**
+**Título:** No hay mensajes
+**Texto:** Las consultas de tus clientes van a llegar acá.
+
+**Usuarios del equipo**
+**Título:** Sos la única persona en el equipo
+**Texto:** Invitá a otras personas para que te ayuden a administrar la tienda.
+**Botón:** Invitar persona
+
+---
+
+**Estados vacíos generales**
+
+**Búsqueda sin resultados**
+**Título:** No encontramos resultados para "{búsqueda}"
+**Texto:** Revisá lo que escribiste o probá con otras palabras.
+**Botón:** Borrar búsqueda
+
+**Filtros sin resultados**
+**Título:** Ningún resultado coincide con los filtros
+**Texto:** Probá cambiar o quitar algunos filtros.
+**Botón:** Quitar filtros
+
+**Período sin datos**
+**Título:** No hay datos para este período
+**Texto:** Elegí otro rango de fechas.
+
+**Error al cargar**
+**Título:** No pudimos cargar la información
+**Texto:** Revisá tu conexión y volvé a intentarlo.
+**Botón:** Reintentar
+
+**Sin permisos**
+**Título:** No tenés acceso a esta sección
+**Texto:** Pedile acceso a la persona que administra la tienda.

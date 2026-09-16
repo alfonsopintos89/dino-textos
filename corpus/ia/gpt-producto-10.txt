@@ -1,0 +1,173 @@
+# Inicio
+
+## Buen día, [Nombre]
+Este es el resumen de tu tienda para hoy.
+
+### Ventas de hoy
+$0,00
+
+### Pedidos
+0 pedidos
+
+### Clientes nuevos
+0 clientes
+
+### Productos con poco stock
+0 productos
+
+## Actividad reciente
+Todavía no hay actividad para mostrar.
+
+## Acciones rápidas
+Agregar producto  
+Ver pedidos  
+Crear descuento  
+Invitar a un miembro del equipo
+
+# Productos
+
+## Tus productos
+Administrá el catálogo de tu tienda desde un solo lugar.
+
+### No hay productos todavía
+Agregá tu primer producto para empezar a vender.
+
+Agregar producto
+
+### No encontramos productos
+Probá con otro término de búsqueda o ajustá los filtros.
+
+Limpiar filtros
+
+### No hay productos en esta categoría
+Agregá un producto o elegí otra categoría.
+
+Agregar producto
+
+# Pedidos
+
+## Pedidos
+Consultá, gestioná y seguí todos los pedidos de tu tienda.
+
+### Todavía no hay pedidos
+Cuando recibas tu primer pedido, lo vas a ver acá.
+
+### No encontramos pedidos
+Probá con otro término de búsqueda o modificá los filtros.
+
+Limpiar filtros
+
+### No hay pedidos pendientes
+Todos los pedidos están al día.
+
+# Clientes
+
+## Clientes
+Conocé y administrá a las personas que compran en tu tienda.
+
+### Todavía no hay clientes
+Los clientes aparecerán acá cuando realicen su primera compra.
+
+### No encontramos clientes
+Probá con otro nombre, correo electrónico o filtro.
+
+Limpiar filtros
+
+# Categorías
+
+## Categorías
+Organizá tus productos para que sea más fácil encontrarlos.
+
+### No hay categorías
+Creá una categoría para organizar tu catálogo.
+
+Crear categoría
+
+# Descuentos
+
+## Descuentos
+Creá promociones y ofrecé beneficios especiales a tus clientes.
+
+### Todavía no hay descuentos
+Creá tu primer descuento para impulsar tus ventas.
+
+Crear descuento
+
+### No hay descuentos activos
+Los descuentos activos aparecerán acá.
+
+Crear descuento
+
+# Inventario
+
+## Inventario
+Controlá el stock de todos tus productos.
+
+### El inventario está vacío
+Agregá productos para empezar a gestionar el stock.
+
+Agregar producto
+
+### No hay productos con poco stock
+No hay productos que necesiten reposición.
+
+# Reportes
+
+## Reportes
+Analizá el rendimiento de tu tienda y tomá mejores decisiones.
+
+### Todavía no hay datos suficientes
+Cuando tu tienda tenga actividad, vas a encontrar tus primeros reportes acá.
+
+### No hay resultados para este período
+Elegí otro período para consultar la información disponible.
+
+# Configuración
+
+## Configuración de la tienda
+Personalizá tu tienda y administrá sus preferencias.
+
+### Tu tienda todavía no está configurada
+Completá la configuración para empezar a vender.
+
+Configurar tienda
+
+# Notificaciones
+
+## Notificaciones
+Mantenete al tanto de lo que pasa en tu tienda.
+
+### No tenés notificaciones nuevas
+Cuando haya novedades importantes, las vas a ver acá.
+
+# Equipo
+
+## Equipo
+Invitá a otras personas para que te ayuden a administrar la tienda.
+
+### Todavía no hay miembros del equipo
+Sumá a tu equipo y asigná permisos según cada función.
+
+Invitar miembro
+
+# Búsqueda
+
+## No encontramos resultados
+Probá con otras palabras o revisá la ortografía.
+
+Limpiar búsqueda
+
+# Errores
+
+## Algo salió mal
+No pudimos cargar la información. Volvé a intentarlo.
+
+Intentar de nuevo
+
+## No pudimos guardar los cambios
+Revisá la información e intentá nuevamente.
+
+Intentar de nuevo
+
+## Sin conexión
+Revisá tu conexión a internet e intentá nuevamente.

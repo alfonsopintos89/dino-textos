@@ -1,0 +1,112 @@
+# Monotributo para freelancers: la guía para empezar a facturar sin dolores de cabeza
+
+Diseñás, programás, escribís, traducís o das consultoría por tu cuenta. Tenés clientes en Argentina, en el exterior o en los dos lados. Tarde o temprano aparece la pregunta: **¿cómo me pongo en regla?** Para la mayoría de los freelancers que recién empiezan, o que tienen ingresos moderados, la respuesta es el monotributo.
+
+En este artículo te contamos qué es, cómo funciona, qué pasa si facturás al exterior y cuáles son los errores más comunes.
+
+## ¿Qué es el monotributo?
+
+El monotributo, o Régimen Simplificado para Pequeños Contribuyentes, es un régimen que junta en **una sola cuota mensual** tres conceptos que de otro modo se pagarían por separado:
+
+1. **Impuesto integrado:** reemplaza al IVA y al Impuesto a las Ganancias.
+2. **Aportes jubilatorios (SIPA):** suman años de aportes para tu jubilación.
+3. **Obra social:** te da cobertura de salud y podés elegir la prestadora.
+
+La gran ventaja es la simplicidad. No liquidás IVA todos los meses ni presentás declaración jurada anual de Ganancias. Pagás una cuota fija según tu categoría y listo.
+
+## ¿Quién puede ser monotributista?
+
+Pueden adherir las personas humanas que hacen actividades independientes (como la prestación de servicios) y cuyos ingresos brutos de los últimos 12 meses no superan el tope de la categoría más alta.
+
+Si trabajás como freelancer, lo más probable es que encajes en la categoría de **prestación de servicios**. Desde la reforma de 2024, quienes prestan servicios pueden acceder a todas las categorías (de la A a la K), no solo hasta la H como antes.
+
+## Las categorías: cómo saber en cuál estás
+
+Las categorías van de la **A** a la **K** y se definen principalmente por:
+
+- **Ingresos brutos** de los últimos 12 meses (el parámetro más importante para un freelancer).
+- **Superficie afectada** a la actividad, si tenés un local u oficina.
+- **Energía eléctrica consumida** en ese espacio.
+- **Alquileres devengados**, si alquilás un lugar para trabajar.
+
+Si trabajás desde tu casa y no tenés un espacio exclusivo para la actividad, en general el único parámetro que importa son tus ingresos.
+
+> **Importante:** los montos de cada categoría y el valor de las cuotas se actualizan periódicamente. Antes de elegir tu categoría, consultá las tablas vigentes en el sitio de ARCA o preguntanos directamente.
+
+## Recategorización: cada seis meses
+
+En **enero y julio** tenés que revisar lo que facturaste en los últimos 12 meses y confirmar si seguís en la misma categoría o si te corresponde subir o bajar.
+
+- Si **subiste**, tenés que recategorizarte. Si no lo hacés, ARCA puede recategorizarte de oficio y cobrarte la diferencia con intereses.
+- Si **bajaste**, conviene recategorizarte para pagar menos.
+- Si **no hubo cambios**, no hace falta hacer nada.
+
+Es uno de los momentos del año donde más errores vemos, así que vale la pena agendarlo.
+
+## Facturar como freelancer
+
+Como monotributista emitís **factura electrónica tipo C** a tus clientes en Argentina, sean empresas o particulares. La generás desde el servicio "Comprobantes en línea" de ARCA o con un sistema de facturación compatible.
+
+Algunas reglas básicas:
+
+- **Facturá en el momento en que prestás el servicio o cobrás**, lo que pase primero.
+- **Todo lo que cobrás tiene que estar facturado.** ARCA cruza información de bancos, billeteras virtuales y plataformas de pago.
+- Guardá un registro ordenado de tus facturas. Te va a hacer falta para recategorizarte.
+
+## ¿Y si trabajo para clientes del exterior?
+
+Es una situación muy común entre freelancers y tiene algunas particularidades:
+
+- **Factura E:** a los clientes del exterior se les emite factura tipo E, que corresponde a exportación de servicios. Para emitirla tenés que estar inscripto como exportador en ARCA, un trámite simple que se hace online.
+- **Suma para tu categoría:** lo que facturás al exterior cuenta como ingreso bruto y entra en el cálculo de tu categoría, igual que la facturación local.
+- **Tipo de cambio:** si facturás en moneda extranjera, el monto se convierte a pesos según el tipo de cambio que fija la normativa. Es clave hacerlo bien para no pasarte de categoría sin darte cuenta.
+- **Cobro de las divisas:** según cómo cobres (transferencia internacional, plataformas como Payoneer, Wise o PayPal, etc.) puede haber reglas sobre el ingreso de las divisas al país. Estas normas cambiaron varias veces en los últimos años, así que conviene revisarlas con tu contador.
+
+## Ingresos Brutos: el impuesto provincial
+
+El monotributo es un régimen **nacional**, pero además está el **Impuesto sobre los Ingresos Brutos**, que es provincial. Dependiendo de dónde vivas:
+
+- En algunas jurisdicciones (como CABA, Provincia de Buenos Aires y Córdoba, entre otras) existe el **Monotributo Unificado**: el componente provincial se paga junto con la cuota nacional.
+- En otras provincias tenés que inscribirte y pagar Ingresos Brutos por separado.
+- Si tenés clientes en varias provincias, puede corresponder el **Convenio Multilateral**.
+
+La exportación de servicios suele tener tratamientos especiales en Ingresos Brutos, que varían según la provincia.
+
+## Cómo darte de alta, paso a paso
+
+1. **Obtené tu CUIT** si todavía no lo tenés.
+2. **Conseguí la clave fiscal nivel 3** o superior (se puede validar desde la app Mi ARCA).
+3. **Adherite al monotributo** desde el portal de ARCA: elegís la actividad, la categoría y la obra social.
+4. **Inscribite en Ingresos Brutos** si tu provincia no tiene régimen unificado.
+5. **Habilitá un punto de venta** para factura electrónica.
+6. **Si trabajás con el exterior**, inscribite como exportador.
+7. **Adherite al domicilio fiscal electrónico** y revisá periódicamente las notificaciones.
+
+## Errores frecuentes (y cómo evitarlos)
+
+- **No recategorizarse a tiempo.** Es la causa más común de deudas y sanciones.
+- **Facturar menos de lo que se cobra.** Los cruces de información son cada vez más precisos.
+- **Olvidarse de la cuota.** El vencimiento es mensual. Adherir al débito automático evita recargos.
+- **Pasarse del tope de la categoría máxima.** Si superás los ingresos de la categoría K, quedás excluido del régimen y pasás al régimen general (responsable inscripto), con más obligaciones y más carga impositiva.
+- **No considerar Ingresos Brutos.** Muchos freelancers creen que con el monotributo ya está todo cubierto y descubren deudas provinciales años después.
+- **Mezclar cuentas personales y de trabajo sin control.** No es obligatorio separarlas, pero te simplifica mucho el seguimiento de tus ingresos.
+
+## ¿Cuándo conviene dejar el monotributo?
+
+El monotributo es ideal para empezar, pero no siempre es la mejor opción para siempre. Puede ser momento de evaluar el régimen general si:
+
+- Tus ingresos se acercan al tope de la categoría más alta.
+- Tus clientes son empresas que prefieren facturas con IVA discriminado.
+- Tenés gastos importantes que te convendría deducir.
+
+Cada caso es distinto, y la decisión conviene tomarla con números concretos.
+
+## En resumen
+
+El monotributo es la puerta de entrada más simple para que un freelancer trabaje en regla: una cuota mensual, jubilación, obra social y facturación sin grandes complicaciones. Pero tiene reglas que hay que respetar, sobre todo la recategorización, el tratamiento de los ingresos del exterior y las obligaciones provinciales.
+
+**¿Estás por empezar como freelancer o querés revisar si estás bien categorizado?** Escribinos y analizamos tu situación para que te enfoques en tu trabajo mientras nosotros nos ocupamos de los números.
+
+---
+
+*Este artículo es informativo y no reemplaza el asesoramiento profesional. Los montos, categorías y normas pueden cambiar, así que consultá siempre la información vigente antes de tomar decisiones.*

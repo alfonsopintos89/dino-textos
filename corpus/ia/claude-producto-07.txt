@@ -1,0 +1,42 @@
+# Sobre nosotros
+
+## Creemos que aprender no debería depender del código postal
+
+Aprenda nació en 2021 en una mesa de cocina de Córdoba. Éramos tres personas: una maestra de primaria, un programador y una psicopedagoga. Teníamos una misma frustración. Veíamos chicos con ganas de aprender que se quedaban atrás porque el sistema no tenía tiempo de escucharlos. No les faltaba talento. Lo que hacía falta era una forma de enseñar que se adaptara a cada uno.
+
+Así que empezamos a construirla.
+
+## Qué hacemos
+
+Desarrollamos una plataforma de aprendizaje que acompaña a estudiantes de primaria y secundaria en matemática, lengua y ciencias. Nuestra tecnología detecta dónde se traba cada estudiante, ajusta el ritmo y la dificultad de las actividades y le da a cada docente información clara para intervenir a tiempo.
+
+No venimos a reemplazar a nadie en el aula. Queremos que los docentes tengan más tiempo para lo que ninguna máquina puede hacer: mirar a un alumno a los ojos y decirle "vos podés".
+
+## Cómo trabajamos
+
+**Diseñamos con docentes, no para docentes.** Cada función que lanzamos se prueba primero en aulas reales, con maestros y profesores que nos dicen sin vueltas qué sirve y qué no.
+
+**La evidencia manda.** Medimos el impacto de lo que hacemos y cambiamos el rumbo cuando los datos nos muestran que estamos equivocados.
+
+**Cuidamos los datos como si fueran de nuestros hijos.** La información de los estudiantes no se vende, no se comparte con terceros y se usa solo para mejorar su aprendizaje.
+
+**Pensamos en quienes tienen menos.** Nuestra plataforma funciona con conexiones lentas, en celulares de gama baja y sin conexión. Si no llega a una escuela rural, todavía no está terminada.
+
+## Hasta ahora
+
+- Más de 180.000 estudiantes aprenden con Aprenda.
+- 1.200 escuelas en Argentina, Uruguay, Chile y México usan la plataforma.
+- 9.000 docentes la usan todas las semanas.
+- En promedio, los estudiantes mejoran un 32 % en comprensión lectora durante el primer año de uso.
+
+Estos números nos ponen contentos, pero lo que más nos importa son las historias que hay detrás. Como la de Micaela, que en cuarto grado odiaba las fracciones y hoy quiere ser ingeniera. O la de Jorge, un profesor de Jujuy con 140 alumnos que por fin sabe cuáles lo necesitan más.
+
+## Quiénes somos
+
+Hoy somos un equipo de 45 personas: educadores, desarrolladores, diseñadores, investigadores y especialistas en aprendizaje. Trabajamos desde seis países. Tenemos historias distintas, pero nos une la convicción de que la educación es la herramienta más poderosa para cambiar una vida.
+
+## Lo que viene
+
+Nuestra meta es llegar a un millón de estudiantes de América Latina en 2030. Es ambiciosa, pero sabemos que no la vamos a alcanzar solos. Si sos docente, directivo, parte de un gobierno o una fundación, o simplemente creés en lo mismo que nosotros, escribinos.
+
+**Aprender es un derecho. Hagamos que también sea una posibilidad.**

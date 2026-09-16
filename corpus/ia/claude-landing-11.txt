@@ -1,0 +1,176 @@
+**HERO**
+
+# Tu plata, clara. Aunque la economía no lo sea.
+
+Registrá tus gastos, controlá tus cuotas y sabé cuánto vale de verdad lo que ganás. Todo en una app pensada para cómo se vive en Argentina.
+
+[Descargá gratis]  [Mirá cómo funciona]
+
+Disponible para iOS y Android.
+
+---
+
+**EL PROBLEMA**
+
+## Llegar a fin de mes no debería ser un misterio
+
+Cobrás, pagás la tarjeta, se te suman cuotas que ya ni te acordabas, el precio del súper cambia cada semana y a mitad de mes te preguntás adónde se fue todo.
+
+No es que no sepas manejar la plata. Es que acá hacerlo es más difícil que en cualquier lado.
+
+---
+
+**CÓMO FUNCIONA**
+
+## Empezá en tres pasos
+
+**1. Cargá tus cuentas**
+Sumá tu efectivo, tus bancos, tus billeteras virtuales y tus tarjetas. Todo en un solo lugar.
+
+**2. Registrá tus movimientos**
+Anotá un gasto en segundos. La app lo pone en su categoría y te ayuda a no olvidarte de nada.
+
+**3. Mirá el panorama completo**
+Sabé cuánto gastaste, cuánto te queda y qué se viene el mes que viene.
+
+---
+
+**FUNCIONALIDADES**
+
+## Todo lo que necesitás para ordenar tus finanzas
+
+**Control de cuotas**
+Mirá cuánto vas a pagar de tarjeta en los próximos meses antes de que te llegue el resumen. Sin sorpresas.
+
+**Presupuestos por categoría**
+Poné un límite para salidas, delivery o ropa y recibí un aviso antes de pasarte.
+
+**Pesos y dólares, juntos**
+Registrá tus ahorros en la moneda que tengas y mirá tu patrimonio total con la cotización que elijas.
+
+**Gastos fijos y vencimientos**
+Alquiler, expensas, servicios, prepaga. Te avisamos antes de cada vencimiento para que no pagues recargos.
+
+**Metas de ahorro**
+Las vacaciones, el auto, el fondo de emergencia. Definí cuánto querés juntar y seguí tu avance.
+
+**Reportes claros**
+Gráficos simples que te muestran en qué se te va la plata, mes a mes.
+
+---
+
+**HECHA PARA ARGENTINA**
+
+## Porque una app de afuera no entiende lo que vivimos acá
+
+- **Inflación en cuenta:** compará tus gastos en valores reales, no solo nominales. Sabé si gastás más o si todo está más caro.
+- **Todas las cotizaciones:** oficial, MEP, tarjeta y blue, actualizadas.
+- **Aguinaldo y bonos:** planificá qué hacer con los ingresos extra antes de que lleguen.
+- **Cuotas sin interés (y con):** entendé cuánto te cuestan de verdad.
+- **Tu sueldo contra la inflación:** mirá si tu ingreso le gana o pierde con el paso de los meses.
+
+---
+
+**SEGURIDAD**
+
+## Tus datos son tuyos
+
+Tu información viaja y se guarda encriptada. Nunca te pedimos tus claves de home banking y nunca vendemos tus datos a nadie.
+
+Podés exportar o borrar toda tu información cuando quieras.
+
+---
+
+**TESTIMONIOS**
+
+## Lo que dicen quienes ya la usan
+
+> "Por primera vez sé cuánto debo de tarjeta antes de que me llegue el resumen. Me cambió el mes."
+> — [Nombre], [Ciudad]
+
+> "Tengo ahorros en pesos y en dólares y nunca sabía cuánto tenía en total. Ahora lo veo en un segundo."
+> — [Nombre], [Ciudad]
+
+> "Pensé que gastaba demasiado en el súper. Resulta que gastaba lo mismo, solo que todo estaba más caro."
+> — [Nombre], [Ciudad]
+
+---
+
+**PRECIOS**
+
+## Empezá gratis. Pasate a Pro cuando quieras.
+
+**Gratis**
+$0 / para siempre
+- Registro de gastos e ingresos ilimitado
+- Hasta [X] cuentas
+- Presupuestos por categoría
+- Reportes mensuales
+
+[Empezar gratis]
+
+**Pro**
+$[precio] / mes
+- Todo lo del plan Gratis
+- Cuentas ilimitadas
+- Control de cuotas a futuro
+- Ajuste por inflación
+- Metas de ahorro ilimitadas
+- Exportación de datos
+
+[Probar Pro gratis por [X] días]
+
+---
+
+**PREGUNTAS FRECUENTES**
+
+## Preguntas frecuentes
+
+**¿Es gratis?**
+Sí. El plan Gratis tiene todo lo que necesitás para empezar a ordenarte. Si querés funciones avanzadas, podés pasarte a Pro cuando quieras.
+
+**¿Tengo que conectar mi cuenta bancaria?**
+No. Podés cargar tus movimientos a mano y nunca te vamos a pedir tus claves del banco.
+
+**¿Funciona con billeteras virtuales?**
+Sí. Podés sumar cualquier billetera virtual como una cuenta más y registrar sus movimientos.
+
+**¿De dónde salen las cotizaciones del dólar?**
+Las tomamos de fuentes públicas y las actualizamos varias veces por día.
+
+**¿Cómo calculan la inflación?**
+Usamos los datos oficiales del IPC que publica el INDEC.
+
+**¿Puedo usarla en más de un dispositivo?**
+Sí. Tu información se sincroniza entre el celular y la computadora.
+
+**¿Puedo cancelar Pro cuando quiera?**
+Sí, sin vueltas y sin letra chica. Seguís con el plan Gratis y no perdés tus datos.
+
+---
+
+**CTA FINAL**
+
+## Tomá el control de tu plata hoy
+
+La economía no la podés controlar. Tus finanzas, sí.
+
+[Descargá gratis]
+
+Sin tarjeta de crédito. Empezás en menos de un minuto.
+
+---
+
+**FOOTER**
+
+[Nombre de la app] — Finanzas personales hechas en Argentina.
+
+Producto · Precios · Seguridad · Preguntas frecuentes
+Blog · Ayuda · Contacto
+Términos y condiciones · Política de privacidad
+
+© 2026 [Nombre de la empresa]. Todos los derechos reservados.
+
+---
+
+Tenés que completar o cambiar lo que está entre corchetes. Los testimonios son de ejemplo, así que reemplazalos por reales. Antes de publicar, fijate que las funciones, los datos de seguridad y las fuentes de las cotizaciones y la inflación coincidan con lo que hace la app de verdad.

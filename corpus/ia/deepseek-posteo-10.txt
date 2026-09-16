@@ -1,0 +1,67 @@
+Por qué fallan las entregas de última milla
+
+La última milla es el tramo más corto de la cadena logística, pero también el más caro, el más complejo y el que más impacto tiene en la experiencia del cliente. Se calcula que puede representar más de la mitad del costo total de una entrega. Y cuando falla, no falla solo un paquete: falla una promesa, se pierde confianza y aparece un costo extra que nadie había presupuestado.
+
+Entender por qué fallan las entregas de última milla es el primer paso para diseñar una operación más eficiente, rentable y confiable. Estas son las causas más comunes.
+
+1. Direcciones incorrectas o incompletas
+
+Muchos pedidos llegan con direcciones mal cargadas, sin número, sin referencias, con barrios mal escritos o con datos que el cliente no revisó. En países donde las direcciones no siguen un estándar estricto, el problema se multiplica. El repartidor pierde tiempo llamando, preguntando o adivinando, y la entrega se retrasa o se cancela.
+
+2. Ventanas horarias irreales
+
+Prometer entregas en dos horas, en el mismo día o en una franja de una hora sin tener la capacidad real para cumplirlo genera fallas garantizadas. El cliente espera, se frustra y muchas veces no está cuando el repartidor llega. La promesa comercial debe estar alineada con la capacidad operativa, no al revés.
+
+3. Falta de comunicación con el cliente
+
+La incertidumbre es uno de los mayores enemigos de la última milla. Si el cliente no sabe cuándo llegará su pedido, no puede organizarse. Si el tracking no es confiable, llama al centro de atención. Si no puede reprogramar fácilmente, aumenta la probabilidad de un intento fallido. La comunicación proactiva reduce ausencias, reintentos y cancelaciones.
+
+4. Planificación de rutas deficiente
+
+Asignar rutas de forma manual o estática, sin considerar tráfico, clima, prioridades, ventanas horarias, densidad de entregas o restricciones de acceso, encarece cada recorrido. Una mala ruta no solo tarda más: también consume más combustible, desgasta al equipo y reduce la cantidad de entregas por vehículo.
+
+5. Picos de demanda y capacidad limitada
+
+Campañas, descuentos, fechas especiales y lanzamientos generan picos que la operación no siempre puede absorber. Contratar más repartidores de un día para otro no es suficiente si no hay procesos, tecnología y coordinación. La capacidad debe planificarse con anticipación y monitorearse en tiempo real.
+
+6. Problemas de acceso y seguridad
+
+Edificios con conserjería, barrios cerrados, calles estrechas, zonas con restricciones vehiculares, direcciones difíciles de encontrar y áreas inseguras complican la entrega. Cada minuto extra en la puerta, cada llamada adicional y cada autorización pendiente afectan la productividad de toda la ruta.
+
+7. Intentos fallidos y devoluciones
+
+Cada intento fallido tiene un costo doble: el costo de haber ido y el costo de volver a intentarlo. Si el proceso de devolución o reprogramación no está bien diseñado, el paquete puede quedar atrapado en un ciclo de reintentos, devoluciones y reclamos. Además, una devolución mal gestionada deteriora la experiencia del cliente y aumenta la carga operativa.
+
+8. Datos y sistemas fragmentados
+
+Cuando el ecommerce, el CRM, el WMS, el TMS y las herramientas de reparto no se comunican entre sí, la información se vuelve inconsistente. El cliente recibe datos erróneos, el repartidor no tiene visibilidad y el equipo de soporte no puede resolver. La última milla necesita datos unificados, actualizados y accesibles en tiempo real.
+
+9. Expectativas del cliente cada vez más altas
+
+El cliente compara la entrega de cualquier startup con la de los grandes jugadores del ecommerce. Quiere rapidez, precisión, visibilidad, flexibilidad y bajo costo. Si la operación no puede ofrecer una experiencia similar, la percepción de falla aparece incluso cuando el paquete llega.
+
+10. Costos ocultos que nadie mide
+
+Combustible, peajes, horas extra, llamadas, reintentos, devoluciones, atención al cliente y vehículos subutilizados son costos que suelen aparecer después. Sin métricas claras, es imposible saber qué está fallando y dónde mejorar. La última milla se vuelve un agujero negro financiero.
+
+Cómo reducir las fallas en la última milla
+
+No existe una solución única, pero sí una combinación de acciones que marcan la diferencia:
+
+Validar direcciones desde el checkout, con referencias y confirmación del cliente.
+
+Ofrecer ventanas horarias realistas y flexibles, basadas en capacidad real.
+
+Enviar notificaciones proactivas y permitir reprogramar o cambiar el punto de entrega.
+
+Optimizar rutas de forma dinámica, considerando tráfico, prioridades y restricciones.
+
+Crear puntos de recogida, lockers o entregas en comercios aliados.
+
+Planificar la capacidad para picos y monitorear la operación en tiempo real.
+
+Integrar los sistemas para tener una sola fuente de verdad.
+
+Medir obsesivamente: tasa de entrega al primer intento, costo por entrega, tiempo de ciclo, reintentos, devoluciones y satisfacción del cliente.
+
+La última milla no falla por una sola razón. Fallan los datos, la planificación, la comunicación, la capacidad y la tecnología. Las startups de logística que entiendan esto no solo reducirán costos: convertirán cada entrega en una ventaja competitiva. Después de todo, en logística, la última milla es la primera impresión.

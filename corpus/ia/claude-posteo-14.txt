@@ -1,0 +1,83 @@
+# Trabajo remoto: lo que aprendimos después de años de trabajar desde cualquier lugar
+
+Hace no tanto, trabajar desde casa era un beneficio raro, casi una excepción que había que justificar. Hoy, para muchas empresas de software en Uruguay, es parte normal de cómo funcionan. Pero que algo sea normal no quiere decir que sea fácil. Trabajar a distancia trae ventajas muy concretas y también desafíos que no se arreglan solos.
+
+En este artículo compartimos lo que fuimos aprendiendo: qué funciona, qué no y qué cosas seguimos ajustando.
+
+## Uruguay, un lugar especialmente bueno para el trabajo remoto
+
+Uruguay tiene condiciones que ayudan mucho. Tiene una de las mejores coberturas de fibra óptica de la región, una industria del software madura y con experiencia exportando servicios, y una zona horaria que le queda cómoda tanto a Estados Unidos como a Europa.
+
+Además, desde 2021 el país tiene un marco legal propio: la Ley N.º 19.978 de promoción y regulación del teletrabajo. Entre otras cosas, la ley establece que el teletrabajo tiene que acordarse por escrito, reconoce el derecho a la desconexión y fija reglas sobre las herramientas de trabajo. Para las empresas y los equipos, tener reglas claras da tranquilidad y deja menos lugar a malentendidos.
+
+## Lo que ganamos
+
+**Más foco.** Programar pide concentración profunda. Lejos de las interrupciones típicas de una oficina abierta, mucha gente consigue bloques de trabajo más largos y productivos.
+
+**Tiempo de vuelta.** Cada hora que no se pasa en un ómnibus o buscando dónde estacionar es una hora para descansar, hacer deporte o estar con la familia. Parece un detalle, pero a lo largo de un año es muchísimo tiempo.
+
+**Talento de todo el país.** El trabajo remoto nos permite sumar gente de Salto, Rocha, Tacuarembó o Colonia sin pedirle a nadie que se mude a Montevideo. Así ganamos diversidad y le abrimos oportunidades a personas que antes quedaban afuera.
+
+**Autonomía.** Poder organizar el día según tu propio ritmo, dentro de lo que pide el equipo, genera responsabilidad y confianza.
+
+## Lo que cuesta
+
+Sería deshonesto hablar solo de lo bueno. El trabajo remoto también tiene su lado difícil.
+
+**El aislamiento.** Se extrañan el mate compartido, la charla en la cocina y esos intercambios informales donde muchas veces aparecen las mejores ideas. Para quien vive solo, esto se nota todavía más.
+
+**Los límites difusos.** Cuando la oficina está a tres metros del dormitorio, cuesta "salir" del trabajo. Mirar Slack a las once de la noche se vuelve un hábito sin que te des cuenta.
+
+**La comunicación.** Lo que en persona se aclara en treinta segundos, a distancia puede volverse un hilo de veinte mensajes. Sin cuidado, se pierde contexto y aparecen los malentendidos.
+
+**La incorporación de gente nueva.** Aprender mirando a los demás es mucho más difícil a través de una pantalla, sobre todo para perfiles junior.
+
+## Prácticas que nos funcionan
+
+Con los años fuimos armando un conjunto de hábitos que nos ayudan a aprovechar las ventajas y achicar los problemas.
+
+### 1. Escribir más y mejor
+
+La comunicación asincrónica es la base del trabajo remoto. Documentamos decisiones, dejamos contexto en los tickets y escribimos pull requests que se entienden sin tener que preguntar. Una buena regla: si alguien lee tu mensaje mañana y sin contexto, ¿lo entiende?
+
+### 2. Menos reuniones, pero mejores
+
+Cada reunión tiene que tener un objetivo claro y una agenda. Si algo se puede resolver con un mensaje o un documento, no hace falta juntarse. Y cuando nos juntamos, prendemos la cámara siempre que se pueda: ver caras cambia mucho la conversación.
+
+### 3. Horarios de coincidencia
+
+La flexibilidad no quiere decir que cada uno trabaje totalmente por su lado. Acordamos franjas horarias en las que todo el equipo está disponible para coordinar, resolver dudas o hacer pair programming.
+
+### 4. Respetar la desconexión
+
+No esperamos respuestas fuera del horario laboral. Si alguien manda un mensaje tarde, es porque le quedó cómodo, no porque espere respuesta inmediata. Además de ser un derecho reconocido por la ley, es clave para que el trabajo sea sostenible a largo plazo.
+
+### 5. Espacios para lo informal
+
+Armamos momentos que no son de trabajo: cafés virtuales, canales para compartir fotos de mascotas o recomendaciones de series, y juegos rápidos al cierre de la semana. Parece poca cosa, pero es lo que mantiene unido a un equipo.
+
+### 6. Encontrarse en persona
+
+Remoto no quiere decir no vernos nunca. Organizamos encuentros presenciales periódicos: jornadas de planificación, celebraciones de fin de año o simplemente un asado. Esos momentos le dan sentido a todo lo que después hacemos a distancia.
+
+### 7. Buenas condiciones de trabajo
+
+Un buen puesto de trabajo importa. Una silla adecuada, una pantalla extra y una buena conexión influyen directamente en la salud y la productividad. Invertir en eso no es un gasto, es cuidar a las personas.
+
+### 8. Mentoría pensada para la distancia
+
+Para quienes recién entran, cada persona nueva tiene un referente asignado, sesiones frecuentes de pair programming y documentación de onboarding que actualizamos todo el tiempo. Lo que en una oficina pasa solo, a distancia hay que hacerlo a propósito.
+
+## ¿Remoto, híbrido o presencial?
+
+No hay una respuesta única. Hay personas que rinden mejor en casa y otras que necesitan la energía de la oficina. Hay tareas que se resuelven muy bien a distancia y otras que ganan mucho cara a cara.
+
+Para nosotros, la clave está en la flexibilidad con acuerdos claros: que cada equipo encuentre el equilibrio que le sirve, sin perder de vista que lo que importa son los resultados, la colaboración y el bienestar de las personas.
+
+## Para cerrar
+
+El trabajo remoto no es una moda ni una solución mágica. Es una forma de trabajar que, bien hecha, puede mejorar mucho la calidad de vida y la calidad del software que construimos. Pero para que salga bien hace falta intención, buena comunicación y, sobre todo, confianza.
+
+Seguimos aprendiendo y ajustando sobre la marcha. Y si algo nos enseñaron estos años es que la distancia física no tiene por qué ser distancia entre las personas.
+
+¿Vos cómo trabajás? ¿Qué prácticas te sirven a vos o a tu equipo? Nos encantaría leerte.

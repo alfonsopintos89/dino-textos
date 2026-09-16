@@ -1,0 +1,198 @@
+# Tempo
+
+Una librería liviana y sin dependencias para trabajar con fechas en JavaScript.
+
+[![npm](https://img.shields.io/npm/v/tempo-fechas.svg)](https://www.npmjs.com/package/tempo-fechas)
+[![licencia](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
+
+## ¿Por qué Tempo?
+
+El objeto `Date` de JavaScript es incómodo: los meses empiezan en 0, las operaciones modifican el objeto original y dar formato a una fecha lleva más código del necesario. Tempo resuelve esos problemas con una API simple y predecible.
+
+- **Inmutable:** ninguna operación modifica la fecha original.
+- **Liviana:** pesa menos de 4 KB comprimida.
+- **Sin dependencias.**
+- **Soporte de zonas horarias** mediante la API `Intl` nativa.
+- **Internacionalización:** incluye español, inglés y portugués, y podés agregar otros idiomas.
+- **Compatible con TypeScript:** trae sus propias definiciones de tipos.
+
+## Instalación
+
+```bash
+npm install tempo-fechas
+```
+
+Con Yarn o pnpm:
+
+```bash
+yarn add tempo-fechas
+pnpm add tempo-fechas
+```
+
+## Uso rápido
+
+```js
+import { tempo } from 'tempo-fechas';
+
+const hoy = tempo();
+const cumple = tempo('2026-03-15');
+
+hoy.formato('DD/MM/YYYY');            // "16/09/2026"
+cumple.sumar(1, 'año').formato('LL'); // "15 de marzo de 2027"
+hoy.diferencia(cumple, 'días');       // 185
+```
+
+## Crear fechas
+
+```js
+tempo();                         // fecha y hora actual
+tempo('2026-09-16');             // desde un texto ISO 8601
+tempo('16/09/2026', 'DD/MM/YYYY'); // desde un texto con formato propio
+tempo(1789516800000);            // desde un timestamp en milisegundos
+tempo(new Date());               // desde un objeto Date
+tempo({ año: 2026, mes: 9, día: 16 }); // desde un objeto (los meses empiezan en 1)
+```
+
+Si el texto no es una fecha válida, `esValida()` devuelve `false`:
+
+```js
+tempo('30/02/2026', 'DD/MM/YYYY').esValida(); // false
+```
+
+## Dar formato
+
+```js
+const fecha = tempo('2026-09-16T14:30:00');
+
+fecha.formato('DD/MM/YYYY');       // "16/09/2026"
+fecha.formato('dddd D [de] MMMM'); // "miércoles 16 de septiembre"
+fecha.formato('HH:mm');            // "14:30"
+fecha.formato('LLL');              // "16 de septiembre de 2026 14:30"
+```
+
+### Tokens disponibles
+
+| Token  | Resultado             | Ejemplo      |
+|--------|-----------------------|--------------|
+| `YYYY` | Año con cuatro dígitos | `2026`       |
+| `YY`   | Año con dos dígitos   | `26`         |
+| `MMMM` | Nombre del mes        | `septiembre` |
+| `MMM`  | Mes abreviado         | `sep`        |
+| `MM`   | Mes con dos dígitos   | `09`         |
+| `DD`   | Día con dos dígitos   | `16`         |
+| `D`    | Día                   | `16`         |
+| `dddd` | Día de la semana      | `miércoles`  |
+| `ddd`  | Día abreviado         | `mié`        |
+| `HH`   | Hora (00–23)          | `14`         |
+| `hh`   | Hora (01–12)          | `02`         |
+| `mm`   | Minutos               | `30`         |
+| `ss`   | Segundos              | `00`         |
+| `A`    | AM / PM               | `PM`         |
+
+El texto entre corchetes se muestra tal cual: `[de]`.
+
+## Manipular fechas
+
+Todas las operaciones devuelven una fecha nueva, así que podés encadenarlas:
+
+```js
+const fecha = tempo('2026-09-16');
+
+fecha.sumar(3, 'días');                 // 19/09/2026
+fecha.restar(2, 'meses');               // 16/07/2026
+fecha.inicioDe('mes');                  // 01/09/2026 00:00:00
+fecha.finDe('semana');                  // 20/09/2026 23:59:59
+fecha.sumar(1, 'año').inicioDe('año');  // 01/01/2027 00:00:00
+```
+
+Unidades aceptadas: `año`, `mes`, `semana`, `día`, `hora`, `minuto`, `segundo` y `milisegundo`, tanto en singular como en plural.
+
+## Comparar fechas
+
+```js
+const a = tempo('2026-09-16');
+const b = tempo('2026-12-25');
+
+a.esAntesDe(b);                  // true
+a.esDespuesDe(b);                // false
+a.esIgualA('2026-09-16');        // true
+a.estaEntre('2026-01-01', b);    // true
+a.esMismo(b, 'año');             // true
+b.diferencia(a, 'días');         // 100
+```
+
+## Tiempo relativo
+
+```js
+tempo().restar(5, 'minutos').desdeAhora(); // "hace 5 minutos"
+tempo().sumar(2, 'días').desdeAhora();     // "dentro de 2 días"
+```
+
+## Zonas horarias
+
+```js
+const reunion = tempo('2026-09-16T10:00:00', { zona: 'America/Argentina/Buenos_Aires' });
+
+reunion.enZona('Europe/Madrid').formato('HH:mm');   // "15:00"
+reunion.enZona('America/Mexico_City').formato('HH:mm'); // "07:00"
+```
+
+## Idiomas
+
+El idioma predeterminado es el español. Podés cambiarlo de forma global o para una fecha puntual:
+
+```js
+import { tempo, configurar } from 'tempo-fechas';
+import en from 'tempo-fechas/idiomas/en';
+
+configurar({ idioma: en });
+
+tempo('2026-09-16').formato('dddd'); // "Wednesday"
+tempo('2026-09-16').idioma('es').formato('dddd'); // "miércoles"
+```
+
+Para agregar un idioma nuevo, mirá la guía en [`docs/idiomas.md`](docs/idiomas.md).
+
+## Referencia de la API
+
+| Método                          | Descripción                                          |
+|---------------------------------|------------------------------------------------------|
+| `tempo(entrada?, formato?)`     | Crea una fecha                                       |
+| `.formato(patron)`              | Devuelve la fecha como texto                         |
+| `.sumar(cantidad, unidad)`      | Suma tiempo                                          |
+| `.restar(cantidad, unidad)`     | Resta tiempo                                         |
+| `.inicioDe(unidad)`             | Lleva la fecha al inicio de la unidad               |
+| `.finDe(unidad)`                | Lleva la fecha al final de la unidad                |
+| `.diferencia(otra, unidad)`     | Calcula la diferencia entre dos fechas               |
+| `.esAntesDe(otra)`              | Indica si la fecha es anterior                       |
+| `.esDespuesDe(otra)`            | Indica si la fecha es posterior                      |
+| `.esIgualA(otra)`               | Indica si las fechas son iguales                     |
+| `.estaEntre(inicio, fin)`       | Indica si la fecha está dentro del rango             |
+| `.esValida()`                   | Indica si la fecha es válida                         |
+| `.desdeAhora()`                 | Devuelve el tiempo relativo en texto                 |
+| `.enZona(zona)`                 | Convierte la fecha a otra zona horaria               |
+| `.aDate()`                      | Devuelve un objeto `Date` nativo                     |
+| `.aISO()`                       | Devuelve la fecha en formato ISO 8601                |
+
+La documentación completa está en [`docs/`](docs/).
+
+## Compatibilidad
+
+- Node.js 18 o superior
+- Navegadores modernos: Chrome, Firefox, Safari y Edge (últimas dos versiones)
+
+## Contribuir
+
+¡Las contribuciones son bienvenidas!
+
+1. Hacé un fork del repositorio.
+2. Creá una rama para tu cambio: `git checkout -b mi-mejora`.
+3. Instalá las dependencias con `npm install`.
+4. Corré los tests con `npm test`.
+5. Abrí un pull request con una descripción clara del cambio.
+
+Antes de proponer un cambio grande, abrí un issue para charlarlo.
+
+## Licencia
+
+MIT © Colaboradores de Tempo

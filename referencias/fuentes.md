@@ -9,7 +9,7 @@ medición completa y `corpus/calibrar.py` la vuelve a hacer desde cero.
 |---|---|
 | Corpus humano | 592 notas, 355.386 palabras de prosa, todas publicadas antes de 2023 |
 | | 294 de la diaria (Uruguay), 298 de eldiarioAR (Argentina) |
-| Corpus de IA | 15 textos generados con el CLI `claude`, 10.471 palabras, tres géneros |
+| Corpus de IA | 125 textos de cinco modelos: 45 de Claude, 25 de GPT, 25 de DeepSeek, 15 de Gemini y 15 de Grok |
 | Fecha de la corrida | 16 de setiembre de 2026 |
 
 La fecha de corte de 2023 es lo que hace humano al corpus humano: lo publicado antes de que
@@ -37,6 +37,19 @@ aparecen en más del 20% de los documentos de una fuente. En la diaria eran 7 re
 llevaron la mitad del texto; en eldiarioAR eran 31 y se llevaron el 43%. Ahí importaba el
 doble, porque eldiarioAR comparte plantilla con elDiario.es y ese texto viene en peninsular:
 habría ensuciado justo el eje que mide el registro.
+
+### Los textos de Claude sabían que los estaban midiendo
+
+El primer corpus de Claude se generó con el CLI corriendo dentro de este repo. Claude Code
+mete en su contexto la carpeta de trabajo y el estado de git, así que leyó las reglas de
+dino y las obedeció: doce textos traían `[falta dato]`, y uno avisaba que no había podido
+pasarse por el linter. La herramienta de descubrimiento lo delató sola — la frase más
+característica de Claude salió `tools dino py`.
+
+Esos textos no medían el default de Claude, medían a Claude obedeciendo a este proyecto. Se
+borraron los 45 y se regeneraron en una carpeta temporal vacía, sin las variables de la
+sesión padre y sin herramientas. `construir.py` ahora descarta cualquier texto con marcas
+del proyecto, y lo guarda aparte para poder ver qué lo delató.
 
 ### El techo por patrón y el piso por scorer eran incompatibles
 
@@ -131,6 +144,25 @@ sigue midiendo por si el corpus de IA cambia lo que se puede afirmar.
 El de los dos puntos **estaba en el scorer** cuando empecé. Lo había portado del umbral que
 el linter inglés usa para el punto y coma, sin ningún número que lo respaldara, y disparó
 sobre el primer documento de verdad que escribí.
+
+## Cuánto caza el scorer a cada modelo
+
+| Modelo | Textos | Slop detectado | Registro que no es de acá |
+|---|---|---|---|
+| Claude | 45 | 27% | 4% |
+| GPT | 25 | 44% | 4% |
+| DeepSeek | 25 | 36% | 24% |
+| Gemini | 15 | 60% | 0% |
+| Grok | 15 | 53% | 47% |
+
+Claude es el que menos se deja cazar, y es justo el que más copy publicado escribe. El
+catálogo salió del slop inglés de 2024, y Claude en 2026 no escribe así.
+
+El intento de descubrir su acento desde los datos chocó con la limitación de siempre. Las
+frases más propias de Claude — `preguntas frecuentes`, `por whatsapp`, `lunes a viernes` —
+son vocabulario de landing, no acento: no aparecen en el corpus humano porque el corpus
+humano es periodismo. Separar lo que escribió Claude de lo que es una landing necesita
+landings escritas por personas.
 
 ## Lo que esta corrida NO pudo demostrar
 

@@ -1,0 +1,74 @@
+# Términos de uso (resumen en lenguaje claro)
+
+*Última actualización: 16 de septiembre de 2026*
+
+Este es un resumen de las reglas para usar la app. Lo escribimos para que se entienda fácil. Con usar la app, aceptás estas reglas. La versión completa y legal está en [enlace a los términos completos].
+
+## 1. Qué hace la app
+
+La app te ayuda a buscar profesionales de la salud, pedir turnos, cambiarlos, cancelarlos y recibir recordatorios.
+
+**La app no es un servicio médico.** No damos diagnósticos, tratamientos ni consejos médicos. Eso lo hacen los profesionales que atienden.
+
+## 2. Emergencias
+
+**No uses la app en una emergencia.** Si tu vida o la de otra persona está en riesgo, llamá al servicio de emergencias de tu zona (por ejemplo, 107 o 911) o andá a la guardia más cercana.
+
+## 3. Quién puede usarla
+
+- Tenés que ser mayor de 18 años.
+- Si pedís un turno para otra persona (un hijo, un familiar), tenés que tener permiso para hacerlo.
+- Los datos que cargues tienen que ser reales y estar al día.
+
+## 4. Tu cuenta
+
+- Sos responsable de lo que se haga desde tu cuenta.
+- No compartas tu contraseña.
+- Si notás algo raro en tu cuenta, avisanos enseguida.
+
+## 5. Turnos
+
+- Los horarios disponibles los carga cada profesional o centro médico. Tratamos de que estén al día, pero pueden cambiar.
+- El profesional o el centro puede cancelar o mover un turno. Si pasa, te vamos a avisar.
+- **Si no podés ir, cancelá con tiempo.** Así otra persona puede usar ese turno. Algunos profesionales piden cancelar con cierta anticipación y pueden cobrar si no vas sin avisar. Esa regla te la mostramos antes de confirmar el turno.
+
+## 6. Pagos
+
+- Si el turno tiene costo, lo vas a ver antes de confirmar.
+- Los precios, las obras sociales y las prepagas que se aceptan los define cada profesional o centro.
+- Si hay un reembolso, se rige por la política de cancelación de ese profesional.
+
+## 7. Tus datos de salud
+
+- Tus datos de salud son sensibles y los cuidamos especialmente.
+- Solo los compartimos con el profesional o centro con el que pediste turno, y solo lo necesario para atenderte.
+- **No vendemos tus datos.**
+- Podés pedir ver, corregir o borrar tus datos cuando quieras.
+- Para más detalles, leé nuestra [Política de privacidad].
+
+## 8. Lo que no podés hacer
+
+- Reservar turnos que no pensás usar.
+- Hacerte pasar por otra persona.
+- Dejar reseñas falsas u ofensivas.
+- Intentar dañar la app, entrar sin permiso o copiar su contenido.
+
+Si no cumplís estas reglas, podemos suspender o cerrar tu cuenta.
+
+## 9. Nuestra responsabilidad
+
+- Hacemos lo posible para que la app funcione bien, pero puede tener fallas o interrupciones.
+- No somos responsables de la atención médica que recibas. Esa responsabilidad es del profesional que te atiende.
+- Nada de esto limita los derechos que te da la ley de defensa del consumidor.
+
+## 10. Cambios en estos términos
+
+Si cambiamos algo importante, te avisamos por la app o por correo antes de que empiece a regir. Si seguís usando la app después, significa que aceptás los cambios.
+
+## 11. Dar de baja tu cuenta
+
+Podés cerrar tu cuenta cuando quieras desde **Configuración > Cuenta > Eliminar cuenta**. Algunos datos los tenemos que guardar por un tiempo porque lo exige la ley.
+
+## 12. Contacto
+
+¿Tenés dudas? Escribinos a [correo de contacto] o desde **Ayuda** en la app.

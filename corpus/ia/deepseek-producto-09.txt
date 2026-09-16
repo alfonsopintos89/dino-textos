@@ -1,0 +1,38 @@
+Precios
+
+Planes simples que crecen con tu negocio. Todos incluyen facturación electrónica, gestión de clientes y productos, y actualizaciones automáticas.
+
+Esencial — $19/mes
+Para freelancers y pequeños negocios que empiezan a facturar.
+- Hasta 100 facturas al mes
+- 1 usuario
+- Gestión de clientes y productos
+- Facturación electrónica básica
+- Reportes esenciales
+- Soporte por email
+
+Profesional — $49/mes
+Para pymes que necesitan automatizar y controlar mejor sus finanzas.
+- Facturas ilimitadas
+- Hasta 5 usuarios
+- Cotizaciones y recibos
+- Recordatorios de pago automáticos
+- Impuestos y descuentos personalizados
+- Reportes avanzados
+- Integración con pasarelas de pago
+- Soporte prioritario
+
+Empresa — $99/mes
+Para equipos y empresas en crecimiento.
+- Todo lo de Profesional
+- Usuarios ilimitados
+- Multiempresa y multiusuario
+- API y webhooks
+- Roles y permisos avanzados
+- Conciliación bancaria
+- Reportes personalizados
+- Gerente de cuenta y soporte 24/7
+
+Todos los planes incluyen prueba gratis de 14 días. Sin tarjeta de crédito.
+
+¿Necesitas algo a medida? Contáctanos para un plan personalizado.

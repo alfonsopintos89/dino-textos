@@ -1,0 +1,32 @@
+Pantalla de inicio
+
+Título: Resumen de tu tienda
+Subtítulo: Todo lo que necesitás saber para gestionar tu negocio, en un solo lugar.
+Bienvenida: ¡Hola! Este es el estado de tu tienda hoy.
+Resumen de ventas: Consultá tus ventas, pedidos e ingresos en tiempo real.
+Acciones rápidas: Agregar producto | Ver pedidos | Configurar envíos | Crear cupón
+Últimos pedidos: Revisá los pedidos más recientes y su estado.
+Productos más vendidos: Descubrí qué productos tienen mejor rendimiento.
+Tareas pendientes: Tenés tareas por completar para mantener tu tienda al día.
+Consejo: Completá la configuración de tu tienda para empezar a vender.
+Consejo: Configurá medios de pago y envío para que tus clientes puedan comprar.
+Consejo: Agregá productos y compartí tu tienda para recibir tus primeros pedidos.
+
+Estados vacíos
+
+Productos: Todavía no cargaste productos. Agregá tu primer producto para empezar a vender. Botón: Agregar producto
+Pedidos: Aún no tenés pedidos. Cuando alguien compre en tu tienda, los pedidos van a aparecer acá. Botón: Compartir tienda
+Clientes: Todavía no hay clientes registrados. Cuando alguien se registre o compre, lo vas a ver acá. Botón: Invitar clientes
+Categorías: No creaste categorías. Organizá tus productos en categorías para que sea más fácil encontrarlos. Botón: Crear categoría
+Cupones: No tenés cupones activos. Creá una promoción para atraer más ventas. Botón: Crear cupón
+Envíos: No configuraste métodos de envío. Agregá al menos uno para que tus clientes puedan recibir sus compras. Botón: Configurar envíos
+Pagos: No configuraste medios de pago. Agregá uno para empezar a cobrar. Botón: Configurar pagos
+Reseñas: Todavía no hay reseñas. Cuando tus clientes opinen sobre sus compras, las vas a ver acá. Botón: Ver productos
+Mensajes: No tenés mensajes. Las consultas de tus clientes van a aparecer acá. Botón: Ir a la tienda
+Notificaciones: No tenés notificaciones por ahora. Te avisaremos cuando haya novedades importantes. Botón: Actualizar
+Reportes: No hay datos para mostrar en este período. Probá con otro rango de fechas. Botón: Cambiar fechas
+Búsqueda: No encontramos resultados para tu búsqueda. Probá con otras palabras o revisá los filtros. Botón: Limpiar filtros
+Equipo: Todavía no invitaste a nadie. Sumá colaboradores para gestionar la tienda juntos. Botón: Invitar miembro
+Inventario: No hay productos en inventario. Agregá stock para empezar a vender. Botón: Gestionar inventario
+Banners: No hay banners activos. Creá uno para destacar promociones en tu tienda. Botón: Crear banner
+Publicaciones: No hay publicaciones. Creá tu primera entrada para compartir novedades. Botón: Crear entrada

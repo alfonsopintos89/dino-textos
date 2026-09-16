@@ -20,6 +20,7 @@ import os
 import random
 import re
 import subprocess
+import tempfile
 import sys
 import time
 import urllib.error
@@ -266,20 +267,137 @@ GENEROS = {
 }
 
 
+# Treinta pedidos más para Claude, con rubros que no están en GENEROS. La mitad
+# están escritos como los escribe alguien que arma una web con Claude Code, que
+# es de donde sale la mayor parte del copy de Claude que termina publicado.
+#
+# Los números 05 a 09 de cada género son para DESCUBRIR patrones; del 10 al 14
+# quedan guardados para VALIDAR. Un patrón descubierto mirando un texto no puede
+# probarse sobre ese mismo texto: daría bien siempre.
+CLAUDE_EXTRA = {
+    'landing': [
+        'Escribí el copy de una landing para una escuela de surf en La Paloma.',
+        'Escribí el copy de una landing para una veterinaria en Córdoba.',
+        'Escribí el copy de una landing para un gimnasio boutique en Palermo.',
+        'Escribí el copy de una landing para una bodega familiar de Canelones.',
+        'Escribí el copy de una landing para un software de gestión de turnos médicos.',
+        'Estoy armando en Next.js la web de una agencia de viajes de Montevideo. Escribí los textos de la home: hero, servicios, por qué elegirnos y llamada a la acción.',
+        'Estoy haciendo la landing de una app de finanzas personales para Argentina. Pasame el copy de todas las secciones.',
+        'Armá los textos de la home para la web de un estudio de arquitectura en Punta del Este.',
+        'Necesito el copy de la landing de un curso online de programación para principiantes.',
+        'Escribí los textos de la página principal de una empresa de mudanzas en Buenos Aires.',
+    ],
+    'posteo': [
+        'Escribí un posteo de blog sobre cómo ahorrar en dólares siendo uruguayo.',
+        'Escribí un artículo para el blog de una consultora sobre transformación digital en pymes.',
+        'Escribí una newsletter mensual para los socios de un club deportivo.',
+        'Escribí un posteo de LinkedIn sobre lo que aprendí liderando un equipo de desarrollo.',
+        'Escribí un artículo de blog sobre tendencias de diseño web.',
+        'Estoy armando el blog de una startup de logística. Escribí el primer artículo, sobre por qué fallan las entregas de última milla.',
+        'Para el blog de mi estudio contable, escribí un artículo sobre monotributo para freelancers.',
+        'Escribí un posteo para el blog de una marca de café de especialidad sobre cómo preparar un buen filtrado.',
+        'Escribí la newsletter de lanzamiento de una nueva función de una app de delivery.',
+        'Escribí un artículo sobre trabajo remoto para el blog de una empresa de software uruguaya.',
+    ],
+    'producto': [
+        'Escribí el README de una API REST para gestionar reservas de restaurantes.',
+        'Escribí los mensajes de error y confirmación de un formulario de registro.',
+        'Escribí la página "Sobre nosotros" de una startup de tecnología educativa.',
+        'Escribí el texto de onboarding de una app para organizar gastos compartidos.',
+        'Escribí la sección de precios con tres planes para un SaaS de facturación.',
+        'Estoy armando el panel de administración de un e-commerce. Escribí los textos de la pantalla de inicio y de los estados vacíos.',
+        'Escribí la documentación para desarrolladores de un SDK de pagos.',
+        'Escribí los textos de los emails transaccionales de una tienda online: bienvenida, compra confirmada y envío.',
+        'Escribí las preguntas frecuentes de una app de alquiler de autos.',
+        'Escribí la página de términos de uso resumida en lenguaje claro para una app de citas médicas.',
+    ],
+}
+
+
+def construir_claude_extra(en_paralelo=5):
+    """Los treinta textos de CLAUDE_EXTRA, generados desde una carpeta neutra.
+
+    El aislamiento está en `_generar_uno`: Claude Code mete en su contexto la
+    carpeta de trabajo, el estado de git y la sesión padre, y un repo lleno de
+    catálogos de slop no es un contexto neutro.
+    """
+    destino = os.path.join(AQUI, 'ia')
+    tareas = []
+    for genero, prompts in CLAUDE_EXTRA.items():
+        for j, prompt in enumerate(prompts):
+            nombre = 'claude-%s-%02d.txt' % (genero, j + 5)
+            tareas.append((genero, j + 5, prompt, os.path.join(destino, nombre), nombre))
+    manifiesto = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=en_paralelo) as pool:
+        for fila in pool.map(_generar_uno, tareas):
+            if fila:
+                fila['uso'] = 'validación' if fila['archivo'][-6:-4] >= '10' else 'descubrimiento'
+                manifiesto.append(fila)
+    ruta_manifiesto = os.path.join(destino, 'manifiesto.json')
+    previo = json.load(open(ruta_manifiesto, encoding='utf-8'))
+    with open(ruta_manifiesto, 'w', encoding='utf-8') as f:
+        json.dump(previo + manifiesto, f, ensure_ascii=False, indent=2)
+    print('%d textos nuevos de Claude' % len(manifiesto))
+    return 0
+
+
+# Marcas de que el modelo vio este proyecto mientras escribía. Pasó con doce textos
+# de Claude: generados con el repo como carpeta de trabajo, leyeron las reglas de
+# dino, pusieron [falta dato] e intentaron correr el linter. Un texto así no mide
+# el default del modelo, mide al modelo obedeciendo a este repo.
+CONTAMINACION = re.compile(
+    r'\bdino\b|\blinter\b|scratchpad|\bslop\b|tools/|\[falta dato\]|deslop|skill\.md',
+    re.I)
+
+# Solo lo que el CLI necesita para arrancar y autenticarse. Afuera las variables de
+# la sesión de Claude Code que está corriendo esto: con ellas el subproceso se
+# engancha a la sesión padre. Y afuera cualquier clave de API que no le compete.
+ENTORNO_PERMITIDO = ('HOME', 'PATH', 'USER', 'LOGNAME', 'SHELL', 'LANG', 'LC_ALL',
+                     'TERM', 'TMPDIR')
+
+HERRAMIENTAS_BLOQUEADAS = ['Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep', 'WebFetch',
+                           'WebSearch', 'Agent', 'Task', 'Skill', 'NotebookEdit',
+                           'TodoWrite']
+
+
+def contaminado(texto):
+    return bool(CONTAMINACION.search(texto))
+
+
+def entorno_limpio(entorno):
+    return dict((k, v) for k, v in entorno.items() if k in ENTORNO_PERMITIDO)
+
+
 def _generar_uno(tarea):
-    """Una llamada al CLI. Devuelve el manifiesto o None si no sirvió."""
+    """Una llamada al CLI, aislada. Devuelve el manifiesto o None si no sirvió.
+
+    Carpeta temporal vacía y con nombre neutro, entorno sin la sesión padre, y sin
+    herramientas: el modelo tiene que escribir, no explorar. Aun así, si el texto
+    trae marcas del proyecto, se descarta.
+    """
     genero, i, prompt, ruta, nombre = tarea
     if os.path.exists(ruta):
         return None
     try:
+        carpeta = tempfile.mkdtemp(prefix='redaccion-')
         salida = subprocess.run(
-            ['claude', '-p', prompt + ' Escribilo en español. Solo el texto.'],
-            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, timeout=600)
+            ['claude', '-p', prompt + ' Escribilo en español. Solo el texto.',
+             '--disallowed-tools'] + HERRAMIENTAS_BLOQUEADAS,
+            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, timeout=600,
+            cwd=carpeta, env=entorno_limpio(os.environ))
     except (OSError, subprocess.TimeoutExpired):
         sys.stderr.write('  falló %s\n' % nombre)
         return None
     texto = salida.stdout.decode('utf-8', 'replace').strip()
     if len(texto.split()) < 80:
+        return None
+    if contaminado(texto):
+        # Se guarda aparte para poder mirar qué lo delató: sin esto, un falso
+        # positivo de la guarda y una contaminación real se ven iguales.
+        with open(ruta + '.contaminado', 'w', encoding='utf-8') as f:
+            f.write(texto)
+        sys.stderr.write('  CONTAMINADO, descartado: %s (%s)\n'
+                         % (nombre, CONTAMINACION.search(texto).group(0)))
         return None
     with open(ruta, 'w', encoding='utf-8') as f:
         f.write(texto)
@@ -301,7 +419,7 @@ def construir_ia(cuantos, en_paralelo=5):
             prompt = prompts[i % len(prompts)]
             if i >= len(prompts):
                 prompt += ' Que sea de otro rubro, distinto de los habituales.'
-            nombre = '%s-%02d.txt' % (genero, i)
+            nombre = 'claude-%s-%02d.txt' % (genero, i)
             tareas.append((genero, i, prompt, os.path.join(destino, nombre), nombre))
 
     manifiesto = []
@@ -391,7 +509,15 @@ def _generar_openrouter(tarea):
             'palabras': len(texto.split())}
 
 
-def construir_openrouter(prefijo, modelo=None, en_paralelo=5):
+# Diez de los pedidos de CLAUDE_EXTRA, para que otros modelos respondan exactamente
+# lo mismo que Claude. Con los mismos pedidos se puede separar lo que es acento de
+# Claude de lo que es acento de cualquier IA.
+CONTRASTE = [('landing', 0), ('landing', 1), ('landing', 5), ('landing', 6),
+             ('posteo', 0), ('posteo', 3), ('posteo', 5),
+             ('producto', 2), ('producto', 4), ('producto', 5)]
+
+
+def construir_openrouter(prefijo, modelo=None, en_paralelo=5, contraste=False):
     """Genera los quince textos con un modelo de OpenRouter.
 
     Sin `modelo` usa OPENROUTER_TEXT_MODEL de .env.local. Con él, cualquier otro
@@ -405,11 +531,17 @@ def construir_openrouter(prefijo, modelo=None, en_paralelo=5):
         return 2
     destino = os.path.join(AQUI, 'ia')
     tareas = []
-    for genero, prompts in GENEROS.items():
-        for i, prompt in enumerate(prompts):
-            nombre = '%s-%s-%02d.txt' % (prefijo, genero, i)
-            tareas.append((genero, i, prompt, os.path.join(destino, nombre), nombre,
-                           clave, modelo))
+    if contraste:
+        for genero, j in CONTRASTE:
+            nombre = '%s-%s-%02d.txt' % (prefijo, genero, j + 5)
+            tareas.append((genero, j + 5, CLAUDE_EXTRA[genero][j],
+                           os.path.join(destino, nombre), nombre, clave, modelo))
+    else:
+        for genero, prompts in GENEROS.items():
+            for i, prompt in enumerate(prompts):
+                nombre = '%s-%s-%02d.txt' % (prefijo, genero, i)
+                tareas.append((genero, i, prompt, os.path.join(destino, nombre), nombre,
+                               clave, modelo))
     print('generando %d textos con %s' % (len(tareas), modelo))
     manifiesto = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=en_paralelo) as pool:
@@ -426,9 +558,12 @@ def construir_openrouter(prefijo, modelo=None, en_paralelo=5):
 
 if __name__ == '__main__':
     args = sys.argv[1:]
-    if args and args[0] == '--openrouter':
+    if args and args[0] == '--claude-extra':
+        sys.exit(construir_claude_extra())
+    if args and args[0] in ('--openrouter', '--openrouter-contraste'):
         sys.exit(construir_openrouter(args[1] if len(args) > 1 else 'gpt',
-                                      args[2] if len(args) > 2 else None))
+                                      args[2] if len(args) > 2 else None,
+                                      contraste=args[0] == '--openrouter-contraste'))
     cuantos = int(args[1]) if len(args) > 1 else 60
     if args and args[0] == '--limpiar':
         config = json.load(open(os.path.join(AQUI, 'fuentes.json'), encoding='utf-8'))

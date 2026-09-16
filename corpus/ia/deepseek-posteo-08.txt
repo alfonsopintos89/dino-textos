@@ -1,0 +1,20 @@
+Liderar un equipo de desarrollo me enseñó que el código es solo una parte del trabajo.
+
+Estas son algunas lecciones que me llevo:
+
+1. El contexto vale más que el control. Las personas se comprometen cuando entienden el por qué.
+2. La claridad es un acto de respeto: prioridades explícitas, expectativas realistas y retroalimentación a tiempo.
+3. Delegar no es soltar. Es acompañar, quitar obstáculos y confiar.
+4. Un error no es una falla moral: es información. Si el equipo teme equivocarse, deja de innovar.
+5. El mejor líder no es el que tiene todas las respuestas, sino el que construye un equipo capaz de encontrarlas.
+6. Dar crédito en público y asumir responsabilidad en privado.
+7. Proteger el foco del equipo es una de las tareas más importantes. Cada interrupción tiene un costo.
+8. La documentación, las pruebas y la automatización no son burocracia: son empatía con el equipo del futuro.
+9. Escuchar antes de decidir. Muchas veces la respuesta ya está en alguien del equipo.
+10. El crecimiento de las personas es el entregable más importante.
+
+Sigo aprendiendo. Liderar es un ejercicio de humildad, paciencia y mejora continua.
+
+¿Qué lección te dejó liderar o trabajar en un equipo de desarrollo?
+
+#Liderazgo #DesarrolloDeSoftware #Equipos #Tecnología #Management

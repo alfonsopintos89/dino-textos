@@ -1,0 +1,508 @@
+# SDK de Pagos: documentación para desarrolladores
+
+## Introducción
+
+El SDK de Pagos te permite integrar cobros, reembolsos, clientes y notificaciones de eventos en tu aplicación sin llamar directamente a la API REST. El SDK se ocupa de la autenticación, los reintentos, la paginación y la verificación de firmas de webhooks.
+
+Esta guía usa ejemplos en Node.js (TypeScript). Los conceptos son los mismos en las otras versiones del SDK.
+
+---
+
+## Requisitos
+
+- Node.js 18 o superior
+- Una cuenta de comercio activa
+- Claves de API para el entorno de pruebas (sandbox) y el de producción
+
+---
+
+## Instalación
+
+```bash
+npm install @pagos/sdk
+```
+
+o con Yarn:
+
+```bash
+yarn add @pagos/sdk
+```
+
+---
+
+## Autenticación
+
+Cada cuenta tiene dos tipos de claves:
+
+| Tipo | Prefijo | Uso |
+|---|---|---|
+| Clave secreta | `sk_test_` / `sk_live_` | Solo en el servidor. Tiene acceso total a la API. |
+| Clave pública | `pk_test_` / `pk_live_` | En el cliente (navegador o app móvil) para tokenizar tarjetas. |
+
+> **Importante:** nunca pongas la clave secreta en código del cliente, en repositorios ni en logs. Guardala en variables de entorno o en un gestor de secretos.
+
+```ts
+import { Pagos } from "@pagos/sdk";
+
+const pagos = new Pagos({
+  apiKey: process.env.PAGOS_SECRET_KEY!,
+});
+```
+
+El SDK detecta el entorno por el prefijo de la clave: con `sk_test_` las operaciones van al sandbox y no generan movimientos reales de dinero.
+
+### Opciones de configuración
+
+```ts
+const pagos = new Pagos({
+  apiKey: process.env.PAGOS_SECRET_KEY!,
+  timeout: 30_000,        // milisegundos; por defecto 30000
+  maxRetries: 2,          // reintentos automáticos; por defecto 2
+  apiVersion: "2026-06-01",
+});
+```
+
+| Opción | Tipo | Por defecto | Descripción |
+|---|---|---|---|
+| `apiKey` | `string` | — | Clave secreta (obligatoria). |
+| `timeout` | `number` | `30000` | Tiempo máximo de espera por solicitud, en ms. |
+| `maxRetries` | `number` | `2` | Reintentos ante errores de red o respuestas 5xx. |
+| `apiVersion` | `string` | Última estable | Fija la versión de la API que usa tu integración. |
+
+---
+
+## Inicio rápido: tu primer cobro
+
+### 1. Tokenizá la tarjeta en el cliente
+
+Los datos de la tarjeta nunca deben pasar por tu servidor. Usá la clave pública para convertirlos en un token:
+
+```ts
+import { PagosClient } from "@pagos/sdk/client";
+
+const cliente = new PagosClient({ publicKey: "pk_test_..." });
+
+const { token } = await cliente.tokens.create({
+  card: {
+    number: "4111111111111111",
+    expMonth: 12,
+    expYear: 2028,
+    cvc: "123",
+    holderName: "Ana Pérez",
+  },
+});
+
+// Mandá `token` a tu servidor
+```
+
+### 2. Creá el pago en el servidor
+
+```ts
+const pago = await pagos.payments.create(
+  {
+    amount: 150000,            // 1500,00 en la unidad menor de la moneda
+    currency: "ARS",
+    source: token,
+    description: "Pedido #1042",
+    metadata: { orderId: "1042" },
+  },
+  { idempotencyKey: "pedido-1042" }
+);
+
+console.log(pago.id);     // "pay_8f3k2..."
+console.log(pago.status); // "succeeded"
+```
+
+### 3. Confirmá el resultado con webhooks
+
+No tomes la respuesta síncrona como la única fuente de verdad. Algunos pagos quedan en estado `pending` (por ejemplo, los que requieren autenticación 3-D Secure). Escuchá el evento `payment.succeeded` para confirmar el pedido. Más detalles en [Webhooks](#webhooks).
+
+---
+
+## Conceptos clave
+
+### Montos
+
+Todos los montos son **enteros en la unidad menor de la moneda** (centavos). Así se evitan los errores de redondeo de los números de punto flotante.
+
+| Monto real | Moneda | Valor de `amount` |
+|---|---|---|
+| $1500,00 | ARS | `150000` |
+| US$ 9,99 | USD | `999` |
+| ¥ 500 | JPY | `500` (moneda sin decimales) |
+
+### Estados de un pago
+
+```
+created ──► pending ──► succeeded ──► refunded / partially_refunded
+               │
+               └──────► failed
+```
+
+| Estado | Significado |
+|---|---|
+| `created` | El pago se registró pero todavía no se procesó. |
+| `pending` | Está en proceso o espera una acción del comprador (por ejemplo, 3-D Secure). |
+| `succeeded` | El cobro se completó. |
+| `failed` | El cobro fue rechazado. Mirá `failureCode` para saber por qué. |
+| `refunded` | Se devolvió el monto total. |
+| `partially_refunded` | Se devolvió una parte del monto. |
+
+### Metadata
+
+Todos los objetos principales aceptan un campo `metadata` con hasta 50 pares clave-valor (claves de hasta 40 caracteres, valores de hasta 500). Usalo para vincular objetos del SDK con entidades de tu sistema. No guardes ahí datos sensibles.
+
+---
+
+## Referencia de recursos
+
+### Pagos
+
+#### Crear un pago
+
+```ts
+pagos.payments.create(params, options?)
+```
+
+| Parámetro | Tipo | Obligatorio | Descripción |
+|---|---|---|---|
+| `amount` | `number` | Sí | Monto en la unidad menor. |
+| `currency` | `string` | Sí | Código ISO 4217 (`ARS`, `USD`, `MXN`…). |
+| `source` | `string` | Sí* | Token de tarjeta o ID de un método de pago guardado. |
+| `customer` | `string` | No | ID de cliente. *Si lo mandás, `source` puede omitirse y se usa el método por defecto. |
+| `capture` | `boolean` | No | Si es `false`, solo se autoriza el pago. Por defecto `true`. |
+| `installments` | `number` | No | Cantidad de cuotas. |
+| `description` | `string` | No | Texto descriptivo interno. |
+| `statementDescriptor` | `string` | No | Texto que aparece en el resumen de la tarjeta (hasta 22 caracteres). |
+| `metadata` | `object` | No | Datos propios. |
+
+#### Autorizar y capturar por separado
+
+Sirve cuando confirmás el stock o el envío antes de cobrar:
+
+```ts
+const autorizacion = await pagos.payments.create({
+  amount: 50000,
+  currency: "ARS",
+  source: token,
+  capture: false,
+});
+
+// Más tarde (antes de que venza la autorización, normalmente 7 días):
+const capturado = await pagos.payments.capture(autorizacion.id, {
+  amount: 45000, // opcional: capturar un monto menor
+});
+```
+
+Para liberar una autorización sin cobrarla:
+
+```ts
+await pagos.payments.cancel(autorizacion.id);
+```
+
+#### Obtener un pago
+
+```ts
+const pago = await pagos.payments.retrieve("pay_8f3k2...");
+```
+
+#### Listar pagos
+
+```ts
+const pagina = await pagos.payments.list({
+  limit: 20,
+  status: "succeeded",
+  createdFrom: "2026-09-01T00:00:00Z",
+});
+```
+
+### Reembolsos
+
+```ts
+// Reembolso total
+const reembolso = await pagos.refunds.create({
+  payment: "pay_8f3k2...",
+});
+
+// Reembolso parcial
+const parcial = await pagos.refunds.create({
+  payment: "pay_8f3k2...",
+  amount: 20000,
+  reason: "requested_by_customer",
+});
+```
+
+Valores posibles de `reason`: `requested_by_customer`, `duplicate`, `fraudulent`.
+
+Los reembolsos pueden tardar entre 5 y 10 días hábiles en aparecer en el resumen del titular, según el emisor.
+
+### Clientes y métodos de pago guardados
+
+```ts
+const clienteNuevo = await pagos.customers.create({
+  email: "ana@ejemplo.com",
+  name: "Ana Pérez",
+  metadata: { userId: "u_381" },
+});
+
+await pagos.customers.attachPaymentMethod(clienteNuevo.id, {
+  source: token,
+  setAsDefault: true,
+});
+
+// Cobro posterior sin volver a pedir la tarjeta
+await pagos.payments.create({
+  amount: 99900,
+  currency: "ARS",
+  customer: clienteNuevo.id,
+});
+```
+
+Otras operaciones disponibles: `retrieve`, `update`, `list`, `delete`, `listPaymentMethods` y `detachPaymentMethod`.
+
+---
+
+## Paginación
+
+Los métodos `list` devuelven páginas basadas en cursor:
+
+```ts
+const pagina = await pagos.payments.list({ limit: 50 });
+
+pagina.data;     // Array de pagos
+pagina.hasMore;  // true si hay más resultados
+pagina.nextCursor;
+```
+
+Para recorrer todos los resultados, usá el iterador asíncrono. El SDK pide las páginas siguientes automáticamente:
+
+```ts
+for await (const pago of pagos.payments.list({ status: "failed" })) {
+  console.log(pago.id, pago.failureCode);
+}
+```
+
+---
+
+## Idempotencia
+
+Los errores de red pueden hacer que no sepas si una solicitud llegó al servidor. Para reintentar sin riesgo de cobrar dos veces, mandá una clave de idempotencia en toda operación que cree o modifique recursos:
+
+```ts
+await pagos.payments.create(params, {
+  idempotencyKey: `pedido-${orderId}`,
+});
+```
+
+- Si la misma clave se usa de nuevo con los mismos parámetros, la API devuelve el resultado original sin repetir la operación.
+- Si se usa con parámetros distintos, la API devuelve un error `idempotency_conflict`.
+- Las claves duran 24 horas.
+- Los reintentos automáticos del SDK generan y reutilizan una clave cuando no le pasás ninguna. Aun así, conviene que la definas vos a partir de un identificador de tu dominio, así también quedan cubiertos los reintentos de tu propia aplicación.
+
+---
+
+## Webhooks
+
+Los webhooks avisan a tu servidor cuando pasa algo en tu cuenta: un pago se confirma, falla, se reembolsa o recibe un contracargo.
+
+### Eventos principales
+
+| Evento | Cuándo se envía |
+|---|---|
+| `payment.succeeded` | Se completó un cobro. |
+| `payment.failed` | Se rechazó un cobro. |
+| `payment.pending_action` | El comprador tiene que completar una acción (3-D Secure). |
+| `refund.succeeded` | Se procesó un reembolso. |
+| `dispute.created` | El titular inició un contracargo. |
+| `dispute.closed` | Se resolvió un contracargo. |
+
+### Recibir y verificar eventos
+
+Cada envío incluye el encabezado `Pagos-Signature`. **Siempre verificá la firma** antes de procesar el evento. Si no lo hacés, cualquiera podría mandarle eventos falsos a tu endpoint.
+
+La verificación necesita el **cuerpo crudo** de la solicitud, sin parsear:
+
+```ts
+import express from "express";
+import { Pagos, WebhookSignatureError } from "@pagos/sdk";
+
+const app = express();
+const pagos = new Pagos({ apiKey: process.env.PAGOS_SECRET_KEY! });
+
+app.post(
+  "/webhooks/pagos",
+  express.raw({ type: "application/json" }),
+  async (req, res) => {
+    let evento;
+    try {
+      evento = pagos.webhooks.constructEvent(
+        req.body,                                  // Buffer crudo
+        req.header("Pagos-Signature")!,
+        process.env.PAGOS_WEBHOOK_SECRET!
+      );
+    } catch (err) {
+      if (err instanceof WebhookSignatureError) {
+        return res.status(400).send("Firma inválida");
+      }
+      throw err;
+    }
+
+    switch (evento.type) {
+      case "payment.succeeded":
+        await marcarPedidoComoPagado(evento.data.metadata.orderId);
+        break;
+      case "payment.failed":
+        await notificarPagoRechazado(evento.data);
+        break;
+    }
+
+    res.sendStatus(200);
+  }
+);
+```
+
+`constructEvent` compara las firmas en tiempo constante y rechaza los eventos con más de 5 minutos de antigüedad, lo que protege contra ataques de repetición. Podés cambiar esa tolerancia con el cuarto parámetro (en segundos).
+
+### Buenas prácticas para webhooks
+
+- **Respondé rápido.** Devolvé un `2xx` en menos de 10 segundos y mandá el trabajo pesado a una cola.
+- **Esperá duplicados.** Un mismo evento puede llegar más de una vez. Guardá `evento.id` y descartá los que ya procesaste.
+- **No dependas del orden.** Los eventos pueden llegar desordenados. Si necesitás el estado actual, consultalo con `retrieve`.
+- **Reintentos.** Si tu endpoint no responde `2xx`, se reintenta con espera exponencial durante hasta 3 días.
+
+---
+
+## Manejo de errores
+
+Todos los errores del SDK heredan de `PagosError` y tienen estas propiedades:
+
+| Propiedad | Descripción |
+|---|---|
+| `type` | Categoría del error. |
+| `code` | Código específico legible por máquina. |
+| `message` | Descripción legible por personas (no la muestres tal cual al usuario final). |
+| `statusCode` | Código HTTP de la respuesta. |
+| `requestId` | Identificador de la solicitud. Incluilo cuando contactes a soporte. |
+
+### Tipos de error
+
+| Clase | HTTP | Causa típica | Qué hacer |
+|---|---|---|---|
+| `CardError` | 402 | La tarjeta fue rechazada. | Mostrar un mensaje claro y pedir otro medio de pago. |
+| `InvalidRequestError` | 400 / 404 | Parámetros inválidos o recurso inexistente. | Corregir la integración. |
+| `AuthenticationError` | 401 | Clave de API inválida o revocada. | Revisar la configuración. |
+| `PermissionError` | 403 | La clave no tiene permiso para esa operación. | Revisar los permisos de la clave. |
+| `IdempotencyError` | 409 | Clave de idempotencia reutilizada con otros parámetros. | Generar una clave nueva o corregir los parámetros. |
+| `RateLimitError` | 429 | Demasiadas solicitudes. | Reintentar con espera exponencial. |
+| `APIConnectionError` | — | Falla de red. | Reintentar con la misma clave de idempotencia. |
+| `APIError` | 5xx | Error interno del servicio. | Reintentar más tarde. |
+
+### Ejemplo
+
+```ts
+import { CardError, RateLimitError, PagosError } from "@pagos/sdk";
+
+try {
+  await pagos.payments.create(params, { idempotencyKey });
+} catch (err) {
+  if (err instanceof CardError) {
+    switch (err.code) {
+      case "insufficient_funds":
+        return mostrar("La tarjeta no tiene fondos suficientes.");
+      case "expired_card":
+        return mostrar("La tarjeta está vencida.");
+      default:
+        return mostrar("No pudimos procesar el pago. Probá con otra tarjeta.");
+    }
+  }
+  if (err instanceof RateLimitError) {
+    return reintentarMasTarde();
+  }
+  if (err instanceof PagosError) {
+    logger.error({ requestId: err.requestId, code: err.code }, err.message);
+  }
+  throw err;
+}
+```
+
+### Códigos de rechazo frecuentes
+
+| `code` | Descripción |
+|---|---|
+| `card_declined` | Rechazo genérico del emisor. |
+| `insufficient_funds` | Fondos insuficientes. |
+| `expired_card` | Tarjeta vencida. |
+| `incorrect_cvc` | Código de seguridad incorrecto. |
+| `processing_error` | Error temporal al procesar; se puede reintentar. |
+| `fraud_suspected` | Bloqueado por el sistema antifraude. |
+
+> Por seguridad, no le digas al usuario final que el pago se bloqueó por sospecha de fraude. Mostrale un mensaje genérico.
+
+---
+
+## Pruebas en sandbox
+
+Con las claves `sk_test_` y `pk_test_` podés simular todo el ciclo de pago sin mover dinero real.
+
+### Tarjetas de prueba
+
+Usá cualquier fecha de vencimiento futura y cualquier CVC de 3 dígitos.
+
+| Número | Resultado |
+|---|---|
+| `4111 1111 1111 1111` | Pago aprobado |
+| `4000 0000 0000 0002` | Rechazo genérico (`card_declined`) |
+| `4000 0000 0000 9995` | Fondos insuficientes |
+| `4000 0000 0000 0069` | Tarjeta vencida |
+| `4000 0000 0000 3220` | Requiere 3-D Secure |
+| `4000 0000 0000 0259` | Aprobado; después genera un contracargo |
+
+### Probar webhooks en local
+
+Usá la CLI para reenviar eventos a tu máquina:
+
+```bash
+pagos login
+pagos listen --forward-to localhost:3000/webhooks/pagos
+```
+
+El comando muestra un secreto de webhook temporal (`whsec_...`). Configuralo como `PAGOS_WEBHOOK_SECRET` mientras desarrollás.
+
+Para disparar un evento puntual:
+
+```bash
+pagos trigger payment.succeeded
+```
+
+---
+
+## Versionado
+
+- El SDK sigue **versionado semántico**. Los cambios incompatibles solo llegan en versiones mayores.
+- La API tiene versiones con fecha (por ejemplo, `2026-06-01`). Fijá `apiVersion` en la configuración para que tu integración no cambie de comportamiento cuando salga una versión nueva.
+- Antes de actualizar, leé el registro de cambios y probá en sandbox.
+
+---
+
+## Lista de verificación para pasar a producción
+
+- [ ] Las claves `sk_live_` están guardadas en un gestor de secretos, no en el código.
+- [ ] Los datos de tarjeta se tokenizan en el cliente y nunca llegan a tu servidor.
+- [ ] Todas las operaciones que crean recursos usan claves de idempotencia.
+- [ ] El endpoint de webhooks verifica la firma, responde rápido y tolera duplicados.
+- [ ] Los pedidos se confirman con webhooks, no solo con la respuesta síncrona.
+- [ ] Probaste los rechazos, 3-D Secure y los reembolsos con las tarjetas de prueba.
+- [ ] Guardás `requestId` en los logs de errores.
+- [ ] `apiVersion` está fijada explícitamente.
+- [ ] El endpoint de webhooks de producción está registrado en el panel, con su propio secreto.
+
+---
+
+## Soporte
+
+Si tenés un problema, escribinos e incluí:
+
+- El `requestId` de la solicitud afectada
+- La versión del SDK (`npm ls @pagos/sdk`)
+- El entorno (sandbox o producción)
+- Un fragmento de código mínimo que reproduzca el problema, **sin claves ni datos de tarjeta**

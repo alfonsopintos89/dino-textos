@@ -1,111 +1,5 @@
 [
   {
-    "archivo": "landing-01.txt",
-    "genero": "landing",
-    "prompt": "Escribí el copy de una landing para un estudio contable en Rosario.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "landing-02.txt",
-    "genero": "landing",
-    "prompt": "Escribí el copy de la home de una app de delivery uruguaya.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "landing-03.txt",
-    "genero": "landing",
-    "prompt": "Escribí el copy de una landing para una empresa de paneles solares.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "landing-04.txt",
-    "genero": "landing",
-    "prompt": "Escribí el copy de una landing para una clínica odontológica.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "posteo-00.txt",
-    "genero": "posteo",
-    "prompt": "Escribí un posteo de blog sobre cómo elegir un proveedor de software.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "posteo-01.txt",
-    "genero": "posteo",
-    "prompt": "Escribí un artículo sobre el mercado inmobiliario uruguayo para un blog.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "posteo-02.txt",
-    "genero": "posteo",
-    "prompt": "Escribí una newsletter para clientes de una agencia de marketing.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "posteo-03.txt",
-    "genero": "posteo",
-    "prompt": "Escribí un posteo de blog sobre productividad para equipos remotos.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "posteo-04.txt",
-    "genero": "posteo",
-    "prompt": "Escribí un artículo sobre inteligencia artificial para un público general.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "producto-00.txt",
-    "genero": "producto",
-    "prompt": "Escribí el README de una librería de JavaScript para manejar fechas.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "producto-01.txt",
-    "genero": "producto",
-    "prompt": "Escribí la documentación de onboarding de una app de facturación.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "producto-02.txt",
-    "genero": "producto",
-    "prompt": "Escribí los textos de interfaz de un panel de control de una app de gestión.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "producto-03.txt",
-    "genero": "producto",
-    "prompt": "Escribí las notas de la versión 2.0 de una app de gestión de stock.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "producto-04.txt",
-    "genero": "producto",
-    "prompt": "Escribí la página de preguntas frecuentes de un servicio de hosting.",
-    "modelo": "claude (CLI)",
-    "fecha": "2026-09-16"
-  },
-  {
-    "archivo": "landing-00.txt",
-    "genero": "landing",
-    "prompt": "Escribí el copy de una landing para una inmobiliaria en Montevideo.",
-    "modelo": "claude (CLI)",
-    "palabras": 971,
-    "pegado_a_mano": false
-  },
-  {
     "archivo": "gemini-landing-00.txt",
     "genero": "landing",
     "prompt": "ver corpus/prompts-para-pegar.md, landing 00",
@@ -584,5 +478,510 @@
     "modelo": "x-ai/grok-4.6 (OpenRouter)",
     "fecha": "2026-09-16",
     "palabras": 321
+  },
+  {
+    "archivo": "deepseek-landing-05.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una escuela de surf en La Paloma.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 427
+  },
+  {
+    "archivo": "deepseek-landing-06.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una veterinaria en Córdoba.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 241
+  },
+  {
+    "archivo": "deepseek-landing-10.txt",
+    "genero": "landing",
+    "prompt": "Estoy armando en Next.js la web de una agencia de viajes de Montevideo. Escribí los textos de la home: hero, servicios, por qué elegirnos y llamada a la acción.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 273
+  },
+  {
+    "archivo": "deepseek-landing-11.txt",
+    "genero": "landing",
+    "prompt": "Estoy haciendo la landing de una app de finanzas personales para Argentina. Pasame el copy de todas las secciones.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 737
+  },
+  {
+    "archivo": "deepseek-posteo-05.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de blog sobre cómo ahorrar en dólares siendo uruguayo.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 688
+  },
+  {
+    "archivo": "deepseek-posteo-08.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de LinkedIn sobre lo que aprendí liderando un equipo de desarrollo.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 207
+  },
+  {
+    "archivo": "deepseek-posteo-10.txt",
+    "genero": "posteo",
+    "prompt": "Estoy armando el blog de una startup de logística. Escribí el primer artículo, sobre por qué fallan las entregas de última milla.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 819
+  },
+  {
+    "archivo": "deepseek-producto-07.txt",
+    "genero": "producto",
+    "prompt": "Escribí la página \"Sobre nosotros\" de una startup de tecnología educativa.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 305
+  },
+  {
+    "archivo": "deepseek-producto-09.txt",
+    "genero": "producto",
+    "prompt": "Escribí la sección de precios con tres planes para un SaaS de facturación.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 169
+  },
+  {
+    "archivo": "deepseek-producto-10.txt",
+    "genero": "producto",
+    "prompt": "Estoy armando el panel de administración de un e-commerce. Escribí los textos de la pantalla de inicio y de los estados vacíos.",
+    "modelo": "deepseek/deepseek-v4.1-flash (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 400
+  },
+  {
+    "archivo": "gpt-landing-05.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una escuela de surf en La Paloma.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 500
+  },
+  {
+    "archivo": "gpt-landing-06.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una veterinaria en Córdoba.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 384
+  },
+  {
+    "archivo": "gpt-landing-10.txt",
+    "genero": "landing",
+    "prompt": "Estoy armando en Next.js la web de una agencia de viajes de Montevideo. Escribí los textos de la home: hero, servicios, por qué elegirnos y llamada a la acción.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 270
+  },
+  {
+    "archivo": "gpt-landing-11.txt",
+    "genero": "landing",
+    "prompt": "Estoy haciendo la landing de una app de finanzas personales para Argentina. Pasame el copy de todas las secciones.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 842
+  },
+  {
+    "archivo": "gpt-posteo-05.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de blog sobre cómo ahorrar en dólares siendo uruguayo.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 1200
+  },
+  {
+    "archivo": "gpt-posteo-08.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de LinkedIn sobre lo que aprendí liderando un equipo de desarrollo.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 218
+  },
+  {
+    "archivo": "gpt-posteo-10.txt",
+    "genero": "posteo",
+    "prompt": "Estoy armando el blog de una startup de logística. Escribí el primer artículo, sobre por qué fallan las entregas de última milla.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 1322
+  },
+  {
+    "archivo": "gpt-producto-07.txt",
+    "genero": "producto",
+    "prompt": "Escribí la página \"Sobre nosotros\" de una startup de tecnología educativa.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 381
+  },
+  {
+    "archivo": "gpt-producto-09.txt",
+    "genero": "producto",
+    "prompt": "Escribí la sección de precios con tres planes para un SaaS de facturación.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 156
+  },
+  {
+    "archivo": "gpt-producto-10.txt",
+    "genero": "producto",
+    "prompt": "Estoy armando el panel de administración de un e-commerce. Escribí los textos de la pantalla de inicio y de los estados vacíos.",
+    "modelo": "openai/gpt-5.6-luna (OpenRouter)",
+    "fecha": "2026-09-16",
+    "palabras": 525
+  },
+  {
+    "archivo": "claude-landing-00.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una inmobiliaria en Montevideo.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-landing-01.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para un estudio contable en Rosario.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-landing-02.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de la home de una app de delivery uruguaya.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-landing-03.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una empresa de paneles solares.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-landing-04.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una clínica odontológica.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-posteo-00.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de blog sobre cómo elegir un proveedor de software.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-posteo-01.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un artículo sobre el mercado inmobiliario uruguayo para un blog.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-posteo-02.txt",
+    "genero": "posteo",
+    "prompt": "Escribí una newsletter para clientes de una agencia de marketing.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-posteo-03.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de blog sobre productividad para equipos remotos.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-posteo-04.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un artículo sobre inteligencia artificial para un público general.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-producto-00.txt",
+    "genero": "producto",
+    "prompt": "Escribí el README de una librería de JavaScript para manejar fechas.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-producto-01.txt",
+    "genero": "producto",
+    "prompt": "Escribí la documentación de onboarding de una app de facturación.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-producto-02.txt",
+    "genero": "producto",
+    "prompt": "Escribí los textos de interfaz de un panel de control de una app de gestión.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-producto-03.txt",
+    "genero": "producto",
+    "prompt": "Escribí las notas de la versión 2.0 de una app de gestión de stock.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-producto-04.txt",
+    "genero": "producto",
+    "prompt": "Escribí la página de preguntas frecuentes de un servicio de hosting.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "claude-landing-05.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una escuela de surf en La Paloma.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-landing-06.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una veterinaria en Córdoba.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-landing-07.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para un gimnasio boutique en Palermo.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-landing-08.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una bodega familiar de Canelones.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-landing-10.txt",
+    "genero": "landing",
+    "prompt": "Estoy armando en Next.js la web de una agencia de viajes de Montevideo. Escribí los textos de la home: hero, servicios, por qué elegirnos y llamada a la acción.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-landing-11.txt",
+    "genero": "landing",
+    "prompt": "Estoy haciendo la landing de una app de finanzas personales para Argentina. Pasame el copy de todas las secciones.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-landing-12.txt",
+    "genero": "landing",
+    "prompt": "Armá los textos de la home para la web de un estudio de arquitectura en Punta del Este.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-landing-13.txt",
+    "genero": "landing",
+    "prompt": "Necesito el copy de la landing de un curso online de programación para principiantes.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-landing-14.txt",
+    "genero": "landing",
+    "prompt": "Escribí los textos de la página principal de una empresa de mudanzas en Buenos Aires.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-posteo-05.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de blog sobre cómo ahorrar en dólares siendo uruguayo.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-posteo-06.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un artículo para el blog de una consultora sobre transformación digital en pymes.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-posteo-07.txt",
+    "genero": "posteo",
+    "prompt": "Escribí una newsletter mensual para los socios de un club deportivo.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-posteo-08.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de LinkedIn sobre lo que aprendí liderando un equipo de desarrollo.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-posteo-09.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un artículo de blog sobre tendencias de diseño web.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-posteo-10.txt",
+    "genero": "posteo",
+    "prompt": "Estoy armando el blog de una startup de logística. Escribí el primer artículo, sobre por qué fallan las entregas de última milla.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-posteo-11.txt",
+    "genero": "posteo",
+    "prompt": "Para el blog de mi estudio contable, escribí un artículo sobre monotributo para freelancers.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-posteo-12.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo para el blog de una marca de café de especialidad sobre cómo preparar un buen filtrado.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-posteo-13.txt",
+    "genero": "posteo",
+    "prompt": "Escribí la newsletter de lanzamiento de una nueva función de una app de delivery.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-posteo-14.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un artículo sobre trabajo remoto para el blog de una empresa de software uruguaya.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-producto-06.txt",
+    "genero": "producto",
+    "prompt": "Escribí los mensajes de error y confirmación de un formulario de registro.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-producto-07.txt",
+    "genero": "producto",
+    "prompt": "Escribí la página \"Sobre nosotros\" de una startup de tecnología educativa.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-producto-08.txt",
+    "genero": "producto",
+    "prompt": "Escribí el texto de onboarding de una app para organizar gastos compartidos.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-producto-09.txt",
+    "genero": "producto",
+    "prompt": "Escribí la sección de precios con tres planes para un SaaS de facturación.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-producto-10.txt",
+    "genero": "producto",
+    "prompt": "Estoy armando el panel de administración de un e-commerce. Escribí los textos de la pantalla de inicio y de los estados vacíos.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-producto-11.txt",
+    "genero": "producto",
+    "prompt": "Escribí la documentación para desarrolladores de un SDK de pagos.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-producto-12.txt",
+    "genero": "producto",
+    "prompt": "Escribí los textos de los emails transaccionales de una tienda online: bienvenida, compra confirmada y envío.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-producto-13.txt",
+    "genero": "producto",
+    "prompt": "Escribí las preguntas frecuentes de una app de alquiler de autos.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-producto-14.txt",
+    "genero": "producto",
+    "prompt": "Escribí la página de términos de uso resumida en lenguaje claro para una app de citas médicas.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "validación"
+  },
+  {
+    "archivo": "claude-landing-09.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para un software de gestión de turnos médicos.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
+  },
+  {
+    "archivo": "claude-producto-05.txt",
+    "genero": "producto",
+    "prompt": "Escribí el README de una API REST para gestionar reservas de restaurantes.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16",
+    "uso": "descubrimiento"
   }
 ]

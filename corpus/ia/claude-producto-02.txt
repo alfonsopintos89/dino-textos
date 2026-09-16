@@ -1,0 +1,91 @@
+# Panel de control
+
+## Encabezado
+- Hola, {nombre} 👋
+- Esto es lo que pasa hoy en tu negocio.
+- Buscar clientes, pedidos o productos…
+- Notificaciones
+- Mi cuenta
+- Cerrar sesión
+
+## Menú lateral
+- Inicio
+- Ventas
+- Clientes
+- Inventario
+- Facturación
+- Reportes
+- Equipo
+- Configuración
+- Ayuda
+
+## Indicadores principales
+- **Ingresos del mes**: {monto}. {+X %} frente al mes anterior.
+- **Pedidos nuevos**: {cantidad}. {X} pendientes de confirmar.
+- **Clientes activos**: {cantidad}. {X} se sumaron esta semana.
+- **Facturas vencidas**: {cantidad}. Suman {monto} sin cobrar.
+
+## Filtros
+- Período: Hoy · Últimos 7 días · Este mes · Este año · Personalizado
+- Aplicar filtros
+- Borrar filtros
+
+## Gráfico de ventas
+- **Evolución de ventas**
+- Compará tus ingresos con el período anterior.
+- Período actual · Período anterior
+- Ver reporte completo
+
+## Actividad reciente
+- **Actividad reciente**
+- {Usuario} creó el pedido #{número}.
+- {Cliente} pagó la factura #{número}.
+- El stock de {producto} está por debajo del mínimo.
+- Ver toda la actividad
+
+## Tareas pendientes
+- **Tus pendientes**
+- Aprobar {X} pedidos
+- Revisar {X} facturas vencidas
+- Reponer {X} productos
+- Marcar como hecha
+
+## Acciones rápidas
+- Nuevo pedido
+- Nuevo cliente
+- Emitir factura
+- Cargar producto
+- Exportar datos
+
+## Tabla de últimos pedidos
+- **Últimos pedidos**
+- N.º de pedido · Cliente · Fecha · Total · Estado · Acciones
+- Estados: Pendiente · En preparación · Enviado · Entregado · Cancelado
+- Ver detalle · Editar · Cancelar pedido
+- Mostrando {X} de {Y} resultados
+- Anterior · Siguiente
+
+## Estados vacíos
+- Todavía no tenés pedidos. Cuando registres el primero, lo vas a ver acá.
+- No hay actividad en este período. Probá con otro rango de fechas.
+- No encontramos resultados para "{búsqueda}". Revisá cómo lo escribiste o probá con otras palabras.
+- ¡Estás al día! No tenés tareas pendientes.
+
+## Mensajes del sistema
+- Cargando datos…
+- Los cambios se guardaron.
+- El pedido se creó.
+- No pudimos cargar la información. Revisá tu conexión y probá de nuevo.
+- Algo salió mal. Probá de nuevo en unos minutos.
+- Reintentar
+- Tu sesión venció. Volvé a iniciar sesión para seguir.
+
+## Confirmaciones
+- **¿Querés cancelar este pedido?**
+- Esta acción no se puede deshacer.
+- Sí, cancelar · No, volver
+
+## Pie de página
+- Última actualización: {fecha y hora}
+- Actualizar
+- Términos y condiciones · Privacidad · Soporte

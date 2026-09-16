@@ -96,5 +96,35 @@ class TestOpenRouter(unittest.TestCase):
         self.assertIn('401', mensaje)
 
 
+class TestContaminacion(unittest.TestCase):
+    """Un texto del corpus de IA que conoce este proyecto no mide el default del
+    modelo: mide al modelo obedeciendo a dino. Pasó, con doce textos de Claude."""
+
+    def test_detecta_las_marcas_del_proyecto(self):
+        for texto in ('No pude pasarle tools/dino.py porque quedó pendiente.',
+                      'El borrador está en el scratchpad.',
+                      'Precio: [falta dato] por mes.',
+                      'Lo corrí por el linter y dio 5/5.'):
+            self.assertTrue(construir.contaminado(texto), texto)
+
+    def test_no_marca_palabras_que_contienen_una_marca(self):
+        for texto in ('Traé una linterna para la excursión nocturna.',
+                      'El museo tiene un esqueleto de dinosaurio.'):
+            self.assertFalse(construir.contaminado(texto), texto)
+
+    def test_no_marca_copy_normal(self):
+        self.assertFalse(construir.contaminado(
+            'Encontrá tu lugar en Montevideo. Te ayudamos a comprar o alquilar.'))
+
+    def test_el_entorno_limpio_no_hereda_la_sesion_de_claude_code(self):
+        sucio = {'HOME': '/h', 'PATH': '/p', 'CLAUDE_CODE_SESSION_ID': 'x',
+                 'CLAUDECODE': '1', 'CLAUDE_PID': '9', 'OPENROUTER_API_KEY': 'k'}
+        limpio = construir.entorno_limpio(sucio)
+        self.assertEqual(limpio.get('HOME'), '/h')
+        self.assertEqual(limpio.get('PATH'), '/p')
+        for clave in ('CLAUDE_CODE_SESSION_ID', 'CLAUDECODE', 'CLAUDE_PID', 'OPENROUTER_API_KEY'):
+            self.assertNotIn(clave, limpio)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

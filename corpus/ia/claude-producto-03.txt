@@ -1,0 +1,51 @@
+# Notas de la versión 2.0
+
+## Novedades
+
+**Panel de control renovado**
+La pantalla de inicio es nueva. De un vistazo ves el valor total del inventario, los productos con poco stock, los movimientos recientes y los artículos que más se venden. Además, podés elegir qué indicadores mostrar y cambiarlos de lugar.
+
+**Varios depósitos**
+Ahora podés manejar el stock de más de un depósito o sucursal desde una sola cuenta. Cada producto muestra cuánto hay en cada lugar, y las transferencias entre depósitos se registran con su propio comprobante.
+
+**Alertas de stock mínimo**
+Definí un stock mínimo para cada producto y la app te va a avisar por notificación o por correo cuando se acerque a ese nivel. Así te enterás a tiempo para reponer.
+
+**Órdenes de compra**
+Podés generar órdenes de compra a proveedores directamente desde la app. Cuando llega la mercadería, la recibís total o parcialmente y el stock se actualiza solo.
+
+**Lotes y vencimientos**
+Para los productos perecederos podés cargar el número de lote y la fecha de vencimiento. La app te avisa qué lotes están por vencer y sugiere usar primero los más antiguos.
+
+**Escáner de códigos de barras**
+Desde la app móvil podés usar la cámara del teléfono para leer códigos de barras y códigos QR. Sirve para cargar entradas, salidas y conteos sin escribir nada a mano.
+
+## Mejoras
+
+- La búsqueda de productos es mucho más rápida y tolera errores de tipeo.
+- Los informes se pueden exportar a Excel, CSV y PDF.
+- El historial de movimientos muestra quién hizo cada cambio y cuándo.
+- Se agregaron roles de usuario (administrador, encargado de depósito y vendedor) con permisos configurables.
+- La importación masiva de productos ahora revisa el archivo antes de cargarlo y marca los errores fila por fila.
+- La app móvil funciona sin conexión y sincroniza los cambios cuando vuelve a tener internet.
+- Se agregó el modo oscuro.
+
+## Correcciones
+
+- Se corrigió un error que duplicaba movimientos cuando se tocaba dos veces el botón "Guardar".
+- Las cantidades con decimales ya se redondean bien en los productos que se venden por peso o por volumen.
+- Se solucionó un problema que hacía que algunos informes mostraran datos desactualizados.
+- Los filtros por categoría ya no se borran al cambiar de pantalla.
+- Se corrigieron problemas de visualización en pantallas chicas.
+
+## Cambios importantes
+
+- Para usar varios depósitos hay que revisar la configuración inicial. Todo el stock que tenías se asignó a un depósito llamado "Principal".
+- La API anterior (v1) va a seguir funcionando durante seis meses más. Recomendamos pasarse a la API v2, que está explicada en la documentación para desarrolladores.
+- Esta versión ya no funciona en Android 8 ni en iOS 14 o versiones anteriores.
+
+## Cómo actualizar
+
+La actualización se instala sola en la versión web. En celulares y tablets, descargá la última versión desde la App Store o Google Play. Tus datos se migran automáticamente y no tenés que hacer nada más.
+
+¿Tenés dudas o sugerencias? Escribinos desde la sección **Ayuda** de la app.

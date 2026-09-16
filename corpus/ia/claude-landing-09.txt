@@ -1,0 +1,185 @@
+# Copy para la landing: software de gestión de turnos médicos
+
+## HERO
+
+**Titular:**
+Tu agenda médica, en orden. Tus pacientes, atendidos a tiempo.
+
+**Subtítulo:**
+Gestioná turnos, recordatorios e historias clínicas desde un solo lugar. Menos llamadas, menos ausencias y más tiempo para tus pacientes.
+
+**CTA principal:** Probalo gratis por 30 días
+**CTA secundario:** Pedí una demo
+
+**Microcopy:** Sin tarjeta de crédito. Lo configurás en minutos.
+
+---
+
+## BARRA DE CONFIANZA
+
+Más de 2.500 profesionales de la salud ya organizan su agenda con nosotros.
+
+---
+
+## EL PROBLEMA
+
+**Titular:**
+¿Cuánto tiempo pierde tu consultorio al teléfono?
+
+**Texto:**
+Llamadas que no paran, turnos anotados en papel, pacientes que no vienen y huecos en la agenda que nadie cubre. Tu equipo pasa el día apagando incendios en lugar de atender bien a quien llega.
+
+Existe una forma más simple.
+
+---
+
+## LA SOLUCIÓN
+
+**Titular:**
+Todo lo que tu consultorio necesita, en una sola plataforma
+
+**Subtítulo:**
+Pensado para médicos, clínicas y centros de salud de cualquier tamaño.
+
+---
+
+## FUNCIONALIDADES
+
+**Turnos online las 24 horas**
+Tus pacientes reservan desde el celular a cualquier hora, sin llamar. Vos definís los horarios disponibles y el sistema hace el resto.
+
+**Recordatorios automáticos**
+Enviamos avisos por WhatsApp, SMS y email antes de cada turno. Los pacientes confirman o cancelan con un clic y el turno liberado vuelve a quedar disponible.
+
+**Agenda unificada**
+Varios profesionales, especialidades y sedes en una misma vista. Sin superposiciones ni confusiones.
+
+**Historia clínica digital**
+Accedé a los antecedentes, estudios y notas de cada paciente desde cualquier dispositivo, con seguridad.
+
+**Lista de espera inteligente**
+Cuando alguien cancela, avisamos automáticamente al siguiente paciente de la lista.
+
+**Reportes y estadísticas**
+Conocé tu tasa de ausentismo, los horarios con más demanda y el rendimiento de cada profesional.
+
+**Integración con obras sociales y prepagas**
+Registrá coberturas, autorizaciones y coseguros sin planillas paralelas.
+
+---
+
+## BENEFICIOS EN NÚMEROS
+
+**-60 %** de ausencias a turnos
+**-70 %** de llamadas a recepción
+**+5 horas** libres por semana para tu equipo
+
+---
+
+## CÓMO FUNCIONA
+
+**1. Creá tu cuenta**
+Registrate en menos de 2 minutos.
+
+**2. Configurá tu agenda**
+Cargá profesionales, horarios y prestaciones. Si necesitás ayuda, te acompañamos.
+
+**3. Compartí tu link de turnos**
+Sumalo a tu web, a tus redes o a Google y empezá a recibir reservas hoy mismo.
+
+---
+
+## PARA QUIÉN ES
+
+**Profesionales independientes**
+Organizá tu consultorio sin depender de una secretaria.
+
+**Consultorios y clínicas**
+Coordiná a todo tu equipo desde una sola agenda.
+
+**Centros médicos con varias sedes**
+Controlá cada sede y tené la información de todas en un mismo lugar.
+
+---
+
+## TESTIMONIOS
+
+"Antes perdíamos entre 8 y 10 turnos por semana por ausencias. Con los recordatorios automáticos, casi desaparecieron."
+**Dra. Laura Méndez**, dermatóloga
+
+"La recepción dejó de ser un caos. Los pacientes reservan solos y nosotros nos dedicamos a atenderlos."
+**Martín Sosa**, director de Centro Médico Norte
+
+"Lo configuré en una tarde. Es simple, rápido y mis pacientes lo usan sin problemas."
+**Dr. Pablo Ferreyra**, traumatólogo
+
+---
+
+## SEGURIDAD
+
+**Titular:**
+Los datos de tus pacientes, protegidos
+
+**Texto:**
+Usamos cifrado de punta a punta, hacemos copias de seguridad automáticas y cumplimos con la normativa vigente de protección de datos personales y de salud. La información es tuya y solo accede quien vos autorizás.
+
+---
+
+## PLANES
+
+**Profesional**
+Para quienes atienden solos.
+Agenda online, recordatorios y historia clínica.
+**CTA:** Empezá gratis
+
+**Consultorio** *(el más elegido)*
+Para equipos de hasta 10 profesionales.
+Todo lo del plan Profesional, más lista de espera, reportes y gestión de obras sociales.
+**CTA:** Empezá gratis
+
+**Institución**
+Para clínicas y centros con varias sedes.
+Funciones a medida, integraciones y soporte dedicado.
+**CTA:** Hablá con ventas
+
+---
+
+## PREGUNTAS FRECUENTES
+
+**¿Necesito instalar algo?**
+No. Funciona desde el navegador y desde el celular, sin descargas.
+
+**¿Puedo importar mi agenda actual?**
+Sí. Te ayudamos a migrar tus pacientes y turnos sin costo.
+
+**¿Mis pacientes tienen que descargar una app?**
+No. Reservan desde un link, en pocos pasos.
+
+**¿Qué pasa cuando termina la prueba gratuita?**
+Elegís el plan que mejor te sirve. Si no seguís, no se te cobra nada.
+
+**¿Tienen soporte?**
+Sí, por chat, email y WhatsApp, con personas reales que conocen el sistema.
+
+---
+
+## CTA FINAL
+
+**Titular:**
+Dedicá tu tiempo a tus pacientes, no a tu agenda
+
+**Subtítulo:**
+Sumate a los miles de profesionales que ya dejaron atrás el papel y el teléfono.
+
+**CTA:** Probalo gratis por 30 días
+
+**Microcopy:** Sin tarjeta de crédito · Cancelás cuando quieras · Soporte en español
+
+---
+
+## FOOTER
+
+Producto · Precios · Recursos · Blog · Ayuda · Contacto
+Términos y condiciones · Política de privacidad
+
+Hecho para quienes cuidan la salud de los demás.

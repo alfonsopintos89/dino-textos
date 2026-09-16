@@ -1,0 +1,70 @@
+# Productividad en equipos remotos: menos control, más claridad
+
+Trabajar a distancia dejó de ser una excepción. Muchos equipos lo eligieron, otros lo heredaron y casi todos lo siguen ajustando. Lo que sí quedó claro es esto: las prácticas de la oficina no funcionan igual cuando se pasan a una pantalla. Un equipo remoto que rinde bien no es una oficina con videollamadas. Funciona de otra manera.
+
+Estas son algunas ideas para que un equipo distribuido trabaje mejor sin quemarse en el intento.
+
+## 1. Medí resultados, no horas conectadas
+
+El error más común es querer reemplazar la mirada del jefe con indicadores de presencia: el puntito verde del chat, respuestas instantáneas, cámaras siempre prendidas. Eso no mide productividad, mide ansiedad.
+
+Lo que importa es qué se entrega, con qué calidad y en qué plazo. Definí objetivos claros por semana o por ciclo, acordá qué significa "terminado" y dejá que cada persona organice su tiempo. La confianza no se regala a ciegas: se apoya en acuerdos claros y en entregas visibles.
+
+## 2. Escribí más de lo que te parece necesario
+
+En remoto, lo que no está escrito no existe. Las decisiones que se toman en una llamada y no se registran se pierden. La persona que no pudo estar pregunta de nuevo, y alguien más termina repitiendo lo mismo tres veces.
+
+Algunos hábitos que ayudan:
+
+- **Documentar las decisiones**: qué se decidió, por qué y quién es responsable.
+- **Mantener una fuente única de verdad**: un espacio donde viva la información actualizada del proyecto, en lugar de diez hilos de chat dispersos.
+- **Escribir mensajes que se entiendan solos**: en vez de "¿tenés un minuto?", mandá directamente la pregunta con el contexto.
+
+Escribir bien lleva tiempo, pero ahorra muchísimo más del que consume.
+
+## 3. Priorizá la comunicación asincrónica
+
+No todo necesita una reunión. De hecho, casi nada la necesita. La comunicación asincrónica permite que cada persona responda cuando puede concentrarse, respeta las diferencias horarias y deja un registro automático.
+
+Reservá las reuniones en vivo para lo que realmente las justifica: resolver conflictos, pensar ideas en conjunto, dar feedback delicado o simplemente conectar como equipo. Y cuando haya reunión, que tenga agenda, un objetivo claro y un resumen al final.
+
+## 4. Protegé el tiempo de concentración
+
+El trabajo profundo es el que más valor genera y el primero que se sacrifica ante un aluvión de notificaciones. En un equipo remoto, el chat puede convertirse en una oficina ruidosa donde todos te tocan el hombro al mismo tiempo.
+
+Algunas prácticas útiles:
+
+- Bloques de concentración en el calendario, respetados por todo el equipo.
+- Acuerdos explícitos sobre los tiempos de respuesta esperados (no todo es urgente).
+- Canales diferenciados para lo urgente y lo que puede esperar.
+- Días o franjas sin reuniones.
+
+## 5. Hacé visible el trabajo
+
+Cuando no compartís el mismo espacio, es fácil perder de vista qué está haciendo cada uno. Eso genera duplicaciones, bloqueos que nadie detecta y la sensación de que "nadie sabe en qué anda nadie".
+
+Un tablero compartido de tareas, actualizaciones breves por escrito al inicio o al final del día, y revisiones periódicas del avance ayudan a que todos tengan el panorama sin necesidad de perseguir a nadie.
+
+## 6. No descuides el vínculo humano
+
+La productividad no es solo una cuestión de procesos. Los equipos que se conocen, confían entre sí y se sienten parte de algo colaboran mejor, se piden ayuda antes y resuelven los conflictos con menos fricción.
+
+En remoto, esos vínculos no surgen solos junto a la máquina de café: hay que generar espacios. Un rato informal en la semana, un canal para compartir cosas no laborales, encuentros presenciales cada tanto si es posible. Parece tiempo "improductivo", pero es una inversión.
+
+## 7. Cuidá los límites
+
+Trabajar desde casa desdibuja la frontera entre la vida laboral y la personal. Muchas personas en equipos remotos no trabajan menos: trabajan más, y peor. El agotamiento es enemigo de la productividad.
+
+Los líderes tienen un rol clave acá: no mandar mensajes a cualquier hora esperando respuesta, respetar las vacaciones, dar el ejemplo desconectándose. Un equipo descansado rinde más que uno siempre disponible.
+
+## 8. Revisá y ajustá
+
+No existe una fórmula universal. Lo que funciona para un equipo de cinco personas en la misma zona horaria no sirve para uno de cuarenta repartido en tres continentes. Por eso es clave hacer pausas periódicas para preguntar: ¿qué nos está funcionando?, ¿qué nos frena?, ¿qué podemos probar distinto?
+
+Las retrospectivas no son solo para proyectos de software: son una herramienta para que cualquier equipo mejore de forma continua.
+
+---
+
+## En resumen
+
+La productividad en equipos remotos no depende de vigilar más ni de sumar herramientas. Depende de tener claridad sobre los objetivos, comunicarse con intención, proteger el tiempo de concentración y cuidar a las personas. Cuando eso está, la distancia deja de ser un obstáculo y puede ser una ventaja: más autonomía, más foco y equipos formados por el mejor talento, esté donde esté.
