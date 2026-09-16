@@ -1,7 +1,11 @@
-name: dino
+name: textosaurio
 
-# El gate. Corre la suite y después puntúa los .md que cambiaron en el push.
-# Sin dependencias que instalar: el scorer es biblioteca estándar.
+# Corre los tests y después puntúa los .md que cambiaron en el push.
+# Frena si el general de alguno queda abajo de 8.
+# Sin dependencias que instalar: el script es biblioteca estándar.
+#
+# Para usarlo en tu repo: copiá tools/textosaurio.py a tu repo, copiá este
+# archivo a .github/workflows/ y borrá el paso de tests.
 
 on:
   push:
@@ -19,9 +23,9 @@ jobs:
         with:
           python-version: '3.9'   # el mismo que trae macOS de fábrica
 
-      - name: suite de regresión
+      - name: tests
         run: |
-          python3 tools/test_dino.py
+          python3 tools/test_textosaurio.py
           python3 corpus/test_calibrar.py
 
       - name: puntuar los textos que cambiaron
@@ -35,8 +39,9 @@ jobs:
             exit 0
           fi
           fallaron=0
-          for archivo in $(git diff --name-only --diff-filter=d "$base" HEAD -- '*.md'); do
+          for archivo in $(git diff --name-only --diff-filter=d "$base" HEAD -- '*.md' \
+                           | grep -v -E '^(ejemplos|corpus|docs)/'); do
             echo "── $archivo"
-            python3 tools/dino.py "$archivo" || fallaron=1
+            python3 tools/textosaurio.py "$archivo" --minimo 8 || fallaron=1
           done
           exit $fallaron

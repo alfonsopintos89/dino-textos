@@ -16,7 +16,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(AQUI), 'tools'))
 sys.path.insert(0, AQUI)
 import calibrar
-import dino
+import textosaurio as dino
 
 # Guarda de regresión, no objetivo de calidad. El número que de verdad se le
 # exige a cada regla es el techo por patrón de calibrar.py; este de acá es la
@@ -36,8 +36,7 @@ def main():
     culpables = collections.Counter()
     for texto in documentos:
         hallazgos = dino.auditar(texto)
-        slop, _ = dino.puntuar(hallazgos)
-        if slop == 5:
+        if not dino.grupos_de_ia(hallazgos):
             limpios += 1
         for grupo in dino.GRUPOS_SLOP:
             if hallazgos['slop'][grupo]:

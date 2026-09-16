@@ -1,190 +1,268 @@
-# dino
+# Textosaurio
 
-**Un linter que caza el acento de IA en textos en español rioplatense.**
+![Los cinco dinosaurios de Textosaurio en fila, uno por cada puntaje](docs/img/portada.jpg)
 
-La escritura de IA tiene olor. `potenciar`, `robusto`, `de vanguardia`,
-`llevá tu negocio al siguiente nivel`. El lector ya lo detecta, y una página que huele a eso
-es una página que deja de creerte.
+**Revisá cualquier texto en español hecho con IA antes de publicarlo.**
 
-En inglés esto está resuelto. [SlopMonster](https://github.com/ItsssssJack/SlopMonster) lo
-hace bien, y su propio README dice dónde termina: *"The catalogue is English only. Copy in
-another language scores 5/5 because the scorer cannot read it, not because it is clean."*
-Este proyecto ocupa ese hueco.
+Le pasás una landing, un artículo de blog o un post, y te devuelve cinco puntajes del 1 al
+10, un puntaje general y la lista de qué cambiar. Si querés, aplica los cambios y vuelve a
+puntuar.
 
-Y le agrega un eje que en inglés no hace falta.
+Está pensado para quienes escriben para la web en español: agencias, freelancers, equipos
+de marketing y cualquiera que usa ChatGPT, Claude o Gemini para escribir y no quiere que se
+note.
 
-## Dos ejes, porque son dos fallas distintas
+## Cómo se ve
 
 ```
-── slop
-  construcciones de IA:
-    · «llevá tu X al siguiente nivel»  (1)
-  venta y prueba inventada:
-    · 10.000 clientes felices
+/textosaurio landing.md
 
-  slop 3/5  necesita reescritura
+Textosaurio · landing.md · web · trato: vos
 
-── registro rioplatense
-  imperativos que no son voseo:
-    · regístrate (enclítico de tuteo)  (1)
+  1  Sin completar            1/10
+  2  Especificidad            6/10
+  3  Correcto y completo      8/10
+  4  Suena humano             8/10
+  5  Hecho para el formato    8/10
 
-  registro 2/3  no suena de acá
+  GENERAL  6/10 (el promedio da 6,2, pero quedan huecos y hay testimonios sin respaldo)
+
+¿Qué recomendaciones querés ver?
+  › Todas
+    Solo de los puntajes menores a 8
+    Solo de los puntajes menores a 6
 ```
 
-Un texto puede ser humanísimo y estar escrito en peninsular. Otro puede estar en voseo
-perfecto y ser slop puro. Se arreglan con ediciones distintas, así que puntúan aparte.
-Abajo de 5/5 o de 3/3 el comando sale con código distinto de cero, y un build puede frenar
-ahí.
+Después te muestra cada recomendación con la frase original, la propuesta y el porqué. Si
+le decís que las aplique, escribe el texto mejorado en un archivo nuevo y te muestra el
+antes y el después.
 
-## No es el catálogo inglés traducido
+## Instalarlo
 
-Cuatro cosas se rompen al portarlo, y cada una obligó a rediseñar la regla.
+Necesitás [Claude Code](https://claude.com/claude-code) y Python 3. En Mac, Python ya viene
+instalado. En Windows, bajalo de [python.org](https://www.python.org/downloads/).
 
-**El tell más ruidoso del copy en español no es una palabra, es un imperativo.** Todo lo que
-genera un modelo dice `Descubre nuestra plataforma`, `Prueba gratis`, `Regístrate`. Pero
-`descubre` y `prueba` son también tercera persona del indicativo y sustantivo:
-*el equipo conoce el rubro*, *la prueba de carga*. Un patrón ingenuo marca prosa impecable,
-así que este caza solo donde es inequívoco — el enclítico, la tilde que separa `regístrate`
-de `registrate`, y el verbo encabezando un renglón corto.
+**Un solo paso.** Pegá esto en la terminal:
 
-**La raya es puntuación legítima en español, y el inciso lleva dos.** El linter inglés
-cuenta guiones largos; acá eso marcaría todo texto bien puntuado. Lo que sí es calco es la
-raya sin espacios de ningún lado.
+```bash
+git clone https://github.com/alfonsopintos89/textosaurio ~/.claude/skills/textosaurio
+```
 
-**El español no usa coma de Oxford.** De las dos formas del ritmo de tres que busca el
-linter inglés, la primera no dispararía nunca.
+Listo. Abrí Claude Code en la carpeta de tu proyecto y escribí:
 
-**Los números se escriben al revés.** El patrón inglés lee `10,000 users`. Acá el punto
-separa los miles y la coma es el decimal, así que sobre `10.000 clientes` no ve nada.
+```
+/textosaurio index.html
+```
 
-## Recibos, no promesas
+También funciona si le hablás normal: «revisá este texto», «puntuá esta landing», «¿esto
+suena a IA?».
 
-El catálogo no se escribió de memoria. Se midió contra dos corpus: 592 notas anteriores a
-2023 — 294 de la diaria y 298 de eldiarioAR, humanas por construcción porque ChatGPT todavía
-no existía — y 15 textos generados con el CLI `claude`. En total 355.386 palabras de prosa
-rioplatense de las dos orillas.
+**¿Usás otro agente?** (Codex, Cursor, Gemini CLI.) Clonalo en cualquier carpeta y decile
+al agente que siga las instrucciones de `SKILL.md`. Son instrucciones en texto, nada
+específico de Claude.
 
-Un patrón entra al scorer si aparece 5 veces más por cada 10.000 palabras en texto de IA que
-en humano, y si marca menos del 0,5% de los textos humanos. Ese 0,5% no es un número
-inventado: sale de dividir el piso que se le pide al scorer entero por el tamaño del
-catálogo. Los 48 patrones que quedaron cumplen; el peor marca el 0,34%.
+## Usarlo
 
-**El corpus volteó once entradas, arregló tres patrones rotos y corrigió dos errores de
-método míos.**
-
-| | textos humanos que el scorer deja limpios |
+| Querés revisar | Escribí |
 |---|---|
-| Catálogo inicial | 75,8% |
-| Después de lo que enseñó el corpus | **94,3%** |
+| Una página web | `/textosaurio index.html` |
+| Un artículo | `/textosaurio articulo.md` |
+| Un post que pegás en el chat | `/textosaurio` y pegá el texto |
+| Un post de LinkedIn | `/textosaurio post.txt, es para LinkedIn` |
+| Un texto que tutea o trata de usted | `/textosaurio landing.html, está en usted` |
 
-Lo más fuerte que apareció: **la forma insignia del catálogo inglés no transfiere**.
-`no solo X, sino Y` es la construcción más ruidosa del inglés y la primera que cualquiera
-traduciría. En español marcaba el **8,6%** de la prensa humana, con frases como
-~~advertido no solo por organizaciones ecologistas sino por organismos como el BCE~~. Es un
-correlativo gramatical corriente, no un tic de marketing. El inglés no obliga a esa
-correlación y por eso ahí llama la atención; el español sí, y por eso acá no dice nada.
+Tu archivo original no se toca. El texto mejorado va a un archivo nuevo al lado:
+`index.html` → `index.textosaurio.html`.
 
-Otras once entradas resultaron español corriente: ~~excepcional~~, ~~en definitiva~~,
-~~cuando se trata de~~, ~~el poder de~~. Y el umbral de dos puntos, que yo había portado de
-una regla pensada para el punto y coma en inglés sin ningún número detrás, tocaba el 67,1%
-de los textos humanos.
+## Los cinco dinosaurios
 
-Todos los rechazos están publicados con su medición en
-[`referencias/fuentes.md`](referencias/fuentes.md), incluidos los dos errores de método que
-invalidaron mediciones que este mismo README ya había publicado.
+Cada puntaje lo cuida un dinosaurio. Todos van del 1 al 10.
 
-### Lo que esta corrida NO pudo demostrar
+![1, Sin completar: Lupa encuentra lo que quedó de la plantilla](docs/img/1-sin-completar.jpg)
 
-Conviene decirlo con todas las letras, porque es lo primero que cualquiera debería preguntar.
+### 1. Sin completar
 
-**Ningún patrón quedó admitido por ratio.** El corpus de IA, generado con un modelo de
-primera línea en 2026, casi no contiene los tells que el catálogo busca: en 10.471 palabras,
-`potenciar` no aparece ninguna vez.
+Lo que quedó de la plantilla: corchetes como `[Nombre]` o `[precio]`, `XX` en lugar de un
+número, mails como `hola@ejemplo.com`, teléfonos como `1234-5678`, `lorem ipsum`, botones que
+no llevan a ningún lado.
 
-El catálogo sigue sirviendo para texto salido de generadores más viejos, más baratos o peor
-prompteados, que es de donde viene casi todo el slop que uno se cruza. Pero eso es una
-afirmación sin medir, y va dicha como tal. Bajar el mínimo para que diera sería exactamente
-el número inventado que este proyecto dice no hacer.
+Parece obvio, pero es el problema más común. Cuando le pedís a una IA una landing sin darle
+los datos del negocio, los deja en blanco. De 45 textos que escribió Claude para medir esta
+herramienta, **a 26 les quedaron huecos**.
 
-Lo que el corpus sí demostró es lo otro, y no es poco: que ninguna de estas reglas marca
-prosa rioplatense escrita por personas. Un linter que llora lobo se apaga a la semana.
+**Un solo hueco ya deja este puntaje en 6**, y el general no puede pasar de 6 hasta que lo
+completes.
 
-## Una corrida entera
+![2, Especificidad: Metro pide el dato que nadie más puede copiar](docs/img/2-especificidad.jpg)
 
-Una landing de estudio contable, de 0/5 y 2/3 a 5/5 y 3/3, con el antes, el después y el
-motivo de cada cambio: [`ejemplos/estudio-contable.md`](ejemplos/estudio-contable.md).
+### 2. Especificidad
 
-## Arrancar
+Cuánto de lo que dice el texto es concreto: precios, plazos, lugares, nombres, cantidades.
+
+**La prueba es simple: cambiá el nombre de tu negocio por el de la competencia.** Si la
+frase sigue siendo verdad, es genérica.
+
+> ~~Brindamos atención personalizada con un equipo de profesionales.~~
+> **Te atiende siempre la misma contadora, y te responde el mismo día.**
+> La primera la puede firmar cualquier estudio contable. La segunda es una promesa que se
+> puede cumplir o no.
+
+![3, Correcto y completo: Profe corrige el trato, los signos y lo que falta](docs/img/3-correcto-y-completo.jpg)
+
+### 3. Correcto y completo
+
+Dos preguntas: ¿está bien escrito? y ¿tiene todo lo que ese formato necesita?
+
+- **El trato.** Si el texto es de vos, todo en vos. La IA tutea por defecto, y
+  basta un `Regístrate` en una landing de Buenos Aires para que se note.
+- **Los signos.** En español la pregunta abre con `¿` y la exclamación con `¡`.
+- **Las mayúsculas.** `Nuestros Servicios Profesionales` es un título en inglés. En español
+  va `Nuestros servicios profesionales`.
+- **Lo que falta.** Una landing sin precio ni forma de contacto está incompleta, aunque
+  esté perfectamente escrita.
+- **Lo que se contradice.** «Atendemos urgencias siempre» y un horario que cierra los
+  domingos.
+
+![4, Suena humano: Olfato huele el acento de robot](docs/img/4-suena-humano.jpg)
+
+### 4. Suena humano
+
+Las marcas que deja la IA: palabras infladas como `potenciar` u `optimizar`, frases de
+plantilla como `ahí es donde entra X`, cifras de clientes que nadie puede mostrar, y
+oraciones todas del mismo largo.
+
+Ninguna regla es de memoria: cada una se midió contra 592 notas de prensa argentina y
+uruguaya escritas antes de que existiera ChatGPT. Ninguna marca más del 0,5% de esos textos
+escritos por personas.
+
+**Lo que no se marca, porque en español es correcto:** `no solo X, sino Y`, que en inglés
+es la marca de IA más famosa y en español aparece en el 8,6% de la prensa escrita por
+personas. Tampoco una enumeración de tres cosas, ni un inciso entre dos rayas.
+
+![5, Hecho para el formato: Radar lo mira como lo ven Google y el feed](docs/img/5-formato.jpg)
+
+### 5. Hecho para el formato
+
+Lo que cambia según dónde se publica:
+
+| Formato | Qué revisa |
+|---|---|
+| **Web** | `<title>` y meta descripción para Google, un solo `<h1>`, texto alternativo en las imágenes, `lang="es"` |
+| **Blog** | subtítulos si es largo, párrafos cortos, que la respuesta llegue en el primer párrafo |
+| **LinkedIn** | hasta 3.000 caracteres, gancho antes del «ver más» |
+| **Instagram** | hasta 2.200 caracteres, **hasta 5 hashtags** (la regla nueva desde diciembre de 2025), gancho corto |
+
+Cada control tiene su fuente en [`referencias/formatos.md`](referencias/formatos.md). Donde
+no hay regla oficial, se dice. Por ejemplo, Google no fija un largo para el título, así que
+no se marca por largo.
+
+## El puntaje general
+
+Es el promedio de los cinco, con una excepción: **si queda algo sin completar o hay prueba
+inventada, no pasa de 6.** Un texto con `[Nombre]` o con `+10.000 clientes felices` que no
+podés mostrar no está listo, por lindo que suene.
+
+## Quién pone cada puntaje
+
+Dos partes trabajan juntas:
+
+1. **Un script** hace lo que no necesita criterio: encontrar corchetes, contar datos,
+   revisar el trato y los signos, controlar los límites de cada red. Da siempre el mismo
+   resultado.
+2. **Claude** lee el texto entero y ajusta lo que el script no puede ver. Por ejemplo, un
+   testimonio firmado «María G.» que es de ejemplo, o una frase genérica sin palabras
+   raras. Puede mover cada puntaje hasta 2 puntos, y **por cada punto tiene que citar la
+   frase exacta**.
+
+Si el puntaje de Claude difiere del script, se muestra al lado: `8/10 (script: 10)`.
+
+## Lo que nunca hace
+
+- **Inventar datos.** Si una recomendación necesita un precio, un plazo o un teléfono que
+  no está en el texto, escribe `[falta dato: precio del plan básico]` y te lo lista para
+  que lo completes.
+- **Cambiar lo que querés decir.** Mejora cómo está escrito, no la oferta ni el tono de tu
+  marca.
+- **Prometer que pasa un detector de IA.** Los detectores fallan mucho, y escribir para
+  engañarlos empeora el texto. El objetivo es que lo lea una persona y le crea.
+
+## Un ejemplo de punta a punta
+
+Una landing de veterinaria escrita por Claude: 21 huecos, testimonios sin respaldo y un
+general de 6. Con las recomendaciones aplicadas y los datos completos, termina en 9,6.
+Cada paso, con la salida real: [`ejemplos/veterinaria.md`](ejemplos/veterinaria.md).
+
+## Sin Claude: solo el script
+
+El script funciona solo, sin ninguna IA. No necesita instalar nada más que Python.
 
 ```bash
-git clone git@github.com:alfonsopintos89/dino-textos.git && cd dino-textos
-
-python3 tools/dino.py --texto "Una plataforma robusta que potencia tu negocio."
-python3 tools/dino.py borrador.md
-python3 tools/dino.py index.html --vista hero
-python3 tools/dino.py nota.md --sin-registro          # público de toda LatAm
-python3 tools/dino.py index.html --permitir-prueba    # los números son reales
-
-python3 tools/test_dino.py                            # tocaste un regex, corré esto
+python3 tools/textosaurio.py index.html
+python3 tools/textosaurio.py articulo.md --formato blog
+python3 tools/textosaurio.py post.txt --formato instagram --trato tu
+python3 tools/textosaurio.py --texto "Pegá el texto acá"
 ```
 
-Sin dependencias. El scorer es biblioteca estándar y anda en el Python 3.9 que trae macOS de
-fábrica. `.github/workflows/dino.yml` es el gate, listo para copiar.
+| Opción | Para qué |
+|---|---|
+| `--formato` | `web`, `blog`, `linkedin`, `instagram` o `post`. Si no lo ponés, lo adivina. |
+| `--trato` | `vos` (el default), `tu` o `usted`. |
+| `--minimo 8` | Sale con error si el general queda abajo de ese número. |
+| `--permitir-prueba` | Tus cifras de clientes son reales y las podés mostrar. |
+| `--json` | El resultado en JSON, para usarlo desde otro programa. |
 
-### Como skill de un agente
+### En GitHub, antes de publicar
 
-**Claude Code:** copiá esta carpeta a `~/.claude/skills/dino/` y decí `/dino` o
-"sacale la IA a esto". **Otros agentes:** apuntalos a `SKILL.md`, que es markdown y no tiene
-nada específico de Claude.
+[`.github/workflows/textosaurio.yml`](.github/workflows/textosaurio.yml) revisa cada `.md`
+que cambia en un push y frena si el general queda abajo de 8. Copialo a tu repo.
 
-## Rehacer la medición
+## Cómo se midió
 
-```bash
-python3 corpus/construir.py --humano 200    # baja prensa pre-2023 desde el sitemap
-python3 corpus/construir.py --ia 15         # genera el corpus de IA
-python3 corpus/calibrar.py                  # mide y dicta veredicto
-python3 corpus/verificar_falsos_positivos.py
+Las reglas de «Suena humano» salen de comparar dos pilas de textos:
+
+- **Escritos por personas:** 592 notas de [la diaria](https://ladiaria.com.uy) y
+  [elDiarioAR](https://www.eldiarioar.com) anteriores a 2023, 355.386 palabras.
+- **Escritos por IA:** 125 textos de Claude, GPT, Gemini, DeepSeek y Grok, entre landings,
+  posts y fichas de producto.
+
+Lo que dejó la medición:
+
+| | Sin completar | Especificidad |
+|---|---|---|
+| Prensa escrita por personas | 10 | 9,4 |
+| Claude | **5,8** | 6,9 |
+| GPT | 8,8 | **5,2** |
+| Gemini | 7,1 | 8,7 |
+| DeepSeek | 8,6 | 6,8 |
+| Grok | 9,4 | 7,3 |
+
+Claude es el que más huecos deja. GPT es el más genérico.
+
+Lo que la medición **no** pudo demostrar: que el script detecte bien la IA de 2026 por las
+palabras. Los modelos actuales casi no usan `potenciar` ni `de vanguardia`. Por eso «Suena
+humano» se apoya tanto en el criterio de Claude, y por eso los otros cuatro puntajes
+importan tanto. Todos los números, incluidas las reglas que se descartaron, están en
+[`referencias/fuentes.md`](referencias/fuentes.md).
+
+## Qué hay en el repo
+
+```
+SKILL.md                          las instrucciones que sigue Claude
+tools/textosaurio.py              el script. Python sin dependencias
+tools/test_textosaurio.py         los tests
+referencias/rubrica.md            qué significa cada número en cada puntaje
+referencias/formatos.md           los controles de cada formato y su fuente
+referencias/senales-ia-espanol.md las señales de IA, con su medición
+referencias/registro-rioplatense.md  el voseo y los otros tratos
+referencias/fuentes.md            de dónde sale cada número
+ejemplos/veterinaria.md           un ejemplo completo
+corpus/                           cómo se armó y se midió el corpus
 ```
 
-`calibrar.py` **importa** `dino.py` en vez de copiar sus listas. Si tuviera su propia copia
-del catálogo, las dos se separarían con el tiempo y el número publicado dejaría de describir
-la herramienta que corre de verdad.
+## Créditos
 
-Al repo no sube texto ajeno: la caché está en `.gitignore` y lo que se versiona son los
-conteos. La descarga respeta `robots.txt` y va despacio.
+La idea de puntuar el texto y hacer que el script tenga la primera y la última palabra viene
+de [SlopMonster](https://github.com/ItsssssJack/SlopMonster), que hace esto para el inglés.
+Los dinosaurios se generaron con `gpt-image-2.5` a través de OpenRouter.
 
-## La regla dura
-
-**Nunca inventar prueba.** Ni cantidades de clientes, ni testimonios, ni puntuaciones. Si
-una afirmación necesita un número que no tenés, escribí `[falta dato]` y seguí. El lift de
-un número inventado es más chico que el de la especificidad real, y es el único error sin
-vuelta atrás.
-
-Y esto nunca va a prometer pasar detectores de IA. Los detectores son ruido. El objetivo es
-el estómago de un lector.
-
-## El mapa
-
-```
-SKILL.md                              el loop entero, como instrucciones para el agente
-tools/dino.py                         el scorer. stdlib, un archivo, sale rojo
-tools/test_dino.py                    63 tests: aciertos y falsos positivos
-corpus/construir.py                   arma los dos corpus
-corpus/calibrar.py                    mide las reglas y dicta veredicto
-corpus/candidatos.py                  lo propuesto y lo que el corpus volteó
-corpus/prompts-para-pegar.md          para generar el corpus de IA con otros modelos
-corpus/verificar_falsos_positivos.py  el scorer contra el corpus humano entero
-referencias/senales-ia-espanol.md     el catálogo del eje slop
-referencias/registro-rioplatense.md   el catálogo del eje registro
-referencias/fuentes.md                de dónde sale cada número, rechazos incluidos
-ejemplos/estudio-contable.md          una corrida entera, 0/5 → 5/5
-.github/workflows/dino.yml            el gate
-docs/superpowers/specs/               el diseño
-```
-
-Esta página pasa su propio scorer. `python3 tools/dino.py README.md` da 5/5 y 3/3, con el
-mismo catálogo y los mismos regex que puntúan tu landing. No se ablandó nada para llegar:
-los especímenes están marcados como literales, en `código` o ~~tachados~~, y la prosa de
-alrededor se escribió limpia como cualquier otra.
-
-MIT, igual que el proyecto del que deriva.
+Licencia MIT.

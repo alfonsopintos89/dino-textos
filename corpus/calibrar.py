@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Mide las reglas de dino.py contra los dos corpus y dicta veredicto.
+"""Mide las reglas de textosaurio.py contra los dos corpus y dicta veredicto.
 
 Importa el scorer en vez de copiar sus listas. Es a propósito: si la medición
 tuviera su propia copia del catálogo, las dos se separarían con el tiempo y el
@@ -18,7 +18,7 @@ import sys
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(AQUI), 'tools'))
 sys.path.insert(0, AQUI)
-import dino
+import textosaurio as dino
 
 # ── el criterio ──────────────────────────────────────────────────────────────
 # Los tres números que deciden qué entra al scorer. Están acá, en una sola
@@ -72,7 +72,7 @@ def veredicto(apariciones_ia, por_10k_ia, por_10k_humano, docs_humanos_tocados):
 # ── de dónde salen los patrones ──────────────────────────────────────────────
 
 def patrones_del_scorer():
-    """Cada regla que dino.py aplica hoy, como (grupo, etiqueta, regex compilado)."""
+    """Cada regla que textosaurio.py aplica hoy, como (grupo, etiqueta, regex compilado)."""
     for palabra in dino.LEXICO_RAIZ:
         yield ('lexico', palabra, re.compile(dino._patron_raiz(palabra)))
     for frase in dino.LEXICO_EXACTO:

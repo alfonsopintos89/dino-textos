@@ -63,7 +63,7 @@ def sobrerrepresentados(ia, humanos, n, minimo_docs_ia):
 
 def cargar_modelo(modelo, uso):
     """Los textos de un modelo, de descubrimiento (00-09) o de validación (10-14)."""
-    import dino
+    import textosaurio as dino
     docs = []
     carpeta = os.path.join(AQUI, 'ia')
     for nombre in sorted(os.listdir(carpeta)):
@@ -96,7 +96,7 @@ def main(argv):
     otros = []
     for nombre in os.listdir(os.path.join(AQUI, 'ia')):
         if nombre.endswith('.txt') and not nombre.startswith(modelo + '-'):
-            import dino
+            import textosaurio as dino
             otros.append(dino.normalizar(dino.leer_utf8(os.path.join(AQUI, 'ia', nombre))))
     print('contraste: %d textos de otros modelos\n' % len(otros))
     for n in (1, 2, 3, 4):

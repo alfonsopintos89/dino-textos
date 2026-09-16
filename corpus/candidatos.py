@@ -3,7 +3,7 @@
 """Patrones propuestos que todavía NO están en el scorer.
 
 Se miden igual que los que ya entraron. Si pasan el criterio, se mueven a mano a
-`tools/dino.py` con su número anotado en `referencias/fuentes.md`. Si no pasan,
+`tools/textosaurio.py` con su número anotado en `referencias/fuentes.md`. Si no pasan,
 se publican rechazados, con el número que los rechazó.
 
 Están acá porque sospecho de ellos, no porque tenga evidencia. Esa es

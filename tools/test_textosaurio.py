@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Suite de regresión de dino.py.
+"""Suite de regresión de textosaurio.py.
 
 Cada regla llega acá con dos tests: un espécimen que la dispara y un texto
 humano parecido que NO la dispara. El segundo es el que importa. Es la
@@ -12,7 +12,7 @@ import sys
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import dino
+import textosaurio as dino
 
 
 class TestNormalizar(unittest.TestCase):
@@ -285,29 +285,226 @@ SUCIO = ('Potenciamos tu negocio con una plataforma robusta. '
          'Ahí es donde entra nuestro equipo.')
 
 
-class TestPuntaje(unittest.TestCase):
+def evaluar(texto, **kw):
+    return dino.evaluar(dino.normalizar(texto), **kw)
 
-    def test_texto_limpio_da_puntaje_perfecto(self):
-        self.assertEqual(dino.puntuar(dino.auditar(LIMPIO)), (5, 3))
 
-    def test_cada_grupo_con_aciertos_descuenta_un_punto(self):
-        """Dos grupos tocados, dos puntos menos. Un grupo con ocho aciertos
+class TestSinCompletar(unittest.TestCase):
+
+    def test_marca_los_huecos_de_plantilla(self):
+        for frase in ('Hola, soy [Nombre] y te espero.', 'Escribinos a hola@ejemplo.com.',
+                      'Precio: $XX por mes.', 'Lorem ipsum dolor sit amet.',
+                      'Llamanos al 1234-5678.', 'Hola {{nombre}}, gracias.',
+                      'TODO: poner el horario.', 'Estamos en Calle Falsa 123.'):
+            self.assertTrue(dino.sin_completar(frase), frase)
+
+    def test_no_marca_lo_que_parece_hueco_y_no_lo_es(self):
+        for frase in ('Fue la gran crisis del siglo XX.', 'Como dice la nota [1], cerró.',
+                      'Escribinos a hola@estudiorivas.com.ar.', 'Abrimos en la calle Florida.',
+                      'Un XXI mejor.'):
+            self.assertEqual(dino.sin_completar(frase), [], frase)
+
+    def test_no_marca_lo_que_la_prensa_pone_entre_corchetes(self):
+        """Especímenes reales del corpus humano: aclaraciones adentro de citas."""
+        for frase in ('Le dijo [a Rusia] que no iba a ceder.', 'Habló [ Biden ] ayer.',
+                      'Vio el [dron] sobre la casa.', 'Lo recibió en el entresiglos XIX-XX.',
+                      'La cosecha del XX fue otra.', '[Conferencia realizada en la Asociación '
+                      'de Amigos del Museo Nacional]'):
+            self.assertEqual(dino.sin_completar(frase), [], frase)
+
+    def test_marca_los_huecos_que_deja_claude(self):
+        """Los más frecuentes en 45 textos de Claude: 28 tenían al menos uno."""
+        for frase in ('[Nombre]', '[X] años', '[Teléfono]', '[precio]', '[hora]',
+                      '[Nombre de la tienda]', '[email de contacto]', '/producto/{id}'):
+            self.assertTrue(dino.sin_completar(frase), frase)
+
+    def test_falta_dato_largo_cuenta(self):
+        huecos = dino.sin_completar('Somos [falta dato: cuántos veterinarios y sus nombres].')
+        self.assertEqual(len(huecos), 1)
+
+    def test_los_botones_se_excluyen_aunque_haya_falta_dato_antes(self):
+        huecos = dino.sin_completar('[falta dato: barrio] [Pedí tu turno] [Llamar ahora]')
+        self.assertEqual(huecos, [('falta dato', '[falta dato: barrio]')])
+
+    def test_un_boton_escrito_entre_corchetes_no_es_un_hueco(self):
+        for frase in ('**[Pedí tu turno]**', '[Escribinos por WhatsApp]', '[Ver todos]',
+                      '[Reservá tu clase]', '[Sumate]', '[Regístrate gratis]'):
+            self.assertEqual(dino.sin_completar(frase), [], frase)
+
+    def test_un_mail_de_ejemplo_es_un_solo_hueco(self):
+        self.assertEqual(len(dino.sin_completar('Escribí a hola@ejemplo.com')), 1)
+
+    def test_enlaces_vacios_en_html(self):
+        html = '<a href="#">Comprar</a><a href="/precios">Precios</a>'
+        self.assertTrue(dino.sin_completar('Comprar Precios', html))
+
+    def test_un_solo_hueco_ya_no_deja_publicar(self):
+        r = evaluar('Somos [Nombre]. Arreglamos techos desde 2001 en Lanús.')
+        self.assertEqual(r['puntajes']['sin_completar'], 6)
+        self.assertLessEqual(r['general'], dino.TOPE)
+        self.assertTrue(r['tope'])
+
+
+class TestEspecificidad(unittest.TestCase):
+
+    def test_el_texto_con_datos_puntua_mas_que_el_generico(self):
+        concreto = evaluar('Techos de chapa en Lanús y Banfield. Presupuesto en 48 horas, '
+                           'desde $180.000, con 5 años de garantía escrita.')
+        generico = evaluar('Soluciones integrales de calidad para tus necesidades, '
+                           'con un equipo de profesionales y atención personalizada.')
+        self.assertGreater(concreto['puntajes']['especificidad'],
+                           generico['puntajes']['especificidad'])
+        self.assertGreaterEqual(concreto['puntajes']['especificidad'], 8)
+        self.assertLessEqual(generico['puntajes']['especificidad'], 3)
+
+    def test_un_dato_repetido_cuenta_una_vez(self):
+        concretos, _ = dino.especificidad('Llamanos al 351 555-0142. Repito: 351 555-0142.')
+        self.assertEqual(concretos, ['351 555-0142'])
+
+    def test_la_prueba_inventada_no_cuenta_como_dato(self):
+        concretos, _ = dino.especificidad('Más de 10.000 clientes felices.')
+        self.assertEqual(concretos, [])
+
+    def test_un_titulo_en_mayusculas_no_son_nombres_propios(self):
+        concretos, _ = dino.especificidad('Nuestros Servicios Profesionales')
+        self.assertEqual(concretos, [])
+
+
+class TestCorreccion(unittest.TestCase):
+
+    def test_trato_mezclado(self):
+        errores = dino.correccion('x', dino.auditar('Regístrate y contáctanos.')['registro'])
+        self.assertTrue(errores)
+
+    def test_pregunta_partida_en_dos_renglones_de_markdown(self):
+        texto = dino.prosa_markdown('¿El título usa las\npalabras que alguien buscaría?\n')
+        etiquetas = [e for e, _ in dino.correccion(texto, dino.auditar(texto)['registro'])]
+        self.assertNotIn('pregunta sin «¿»', etiquetas)
+
+    def test_titulo_en_negrita_no_se_une_al_parrafo(self):
+        texto = dino.prosa_markdown('**Te atendemos sin apuro**\nCada consulta dura lo que necesita.')
+        self.assertEqual(len(texto.split('\n')), 2)
+
+    def test_signos_de_apertura(self):
+        texto = 'Querés saber más? Llamanos.'
+        etiquetas = [e for e, _ in dino.correccion(texto, dino.auditar(texto)['registro'])]
+        self.assertIn('pregunta sin «¿»', etiquetas)
+        texto = '¿Querés saber más? Llamanos.'
+        etiquetas = [e for e, _ in dino.correccion(texto, dino.auditar(texto)['registro'])]
+        self.assertNotIn('pregunta sin «¿»', etiquetas)
+
+    def test_mayusculas_en_cada_palabra(self):
+        texto = 'Nuestros Servicios Profesionales\nHacemos techos.'
+        etiquetas = [e for e, _ in dino.correccion(texto, dino.auditar(texto)['registro'])]
+        self.assertTrue(any('Mayúsculas' in e for e in etiquetas))
+
+    def test_titulo_en_espanol_correcto_no_se_marca(self):
+        texto = 'Nuestros servicios en Buenos Aires\nHacemos techos.'
+        etiquetas = [e for e, _ in dino.correccion(texto, dino.auditar(texto)['registro'])]
+        self.assertFalse(any('Mayúsculas' in e for e in etiquetas))
+
+    def test_repeticion_a_proposito_no_se_marca(self):
+        for texto in ('Sonaba yira yira en la radio.', 'Paka paka, dijo el nene.'):
+            etiquetas = [e for e, _ in dino.correccion(texto, dino.auditar(texto)['registro'])]
+            self.assertNotIn('palabra repetida', etiquetas, texto)
+
+    def test_titulo_con_nombres_propios_y_comas_no_se_marca(self):
+        texto = 'Veterinaria Los Plátanos, en General Paz, Córdoba\nAtendemos perros.'
+        etiquetas = [e for e, _ in dino.correccion(texto, dino.auditar(texto)['registro'])]
+        self.assertFalse(any('Mayúsculas' in e for e in etiquetas))
+
+    def test_palabra_repetida(self):
+        texto = 'Lo hacemos de de verdad.'
+        etiquetas = [e for e, _ in dino.correccion(texto, dino.auditar(texto)['registro'])]
+        self.assertIn('palabra repetida', etiquetas)
+
+
+class TestTrato(unittest.TestCase):
+
+    def test_en_tu_se_marca_el_voseo(self):
+        h = dino.auditar('Si tenés dudas, escribinos.', 'tu')
+        self.assertTrue(h['registro']['imperativos'])
+
+    def test_en_tu_no_se_marca_el_tuteo(self):
+        h = dino.auditar('Si tienes dudas, escríbenos. Regístrate gratis.', 'tu')
+        self.assertEqual(sum(len(v) for v in h['registro'].values()), 0)
+
+    def test_en_usted_se_marca_el_tu_y_el_vos(self):
+        h = dino.auditar('Si tenés dudas, te respondemos por tu mail.', 'usted')
+        self.assertTrue(h['registro']['pronombres'])
+        self.assertTrue(h['registro']['imperativos'])
+
+    def test_en_tu_no_se_marca_mas_ni_despues(self):
+        h = dino.auditar('Después vas a querer más.', 'tu')
+        self.assertEqual(h['registro']['imperativos'], [])
+
+
+class TestHumano(unittest.TestCase):
+
+    def test_texto_limpio_puntua_diez(self):
+        self.assertEqual(evaluar(LIMPIO)['puntajes']['humano'], 10)
+
+    def test_cada_grupo_tocado_descuenta_dos(self):
+        """Dos grupos tocados, cuatro puntos menos. Un grupo con ocho aciertos
 
         descuenta lo mismo que uno con uno solo: el arreglo es el mismo.
         """
-        slop, _ = dino.puntuar(dino.auditar(SUCIO))
-        self.assertEqual(slop, 3)
+        self.assertEqual(evaluar(SUCIO)['puntajes']['humano'], 6)
 
-    def test_los_dos_ejes_puntuan_por_separado(self):
-        """Un texto puede ser humanísimo y estar escrito en peninsular."""
-        slop, registro = dino.puntuar(dino.auditar('Coge el ordenador, por favor.'))
-        self.assertEqual(slop, 5)
-        self.assertLess(registro, 3)
+    def test_permitir_prueba(self):
+        texto = 'Más de 10.000 clientes nos eligieron.'
+        self.assertEqual(evaluar(texto)['puntajes']['humano'], 8)
+        r = evaluar(texto, permitir_prueba=True)
+        self.assertEqual(r['puntajes']['humano'], 10)
+        self.assertEqual(r['tope'], [])
 
-    def test_permitir_prueba_no_descuenta_el_punto(self):
-        h = dino.auditar('Más de 10.000 clientes nos eligieron.')
-        self.assertEqual(dino.puntuar(h)[0], 4)
-        self.assertEqual(dino.puntuar(h, permitir_prueba=True)[0], 5)
+    def test_ritmo_parejo(self):
+        parejo = ' '.join(['Hacemos techos de chapa con cuidado.'] * 9)
+        self.assertTrue(dino.cadencia_pareja(parejo))
+        variado = ('Techos. Hacemos techos de chapa y de tejas en todo el conurbano sur desde '
+                   'hace veinte años. Nada más. Cada obra lleva garantía escrita por cinco años '
+                   'y un presupuesto cerrado. Sin sorpresas. Te mandamos fotos del avance todos '
+                   'los días. Llamanos. Vamos a verlo sin cargo esta semana.')
+        self.assertFalse(dino.cadencia_pareja(variado))
+
+
+class TestFormato(unittest.TestCase):
+
+    def test_web_completa_no_tiene_fallas(self):
+        html = ('<html lang="es"><head><title>Techos Rivas, techos de chapa en Lanús</title>'
+                '<meta name="description" content="Presupuesto en 48 horas."></head>'
+                '<body><h1>Techos</h1><h2>Precios</h2><img src="a.png" alt="Obra"></body></html>')
+        self.assertEqual(dino.controles_de_formato('', html, 'web', True), [])
+
+    def test_web_con_fallas(self):
+        html = '<html><head><title>Inicio</title></head><body><h1>A</h1><h1>B</h1><h4>C</h4><img src="a.png"></body></html>'
+        self.assertEqual(len(dino.controles_de_formato('', html, 'web', True)), 6)
+
+    def test_instagram(self):
+        texto = 'Una primera línea larguísima ' * 6 + '\nCuerpo.\n#a #b #c #d #e #f'
+        fallas = dino.controles_de_formato(texto, texto, 'instagram', False)
+        self.assertEqual(len(fallas), 2)
+
+    def test_linkedin_no_limita_hashtags(self):
+        texto = 'Gancho corto.\nCuerpo.\n#a #b #c #d #e #f'
+        self.assertEqual(dino.controles_de_formato(texto, texto, 'linkedin', False), [])
+
+    def test_blog_largo_sin_subtitulos(self):
+        md = '# Título\n\n' + ('palabra ' * 70 + '\n\n') * 10
+        fallas = dino.controles_de_formato(md, md, 'blog', False)
+        self.assertTrue(any('subtítulos' in f for f in fallas))
+
+
+class TestGeneral(unittest.TestCase):
+
+    def test_general_es_el_promedio_sin_tope(self):
+        r = evaluar(LIMPIO)
+        self.assertEqual(r['general'], round(sum(r['puntajes'].values()) / 5.0, 1))
+
+    def test_prueba_inventada_topea(self):
+        r = evaluar('Arreglamos techos desde 2001 en Lanús. +5.000 clientes felices.')
+        self.assertIn('hay prueba que parece inventada', r['tope'])
+        self.assertLessEqual(r['general'], dino.TOPE)
 
 
 class TestCLI(unittest.TestCase):
@@ -315,14 +512,14 @@ class TestCLI(unittest.TestCase):
     def correr(self, *args):
         return subprocess.run(
             [sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                          'dino.py')] + list(args),
+                                          'textosaurio.py')] + list(args),
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
-    def test_sale_cero_con_texto_limpio(self):
-        self.assertEqual(self.correr('--texto', LIMPIO).returncode, 0)
+    def test_sale_cero_si_llega_al_minimo(self):
+        self.assertEqual(self.correr('--texto', LIMPIO, '--minimo', '7').returncode, 0)
 
-    def test_sale_uno_con_texto_sucio(self):
-        self.assertEqual(self.correr('--texto', SUCIO).returncode, 1)
+    def test_sale_uno_si_no_llega(self):
+        self.assertEqual(self.correr('--texto', SUCIO + ' Escribí a hola@ejemplo.com').returncode, 1)
 
     def test_entrada_vacia_falla_en_vez_de_aprobar(self):
         """Una entrada vacía que puntúa limpio reporta slop como limpio justo
@@ -335,15 +532,28 @@ class TestCLI(unittest.TestCase):
     def test_archivo_ilegible_sale_con_dos(self):
         self.assertEqual(self.correr('/no/existe/che.md').returncode, 2)
 
-    def test_sin_registro_apaga_el_segundo_eje(self):
-        salida = self.correr('--texto', 'Coge el ordenador.', '--sin-registro')
-        self.assertEqual(salida.returncode, 0)
-        self.assertNotIn(b'registro', salida.stdout.lower())
+    def test_opcion_invalida_sale_con_dos(self):
+        self.assertEqual(self.correr('--texto', LIMPIO, '--trato', 'che').returncode, 2)
 
-    def test_el_reporte_nombra_los_dos_ejes(self):
+    def test_el_reporte_nombra_los_cinco_puntajes(self):
         salida = self.correr('--texto', SUCIO).stdout.decode('utf-8')
-        self.assertIn('slop', salida)
-        self.assertIn('registro', salida)
+        for _, titulo in dino.NOMBRES:
+            self.assertIn(titulo, salida)
+        self.assertIn('GENERAL', salida)
+
+    def test_un_md_que_menciona_etiquetas_html_sigue_siendo_markdown(self):
+        import json, tempfile
+        with tempfile.NamedTemporaryFile('w', suffix='.md', delete=False, encoding='utf-8') as f:
+            f.write('# Guía\n\nRevisá el `<title>` y que haya un solo `<h1>`.\n')
+        salida = json.loads(self.correr(f.name, '--json').stdout.decode('utf-8'))
+        os.unlink(f.name)
+        self.assertEqual(salida['formato'], 'blog')
+        self.assertEqual(salida['evidencia']['formato'], [])
+
+    def test_json(self):
+        import json
+        salida = self.correr('--texto', SUCIO, '--json').stdout.decode('utf-8')
+        self.assertEqual(set(json.loads(salida)['puntajes']), set(k for k, _ in dino.NOMBRES))
 
 
 class TestFalsosPositivosDelCorpus(unittest.TestCase):

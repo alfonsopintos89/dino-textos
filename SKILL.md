@@ -1,93 +1,128 @@
 ---
-name: dino
-description: Saca el acento de IA de un texto en español rioplatense y lo deja sonando de acá. Puntúa, reescribe y vuelve a puntuar. Se dispara con /dino, "sacale la IA a esto", "esto suena a ChatGPT", "hacelo sonar rioplatense", "arreglá este copy".
+name: textosaurio
+description: Revisa un texto en español hecho con IA (landing, blog, post de LinkedIn o Instagram) y le pone cinco puntajes del 1 al 10 (sin completar, especificidad, correcto y completo, suena humano, hecho para el formato) más un puntaje general. Después ofrece las recomendaciones y las aplica. Se dispara con /textosaurio, "revisá este texto", "puntuá esta landing", "esto suena a IA", "mejorá este copy".
 ---
 
-# dino
+# Textosaurio
 
-Agarrá un borrador y dejalo como si lo hubiera escrito una persona de acá. Una landing,
-un README, una newsletter, un mail.
+Recibís un texto hecho con IA y devolvés cinco puntajes del 1 al 10, un puntaje general
+y, si la persona quiere, el texto mejorado.
 
-El objetivo no es pasar un detector de IA. Los detectores son ruido y perseguirlos empeora
-la prosa. El objetivo es el estómago de un lector que este mes leyó mil párrafos de IA.
+El objetivo no es engañar a un detector de IA. Es que el texto se pueda publicar: que no
+le queden huecos, que diga cosas concretas, que esté bien escrito, que no suene a robot y
+que funcione donde se va a publicar.
 
-Dos ejes que puntúan por separado, porque fallan por razones distintas y se arreglan con
-ediciones distintas. Un texto puede ser humanísimo y estar escrito en peninsular, o estar
-en voseo perfecto y ser slop puro.
-
-```
-1. PUNTUAR     python3 tools/dino.py texto.md      slop /5 y registro /3
-2. REESCRIBIR  tres pases
-3. REPUNTUAR   python3 tools/dino.py de nuevo      se shipea en 5/5 y 3/3
-```
-
-El linter tiene la primera y la última palabra, porque el linter es honesto y el modelo es
-persuasivo. "Casi limpio" es como termina una página sonando igual que todas las demás.
-
-## Paso 1 — puntuar
+## Paso 1. Correr el script
 
 ```bash
-python3 tools/dino.py borrador.md
-python3 tools/dino.py index.html
-python3 tools/dino.py index.html --vista hero     # un solo elemento por id
-python3 tools/dino.py --texto "pegá un borrador acá"
-python3 tools/dino.py nota.md --sin-registro      # público de toda LatAm
-python3 tools/dino.py index.html --permitir-prueba  # los números son reales y los podés mostrar
+python3 <carpeta de este skill>/tools/textosaurio.py ARCHIVO [--formato F] [--trato T]
 ```
 
-Regex, sin opiniones. Abajo de 5/5 o de 3/3 sale con código distinto de cero, así que sirve
-de gate de build. Una entrada vacía falla, nunca aprueba: un gate que estampa limpio sobre
-un archivo de cero bytes reporta slop como limpio justo cuando el pipeline se rompió.
+- `ARCHIVO` puede ser `.html`, `.md` o `.txt`. Si la persona pegó el texto en el chat,
+  usá `--texto "…"`.
+- `--formato`: `web`, `blog`, `linkedin`, `instagram` o `post`. Si el pedido lo dice
+  («esta landing», «mi post de LinkedIn»), pasalo. Si no, el script lo adivina.
+- `--trato`: `vos` (default), `tu` o `usted`. Elegí el que usa la mayor parte del texto
+  o el que pidió la persona. Si el texto está mitad y mitad y no hay pista, preguntá.
+- `--permitir-prueba` solo si la persona confirmó que sus cifras de clientes son reales.
 
-Tocaste un regex, corré `python3 tools/test_dino.py`. Cada regla tiene un espécimen que la
-dispara y un texto humano parecido que no. El segundo es el que importa.
+El script da una base objetiva para cada puntaje y la evidencia. No lo reemplaces por tu
+impresión: es la parte que no cambia de una corrida a otra.
 
-## Paso 2 — reescribir, tres pases
+## Paso 2. Completar los puntajes con criterio
 
-El catálogo completo está en `referencias/senales-ia-espanol.md` y
-`referencias/registro-rioplatense.md`. La versión corta:
+Leé el texto entero y ajustá cada puntaje según la guía de
+`referencias/rubrica.md`. Las reglas:
 
-1. **Léxico.** `potenciar`, `optimizar`, `robusto`, `holístico`, `de vanguardia`,
-   `en el mundo actual`, `soluciones integrales`. Cambialo por una palabra más llana, no
-   por un sinónimo más pomposo de la misma idea.
-2. **Formas.** `ahí es donde entra X`, `llevá tu X al siguiente nivel`, `descubrí cómo`,
-   `ya sea que`. También el reflejo del ritmo de tres, la raya al modo inglés, las preguntas
-   que el propio texto se contesta, el párrafo de cierre que nadie pidió y la negrita al
-   principio de cada viñeta.
+1. **Sin completar solo puede bajar.** Si encontrás un hueco que el script no vio (un
+   testimonio de «María G.» que claramente no es real, «Tu Marca», una fecha de
+   relleno), bajalo con la misma escala: uno solo deja el puntaje en 6.
+2. **Los otros cuatro se mueven como mucho 2 puntos** respecto del script, para arriba o
+   para abajo.
+3. **Cada punto que sacás o sumás lleva la frase exacta entre comillas.** Sin cita no hay
+   ajuste. «Suena genérico» no es evidencia; «“Brindamos soluciones a medida” lo podría
+   firmar cualquier estudio» sí.
+4. **El general se recalcula** con tus puntajes finales: el promedio de los cinco. Si
+   queda algo sin completar o hay prueba inventada (cifras de clientes, testimonios o
+   premios que el texto no puede respaldar), el general no pasa de 6.
 
-   Lo que **no** hay que tocar es `no solo X, sino Y`. En inglés es el tell más ruidoso que
-   existe; en español es un correlativo gramatical corriente y aparece en el 8,6% de la
-   prensa escrita por personas. Reescribirlo sería corregir español correcto.
-3. **Poné a alguien de acá adentro.** Sacar los tells deja texto limpio y muerto. Voseo, no
-   tuteo. Una cifra concreta por afirmación, sacada del texto original y de ningún otro
-   lado. Largos de oración que varíen fuerte. Una oración de tres palabras después de una
-   larga. Una cosa que un escritor prolijo habría cortado.
+## Paso 3. Mostrar el resultado
 
-Sobre el voseo: no alcanza con cambiar `tú` por `vos`. El imperativo es lo que delata todo
-copy generado. `Descubre` → `Descubrí`. `Prueba gratis` → `Probá gratis`.
-`Regístrate` → `Registrate`, sin tilde: la tilde es justamente lo que lo delata.
+Siempre con esta forma, en este orden:
 
-## Paso 3 — volver a puntuar
+```
+Textosaurio · landing.html · web · trato: vos
 
-Siempre. Un modelo es muy bueno sacando tells y perfectamente capaz de meter otros nuevos
-mientras lo hace. Una reescritura sin repuntuar es cara o cruz.
+  1  Sin completar            4/10
+  2  Especificidad            5/10
+  3  Correcto y completo      8/10
+  4  Suena humano             6/10   (script: 8)
+  5  Hecho para el formato    7/10
 
-## La regla dura
+  GENERAL  6/10 — el promedio da 6, y quedan huecos sin completar
+```
 
-**Nunca inventar prueba.** Ni cantidades de clientes, ni testimonios, ni puntuaciones, ni
-un `+5.000 usuarios` que no puedas mostrar. Si una afirmación necesita un número que no
-tenés, escribí `[falta dato]` y seguí. El linter marca cualquier número pegado a un
-sustantivo de persona a propósito: un falso positivo cuesta diez segundos, un falso
-negativo es una afirmación que no podés respaldar.
+- Si tu puntaje final difiere del script, mostralo como `(script: N)`.
+- Debajo, **una línea por puntaje** con lo más importante y su cita. Nada más: el
+  detalle va en las recomendaciones.
 
-Lo específico y verificable rinde más que la credibilidad prestada. `Techos, y solo techos,
-desde 2001` le gana a `los más confiables del rubro`, porque una fecha no se discute y un
-superlativo el lector lo descuenta solo.
+## Paso 4. Preguntar qué recomendaciones quiere
 
-## Formato de salida
+Preguntá con opciones (usá la herramienta de preguntas si la tenés):
 
-Primero el texto reescrito completo. Después `▎ qué cambié`, cinco líneas como máximo, cada
-una nombrando el tell y el arreglo. Nunca devolver solo el análisis.
+- **Todas las recomendaciones**
+- **Solo de los puntajes menores a 8**
+- **Solo de los puntajes menores a 6**
 
-El significado del autor se mantiene exacto. Sacar el slop no es reescribir el argumento.
-Y el registro que te dieron se respeta: si es técnico, sigue siendo técnico.
+Si ningún puntaje queda debajo del umbral elegido, decilo en una línea y no inventes
+recomendaciones.
+
+Cada recomendación va así, agrupada por puntaje:
+
+```
+── 2 Especificidad (5/10)
+   · «Ofrecemos atención personalizada para cada cliente»
+     → «Te atiende siempre la misma contadora, y te responde el mismo día»
+     Por qué: lo primero lo dice cualquier estudio; lo segundo es una promesa que se puede chequear.
+```
+
+Máximo cinco por puntaje, empezando por las que más suben el puntaje. Si el cambio
+necesita un dato que el texto no tiene (un precio, un plazo, un barrio), la propuesta
+lleva `[falta dato: precio del plan básico]` y no un número inventado.
+
+## Paso 5. Ofrecer aplicarlas
+
+Preguntá si querés que aplique las recomendaciones. Si dice que sí:
+
+1. Escribí el texto mejorado **completo** en un archivo nuevo al lado del original:
+   `landing.html` → `landing.textosaurio.html`. No pises el original salvo que lo pida.
+2. Corré el script sobre el archivo nuevo, con el mismo formato y trato.
+3. Mostrá antes y después:
+
+```
+                           antes   después
+  1  Sin completar           4        5     (quedan 2 [falta dato])
+  2  Especificidad           5        8
+  3  Correcto y completo     8        9
+  4  Suena humano            6        9
+  5  Hecho para el formato   7        9
+  GENERAL                    6        6     → completá los 2 datos y llega a 9
+```
+
+4. Listá los `[falta dato]` que quedaron, para que la persona sepa exactamente qué
+   completar. Mientras queden, el general no pasa de 6. Es a propósito: un texto con
+   huecos no está listo.
+
+## Reglas que no se rompen
+
+- **Nunca inventar datos ni prueba.** Ni cifras de clientes, ni testimonios, ni
+  premios, ni años de experiencia, ni precios. Lo que falta se marca `[falta dato: …]`.
+- **Respetar lo que el texto quiere decir.** Mejorar no es cambiar la oferta ni el tono
+  de la marca. Si es técnico, sigue siendo técnico.
+- **Respetar el trato.** Si el texto es de vos, todo queda en vos: `Descubre` →
+  `Descubrí`, `Regístrate` → `Registrate` (sin tilde: la tilde es justo lo que delata el
+  tuteo).
+- **No tocar lo que está bien.** `no solo X, sino Y` es español correcto y no es señal de
+  IA. Una enumeración de tres cosas reales tampoco.
+- **Volver a puntuar siempre** después de reescribir. Un modelo que saca señales de IA
+  también puede meter otras nuevas.

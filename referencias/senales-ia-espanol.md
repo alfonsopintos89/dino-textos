@@ -1,9 +1,9 @@
 # Señales de escritura por IA en español
 
-El catálogo del eje slop. Cinco grupos, un punto cada uno.
+Las señales que usa el puntaje «Suena humano». Cinco grupos, dos puntos cada uno.
 
 Todo espécimen de esta página va en `código` o ~~tachado~~. No es decoración: un literal
-no es copy, y `dino.py` los saltea al leer un `.md`. Así es como esta página pasa el
+no es copy, y `textosaurio.py` los saltea al leer un `.md`. Así es como esta página pasa el
 scorer que documenta.
 
 Cada patrón lleva su estado de calibración. **Admitido** quiere decir que el corpus lo

@@ -28,7 +28,7 @@ import urllib.request
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(AQUI), 'tools'))
-import dino
+import textosaurio as dino
 
 AGENTE = 'dino-textos/0.1 (corpus de calibración; +https://github.com/alfonsopintos89/dino-textos)'
 PAUSA = 1.5          # segundos entre pedidos: ir despacio es parte del trato
@@ -346,7 +346,7 @@ def construir_claude_extra(en_paralelo=5):
 # dino, pusieron [falta dato] e intentaron correr el linter. Un texto así no mide
 # el default del modelo, mide al modelo obedeciendo a este repo.
 CONTAMINACION = re.compile(
-    r'\bdino\b|\blinter\b|scratchpad|\bslop\b|tools/|\[falta dato\]|deslop|skill\.md',
+    r'\bdino\b|textosaurio|\blinter\b|scratchpad|\bslop\b|tools/|\[falta dato\]|deslop|skill\.md',
     re.I)
 
 # Solo lo que el CLI necesita para arrancar y autenticarse. Afuera las variables de

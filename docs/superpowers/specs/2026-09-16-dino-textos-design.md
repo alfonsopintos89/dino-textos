@@ -1,6 +1,11 @@
 # dino-textos — diseño
 
 Fecha: 2026-09-16
+
+> **Reemplazado.** El proyecto pasó a llamarse Textosaurio y a dar cinco puntajes del
+> 1 al 10 en vez de slop /5 y registro /3. Este diseño queda como registro de cómo se
+> armó el corpus y la calibración, que siguen vigentes. Lo actual está en `README.md` y
+> `SKILL.md`.
 Estado: implementado. Este documento es el diseño tal como se aprobó; la
 implementación lo corrigió en dos puntos, y las correcciones están medidas en
 `referencias/fuentes.md`:
