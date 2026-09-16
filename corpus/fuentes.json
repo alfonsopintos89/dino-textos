@@ -15,7 +15,16 @@
       "patron_anio": "/articulo/(\\d{4})/",
       "robots": "permite /articulo/; prohíbe /short/, /df/ y /buscar/, que no se tocan",
       "paso": 8
+    },
+    {
+      "nombre": "eldiarioAR",
+      "sitio": "https://www.eldiarioar.com",
+      "variedad": "rioplatense argentino",
+      "modo": "indice",
+      "sitemap": "https://www.eldiarioar.com/sitemap_index_a59a1.xml",
+      "patron_fecha_sitemap": "_(\\d{4})_(\\d{2})_",
+      "robots": "robots.txt publica el índice de sitemaps y no prohíbe los artículos"
     }
   ],
-  "pendiente": "Falta una fuente argentina. Página/12 no publica sitemap general (404 en sitemap.xml y sitemap-index.xml al 2026-09-16), así que el corpus v1 es uruguayo. Está anotado en referencias/fuentes.md."
+  "pendiente": "Falta copy comercial humano anterior a 2023 para calibrar las reglas de marketing: el corpus es todo periodismo. Página/12 sigue sin sitemap general."
 }

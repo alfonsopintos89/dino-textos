@@ -11,6 +11,7 @@ sube únicamente frecuencias.json, que son conteos. El script es reproducible
 desde fuentes.json, así que cualquiera puede rehacer la medición.
 """
 import concurrent.futures
+import collections
 import hashlib
 import json
 import os
@@ -28,7 +29,11 @@ import dino
 
 AGENTE = 'dino-textos/0.1 (corpus de calibración; +https://github.com/alfonsopintos89/dino-textos)'
 PAUSA = 1.5          # segundos entre pedidos: ir despacio es parte del trato
-MINIMO_PALABRAS = 250
+# Cien y no más: la diaria tiene paywall, así que lo público de cada nota es la
+# bajada, unas 100-150 palabras de prosa real. El mínimo se aplica DESPUÉS de
+# sacar la plantilla, que en ese sitio son 215 palabras de términos y
+# condiciones por nota — más que el artículo.
+MINIMO_PALABRAS = 100
 PALABRAS_DE_PARRAFO = 12   # un renglón más corto que esto es navegación, no prosa
 
 
@@ -49,8 +54,24 @@ def prosa(html):
     return '\n'.join(renglones)
 
 
-def urls_pre_corte(fuente, corte):
-    """Las URLs de artículos anteriores al corte, leídas del sitemap del sitio."""
+def sub_sitemaps_pre_corte(locs, patron_fecha, corte):
+    """Los sub-sitemaps cuyo nombre declara una fecha anterior al corte.
+
+    `corte` es una tupla (año, mes). Un sub-sitemap sin fecha en el nombre queda
+    afuera: el corpus entero se sostiene sobre la fecha de corte, y un documento
+    que no puede probar la suya vale menos que no tenerlo.
+    """
+    patron = re.compile(patron_fecha)
+    elegidos = []
+    for loc in locs:
+        m = patron.search(loc)
+        if m and (int(m.group(1)), int(m.group(2))) < corte:
+            elegidos.append(loc)
+    return elegidos
+
+
+def _urls_paginado(fuente, corte):
+    """Sitios cuyo sitemap se pagina y trae la fecha en la URL del artículo."""
     encontradas = []
     patron = re.compile(fuente['patron_anio'])
     desde, hasta = fuente['paginas']
@@ -64,7 +85,7 @@ def urls_pre_corte(fuente, corte):
             continue
         for url in re.findall(r'<loc>(.*?)</loc>', xml):
             m = patron.search(url)
-            if m and int(m.group(1)) < corte:
+            if m and int(m.group(1)) < corte[0]:
                 encontradas.append(url)
         sys.stderr.write('\r  sitemap p=%d — %d urls' % (pagina, len(encontradas)))
         time.sleep(PAUSA)
@@ -72,9 +93,111 @@ def urls_pre_corte(fuente, corte):
     return encontradas
 
 
+def _urls_indice(fuente, corte):
+    """Sitios con índice de sitemaps donde la fecha está en el nombre del archivo.
+
+    Es el caso más limpio: el filtro de fecha se aplica antes de bajar nada, así
+    que no se toca una sola URL posterior al corte.
+    """
+    indice = bajar(fuente['sitemap'])
+    subs = sub_sitemaps_pre_corte(re.findall(r'<loc>(.*?)</loc>', indice),
+                                  fuente['patron_fecha_sitemap'], corte)
+    sys.stderr.write('  %d sub-sitemaps anteriores al corte\n' % len(subs))
+    encontradas = []
+    for sub in subs:
+        time.sleep(PAUSA)
+        try:
+            xml = bajar(sub)
+        except (urllib.error.HTTPError, urllib.error.URLError) as e:
+            sys.stderr.write('  %s: %s\n' % (sub.rsplit('/', 1)[-1], e))
+            continue
+        encontradas += re.findall(r'<loc>(.*?)</loc>', xml)
+        sys.stderr.write('\r  %d urls' % len(encontradas))
+    sys.stderr.write('\n')
+    return encontradas
+
+
+UMBRAL_PLANTILLA = 0.2
+
+
+def quitar_plantilla(documentos, umbral=UMBRAL_PLANTILLA):
+    """Saca los renglones que se repiten en más de `umbral` de los documentos.
+
+    Un pie de página, un aviso de suscripción o un selector de edición aparecen
+    en todas las notas del sitio. Dejarlos adentro haría que el corpus midiera
+    la maquetación del diario en vez de cómo escribe la gente, y el renglón
+    repetido pesaría cien veces más que cualquier frase real.
+
+    En eldiarioAR es peor todavía: comparte plantilla con elDiario.es, así que
+    el texto de template viene en peninsular y ensuciaría justo el eje que mide
+    el registro.
+
+    Los documentos que quedan sin nada propio se descartan.
+    """
+    if not documentos:
+        return []
+    veces = collections.Counter()
+    for doc in documentos:
+        for renglon in set(doc.split('\n')):
+            veces[renglon] += 1
+    piso = max(2, int(len(documentos) * umbral))
+    plantilla = set(r for r, n in veces.items() if n >= piso)
+
+    limpios = []
+    for doc in documentos:
+        propios = [r for r in doc.split('\n') if r not in plantilla]
+        if propios:
+            limpios.append('\n'.join(propios))
+    return limpios
+
+
+def urls_pre_corte(fuente, corte):
+    """Las URLs de artículos anteriores al corte, leídas del sitemap del sitio."""
+    if fuente.get('modo') == 'indice':
+        return _urls_indice(fuente, corte)
+    return _urls_paginado(fuente, corte)
+
+
+def limpiar_cache(destino, prefijo):
+    """Aplica `quitar_plantilla` a los textos ya bajados de una fuente.
+
+    Va aparte de la descarga porque la plantilla solo se puede ver mirando el
+    conjunto: un renglón repetido no se distingue de prosa hasta que tenés los
+    otros cien documentos al lado.
+    """
+    nombres = sorted(n for n in os.listdir(destino)
+                     if n.startswith(prefijo) and n.endswith('.txt'))
+    if not nombres:
+        return
+    textos = [open(os.path.join(destino, n), encoding='utf-8').read() for n in nombres]
+    antes = sum(len(t.split()) for t in textos)
+
+    veces = collections.Counter()
+    for t in textos:
+        for r in set(t.split('\n')):
+            veces[r] += 1
+    piso = max(2, int(len(textos) * UMBRAL_PLANTILLA))
+    plantilla = set(r for r, n in veces.items() if n >= piso)
+
+    quedaron = 0
+    for nombre, texto in zip(nombres, textos):
+        propios = [r for r in texto.split('\n') if r not in plantilla]
+        ruta = os.path.join(destino, nombre)
+        if len(' '.join(propios).split()) < MINIMO_PALABRAS:
+            os.remove(ruta)
+            continue
+        with open(ruta, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(propios))
+        quedaron += 1
+    despues = sum(len(open(os.path.join(destino, n), encoding='utf-8').read().split())
+                  for n in os.listdir(destino) if n.startswith(prefijo))
+    print('  %s: %d renglones de plantilla fuera, %d→%d documentos, %d→%d palabras'
+          % (prefijo, len(plantilla), len(nombres), quedaron, antes, despues))
+
+
 def construir_humano(cuantos):
     config = json.load(open(os.path.join(AQUI, 'fuentes.json'), encoding='utf-8'))
-    corte = int(config['corte'][:4])
+    corte = (int(config['corte'][:4]), int(config['corte'][5:7]))
     destino = os.path.join(AQUI, 'humano', 'cache')
     if not os.path.isdir(destino):
         os.makedirs(destino)
@@ -110,6 +233,7 @@ def construir_humano(cuantos):
             guardados += 1
             sys.stderr.write('\r  %d/%d artículos' % (guardados, cuantos))
         sys.stderr.write('\n')
+        limpiar_cache(destino, fuente['nombre'].replace(' ', ''))
     return 0
 
 
@@ -197,6 +321,12 @@ def construir_ia(cuantos, en_paralelo=5):
 if __name__ == '__main__':
     args = sys.argv[1:]
     cuantos = int(args[1]) if len(args) > 1 else 60
+    if args and args[0] == '--limpiar':
+        config = json.load(open(os.path.join(AQUI, 'fuentes.json'), encoding='utf-8'))
+        destino = os.path.join(AQUI, 'humano', 'cache')
+        for fuente in config['fuentes']:
+            limpiar_cache(destino, fuente['nombre'].replace(' ', ''))
+        sys.exit(0)
     if args and args[0] == '--humano':
         sys.exit(construir_humano(cuantos))
     if args and args[0] == '--ia':

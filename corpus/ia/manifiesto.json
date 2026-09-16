@@ -96,5 +96,13 @@
     "prompt": "Escribí la página de preguntas frecuentes de un servicio de hosting.",
     "modelo": "claude (CLI)",
     "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "landing-00.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una inmobiliaria en Montevideo.",
+    "modelo": "claude (CLI)",
+    "palabras": 971,
+    "pegado_a_mano": false
   }
 ]

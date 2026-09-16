@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Tests del descubrimiento de URLs. La descarga en sí no se testea; el filtro
+de fecha sí, porque es lo único que garantiza que el corpus sea humano."""
+import os
+import sys
+import unittest
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import construir
+
+
+class TestSubSitemapsPreCorte(unittest.TestCase):
+
+    LOCS = [
+        'https://x.com/sitemap_contents_2022_11_a59a1_001.xml',
+        'https://x.com/sitemap_contents_2022_12_a59a1_001.xml',
+        'https://x.com/sitemap_contents_2023_01_a59a1_001.xml',
+        'https://x.com/sitemap_contents_2026_09_a59a1_001.xml',
+        'https://x.com/sitemap_news.xml',
+    ]
+    PATRON = r'_(\d{4})_(\d{2})_'
+
+    def test_deja_solo_los_anteriores_al_corte(self):
+        elegidos = construir.sub_sitemaps_pre_corte(self.LOCS, self.PATRON, (2023, 1))
+        self.assertEqual(len(elegidos), 2)
+        self.assertTrue(all('2022' in u for u in elegidos))
+
+    def test_descarta_los_que_no_tienen_fecha_en_el_nombre(self):
+        """Sin fecha no hay garantía de que sea humano, así que no entra.
+
+        El corpus se sostiene sobre la fecha de corte. Un documento que no
+        puede probar la suya vale menos que no tenerlo.
+        """
+        elegidos = construir.sub_sitemaps_pre_corte(self.LOCS, self.PATRON, (2023, 1))
+        self.assertNotIn('https://x.com/sitemap_news.xml', elegidos)
+
+    def test_el_corte_compara_tambien_el_mes(self):
+        elegidos = construir.sub_sitemaps_pre_corte(self.LOCS, self.PATRON, (2022, 12))
+        self.assertEqual(elegidos, ['https://x.com/sitemap_contents_2022_11_a59a1_001.xml'])
+
+
+class TestQuitarPlantilla(unittest.TestCase):
+    """Un renglón que se repite en muchos documentos es plantilla, no prosa.
+
+    Sin esto, el corpus mide el pie de página del diario en vez de cómo
+    escribe la gente. Y en el caso de eldiarioAR es peor: comparte template
+    con elDiario.es, así que la plantilla viene en peninsular y ensuciaría
+    justamente el eje que mide el registro.
+    """
+
+    def test_saca_el_renglon_que_aparece_en_casi_todos(self):
+        docs = ['%s\nSuscribite para seguir leyendo.' % t
+                for t in ('nota uno larga', 'nota dos larga', 'nota tres larga',
+                          'nota cuatro larga', 'nota cinco larga')]
+        limpios = construir.quitar_plantilla(docs, umbral=0.2)
+        self.assertTrue(all('Suscribite' not in d for d in limpios))
+        self.assertIn('nota uno larga', limpios[0])
+
+    def test_no_saca_un_renglon_que_aparece_en_un_solo_documento(self):
+        docs = ['propio de esta nota', 'otra cosa', 'otra más', 'y otra', 'y otra más']
+        limpios = construir.quitar_plantilla(docs, umbral=0.2)
+        self.assertIn('propio de esta nota', limpios[0])
+
+    def test_descarta_los_documentos_que_quedan_vacios(self):
+        docs = ['solo plantilla', 'solo plantilla', 'algo propio\nsolo plantilla']
+        limpios = construir.quitar_plantilla(docs, umbral=0.5)
+        self.assertEqual(limpios, ['algo propio'])
+
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
