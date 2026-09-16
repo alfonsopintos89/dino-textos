@@ -89,7 +89,7 @@ GRUPOS_REGISTRO = ('pronombres', 'imperativos', 'lexico_peninsular')
 LEXICO_RAIZ = [
     'potenciar', 'optimizar', 'revolucionar', 'transformador', 'robusto',
     'holístico', 'sinergia', 'empoderar', 'desbloquear', 'inigualable',
-    'vanguardia', 'meticuloso', 'maximizar', 'impulsar', 'innovador',
+    'vanguardia', 'meticuloso', 'maximizar', 'innovador',
     'disruptivo', 'escalable', 'sofisticado', 'excepcional', 'inmersivo',
 ]
 
@@ -106,7 +106,7 @@ LEXICO_EXACTO = [
 
 SUFIJOS = (r'(?:a|as|o|os|e|es|an|en|ar|ado|ada|ados|adas|ando|amos|'
            r'ación|aciones|ador|adora|adores|adoras|able|ables|'
-           r'ico|ica|icos|icas|ario|aria|arios|arias|mente|'
+           r'ico|ica|icos|icas|mente|'
            r'ó|é|aron|aba|aban|ará|arán|aría|arían)?')
 
 
@@ -171,25 +171,52 @@ RAYA_INGLESA = re.compile(r'\S—\S')
 # lo cierra. El umbral está en cuatro, que ya son dos incisos apilados.
 RAYAS_POR_ORACION = 4
 
-# Tres ítems seguidos donde el tercero cierra la cláusula. Si el tercero sigue de
-# largo — «inspección, reparación y reemplazo para casas y comercios» — es una
-# lista de servicios reales, no un ritmo, y marcarla es llorar lobo.
-RITMO = re.compile(r'\b(\w{4,}),\s+(\w{4,})\s+[ye]\s+(\w{4,})\s*[.!?,;:\n]')
+# Tres ítems donde el tercero cierra la cláusula Y la enumeración abre la oración.
+#
+# Esa segunda condición la enseñó el corpus. En español `X, Y y Z` es simplemente
+# cómo se enumeran tres cosas, y la forma sola no distingue un tricolon retórico
+# de una lista común: sobre prensa rioplatense pre-2023 marcaba el 7,8% de las
+# notas con cosas como «políticos, empresarios y periodistas». El tricolon de
+# copy abre la oración — `Rápido, simple y confiable.` —, la enumeración de una
+# nota va enganchada adentro de una frase más larga. Los ítems además tienen que
+# arrancar con letra, que es lo que deja afuera «2010, 2011 y 2012».
+RITMO = re.compile(
+    r'(?:^|(?<=[.!?])\s+)'
+    r'([^\W\d]\w{3,}),\s+([^\W\d]\w{3,})\s+[ye]\s+([^\W\d]\w{3,})\s*[.!?,;:\n]',
+    re.M)
 
-# Prueba inventada, con el número escrito como se escribe en español: el punto
-# separa los miles y la coma es el decimal. El patrón en inglés lee `10,000` y
-# acá no vería absolutamente nada.
+# Prueba inventada. Dos cosas la definen, y el corpus enseñó la segunda.
+#
+# La primera es el número escrito como se escribe en español: el punto separa los
+# miles y la coma es el decimal. El patrón en inglés lee `10,000` y acá no vería
+# nada.
+#
+# La segunda es el marco de venta. Un número al lado de un sustantivo de persona
+# NO alcanza: un diario cuenta gente todo el tiempo, y sobre prensa rioplatense
+# pre-2023 la versión sin marco marcaba el 3,5% de las notas con frases como
+# «concurrían unos 250 estudiantes». Lo que convierte al número en prueba es el
+# marco que lo rodea: un signo +, un adjetivo de campaña, un posesivo, o un verbo
+# que dice que esa gente ya eligió.
+_NUMERO = r'(?:\d{1,3}(?:\.\d{3})+|\d+)(?:,\d+)?'
+_PERSONA = (r'(?:usuarios?|clientes?|alumnos?|estudiantes?|equipos?|miembros?'
+            r'|empresas?|negocios?|propietarios?|suscriptores?|pacientes?'
+            r'|lectores?|marcas?|profesionales?|personas?|familias?|emprendedores?)')
+_CAMPANA = r'(?:felices|satisfech[oa]s|activos|verificados|contentos|encantados)'
+_YA_ELIGIERON = (r'(?:ya\b|confían|nos eligen|nos eligieron|eligieron|se sumaron'
+                 r'|nos acompañan|nos prefieren)')
+
 PRUEBA = re.compile(
-    r'(?:\+\s?)?(?:\d{1,3}(?:\.\d{3})+|\d+)(?:,\d+)?\s*\+?\s*'
-    r'(?:(?:felices|satisfechos|satisfechas|activos|activas|verificados|contentos)\s+)?'
-    r'(?:\w+\s+){0,1}'
-    r'(?:usuarios?|clientes?|alumnos?|estudiantes?|equipos?|miembros?|empresas?'
-    r'|negocios?|propietarios?|suscriptores?|pacientes?|lectores?|marcas?'
-    r'|profesionales?|personas?|familias?|emprendedores?)'
-    r'(?!\w)', re.I)
+    r'\+\s?' + _NUMERO + r'\s*' + _PERSONA + r'(?!\w)'
+    r'|' + _NUMERO + r'\s*\+\s*' + _PERSONA + r'(?!\w)'
+    r'|' + _NUMERO + r'\s*(?:\w+\s+)?' + _PERSONA + r'\s+' + _CAMPANA + r'(?!\w)'
+    r'|(?:nuestros?|nuestras?)\s+' + _NUMERO + r'\s*' + _PERSONA + r'(?!\w)'
+    r'|' + _NUMERO + r'\s*' + _PERSONA + r'\s+' + _YA_ELIGIERON,
+    re.I)
 
 SUPERLATIVOS = [
-    (r'\b(?:los|las) más \w+\b', 'superlativo que nadie puede chequear'),
+    (r'\b(?:los|las) más (?:confiables?|elegid[oa]s|vendid[oa]s|complet[oa]s'
+     r'|recomendad[oa]s|buscad[oa]s|usad[oa]s|valorad[oa]s)\b',
+     'superlativo que nadie puede chequear'),
     (r'\bl[íi]der(?:es)? (?:en|del|de la)\b', '«líderes en»'),
     (r'\bla mejor opción\b|\bel más completo\b|\bla más completa\b',
      'superlativo que nadie puede chequear'),

@@ -13,6 +13,9 @@ exactamente la diferencia que este archivo existe para marcar.
 CANDIDATOS = [
     # Léxico: palabras que suenan a modelo pero también son español corriente.
     # La sospecha es fuerte; la evidencia, ninguna todavía.
+    # Salió del scorer: marcaba el 2,0% de la prensa humana, porque `impulso` y
+    # `impulsó` son palabras corrientes en prosa política.
+    ('lexico', 'impulsar', r'(?<!\w)impuls(?:a|o|ar|ando|amos|an|ado|ó|aron|ará)(?!\w)'),
     ('lexico', 'aprovechar', r'(?<!\w)aprovech(?:a|ar|ando|amos|an|ado)(?!\w)'),
     ('lexico', 'fomentar', r'(?<!\w)foment(?:a|ar|ando|amos|an|ado)(?!\w)'),
     ('lexico', 'ecosistema', r'(?<!\w)ecosistemas?(?!\w)'),

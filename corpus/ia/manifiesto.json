@@ -1,0 +1,100 @@
+[
+  {
+    "archivo": "landing-01.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para un estudio contable en Rosario.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "landing-02.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de la home de una app de delivery uruguaya.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "landing-03.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una empresa de paneles solares.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "landing-04.txt",
+    "genero": "landing",
+    "prompt": "Escribí el copy de una landing para una clínica odontológica.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "posteo-00.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de blog sobre cómo elegir un proveedor de software.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "posteo-01.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un artículo sobre el mercado inmobiliario uruguayo para un blog.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "posteo-02.txt",
+    "genero": "posteo",
+    "prompt": "Escribí una newsletter para clientes de una agencia de marketing.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "posteo-03.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un posteo de blog sobre productividad para equipos remotos.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "posteo-04.txt",
+    "genero": "posteo",
+    "prompt": "Escribí un artículo sobre inteligencia artificial para un público general.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "producto-00.txt",
+    "genero": "producto",
+    "prompt": "Escribí el README de una librería de JavaScript para manejar fechas.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "producto-01.txt",
+    "genero": "producto",
+    "prompt": "Escribí la documentación de onboarding de una app de facturación.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "producto-02.txt",
+    "genero": "producto",
+    "prompt": "Escribí los textos de interfaz de un panel de control de una app de gestión.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "producto-03.txt",
+    "genero": "producto",
+    "prompt": "Escribí las notas de la versión 2.0 de una app de gestión de stock.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  },
+  {
+    "archivo": "producto-04.txt",
+    "genero": "producto",
+    "prompt": "Escribí la página de preguntas frecuentes de un servicio de hosting.",
+    "modelo": "claude (CLI)",
+    "fecha": "2026-09-16"
+  }
+]

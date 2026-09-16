@@ -334,5 +334,61 @@ class TestCLI(unittest.TestCase):
         self.assertIn('registro', salida)
 
 
+class TestFalsosPositivosDelCorpus(unittest.TestCase):
+    """Especímenes reales del corpus humano que el scorer marcaba mal.
+
+    Cada uno viene de una nota de la diaria anterior a 2023, así que es humano
+    por construcción. Son la razón por la que estas tres reglas cambiaron.
+    """
+
+    def test_no_marca_una_enumeracion_comun_como_ritmo_de_tres(self):
+        """En español `X, Y y Z` es simplemente cómo se enumeran tres cosas.
+
+        La forma sola no distingue una enumeración de un tricolon retórico.
+        Lo que sí lo distingue es que el tricolon de copy abre la oración.
+        """
+        for frase in ('El encuentro reunió a políticos, empresarios y periodistas.',
+                      'Recorrió Francia, España e Italia, y volvió en marzo.',
+                      'Ganó las tablas, el anual y el clausura.'):
+            h = dino.auditar(frase)
+            self.assertEqual(h['slop']['ritmo'], [], frase)
+
+    def test_no_marca_los_anios_como_ritmo_de_tres(self):
+        h = dino.auditar('Pasó en 2010, 2011 y 2012.')
+        self.assertEqual(h['slop']['ritmo'], [])
+
+    def test_no_marca_periodismo_que_cuenta_gente(self):
+        """Un diario cuenta personas todo el tiempo. La prueba inventada no es
+
+        un número al lado de un sustantivo: es un número al lado de un
+        sustantivo dentro de un marco de venta.
+        """
+        for frase in ('A la institución concurrían unos 250 estudiantes.',
+                      'En ella trabajaban 104 personas.',
+                      'Dan clase a unas 5.000 personas en cinco escuelas.',
+                      'Investigaban la muerte de 43 estudiantes en Guerrero.'):
+            h = dino.auditar(frase)
+            self.assertEqual(h['slop']['venta'], [], frase)
+
+    def test_sigue_marcando_la_prueba_con_marco_de_venta(self):
+        for frase in ('Más de 10.000 clientes felices.',
+                      '+5.000 usuarios ya confían en nosotros.',
+                      'Nuestros 300 clientes lo usan todos los días.'):
+            h = dino.auditar(frase)
+            self.assertTrue(h['slop']['venta'], frase)
+
+    def test_no_marca_los_mas_de_como_superlativo(self):
+        """`los más de 5.000` es una cantidad, no un superlativo. El patrón
+
+        `los más \w+` la leía como si fuera «los más confiables».
+        """
+        h = dino.auditar('Asistieron los más de 5.000 socios convocados.')
+        self.assertEqual(h['slop']['venta'], [])
+
+    def test_no_marca_un_superlativo_descriptivo(self):
+        h = dino.auditar('Los más afectados fueron los barrios de la costa.')
+        self.assertEqual(h['slop']['venta'], [])
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

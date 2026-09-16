@@ -22,7 +22,7 @@ la prosa. El objetivo es el estómago de un lector que este mes leyó mil párra
 
 Cuatro cosas rompen al portar el catálogo inglés, y cada una obliga a rediseñar la regla:
 
-1. **El tell número uno del copy en español no es una palabra, es un imperativo.** Todo lo
+1. **El tell más ruidoso del copy en español no es una palabra, es un imperativo.** Todo lo
    que genera un modelo dice `Descubre nuestra plataforma`, `Prueba gratis`, `Regístrate`.
    Pero `descubre` y `prueba` también son tercera persona del indicativo y sustantivo:
    *el equipo conoce el rubro*, *la prueba de que funciona*. Un patrón ingenuo marca texto

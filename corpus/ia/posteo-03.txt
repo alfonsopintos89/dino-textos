@@ -1,0 +1,73 @@
+# La espera es la parte cara
+
+Casi todo lo que se escribe sobre productividad remota habla del día de una persona sola. Bloques de foco, notificaciones apagadas, la cámara prendida o apagada, un ritual de arranque a las nueve. Son consejos razonables. A mí me sirvieron.
+
+Pero si el equipo está repartido entre Montevideo, Madrid y alguien en Vancouver que se levanta cuando vos ya cenaste, tu mañana importa poco. Lo que manda es el tiempo muerto entre que preguntás algo y alguien contesta.
+
+Hacé la cuenta con una tarea cualquiera. Te sentás, avanzás cuarenta minutos, te chocás con una duda que no podés resolver solo. Preguntás en el canal. La única persona que sabe está durmiendo. Agarrás otra cosa, perdés el hilo de la primera, volvés al otro día y encontrás la respuesta esperándote: "¿a qué caso te referís?". Otra vuelta. Dos días para algo que en una oficina eran noventa segundos girando la silla.
+
+El trabajo no tardó dos días. La espera tardó dos días. Y la espera no se arregla concentrándose mejor.
+
+## Contá vueltas, no horas
+
+Probá esto una semana. Agarrá una tarea que se te haya hecho eterna y contá cuántas veces tuviste que esperar a otro ser humano para poder seguir. No cuántas horas le pusiste. Cuántas vueltas.
+
+Casi siempre son dos o tres. Y casi siempre, por lo menos una era evitable.
+
+Una tarea de tres vueltas tarda tres noches, aunque el trabajo de verdad sean dos horas. Bajarla a una vuelta la termina el mismo día. No hay técnica de foco que se le acerque ni de lejos.
+
+## Escribí la pregunta con la respuesta adentro
+
+La mayoría de las preguntas que mandamos obligan al otro a escribir de vuelta solamente para entender qué le estamos preguntando. Esa segunda vuelta es gratis de evitar.
+
+Esto genera dos vueltas:
+
+> che, ¿cómo manejamos los reembolsos parciales?
+
+Esto genera cero:
+
+> Estoy con el reembolso parcial de la orden 4471. Miré el código viejo y trata el parcial como si fuera total, que me parece un bug. Mi plan es dejar el crédito abierto y descontarlo en la compra siguiente. Si no me decís nada antes del jueves a las 10, lo hago así.
+
+Escribirlo cuesta dos minutos más. A cambio, le sacás al otro la obligación de reconstruir el contexto, de adivinar qué querés y de acordarse de contestarte, porque tu mensaje ya avisa qué pasa si no contesta.
+
+Ese último renglón hace casi todo el trabajo. Una pregunta abierta necesita que alguien esté disponible. Una propuesta con fecha necesita que alguien esté en desacuerdo, y el desacuerdo es bastante menos frecuente que el silencio.
+
+## Poné fecha en lugar de esperar consenso
+
+Los equipos remotos se cuelgan en decisiones que en una oficina se resolvían caminando hasta un escritorio. Nadie quiere pasar por encima de nadie, así que el hilo queda abierto, junta emojis y se muere sin que nadie lo cierre.
+
+Ponele fecha a las decisiones chicas. El que la propuso la ejecuta si nadie objeta antes de esa fecha. Si después a alguien no le cierra, se cambia. Casi todas estas decisiones son baratas de revertir y carísimas de esperar.
+
+Las decisiones grandes son otra cosa y merecen su reunión. El problema es que tratamos a las chicas como si fueran grandes.
+
+## La reunión es cara, pero existe
+
+El purismo asincrónico también fracasa, y fracasa peor porque cuesta admitirlo. Hay conversaciones que por escrito llevan cuatro días y habladas llevan veinte minutos. Cuando dos personas escriben párrafos largos sin moverse un centímetro de su posición, lo que falta es una llamada, no otro párrafo.
+
+La diferencia está en para qué se convoca. Una reunión para desatrancar un hilo específico vale lo que cuesta. Una reunión semanal donde cada uno cuenta en qué anda es un informe escrito, con pasos de más.
+
+## Guardá lo que descartaste
+
+Los equipos que documentan decisiones casi siempre guardan la conclusión. "Vamos con Postgres." Perfecto.
+
+Dos meses después entra alguien nuevo, mira eso y pregunta por qué no usaron algo más liviano. Y no queda nadie que se acuerde bien. Se reabre la discusión entera, con las mismas opciones de la primera vez, y se llega adonde ya se había llegado después de gastar una semana.
+
+Lo caro de una decisión es todo lo que miraste y tiraste para llegar a ella. La conclusión es la parte barata. Escribí lo otro: qué opciones había, por qué se cayó cada una, qué tendría que cambiar para volver a mirarla. Con dos párrafos alcanza.
+
+## Lo que no funciona
+
+Las reglas de horario compartido suenan bien y terminan mal. Definís una ventana de solapamiento obligatorio, y lo que conseguís es que todos acumulen preguntas para esa ventana. La ventana se llena de llamadas y el resto del día queda igual de bloqueado que antes.
+
+Lo que sí funciona es lo contrario. Asumir que nadie está disponible nunca y escribir en consecuencia. Cuando las preguntas salen bien escritas, el solapamiento importa mucho menos.
+
+Y hay una parte que no tengo resuelta. Las conversaciones que no son sobre trabajo, la charla al pasar, el chiste, enterarte de que alguien está quemado antes de que lo diga, no encontré manera de volverlas asincrónicas. Lo único que me funcionó es llamar por teléfono sin agenda, y eso no aguanta un equipo grande.
+
+Si alguien lo resolvió, escribime. Esa la sigo debiendo.
+
+---
+
+Tres notas sueltas, ya fuera del texto:
+
+- Escribí el post siguiendo el `SKILL.md` de este repo (voseo, sin léxico de IA, sin prueba inventada), pero **no pude correr `tools/dino.py` para puntuarlo**: la ejecución de `python3` quedó sin aprobación en esta sesión. Verifiqué a mano y con un grep contra las listas de `referencias/`, que dio limpio, pero eso no reemplaza al linter. El archivo está en `/private/tmp/claude-501/.../scratchpad/post.md` si querés puntuarlo vos.
+- El post va en primera persona y cuenta experiencia propia (la ventana de solapamiento que no funcionó, el teléfono sin agenda). Eso no lo saqué de ningún lado: cambialo por lo que le pasó a tu equipo antes de publicarlo, o sacá la sección.
+- La orden `4471` es de ejemplo.
