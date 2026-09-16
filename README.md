@@ -99,6 +99,11 @@ el número inventado que este proyecto dice no hacer.
 Lo que el corpus sí demostró es lo otro, y no es poco: que ninguna de estas reglas marca
 prosa rioplatense escrita por personas. Un linter que llora lobo se apaga a la semana.
 
+## Una corrida entera
+
+Una landing de estudio contable, de 0/5 y 2/3 a 5/5 y 3/3, con el antes, el después y el
+motivo de cada cambio: [`ejemplos/estudio-contable.md`](ejemplos/estudio-contable.md).
+
 ## Arrancar
 
 ```bash
@@ -161,6 +166,7 @@ corpus/verificar_falsos_positivos.py  el scorer contra el corpus humano entero
 referencias/senales-ia-espanol.md     el catálogo del eje slop
 referencias/registro-rioplatense.md   el catálogo del eje registro
 referencias/fuentes.md                de dónde sale cada número, rechazos incluidos
+ejemplos/estudio-contable.md          una corrida entera, 0/5 → 5/5
 .github/workflows/dino.yml            el gate
 docs/superpowers/specs/               el diseño
 ```
