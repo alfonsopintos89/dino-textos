@@ -13,17 +13,21 @@ class TestVeredicto(unittest.TestCase):
 
     def test_admite_lo_que_es_mucho_más_frecuente_en_texto_de_ia(self):
         v = calibrar.veredicto(apariciones_ia=40, por_10k_ia=8.0, por_10k_humano=0.5,
-                               docs_humanos_tocados=0.01)
+                               docs_humanos_tocados=0.003)
         self.assertEqual(v.estado, 'admitido')
 
     def test_rechaza_lo_que_tambien_escriben_los_humanos(self):
         """Ratio de 2x no alcanza. Si la gente también lo escribe, no es un tell."""
         v = calibrar.veredicto(apariciones_ia=40, por_10k_ia=4.0, por_10k_humano=2.0,
-                               docs_humanos_tocados=0.01)
+                               docs_humanos_tocados=0.003)
         self.assertEqual(v.estado, 'rechazado')
 
     def test_rechaza_lo_que_dispara_sobre_texto_humano(self):
-        """Aunque el ratio dé, si marca uno de cada diez textos humanos llora lobo."""
+        """Aunque el ratio dé, si marca uno de cada diez textos humanos llora lobo.
+
+        El techo sale del piso que se le pide al scorer entero, dividido por
+        cuántos patrones tiene el catálogo. No es un número aparte.
+        """
         v = calibrar.veredicto(apariciones_ia=40, por_10k_ia=50.0, por_10k_humano=0.4,
                                docs_humanos_tocados=0.10)
         self.assertEqual(v.estado, 'rechazado')
@@ -51,7 +55,7 @@ class TestVeredicto(unittest.TestCase):
         es opcional.
         """
         v = calibrar.veredicto(apariciones_ia=40, por_10k_ia=4.0, por_10k_humano=2.0,
-                               docs_humanos_tocados=0.01)
+                               docs_humanos_tocados=0.003)
         self.assertIn('2.0', v.motivo)
 
 

@@ -87,10 +87,9 @@ GRUPOS_REGISTRO = ('pronombres', 'imperativos', 'lexico_peninsular')
 # se escribe conjugado y con género, así que matchear la forma exacta se pierde
 # la superficie más común de todas: `Acme potencia tu negocio`.
 LEXICO_RAIZ = [
-    'potenciar', 'optimizar', 'revolucionar', 'transformador', 'robusto',
+    'optimizar', 'transformador', 'robusto',
     'holístico', 'sinergia', 'empoderar', 'desbloquear', 'inigualable',
-    'vanguardia', 'meticuloso', 'maximizar', 'innovador',
-    'disruptivo', 'escalable', 'sofisticado', 'excepcional', 'inmersivo',
+    'vanguardia', 'meticuloso', 'maximizar', 'disruptivo', 'escalable', 'sofisticado', 
 ]
 
 # Frases hechas y palabras que solo son tell en su forma exacta. Van enteras
@@ -98,10 +97,21 @@ LEXICO_RAIZ = [
 # marcarla sería llorar lobo, pero `un viaje de transformación` no lo es.
 LEXICO_EXACTO = [
     'experiencia única', 'de última generación', 'en constante evolución',
-    'en el mundo actual', 'en la era digital', 'sin precedentes',
-    'de vanguardia', 'soluciones integrales', 'el poder de',
-    'un viaje de', 'el mundo de hoy', 'a otro nivel', 'sin fisuras',
+    'en el mundo actual', 'en la era digital', 'de vanguardia', 'soluciones integrales', 'un viaje de', 'el mundo de hoy', 'a otro nivel', 'sin fisuras',
     'de primer nivel', 'de clase mundial', 'nuestra propuesta de valor',
+]
+
+# Palabras cuya raíz choca con un sustantivo corriente y necesitan patrón propio.
+# `potenciar` es el caso: la raíz `potenci` caza también `potencia` y `potencias`,
+# que en prosa política son las grandes potencias y no tienen nada que ver con el
+# verbo. Sobre 355.386 palabras de prensa rioplatense, la versión por raíz marcaba
+# el 4,1% de los textos. Acá van solo las formas inequívocamente verbales, más la
+# tercera persona cuando arrastra un objeto — `potencia tu marca` —, que es la
+# superficie que el copy usa de verdad.
+LEXICO_PATRON = [
+    (r'(?<!\w)potenci(?:ar|ando|ad[oa]s?|amos|an|ará|arán|aría|arían|aron)(?!\w)'
+     r'|(?<!\w)potencia(?=\s+(?:tu|su|tus|sus|el|la|los|las|nuestr[oa]s?)\b)',
+     'potenciar'),
 ]
 
 SUFIJOS = (r'(?:a|as|o|os|e|es|an|en|ar|ado|ada|ados|adas|ando|amos|'
@@ -134,8 +144,12 @@ def _patron_raiz(palabra):
 
 
 CONSTRUCCIONES = [
-    (r'\bno\s+(?:solo|sólo|solamente|únicamente)\b[^.!?]{0,80}\bsino\b',
-     'la forma «no solo X, sino Y»'),
+    # `no solo X, sino Y` NO está acá, y es el hallazgo más fuerte del proyecto.
+    # Es la forma insignia del catálogo inglés y en español no transfiere: es un
+    # correlativo gramatical corriente, no un tic de marketing. Sobre 355.386
+    # palabras de prensa rioplatense marcaba el 8,6% de los textos, con frases
+    # como «advertido no solo por ecologistas sino por organismos como el BCE».
+    # Está medida y rechazada en referencias/fuentes.md.
     (r'\bno se trata (?:solo |sólo )?de\b[^.!?]{0,80}[,.]\s*(?:es|sino|se trata)',
      'la forma «no se trata de X, es Y»'),
     (r'\bah[íi] es donde entra\b', '«ahí es donde entra X»'),
@@ -144,28 +158,27 @@ CONSTRUCCIONES = [
     (r'\bimagin[áa] (?:un|una|el|la|por un momento)\b', 'el arranque «imaginá un…»'),
     (r'¿\s*(?:el|la|lo)\s+(?:resultado|respuesta|clave|consecuencia|mejor)\s*\?',
      'pregunta que el propio texto contesta'),
-    (r'\ben (?:conclusión|resumen|definitiva)\b|\bpara resumir\b',
-     'cierre de redacción escolar'),
-    (r'\bcuando se trata de\b', 'relleno «cuando se trata de»'),
     (r'\bcabe (?:destacar|señalar|mencionar)\b|\bes importante (?:señalar|destacar|notar)\b'
      r'|\bvale la pena mencionar\b', 'carraspeo antes de la idea'),
-    (r'\bla clave está en\b|\bla verdad es que\b', 'arranque de carraspeo'),
     (r'\bte ayuda a\b|\bpuede ayudar(?:te|lo|la) a\b', 'beneficio con pinzas'),
     (r'\bpodría potencialmente\b|\bquizás posiblemente\b|\bpuede llegar a poder\b',
      'dudas apiladas'),
     (r'\bal siguiente nivel\b', '«llevá tu X al siguiente nivel»'),
     (r'\btodo lo que necesit[áa]s saber\b', '«todo lo que necesitás saber sobre»'),
     (r'\ben un mundo cada vez más\b', 'arranque de posteo genérico'),
-    (r'¿\s*list[oa]s?\s+para\s+(?:empezar|comenzar)\s*\?|\bempecemos\b',
-     'llamada a la acción de plantilla'),
     (r'\bdescubr[íie] cómo\b', '«descubrí cómo»'),
-    (r'\bmás que (?:un|una)\b[^.!?]{0,40}[,.]', 'la forma «más que un X»'),
 ]
 
 # La raya al modo inglés: sin espacio de ninguno de los dos lados. En español el
-# inciso abre con espacio afuera y cierra con espacio afuera, así que `\S—\S` es
-# calco directo y no puede confundirse con un inciso bien escrito.
-RAYA_INGLESA = re.compile(r'\S—\S')
+# inciso abre con espacio afuera y cierra con espacio afuera, así que pegada de
+# los dos lados es calco directo.
+#
+# Con una excepción que el corpus enseñó, y que valía el 1,5% de los textos
+# humanos: cuando el inciso cierra al final de la oración, la puntuación va
+# pegada afuera de la raya — «de gobierno corporativo —en ese orden—.». Eso es
+# español correcto, así que ni la puntuación de cierre ni la de apertura cuentan
+# como «palabra pegada».
+RAYA_INGLESA = re.compile(r'[^\s(¡¿“"\[]—[^\s.,;:!?)\]”"]')
 
 # Dos rayas en una oración es lo NORMAL en español: una abre el inciso y la otra
 # lo cierra. El umbral está en cuatro, que ya son dos incisos apilados.
@@ -217,7 +230,9 @@ SUPERLATIVOS = [
     (r'\b(?:los|las) más (?:confiables?|elegid[oa]s|vendid[oa]s|complet[oa]s'
      r'|recomendad[oa]s|buscad[oa]s|usad[oa]s|valorad[oa]s)\b',
      'superlativo que nadie puede chequear'),
-    (r'\bl[íi]der(?:es)? (?:en|del|de la)\b', '«líderes en»'),
+    # `del` y `de la` salieron: cazaban `el líder de la asociación bancaria`, que
+    # es una persona. Marcaba el 4,9% de la prensa humana.
+    (r'\bl[íi]der(?:es)? en\b', '«líderes en»'),
     (r'\bla mejor opción\b|\bel más completo\b|\bla más completa\b',
      'superlativo que nadie puede chequear'),
     (r'\bnúmero uno (?:en|del)\b', '«número uno en»'),
@@ -251,6 +266,10 @@ def auditar(texto):
         n = len(re.findall(r'(?<!\w)%s(?!\w)' % re.escape(frase), bajo))
         if n:
             slop['lexico'].append((frase, n))
+    for patron, etiqueta in LEXICO_PATRON:
+        n = len(re.findall(patron, bajo))
+        if n:
+            slop['lexico'].append((etiqueta, n))
 
     for patron, etiqueta in CONSTRUCCIONES:
         n = len(re.findall(patron, bajo))

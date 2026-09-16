@@ -32,14 +32,12 @@ $ python3 tools/dino.py borrador.md
 
 ── slop
   léxico de IA:
-    · potenciar  (1)
     · robusto  (1)
     · vanguardia  (1)
     · en el mundo actual  (1)
     · de vanguardia  (1)
     · soluciones integrales  (1)
   construcciones de IA:
-    · la forma «no solo X, sino Y»  (1)
     · pregunta que el propio texto contesta  (1)
     · «llevá tu X al siguiente nivel»  (1)
     · «descubrí cómo»  (1)
@@ -102,9 +100,12 @@ $ echo $?
 
 ## Qué pasó, línea por línea
 
-**`aliado estratégico` se fue y no vino nada en su lugar.** La forma
-~~no solo X, sino Y~~ promete una revelación y entrega una abstracción. Sacarla no dejó un
-hueco: dejó una oración menos.
+**`aliado estratégico` se fue y no vino nada en su lugar.** La oración entera prometía una
+revelación y entregaba una abstracción. Sacarla no dejó un hueco: dejó una oración menos.
+
+Vale la pena aclarar que el linter **no** marcó su `no solo X, sino Y`. En inglés esa forma
+es el tell más ruidoso que existe; en español es gramática corriente y la regla está medida
+y rechazada. Acá la línea se cayó por no decir nada, no por su forma.
 
 **`500 clientes felices` se convirtió en `[falta dato]`.** Es la regla dura del proyecto.
 Nadie sabía si eran quinientos, y decir que el casillero está vacío se lee como confianza.

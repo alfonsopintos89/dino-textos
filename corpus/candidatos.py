@@ -11,6 +11,25 @@ exactamente la diferencia que este archivo existe para marcar.
 """
 
 CANDIDATOS = [
+    # Bajados del scorer por el corpus de 592 documentos. El número al lado es
+    # la fracción de prensa rioplatense humana que marcaban. Todos resultaron
+    # español corriente, no tells: el catálogo inglés no transfiere tan directo
+    # como parecía.
+    ('lexico', 'excepcional  [1,86%]', r'(?<!\w)excepcional(?:es)?(?!\w)'),
+    ('lexico', 'innovador  [0,84%]', r'(?<!\w)innovador(?:a|es|as)?(?!\w)'),
+    ('lexico', 'el poder de  [0,84%]', r'(?<!\w)el poder de(?!\w)'),
+    ('lexico', 'sin precedentes  [0,68%]', r'(?<!\w)sin precedentes(?!\w)'),
+    ('lexico', 'revolucionar  [0,68%]', r'(?<!\w)revolucion(?:ar|a|an|ando|ado|aria|arias|ario|arios)(?!\w)'),
+    ('lexico', 'inmersivo  [0,51%]', r'(?<!\w)inmersiv[oa]s?(?!\w)'),
+    ('construcciones', 'cierre de redacción escolar  [1,35%]',
+     r'\ben (?:conclusión|resumen|definitiva)\b|\bpara resumir\b'),
+    ('construcciones', 'cuando se trata de  [0,84%]', r'\bcuando se trata de\b'),
+    ('construcciones', 'la clave está en  [0,84%]',
+     r'\bla clave está en\b|\bla verdad es que\b'),
+    ('construcciones', 'llamada a la acción de plantilla  [0,51%]',
+     r'¿\s*list[oa]s?\s+para\s+(?:empezar|comenzar)\s*\?|\bempecemos\b'),
+    ('construcciones', 'más que un X  [0,51%]', r'\bmás que (?:un|una)\b[^.!?]{0,40}[,.]'),
+
     # Léxico: palabras que suenan a modelo pero también son español corriente.
     # La sospecha es fuerte; la evidencia, ninguna todavía.
     # Salió del scorer: marcaba el 2,0% de la prensa humana, porque `impulso` y
@@ -29,6 +48,11 @@ CANDIDATOS = [
     ('lexico', 'hoy en día', r'(?<!\w)hoy en día(?!\w)'),
     ('lexico', 'sin duda', r'(?<!\w)sin duda(?!\w)'),
     ('lexico', 'sumergirse en', r'(?<!\w)sumerg(?:irse|ite|ete) en(?!\w)'),
+
+    # La forma insignia del catálogo inglés. Rechazada por el corpus: 8,6% de los
+    # textos humanos. En español es gramática, no estilo.
+    ('construcciones', 'la forma «no solo X, sino Y»',
+     r'\bno\s+(?:solo|sólo|solamente|únicamente)\b[^.!?]{0,80}\bsino\b'),
 
     # Construcciones: conectores de redacción formal. Un modelo los apila; una
     # persona escribiendo para la web casi no los usa. Eso dice la sospecha.

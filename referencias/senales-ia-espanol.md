@@ -19,19 +19,24 @@ Dos listas que funcionan distinto.
 forma más común de la palabra, y matchear la forma exacta se la pierde entera. Así que
 `potenciar` caza también `potenciamos`, `potenciada`, `potenciando` y `potenciación`.
 
-La lista: `potenciar`, `optimizar`, `revolucionar`, `transformador`, `robusto`,
-`holístico`, `sinergia`, `empoderar`, `desbloquear`, `inigualable`, `vanguardia`,
-`meticuloso`, `maximizar`, `impulsar`, `innovador`, `disruptivo`, `escalable`,
-`sofisticado`, `excepcional`, `inmersivo`.
+La lista: `optimizar`, `transformador`, `robusto`, `holístico`, `sinergia`, `empoderar`,
+`desbloquear`, `inigualable`, `vanguardia`, `meticuloso`, `maximizar`, `disruptivo`,
+`escalable`, `sofisticado`.
+
+`potenciar` está aparte, con patrón propio, y el motivo enseña algo. La raíz `potenci` caza
+también `potencia` y `potencias`, que en prosa política son ~~las grandes potencias
+occidentales~~ y no tienen nada que ver con el verbo: así marcaba el 4,1% de la prensa
+humana. Ahora entran solo las formas inequívocamente verbales, más la tercera persona cuando
+arrastra objeto — `potencia tu marca` —, que es la superficie que el copy usa de verdad.
 
 **Exactas.** Frases hechas, y palabras que solo son tell en una forma precisa. Van enteras
 porque la raíz cazaría el uso corriente: `viaje` es una palabra común y marcarla sería
 llorar lobo, pero `un viaje de` transformación no lo es.
 
 La lista: `experiencia única`, `de última generación`, `en constante evolución`,
-`en el mundo actual`, `en la era digital`, `sin precedentes`, `de vanguardia`,
-`soluciones integrales`, `el poder de`, `un viaje de`, `el mundo de hoy`, `a otro nivel`,
-`sin fisuras`, `de primer nivel`, `de clase mundial`, `nuestra propuesta de valor`.
+`en el mundo actual`, `en la era digital`, `de vanguardia`, `soluciones integrales`,
+`un viaje de`, `el mundo de hoy`, `a otro nivel`, `sin fisuras`, `de primer nivel`,
+`de clase mundial`, `nuestra propuesta de valor`.
 
 El arreglo es una palabra más llana. No un sinónimo más pomposo de la misma idea.
 
@@ -45,21 +50,34 @@ Formas, no palabras. Una forma es un molde que podés rellenar con cualquier cos
 más que el léxico: un texto puede pasar el chequeo de vocabulario y seguir leyéndose como
 escrito por una máquina.
 
-Hoy la más ruidosa del español es `no solo X, sino Y`. Una vez que la ves no podés
-dejar de verla.
+**Acá está el hallazgo más fuerte del proyecto, y es una ausencia.**
 
-Las veinte del catálogo incluyen `no se trata de X, es Y`, `ahí es donde entra`,
-`ya sea que`, `al siguiente nivel`, `todo lo que necesitás saber`, `cuando se trata de`,
-`cabe destacar`, `es importante señalar`, `la clave está en`, `en resumen`,
-`descubrí cómo`, y las preguntas que el propio texto se contesta, del tipo
-~~¿El resultado? Menos reclamos.~~
+La forma insignia del catálogo inglés es `not just X, but Y`, y su traducción directa es la
+primera que cualquiera pondría en un catálogo español. No está en este. Sobre 355.386
+palabras de prensa rioplatense anterior a 2023 marcaba el 8,6% de los textos:
+
+> ~~advertido no solo por organizaciones ecologistas sino por organismos como el BCE~~
+> ~~no solo se analizan casos de influenza, sino también otros virus respiratorios~~
+
+En español es un correlativo gramatical corriente, no un tic de marketing. El inglés no
+obliga a esa correlación, y por eso ahí la forma llama la atención; el español sí la obliga,
+y por eso acá no dice nada. La medición está en `referencias/fuentes.md`.
+
+Otras cinco construcciones se cayeron por lo mismo: `en definitiva`, `cuando se trata de`,
+`la clave está en`, `empecemos` y `más que un X` son conectores normales del español.
+
+Las que quedaron son las que sí son de registro comercial: `no se trata de X, es Y`,
+`ahí es donde entra X`, `ya sea que X o Y`, `al siguiente nivel`,
+`todo lo que necesitás saber`, `decile adiós a`, `imaginá un`, `descubrí cómo`,
+`en un mundo cada vez más`, `te ayuda a`, `podría potencialmente`, `cabe destacar`, y las
+preguntas que el propio texto se contesta, del tipo ~~¿El resultado? Menos reclamos.~~
 
 Se chequean las dos personas gramaticales de cada forma que las tenga. Escribir en tuteo no
 es un disfraz: es lo que el modelo emite por defecto, y el otro eje lo marca aparte.
 
-> ~~No solo es una inmobiliaria, sino un socio en tu decisión más importante.~~
+> ~~Descubre cómo llevar tu inmobiliaria al siguiente nivel.~~
 > **Cobramos comisión una sola vez, y recién cuando firmás.**
-> La forma promete una revelación y entrega una abstracción.
+> La primera promete una revelación y entrega una abstracción.
 
 ## 3. Cadencia de puntuación
 
@@ -76,9 +94,13 @@ y cierra con espacio afuera. Pegada de los dos lados es inglés:
 > **El equipo —que trabaja hace años— resolvió el problema.**
 > La segunda tiene dos rayas y está perfecta. La primera tiene las mismas dos y es un calco.
 
+Y hay una excepción más que enseñó el corpus, y que valía el 1,5% de los textos humanos:
+cuando el inciso cierra al final de la oración, la puntuación va pegada afuera de la raya,
+como en ~~de gobierno corporativo —en ese orden—.~~ Eso es español correcto, así que la
+puntuación no cuenta como palabra pegada.
+
 La densidad se mide igual, pero recién a partir de cuatro rayas en una oración, que ya son
-dos incisos apilados. Y se cuentan también los dos puntos, con piso escalado al largo del
-texto: dos en un documento técnico largo es un estilo, no un tell.
+dos incisos apilados.
 
 El chequeo mira dentro de una ventana de 220 caracteres, y ese límite hace trabajo real. El
 texto de interfaz no tiene puntos: los ítems de menú, los botones y las etiquetas corren

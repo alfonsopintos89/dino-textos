@@ -50,9 +50,14 @@ El catálogo completo está en `referencias/senales-ia-espanol.md` y
 1. **Léxico.** `potenciar`, `optimizar`, `robusto`, `holístico`, `de vanguardia`,
    `en el mundo actual`, `soluciones integrales`. Cambialo por una palabra más llana, no
    por un sinónimo más pomposo de la misma idea.
-2. **Formas.** `no solo X, sino Y` es la más ruidosa del español ahora mismo. También el
-   reflejo del ritmo de tres, la raya al modo inglés, las preguntas que el propio texto se
-   contesta, el párrafo de cierre que nadie pidió y la negrita al principio de cada viñeta.
+2. **Formas.** `ahí es donde entra X`, `llevá tu X al siguiente nivel`, `descubrí cómo`,
+   `ya sea que`. También el reflejo del ritmo de tres, la raya al modo inglés, las preguntas
+   que el propio texto se contesta, el párrafo de cierre que nadie pidió y la negrita al
+   principio de cada viñeta.
+
+   Lo que **no** hay que tocar es `no solo X, sino Y`. En inglés es el tell más ruidoso que
+   existe; en español es un correlativo gramatical corriente y aparece en el 8,6% de la
+   prensa escrita por personas. Reescribirlo sería corregir español correcto.
 3. **Poné a alguien de acá adentro.** Sacar los tells deja texto limpio y muerto. Voseo, no
    tuteo. Una cifra concreta por afirmación, sacada del texto original y de ningún otro
    lado. Largos de oración que varíen fuerte. Una oración de tres palabras después de una

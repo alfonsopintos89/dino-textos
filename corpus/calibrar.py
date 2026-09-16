@@ -24,9 +24,18 @@ import dino
 # Los tres números que deciden qué entra al scorer. Están acá, en una sola
 # parte, y se publican junto con la medición que los justifica.
 
-RATIO_MINIMO = 5.0            # veces más frecuente en texto de IA que en humano
-TECHO_FALSOS_POSITIVOS = 0.02  # fracción de documentos humanos que puede tocar
-MINIMO_APARICIONES = 10       # abajo de esto la muestra no dice nada
+RATIO_MINIMO = 5.0             # veces más frecuente en texto de IA que en humano
+TECHO_FALSOS_POSITIVOS = 0.005  # fracción de documentos humanos que puede tocar
+MINIMO_APARICIONES = 10        # abajo de esto la muestra no dice nada
+
+# Sobre el techo: la primera versión de este archivo decía 2%, y el corpus mostró
+# que ese número era incompatible con el piso que pedía el verificador. Un scorer
+# con veinticinco palabras de vocabulario, cada una tocando el 1% de los textos
+# sobre documentos distintos, junta un 15% de union aunque ninguna regla pase el
+# 2%. El techo por patrón y el piso por scorer no son dos criterios
+# independientes: el primero tiene que salir del segundo, dividido por cuántos
+# patrones tiene el catálogo. 0,5% sobre 592 documentos son tres textos, que es
+# lo más chico que se puede medir sin que el número sea puro ruido.
 
 Veredicto = collections.namedtuple('Veredicto', 'estado ratio motivo')
 

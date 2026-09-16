@@ -3,8 +3,8 @@
 **Un linter que caza el acento de IA en textos en español rioplatense.**
 
 La escritura de IA tiene olor. `potenciar`, `robusto`, `de vanguardia`,
-`no solo es una herramienta, sino un aliado`. El lector ya lo detecta, y una página que
-huele a eso es una página que deja de creerte.
+`llevá tu negocio al siguiente nivel`. El lector ya lo detecta, y una página que huele a eso
+es una página que deja de creerte.
 
 En inglés esto está resuelto. [SlopMonster](https://github.com/ItsssssJack/SlopMonster) lo
 hace bien, y su propio README dice dónde termina: *"The catalogue is English only. Copy in
@@ -18,7 +18,7 @@ Y le agrega un eje que en inglés no hace falta.
 ```
 ── slop
   construcciones de IA:
-    · la forma «no solo X, sino Y»  (1)
+    · «llevá tu X al siguiente nivel»  (1)
   venta y prueba inventada:
     · 10.000 clientes felices
 
@@ -59,29 +59,39 @@ separa los miles y la coma es el decimal, así que sobre `10.000 clientes` no ve
 
 ## Recibos, no promesas
 
-El catálogo no se escribió de memoria. Se midió contra dos corpus: 200 notas de la diaria
-anteriores a 2023 — humanas por construcción, porque ChatGPT todavía no existía — y 15
-textos generados con el CLI `claude`.
+El catálogo no se escribió de memoria. Se midió contra dos corpus: 592 notas anteriores a
+2023 — 294 de la diaria y 298 de eldiarioAR, humanas por construcción porque ChatGPT todavía
+no existía — y 15 textos generados con el CLI `claude`. En total 355.386 palabras de prosa
+rioplatense de las dos orillas.
 
 Un patrón entra al scorer si aparece 5 veces más por cada 10.000 palabras en texto de IA que
-en humano, si marca menos del 2% de los textos humanos, y si tiene al menos 10 apariciones
-para que el número signifique algo.
+en humano, y si marca menos del 0,5% de los textos humanos. Ese 0,5% no es un número
+inventado: sale de dividir el piso que se le pide al scorer entero por el tamaño del
+catálogo. Los 48 patrones que quedaron cumplen; el peor marca el 0,34%.
 
-**El corpus rechazó cinco reglas mías.**
+**El corpus volteó once entradas, arregló tres patrones rotos y corrigió dos errores de
+método míos.**
 
-| | textos humanos que puntúan 5/5 |
+| | textos humanos que el scorer deja limpios |
 |---|---|
-| Catálogo inicial | 83,1% |
-| Después de lo que enseñó el corpus | **96,0%** |
+| Catálogo inicial | 75,8% |
+| Después de lo que enseñó el corpus | **94,3%** |
 
-`ritmo de tres` marcaba el 7,8% de la prensa humana, con cosas como
-~~políticos, empresarios y periodistas~~ y ~~2010, 2011 y 2012~~: en español `X, Y y Z` es
-simplemente cómo se enumeran tres cosas. `prueba inventada` marcaba el 3,5%, porque un
-diario cuenta gente todo el tiempo. El umbral de dos puntos tocaba el 49,5% y lo había
-portado de una regla pensada para el punto y coma en inglés, sin ningún número detrás.
+Lo más fuerte que apareció: **la forma insignia del catálogo inglés no transfiere**.
+`no solo X, sino Y` es la construcción más ruidosa del inglés y la primera que cualquiera
+traduciría. En español marcaba el **8,6%** de la prensa humana, con frases como
+~~advertido no solo por organizaciones ecologistas sino por organismos como el BCE~~. Es un
+correlativo gramatical corriente, no un tic de marketing. El inglés no obliga a esa
+correlación y por eso ahí llama la atención; el español sí, y por eso acá no dice nada.
+
+Otras once entradas resultaron español corriente: ~~excepcional~~, ~~en definitiva~~,
+~~cuando se trata de~~, ~~el poder de~~. Y el umbral de dos puntos, que yo había portado de
+una regla pensada para el punto y coma en inglés sin ningún número detrás, tocaba el 67,1%
+de los textos humanos.
 
 Todos los rechazos están publicados con su medición en
-[`referencias/fuentes.md`](referencias/fuentes.md), incluidos los que había escrito yo.
+[`referencias/fuentes.md`](referencias/fuentes.md), incluidos los dos errores de método que
+invalidaron mediciones que este mismo README ya había publicado.
 
 ### Lo que esta corrida NO pudo demostrar
 
@@ -89,7 +99,7 @@ Conviene decirlo con todas las letras, porque es lo primero que cualquiera deber
 
 **Ningún patrón quedó admitido por ratio.** El corpus de IA, generado con un modelo de
 primera línea en 2026, casi no contiene los tells que el catálogo busca: en 10.471 palabras,
-`no solo X, sino Y` aparece una vez y `potenciar`, ninguna.
+`potenciar` no aparece ninguna vez.
 
 El catálogo sigue sirviendo para texto salido de generadores más viejos, más baratos o peor
 prompteados, que es de donde viene casi todo el slop que uno se cruza. Pero eso es una
@@ -109,7 +119,7 @@ motivo de cada cambio: [`ejemplos/estudio-contable.md`](ejemplos/estudio-contabl
 ```bash
 git clone git@github.com:alfonsopintos89/dino-textos.git && cd dino-textos
 
-python3 tools/dino.py --texto "No solo es una web, sino una plataforma robusta."
+python3 tools/dino.py --texto "Una plataforma robusta que potencia tu negocio."
 python3 tools/dino.py borrador.md
 python3 tools/dino.py index.html --vista hero
 python3 tools/dino.py nota.md --sin-registro          # público de toda LatAm
@@ -158,10 +168,11 @@ el estómago de un lector.
 ```
 SKILL.md                              el loop entero, como instrucciones para el agente
 tools/dino.py                         el scorer. stdlib, un archivo, sale rojo
-tools/test_dino.py                    57 tests: aciertos y falsos positivos
+tools/test_dino.py                    63 tests: aciertos y falsos positivos
 corpus/construir.py                   arma los dos corpus
 corpus/calibrar.py                    mide las reglas y dicta veredicto
-corpus/candidatos.py                  lo propuesto que todavía no entró
+corpus/candidatos.py                  lo propuesto y lo que el corpus volteó
+corpus/prompts-para-pegar.md          para generar el corpus de IA con otros modelos
 corpus/verificar_falsos_positivos.py  el scorer contra el corpus humano entero
 referencias/senales-ia-espanol.md     el catálogo del eje slop
 referencias/registro-rioplatense.md   el catálogo del eje registro

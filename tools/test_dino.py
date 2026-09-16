@@ -94,7 +94,7 @@ class TestLexicoDeIA(unittest.TestCase):
 
         Matchear la forma exacta se pierde justo la superficie más común.
         """
-        for forma in ('potenciamos', 'potenciada', 'potenciando', 'potencia'):
+        for forma in ('optimizamos', 'optimizada', 'optimizando', 'optimiza'):
             h = dino.auditar('Una experiencia %s para el cliente.' % forma)
             self.assertTrue(h['slop']['lexico'], forma)
 
@@ -110,8 +110,8 @@ class TestLexicoDeIA(unittest.TestCase):
 
 class TestConstrucciones(unittest.TestCase):
 
-    def test_dispara_con_no_solo_sino(self):
-        h = dino.auditar('No solo es una herramienta, sino una forma de trabajar.')
+    def test_dispara_con_no_se_trata_de_x_es_y(self):
+        h = dino.auditar('No se trata de vender más, es de vender mejor.')
         self.assertTrue(h['slop']['construcciones'])
 
     def test_dispara_con_ahi_es_donde_entra(self):
@@ -147,6 +147,17 @@ class TestCadencia(unittest.TestCase):
         """
         h = dino.auditar('El equipo —que trabaja hace años— resolvió el problema.')
         self.assertEqual(h['slop']['cadencia'], [])
+
+    def test_no_dispara_con_la_raya_de_cierre_antes_de_puntuacion(self):
+        """«—gobierno corporativo—.» es español correcto: el inciso cierra y
+
+        la puntuación de la oración va pegada afuera. El patrón leía el
+        «—.» como raya sin espacios, o sea como calco del inglés.
+        """
+        for frase in ('Habló de riesgo y de gobierno corporativo —en ese orden—.',
+                      'Defendió el “originalismo” judicial —según dijo—, y se fue.'):
+            h = dino.auditar(frase)
+            self.assertEqual(h['slop']['cadencia'], [], frase)
 
     def test_no_dispara_con_un_guion_comun(self):
         h = dino.auditar('Es un acuerdo público-privado que arrancó en 2019.')
@@ -270,7 +281,8 @@ class TestLexicoPeninsular(unittest.TestCase):
 
 
 LIMPIO = 'Arreglamos techos desde 2001. Seis clavos por chapa, siempre.'
-SUCIO = 'Potenciamos tu experiencia. No solo es una plataforma, sino un aliado.'
+SUCIO = ('Potenciamos tu negocio con una plataforma robusta. '
+         'Ahí es donde entra nuestro equipo.')
 
 
 class TestPuntaje(unittest.TestCase):
@@ -388,6 +400,60 @@ class TestFalsosPositivosDelCorpus(unittest.TestCase):
     def test_no_marca_un_superlativo_descriptivo(self):
         h = dino.auditar('Los más afectados fueron los barrios de la costa.')
         self.assertEqual(h['slop']['venta'], [])
+
+
+class TestFalsosPositivosDeLaSegundaCorrida(unittest.TestCase):
+    """Lo que enseñó el corpus corregido: 592 documentos, 355.386 palabras de
+
+    prosa real de las dos orillas. Con el corpus anterior estas reglas no se
+    veían, porque aquel era mayormente plantilla de los sitios.
+    """
+
+    def test_no_marca_potencia_como_sustantivo(self):
+        """`potencia` sustantivo no tiene nada que ver con el verbo `potenciar`.
+
+        La raíz `potenci` cazaba las dos, y en prosa política el sustantivo es
+        muchísimo más frecuente.
+        """
+        for frase in ('Las potencias occidentales pidieron prudencia.',
+                      'Hay potencia política en la alegoría.',
+                      'Lo que pueden establecer las grandes potencias.'):
+            h = dino.auditar(frase)
+            self.assertEqual(h['slop']['lexico'], [], frase)
+
+    def test_sigue_marcando_el_verbo_potenciar(self):
+        for frase in ('Potenciamos tu negocio.', 'Una solución que potencia tu marca.',
+                      'Diseñado para potenciar resultados.'):
+            h = dino.auditar(frase)
+            self.assertTrue(h['slop']['lexico'], frase)
+
+    def test_no_marca_al_lider_de_una_organizacion(self):
+        """`el líder de la asociación bancaria` es una persona, no una
+
+        afirmación de mercado. El patrón leía `líder de la` como si fuera
+        `líderes en el rubro`.
+        """
+        for frase in ('Felicitó al líder de la asociación bancaria.',
+                      'Una reunión de líderes de la comunidad.',
+                      'Desconfiaba del líder de la compañía.'):
+            h = dino.auditar(frase)
+            self.assertEqual(h['slop']['venta'], [], frase)
+
+    def test_sigue_marcando_la_afirmacion_de_mercado(self):
+        h = dino.auditar('Somos líderes en el mercado uruguayo.')
+        self.assertTrue(h['slop']['venta'])
+
+    def test_no_marca_el_correlativo_no_solo_sino(self):
+        """En español `no solo X sino Y` es un correlativo gramatical corriente,
+
+        no un tic de marketing. Es la regla insignia del catálogo inglés y es
+        la que peor transfiere: marcaba el 8,6% de la prensa humana.
+        """
+        for frase in ('Fue advertido no solo por ecologistas sino por organismos como el BCE.',
+                      'No solo se analizan casos de influenza, sino también otros virus.',
+                      'Ellas no solo rompían una imagen tradicional sino que se liberaban.'):
+            h = dino.auditar(frase)
+            self.assertEqual(h['slop']['construcciones'], [], frase)
 
 
 if __name__ == '__main__':

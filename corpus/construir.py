@@ -205,7 +205,7 @@ def construir_humano(cuantos):
     for fuente in config['fuentes']:
         print('── %s (%s)' % (fuente['nombre'], fuente['variedad']))
         urls = urls_pre_corte(fuente, corte)
-        print('  %d artículos anteriores a %d' % (len(urls), corte))
+        print('  %d artículos anteriores a %04d-%02d' % (len(urls), corte[0], corte[1]))
         # Muestra determinística: la misma semilla da el mismo corpus, que es lo
         # que hace reproducible el número publicado.
         random.Random(1976).shuffle(urls)

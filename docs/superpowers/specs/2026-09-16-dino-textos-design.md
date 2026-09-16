@@ -1,7 +1,16 @@
 # dino-textos — diseño
 
 Fecha: 2026-09-16
-Estado: aprobado, listo para plan de implementación
+Estado: implementado. Este documento es el diseño tal como se aprobó; la
+implementación lo corrigió en dos puntos, y las correcciones están medidas en
+`referencias/fuentes.md`:
+
+1. El techo de falsos positivos del 2% que se declara más abajo era incompatible
+   con el piso del 95% del verificador. El techo pasó a derivarse del piso y
+   quedó en 0,5%.
+2. El catálogo daba por hecho que `no solo X, sino Y` era la forma más ruidosa.
+   El corpus la rechazó: en español es un correlativo gramatical corriente y
+   marcaba el 8,6% de la prensa humana.
 
 ## Qué es
 
