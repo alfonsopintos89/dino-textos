@@ -1,0 +1,42 @@
+name: dino
+
+# El gate. Corre la suite y después puntúa los .md que cambiaron en el push.
+# Sin dependencias que instalar: el scorer es biblioteca estándar.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  puntuar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'   # el mismo que trae macOS de fábrica
+
+      - name: suite de regresión
+        run: |
+          python3 tools/test_dino.py
+          python3 corpus/test_calibrar.py
+
+      - name: puntuar los textos que cambiaron
+        run: |
+          base="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if [ -z "$base" ] || ! git cat-file -e "$base" 2>/dev/null; then
+            base=$(git rev-parse HEAD~1 2>/dev/null || echo "")
+          fi
+          if [ -z "$base" ]; then
+            echo "sin base de comparación, no hay nada que puntuar"
+            exit 0
+          fi
+          fallaron=0
+          for archivo in $(git diff --name-only --diff-filter=d "$base" HEAD -- '*.md'); do
+            echo "── $archivo"
+            python3 tools/dino.py "$archivo" || fallaron=1
+          done
+          exit $fallaron

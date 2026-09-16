@@ -240,11 +240,6 @@ def auditar(texto):
             slop['cadencia'].append(('%d rayas en una misma oración' % ventana.count('—'),
                                      ventana[:70].strip()))
             break
-    # Piso escalado al largo: dos puntos en un texto técnico largo es un estilo.
-    if texto.count(':') > max(3, len(texto) // 1200):
-        slop['cadencia'].append(('exceso de dos puntos para copy',
-                                 '%d encontrados' % texto.count(':')))
-
     for m in RITMO.finditer(texto):
         slop['ritmo'].append(('ritmo de tres', m.group(0)[:60].strip()))
 
@@ -313,7 +308,6 @@ PENINSULAR = [
     (r'(?<!\w)gafas(?!\w)', '«gafas» por «lentes» o «anteojos»'),
     (r'(?<!\w)aparcar(?!\w)', '«aparcar» por «estacionar»'),
     (r'(?<!\w)chaval(?:es)?(?!\w)', '«chaval»'),
-    (r'(?<!\w)ahora mismo(?!\w)', '«ahora mismo»'),
     # `vale` solo como muletilla: arranca la oración y cierra con coma o punto.
     # `¿cuánto vale?` y `vale la pena` son español de acá y no se tocan.
     (r'(?:^|(?<=[.!?])\s+)vale\s*[,.]', '«vale» como muletilla'),

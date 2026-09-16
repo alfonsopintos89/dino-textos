@@ -1,0 +1,106 @@
+---
+
+## Hero
+
+**Tu contador en Rosario, sin tener que perseguirlo.**
+
+Monotributo, Ingresos Brutos, DReI, sueldos y balances. Los vencimientos los llevamos nosotros.
+
+`[Escribinos por WhatsApp]` `[Pedí una reunión]`
+
+La primera charla no se cobra. En el estudio o por videollamada, como te quede mejor.
+
+---
+
+## Qué hacemos
+
+**Monotributo**
+Alta, recategorización de enero y de julio, y el cambio de categoría cuando empezás a facturar más. Si venís rozando el tope anual, te avisamos nosotros antes que ARCA.
+
+**Responsable inscripto**
+IVA mensual, Ganancias, anticipos, percepciones que te retuvieron y nunca computaste. Te mandamos lo que hay que pagar con tres días hábiles de anticipación, no a las siete de la tarde del día del vencimiento.
+
+**Sueldos**
+Recibos, cargas sociales, F.931, altas y bajas. Trabajamos con Comercio, Gastronómico y UOCRA. Si tu convenio no está en esa lista, preguntá igual.
+
+**Ingresos Brutos y DReI**
+API Santa Fe y Municipalidad de Rosario. Si vendés fuera de la provincia, Convenio Multilateral y el coeficiente unificado que hay que recalcular cada abril.
+
+**Sociedades y balances**
+Estados contables, presentación en Inspección de Personas Jurídicas, constitución de SAS y SRL, cambios de socios.
+
+**La carpeta para el banco**
+Certificación de ingresos, manifestación de bienes, balance firmado y legalizado en el Consejo. Lo que te pidan para el crédito, armado como lo piden.
+
+---
+
+## Cómo trabajamos
+
+**Un contador, con nombre.** El que te atiende la primera vez es el que te contesta en octubre. Nadie te reenvía a un buzón de mail.
+
+**Te contestamos el mismo día hábil.** Por WhatsApp, y en horario de laburo contestamos. Fuera de horario, a la mañana siguiente.
+
+**El número se habla antes.** Los honorarios se acuerdan en la primera reunión y quedan por escrito. Sin "después lo vemos".
+
+**Tus papeles son tuyos.** Declaraciones, F.931 y acuses quedan en una carpeta compartida, ordenados por mes. Si un día te vas a otro estudio, te llevás todo sin pedir permiso.
+
+---
+
+## Para quién
+
+Comercios y locales de Rosario y el Gran Rosario que ya tienen empleados y se les complicó la liquidación de sueldos.
+
+Profesionales independientes que facturan a una o dos empresas y quieren dejar de recategorizarse tarde.
+
+Monotributistas que exportan servicios y cobran por Payoneer, Wise o Deel, y nunca terminan de entender cómo se declara eso.
+
+Pymes familiares con un balance atrasado y ganas de ponerse al día antes de que se les venza algo más.
+
+Startups que necesitan una SAS armada esta semana y facturación desde el primer mes.
+
+---
+
+## Honorarios
+
+Monotributo, desde $[falta dato] por mes. Incluye la liquidación, las dos recategorizaciones del año y las consultas que tengas.
+
+Responsable inscripto, desde $[falta dato] por mes. IVA, Ganancias, Ingresos Brutos y DReI.
+
+Sueldos, $[falta dato] por empleado por mes, con un mínimo de [falta dato] empleados.
+
+Balance, desde $[falta dato], según el movimiento del ejercicio.
+
+Trabajo atrasado: lo cotizamos aparte y te decimos cuánto antes de empezar.
+
+---
+
+## Preguntas
+
+**Estoy con otro contador. ¿Es un quilombo cambiarse?**
+No. Pedís tu clave fiscal y los últimos papeles, y nosotros nos encargamos del resto. Se hace en una semana y no hace falta que le expliques nada a nadie.
+
+**Debo presentaciones de años anteriores.**
+Pasa seguido. Primero miramos qué falta y qué prescribió, después armamos un plan de pago si hace falta. No te vamos a retar.
+
+**¿Atienden solo en Rosario?**
+El estudio está en [falta dato: dirección], a [falta dato] cuadras del Monumento. Igual hay clientes que nunca lo pisaron: con videollamada y firma digital se hace todo.
+
+**Facturo en dólares desde afuera.**
+Exportación de servicios. Se factura con factura E, y hay que mirar el tope de ingresos y cómo entran las divisas. Traé los últimos tres meses de cobros y te decimos en qué situación estás.
+
+**¿Qué necesito para la primera reunión?**
+Tu CUIT y nada más. El resto lo miramos nosotros en ARCA.
+
+---
+
+## Cierre
+
+**Escribinos y contanos en qué andás.**
+
+`[WhatsApp: falta dato]` `[estudio@faltadato.com.ar]`
+
+Consejo Profesional de Ciencias Económicas de Santa Fe, Cámara II. Matrícula [falta dato].
+
+---
+
+Dos cosas sobre el texto: los `[falta dato]` son los lugares donde hace falta un dato real del estudio (precios, dirección, matrícula, convenios que realmente liquidan) — no inventé ninguno. Y no pude pasarle `tools/dino.py` porque el comando quedó pendiente de aprobación en esta sesión; el borrador está en el scratchpad si querés puntuarlo vos: `python3 tools/dino.py /private/tmp/claude-501/-Users-alfonso-Developer-dino-textos/5671a902-4e65-4c1d-9d38-62bda500b0cc/scratchpad/landing-contable.md`

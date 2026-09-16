@@ -1,0 +1,21 @@
+{
+  "nota": "Solo se publican frecuencias derivadas. El texto ajeno queda en cache/, fuera del repo.",
+  "corte": "2023-01-01",
+  "por_que_esa_fecha": "Lo publicado antes de que ChatGPT existiera es humano por construcción.",
+  "fuentes": [
+    {
+      "nombre": "la diaria",
+      "sitio": "https://ladiaria.com.uy",
+      "variedad": "rioplatense uruguayo",
+      "sitemap": "https://ladiaria.com.uy/sitemap-articles.xml?p={pagina}",
+      "paginas": [
+        60,
+        140
+      ],
+      "patron_anio": "/articulo/(\\d{4})/",
+      "robots": "permite /articulo/; prohíbe /short/, /df/ y /buscar/, que no se tocan",
+      "paso": 8
+    }
+  ],
+  "pendiente": "Falta una fuente argentina. Página/12 no publica sitemap general (404 en sitemap.xml y sitemap-index.xml al 2026-09-16), así que el corpus v1 es uruguayo. Está anotado en referencias/fuentes.md."
+}
