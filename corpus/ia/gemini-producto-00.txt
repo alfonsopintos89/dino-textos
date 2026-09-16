@@ -1,0 +1,95 @@
+TempusJS
+Una librería de JavaScript moderna, rápida y minimalista para parsear, validar, manipular y formatear fechas. Diseñada como una alternativa ligera a Moment.js o date-fns.
+
+Características
+🪶 Ultraligera: Menos de 2kB (minificada y comprimida con gzip).
+
+🔒 Inmutable: Todas las operaciones de manipulación devuelven una nueva instancia, protegiendo tus datos originales.
+
+🚫 Sin dependencias: Código puro y autónomo.
+
+📘 TypeScript Ready: Tipado estático incluido de fábrica para una mejor experiencia de desarrollo.
+
+🌍 Localización: Soporte integrado para múltiples idiomas y formatos regionales.
+
+Instalación
+Podés instalar TempusJS a través de tu gestor de paquetes favorito:
+
+npm:
+
+Bash
+npm install tempusjs
+Yarn:
+
+Bash
+yarn add tempusjs
+pnpm:
+
+Bash
+pnpm add tempusjs
+Uso básico
+Importá la librería y empezá a manipular fechas con una sintaxis intuitiva y encadenable:
+
+JavaScript
+import Tempus from 'tempusjs';
+
+// Crear una fecha actual
+const hoy = Tempus();
+
+// Formatear una fecha
+console.log(hoy.format('DD/MM/YYYY')); 
+// Salida: 16/09/2026
+
+// Parsear un string
+const evento = Tempus('2026-12-31');
+
+// Manipulación (Inmutable)
+const proximaSemana = hoy.add(7, 'days');
+const mesPasado = hoy.subtract(1, 'months');
+
+// Comparación
+if (proximaSemana.isAfter(hoy)) {
+  console.log('La fecha es en el futuro');
+}
+API de Referencia
+Creación
+Tempus(): Devuelve la fecha y hora actual.
+
+Tempus(String | Number | Date): Crea una instancia a partir de un string (ISO 8601), un timestamp o un objeto Date nativo.
+
+Formateo
+.format(string): Formatea la fecha según los tokens proporcionados (ej. YYYY-MM-DD HH:mm:ss).
+
+Manipulación
+.add(cantidad, unidad): Suma tiempo a la fecha actual. Unidades permitidas: years, months, days, hours, minutes, seconds.
+
+.subtract(cantidad, unidad): Resta tiempo a la fecha actual.
+
+.startOf(unidad): Ajusta la fecha al inicio de la unidad especificada (ej. inicio del mes).
+
+.endOf(unidad): Ajusta la fecha al final de la unidad especificada.
+
+Comparación
+.isBefore(fecha): Devuelve true si la instancia es anterior a la fecha proporcionada.
+
+.isAfter(fecha): Devuelve true si la instancia es posterior.
+
+.isSame(fecha): Devuelve true si ambas fechas representan el mismo momento exacto.
+
+.diff(fecha, unidad): Devuelve la diferencia entre dos fechas en la unidad especificada.
+
+Contribución
+¡Las contribuciones son bienvenidas! Si encontrás un bug o tenés una idea para una nueva funcionalidad, por favor abrí un issue o enviá un pull request en nuestro repositorio de GitHub.
+
+Hacé un fork del proyecto.
+
+Creá tu rama de características (git checkout -b feature/NuevaFuncionalidad).
+
+Hacé commit de tus cambios (git commit -m 'Agrega NuevaFuncionalidad').
+
+Hacé push a la rama (git push origin feature/NuevaFuncionalidad).
+
+Abrí un Pull Request.
+
+Licencia
+Este proyecto está bajo la Licencia MIT. Podés usarlo, modificarlo y distribuirlo libremente en proyectos comerciales y personales.

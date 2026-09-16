@@ -1,0 +1,100 @@
+# FechaJS
+
+FechaJS es una librería ligera y moderna de JavaScript para el manejo, formateo y manipulación de fechas. Está diseñada para ser fácil de usar, eficiente y sin dependencias externas.
+
+## Características
+
+- Formateo de fechas con patrones personalizados
+- Parsing de cadenas de texto a objetos Date
+- Suma y resta de intervalos de tiempo
+- Cálculo de diferencias entre fechas
+- Validación de fechas
+- Soporte para localización en español
+- Compatible con Node.js y navegadores
+- Tamaño reducido (menos de 5 KB minificada)
+
+## Instalación
+
+### npm
+
+npm install fecha-js
+
+### yarn
+
+yarn add fecha-js
+
+### CDN
+
+<script src="https://cdn.jsdelivr.net/npm/fecha-js/dist/fecha.min.js"></script>
+
+## Uso
+
+### Importación
+
+import * as Fecha from 'fecha-js';
+
+// o CommonJS
+const Fecha = require('fecha-js');
+
+### Ejemplos
+
+Formatear una fecha:
+
+const ahora = new Date();
+console.log(Fecha.formatear(ahora, 'dddd, DD [de] MMMM [de] YYYY'));
+// Ejemplo: "miércoles, 25 de octubre de 2023"
+
+Parsear una cadena:
+
+const fechaNacimiento = Fecha.parsear('05/07/1990', 'DD/MM/YYYY');
+
+Agregar tiempo:
+
+const proximaSemana = Fecha.agregar(new Date(), 7, 'días');
+
+Restar tiempo:
+
+const mesPasado = Fecha.restar(new Date(), 1, 'mes');
+
+Calcular diferencia:
+
+const dias = Fecha.diferencia(fecha1, fecha2, 'días');
+
+Validar fecha:
+
+if (Fecha.esValida('29/02/2024')) {
+  console.log('Fecha bisiesta válida');
+}
+
+## Formatos disponibles
+
+- YYYY: año de 4 dígitos
+- YY: año de 2 dígitos
+- MM: mes (01-12)
+- MMMM: nombre completo del mes
+- DD: día (01-31)
+- dddd: nombre del día de la semana
+- HH: horas (00-23)
+- mm: minutos
+- ss: segundos
+
+## API
+
+- formatear(fecha, formato): Devuelve un string formateado
+- parsear(str, formato): Devuelve un objeto Date
+- agregar(fecha, valor, unidad): Devuelve una nueva Date
+- restar(fecha, valor, unidad): Devuelve una nueva Date
+- diferencia(fechaA, fechaB, unidad): Devuelve un número
+- esValida(fechaOstr): Devuelve un boolean
+- ahora(): Devuelve la Date actual
+- clonar(fecha): Clona una fecha
+
+Unidades soportadas: 'año', 'mes', 'semana', 'día', 'hora', 'minuto', 'segundo'
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Abre un issue o un pull request en el repositorio.
+
+## Licencia
+
+MIT

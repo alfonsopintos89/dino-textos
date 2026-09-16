@@ -1,0 +1,46 @@
+Preguntas Frecuentes
+
+¿Qué es el hosting web y por qué lo necesito?
+El hosting web es el servicio que almacena tu sitio en servidores conectados a internet para que esté disponible las 24 horas. Sin él, tu página no sería accesible en línea.
+
+¿Qué tipos de planes ofrecen?
+Ofrecemos hosting compartido para sitios pequeños y medianos, VPS para mayor control y recursos, servidores dedicados para alto tráfico y cloud hosting para escalabilidad automática.
+
+¿Cuál es el uptime garantizado?
+Garantizamos 99.9 % de uptime. Si no se cumple, aplicamos créditos en tu cuenta.
+
+¿Incluyen certificado SSL?
+Sí, todos los planes incluyen SSL gratuito de Let's Encrypt para habilitar HTTPS.
+
+¿Puedo transferir mi sitio actual?
+Sí, realizamos la migración gratuita desde cualquier otro proveedor. Nuestro equipo se encarga de todo.
+
+¿Qué panel de control utilizan?
+Usamos cPanel en la mayoría de los planes, intuitivo para gestionar archivos, bases de datos, correos y más.
+
+¿Hacen copias de seguridad?
+Sí, backups diarios automáticos con retención de 30 días. También puedes generar copias manuales.
+
+¿Cómo es el soporte técnico?
+Soporte 24/7 por chat en vivo, tickets y teléfono. Equipo especializado y de respuesta rápida.
+
+¿Qué métodos de pago aceptan?
+Tarjetas de crédito, PayPal, transferencias bancarias y, en algunos casos, criptomonedas.
+
+¿Hay garantía de devolución?
+Sí, 30 días de garantía de devolución si no estás satisfecho.
+
+¿Puedo cancelar en cualquier momento?
+Sí, sin penalizaciones. El servicio continúa hasta el final del período pagado.
+
+¿Qué medidas de seguridad tienen?
+Protección DDoS, firewalls, escaneo de malware y actualizaciones constantes.
+
+¿Soportan WordPress y otras CMS?
+Sí, todos los planes son compatibles con WordPress, Joomla, Drupal y otras. Incluyen instaladores con un clic.
+
+¿Hay límites de tráfico o almacenamiento?
+Varían según el plan. Los compartidos tienen límites razonables; VPS y dedicados ofrecen más recursos. Consulta las especificaciones de cada uno.
+
+¿Puedo registrar un dominio con ustedes?
+Sí, puedes registrar uno nuevo o transferir uno existente al contratar el hosting. Precios competitivos.

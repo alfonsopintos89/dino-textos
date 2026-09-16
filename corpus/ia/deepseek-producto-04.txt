@@ -1,0 +1,85 @@
+Preguntas frecuentes
+
+¿Qué es el hosting web?
+El hosting web es el servicio que almacena los archivos, bases de datos y contenidos de tu sitio web en un servidor conectado a Internet para que los visitantes puedan acceder a él en cualquier momento.
+
+¿Qué tipos de hosting ofrecen?
+Ofrecemos hosting compartido, hosting WordPress, VPS, servidores dedicados y planes especiales para proyectos empresariales o de alto tráfico.
+
+¿Cuál es la diferencia entre hosting compartido, VPS y servidor dedicado?
+En el hosting compartido varios sitios comparten los recursos de un mismo servidor. En un VPS tienes recursos virtuales garantizados y mayor control. En un servidor dedicado utilizas todo el servidor exclusivamente para tus proyectos.
+
+¿Puedo registrar un dominio con ustedes?
+Sí. Puedes registrar dominios nuevos, transferir dominios existentes y administrar sus DNS desde nuestro panel.
+
+¿Qué necesito para contratar un plan?
+Solo necesitas elegir el plan, crear una cuenta, seleccionar un dominio o usar uno existente y completar el pago. No se requieren conocimientos técnicos avanzados.
+
+¿Cuánto tarda la activación del servicio?
+La activación suele ser inmediata después de confirmar el pago. En algunos casos puede tardar unos minutos mientras se verifican los datos.
+
+¿Ofrecen migración gratuita?
+Sí. Nuestro equipo puede migrar tu sitio web, correos y bases de datos desde tu proveedor anterior sin costo adicional en la mayoría de los planes.
+
+¿Qué panel de control incluyen?
+Incluimos un panel de control intuitivo para administrar dominios, correos, bases de datos, archivos, certificados SSL y otras funciones. Según el plan, puede ser cPanel, Plesk o un panel personalizado.
+
+¿Puedo instalar WordPress u otro CMS?
+Sí. Puedes instalar WordPress, Joomla, Drupal, PrestaShop, Moodle y otros sistemas con instaladores automáticos o de forma manual.
+
+¿Incluyen certificado SSL?
+Sí. Todos los planes incluyen certificados SSL gratuitos para proteger la conexión de tus visitantes y mejorar el posicionamiento de tu sitio.
+
+¿Cuántas cuentas de correo puedo crear?
+La cantidad depende del plan contratado. En los planes básicos puedes crear varias cuentas y en los planes superiores las cuentas son prácticamente ilimitadas.
+
+¿Tienen backups automáticos?
+Sí. Realizamos copias de seguridad periódicas de archivos y bases de datos. También puedes generar copias manuales desde el panel de control.
+
+¿Qué uptime garantizan?
+Garantizamos un uptime del 99.9% o superior, respaldado por servidores modernos, monitoreo constante y redundancia en la infraestructura.
+
+¿Cómo accedo a mi panel de hosting?
+Recibirás un correo con los datos de acceso después de contratar. Puedes ingresar desde cualquier navegador con tu usuario y contraseña.
+
+¿Ofrecen soporte técnico 24/7?
+Sí. Nuestro equipo de soporte está disponible todos los días, las 24 horas, por chat, correo electrónico y sistema de tickets.
+
+¿Qué métodos de pago aceptan?
+Aceptamos tarjetas de crédito y débito, PayPal, transferencias bancarias y otros métodos locales según el país.
+
+¿Puedo cambiar de plan más adelante?
+Sí. Puedes actualizar o reducir tu plan en cualquier momento. El cambio se aplica según las condiciones de facturación vigentes.
+
+¿Qué pasa si supero los recursos de mi plan?
+Te notificaremos para que puedas optimizar tu sitio o cambiar a un plan superior. En casos graves, el servicio podría limitarse temporalmente para proteger la estabilidad del servidor.
+
+¿Cómo cancelo mi servicio?
+Puedes solicitar la cancelación desde tu panel de cliente o contactando a soporte. La cancelación se aplica al final del período de facturación actual.
+
+¿Tienen garantía de devolución?
+Sí. Ofrecemos una garantía de devolución de 30 días para planes de hosting compartido y WordPress, sujeta a las condiciones del servicio.
+
+¿Mis datos y archivos están seguros?
+Sí. Utilizamos firewalls, monitoreo, cifrado, backups y protocolos de seguridad para proteger tu información y la de tus visitantes.
+
+¿Puedo alojar varios sitios web en un mismo plan?
+Sí. Muchos de nuestros planes permiten alojar múltiples dominios y sitios web. La cantidad depende del plan contratado.
+
+¿Ayudan con la configuración de DNS?
+Sí. Puedes administrar los registros DNS desde el panel o solicitar ayuda a soporte para configurar dominios, subdominios y correos.
+
+¿Qué hago si mi sitio web es hackeado?
+Contacta inmediatamente a soporte. Analizaremos el problema, restauraremos un backup seguro si es necesario y te ayudaremos a reforzar la seguridad del sitio.
+
+¿Ofrecen correo profesional?
+Sí. Puedes crear cuentas de correo con tu propio dominio, acceder por webmail, configurarlas en Outlook, Gmail o aplicaciones móviles y usar filtros antispam.
+
+¿Necesito conocimientos técnicos para administrar mi hosting?
+No. Nuestro panel es fácil de usar y el soporte puede ayudarte con tareas como instalar WordPress, crear correos, configurar SSL o migrar tu sitio.
+
+¿Cómo contacto al soporte?
+Puedes contactarnos por chat en vivo, correo electrónico, tickets de soporte o teléfono, según la disponibilidad de tu plan.
+
+¿No encuentras tu respuesta?
+Escríbenos y nuestro equipo te ayudará a resolver cualquier duda sobre tu servicio de hosting.

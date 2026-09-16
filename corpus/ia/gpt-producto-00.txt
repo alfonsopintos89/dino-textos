@@ -1,0 +1,584 @@
+# FechaClara
+
+Librería de JavaScript para trabajar con fechas de forma simple, segura y consistente. Incluye funciones para crear, formatear, comparar y manipular fechas, con soporte para zonas horarias y localización.
+
+## Características
+
+- API simple y expresiva.
+- Funciones inmutables: las fechas originales no se modifican.
+- Soporte para fechas locales y UTC.
+- Formateo con patrones personalizados.
+- Comparación entre fechas.
+- Suma y resta de días, semanas, meses, años, horas y minutos.
+- Validación de fechas.
+- Soporte para español y otros idiomas.
+- Compatible con Node.js y navegadores.
+- Sin dependencias externas.
+
+## Instalación
+
+Con npm:
+
+```bash
+npm install fechaclara
+```
+
+Con pnpm:
+
+```bash
+pnpm add fechaclara
+```
+
+Con yarn:
+
+```bash
+yarn add fechaclara
+```
+
+## Uso básico
+
+```javascript
+import {
+  ahora,
+  crearFecha,
+  formatear,
+  sumar,
+  diferencia,
+} from "fechaclara";
+
+const fechaActual = ahora();
+
+console.log(formatear(fechaActual, "DD/MM/YYYY"));
+// Ejemplo: 25/12/2024
+
+const fecha = crearFecha("2024-06-15");
+
+const fechaFutura = sumar(fecha, {
+  días: 10,
+});
+
+console.log(formatear(fechaFutura, "DD [de] MMMM [de] YYYY"));
+// 25 de junio de 2024
+
+console.log(diferencia(fecha, fechaFutura, "días"));
+// 10
+```
+
+## Crear fechas
+
+### Fecha actual
+
+```javascript
+import { ahora } from "fechaclara";
+
+const fecha = ahora();
+```
+
+### Desde una cadena
+
+```javascript
+import { crearFecha } from "fechaclara";
+
+const fecha = crearFecha("2024-06-15");
+const fechaConHora = crearFecha("2024-06-15T14:30:00");
+```
+
+### Desde componentes
+
+```javascript
+import { crearFecha } from "fechaclara";
+
+const fecha = crearFecha({
+  año: 2024,
+  mes: 6,
+  día: 15,
+  hora: 14,
+  minuto: 30,
+});
+```
+
+Los meses se representan con valores del 1 al 12.
+
+### Desde un objeto `Date`
+
+```javascript
+import { desdeDate } from "fechaclara";
+
+const fecha = desdeDate(new Date());
+```
+
+### Desde una marca de tiempo Unix
+
+```javascript
+import { desdeTimestamp } from "fechaclara";
+
+const fecha = desdeTimestamp(1718454600000);
+```
+
+## Validación
+
+```javascript
+import { esFechaVálida, crearFecha } from "fechaclara";
+
+esFechaVálida("2024-02-29");
+// true
+
+esFechaVálida("2023-02-29");
+// false
+
+const fecha = crearFecha("fecha incorrecta");
+
+fecha.esVálida();
+// false
+```
+
+También se puede validar una fecha antes de utilizarla:
+
+```javascript
+import { validarFecha } from "fechaclara";
+
+try {
+  const fecha = validarFecha("2024-06-15");
+  console.log("Fecha válida:", fecha);
+} catch (error) {
+  console.error(error.message);
+}
+```
+
+## Formatear fechas
+
+```javascript
+import { crearFecha, formatear } from "fechaclara";
+
+const fecha = crearFecha("2024-06-15T14:30:45");
+
+formatear(fecha, "DD/MM/YYYY");
+// 15/06/2024
+
+formatear(fecha, "YYYY-MM-DD");
+// 2024-06-15
+
+formatear(fecha, "DD [de] MMMM [de] YYYY");
+// 15 de junio de 2024
+
+formatear(fecha, "dddd, DD [de] MMMM");
+// sábado, 15 de junio
+```
+
+### Tokens disponibles
+
+| Token | Descripción | Ejemplo |
+|---|---|---|
+| `YYYY` | Año de cuatro dígitos | `2024` |
+| `YY` | Año de dos dígitos | `24` |
+| `MMMM` | Nombre completo del mes | `junio` |
+| `MMM` | Nombre abreviado del mes | `jun` |
+| `MM` | Mes con dos dígitos | `06` |
+| `M` | Mes sin cero inicial | `6` |
+| `DD` | Día con dos dígitos | `15` |
+| `D` | Día sin cero inicial | `15` |
+| `dddd` | Nombre completo del día | `sábado` |
+| `ddd` | Nombre abreviado del día | `sáb` |
+| `HH` | Hora en formato de 24 horas | `14` |
+| `H` | Hora sin cero inicial | `14` |
+| `mm` | Minutos | `30` |
+| `ss` | Segundos | `45` |
+| `SSS` | Milisegundos | `123` |
+
+El texto literal debe encerrarse entre corchetes:
+
+```javascript
+formatear(fecha, "DD [de] MMMM [de] YYYY");
+// 15 de junio de 2024
+```
+
+## Localización
+
+Por defecto, FechaClara utiliza la configuración regional del sistema.
+
+Para establecer el idioma español:
+
+```javascript
+import { configurarIdioma, formatear } from "fechaclara";
+
+configurarIdioma("es");
+
+formatear(fecha, "dddd, DD [de] MMMM [de] YYYY");
+// sábado, 15 de junio de 2024
+```
+
+También se pueden utilizar otros idiomas disponibles:
+
+```javascript
+configurarIdioma("en");
+configurarIdioma("pt");
+configurarIdioma("fr");
+```
+
+O especificar el idioma directamente:
+
+```javascript
+formatear(fecha, "dddd, DD [de] MMMM", {
+  idioma: "es",
+});
+```
+
+## Sumar y restar tiempo
+
+Todas las operaciones devuelven una nueva fecha.
+
+```javascript
+import { sumar, restar } from "fechaclara";
+
+const fecha = crearFecha("2024-06-15");
+
+const próximaSemana = sumar(fecha, {
+  días: 7,
+});
+
+const mesAnterior = restar(fecha, {
+  meses: 1,
+});
+
+const fechaModificada = sumar(fecha, {
+  años: 1,
+  meses: 2,
+  días: 10,
+  horas: 4,
+  minutos: 30,
+  segundos: 15,
+});
+```
+
+Unidades disponibles:
+
+- `años`
+- `meses`
+- `semanas`
+- `días`
+- `horas`
+- `minutos`
+- `segundos`
+- `milisegundos`
+
+También se aceptan las formas abreviadas:
+
+```javascript
+sumar(fecha, { a: 1, m: 2, d: 3 });
+```
+
+## Comparar fechas
+
+```javascript
+import {
+  esAntesDe,
+  esDespuésDe,
+  esIgualA,
+  esEntre,
+} from "fechaclara";
+
+const inicio = crearFecha("2024-06-01");
+const fin = crearFecha("2024-06-30");
+const fecha = crearFecha("2024-06-15");
+
+esAntesDe(inicio, fin);
+// true
+
+esDespuésDe(fin, inicio);
+// true
+
+esIgualA(inicio, fin);
+// false
+
+esEntre(fecha, inicio, fin);
+// true
+```
+
+También es posible comparar ignorando la hora:
+
+```javascript
+import { esMismoDía } from "fechaclara";
+
+esMismoDía(
+  crearFecha("2024-06-15T08:00:00"),
+  crearFecha("2024-06-15T22:00:00")
+);
+// true
+```
+
+## Diferencia entre fechas
+
+```javascript
+import { diferencia } from "fechaclara";
+
+const inicio = crearFecha("2024-06-01");
+const fin = crearFecha("2024-06-15");
+
+diferencia(inicio, fin, "días");
+// 14
+
+diferencia(inicio, fin, "semanas");
+// 2
+
+diferencia(inicio, fin, "horas");
+// 336
+```
+
+Para obtener una diferencia detallada:
+
+```javascript
+import { diferenciaDetallada } from "fechaclara";
+
+diferenciaDetallada(inicio, fin);
+// {
+//   años: 0,
+//   meses: 0,
+//   días: 14,
+//   horas: 0,
+//   minutos: 0,
+//   segundos: 0
+// }
+```
+
+## Inicio y final de períodos
+
+```javascript
+import {
+  inicioDelDía,
+  finalDelDía,
+  inicioDeLaSemana,
+  finalDeLaSemana,
+  inicioDelMes,
+  finalDelMes,
+} from "fechaclara";
+
+inicioDelDía(fecha);
+finalDelDía(fecha);
+
+inicioDeLaSemana(fecha);
+finalDeLaSemana(fecha);
+
+inicioDelMes(fecha);
+finalDelMes(fecha);
+```
+
+Es posible indicar qué día comienza la semana:
+
+```javascript
+inicioDeLaSemana(fecha, {
+  semanaComienzaEn: "lunes",
+});
+```
+
+## Obtener componentes
+
+```javascript
+import {
+  obtenerAño,
+  obtenerMes,
+  obtenerDía,
+  obtenerHora,
+  obtenerMinutos,
+} from "fechaclara";
+
+obtenerAño(fecha);
+// 2024
+
+obtenerMes(fecha);
+// 6
+
+obtenerDía(fecha);
+// 15
+
+obtenerHora(fecha);
+// 14
+
+obtenerMinutos(fecha);
+// 30
+```
+
+## Zonas horarias
+
+FechaClara trabaja en hora local por defecto, pero también permite utilizar UTC:
+
+```javascript
+import { crearFecha, convertirAUTC, formatear } from "fechaclara";
+
+const fecha = crearFecha("2024-06-15T14:30:00");
+
+const fechaUTC = convertirAUTC(fecha);
+
+formatear(fechaUTC, "YYYY-MM-DD HH:mm:ss", {
+  zonaHoraria: "UTC",
+});
+```
+
+Para mostrar una fecha en una zona horaria específica:
+
+```javascript
+formatear(fecha, "DD/MM/YYYY HH:mm", {
+  zonaHoraria: "America/Argentina/Buenos_Aires",
+});
+```
+
+## Serialización
+
+Convertir una fecha a una cadena ISO:
+
+```javascript
+import { aISO } from "fechaclara";
+
+aISO(fecha);
+// 2024-06-15T14:30:00.000Z
+```
+
+Convertir una fecha a un objeto plano:
+
+```javascript
+import { aObjeto } from "fechaclara";
+
+aObjeto(fecha);
+// {
+//   año: 2024,
+//   mes: 6,
+//   día: 15,
+//   hora: 14,
+//   minuto: 30,
+//   segundo: 0,
+//   milisegundo: 0
+// }
+```
+
+## Inmutabilidad
+
+Las operaciones no modifican la fecha original:
+
+```javascript
+import { crearFecha, sumar, formatear } from "fechaclara";
+
+const original = crearFecha("2024-06-15");
+const modificada = sumar(original, { días: 5 });
+
+formatear(original, "YYYY-MM-DD");
+// 2024-06-15
+
+formatear(modificada, "YYYY-MM-DD");
+// 2024-06-20
+```
+
+## Manejo de meses y fin de mes
+
+Cuando una operación genera una fecha que no existe, FechaClara ajusta el resultado al último día válido del mes:
+
+```javascript
+const fecha = crearFecha("2024-01-31");
+const resultado = sumar(fecha, { meses: 1 });
+
+formatear(resultado, "YYYY-MM-DD");
+// 2024-02-29
+```
+
+## Compatibilidad
+
+FechaClara es compatible con:
+
+- Node.js 18 o superior.
+- Navegadores modernos.
+- ESM.
+- CommonJS.
+- TypeScript mediante declaraciones de tipos incluidas.
+
+## CommonJS
+
+```javascript
+const {
+  crearFecha,
+  formatear,
+  sumar,
+} = require("fechaclara");
+
+const fecha = crearFecha("2024-06-15");
+
+console.log(formatear(sumar(fecha, { días: 1 }), "DD/MM/YYYY"));
+```
+
+## TypeScript
+
+```typescript
+import { crearFecha, sumar, formatear } from "fechaclara";
+
+const fecha = crearFecha("2024-06-15");
+
+const resultado = sumar(fecha, {
+  días: 7,
+});
+
+const texto: string = formatear(resultado, "DD/MM/YYYY");
+```
+
+## API principal
+
+```javascript
+ahora()
+crearFecha(valor)
+desdeDate(date)
+desdeTimestamp(timestamp)
+
+esFechaVálida(valor)
+validarFecha(valor)
+
+formatear(fecha, patrón, opciones)
+aISO(fecha)
+aDate(fecha)
+aObjeto(fecha)
+
+sumar(fecha, cantidad)
+restar(fecha, cantidad)
+
+diferencia(fechaInicial, fechaFinal, unidad)
+diferenciaDetallada(fechaInicial, fechaFinal)
+
+esAntesDe(fecha, otraFecha)
+esDespuésDe(fecha, otraFecha)
+esIgualA(fecha, otraFecha)
+esEntre(fecha, inicio, fin)
+esMismoDía(fecha, otraFecha)
+
+inicioDelDía(fecha)
+finalDelDía(fecha)
+inicioDeLaSemana(fecha)
+finalDeLaSemana(fecha)
+inicioDelMes(fecha)
+finalDelMes(fecha)
+```
+
+## Buenas prácticas
+
+- Utilizá formatos ISO, como `YYYY-MM-DD`, para intercambiar fechas.
+- Especificá la zona horaria cuando trabajes con sistemas distribuidos.
+- Evitá interpretar manualmente cadenas ambiguas como `06/07/2024`.
+- Validá las fechas provenientes de formularios o servicios externos.
+- Preferí las funciones de FechaClara en lugar de modificar objetos `Date` directamente.
+- Utilizá UTC para almacenar fechas y convertí a la zona horaria del usuario al mostrarlas.
+
+## Contribuir
+
+Las contribuciones son bienvenidas.
+
+1. Cloná el repositorio.
+2. Instalá las dependencias.
+3. Creá una rama para tu cambio.
+4. Agregá o actualizá las pruebas.
+5. Ejecutá la suite de tests.
+6. Enviá un pull request.
+
+```bash
+git clone https://github.com/ejemplo/fechaclara.git
+cd fechaclara
+npm install
+npm test
+```
+
+## Licencia
+
+Este proyecto está disponible bajo la licencia MIT.

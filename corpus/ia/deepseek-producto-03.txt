@@ -1,0 +1,24 @@
+Notas de la versión 2.0
+
+¡Llegó la mayor actualización de nuestra app de gestión de stock!
+
+Novedades:
+- Nuevo panel de control con visión general de inventario, movimientos y alertas.
+- Gestión avanzada de productos: variantes, códigos de barras, lotes y fechas de vencimiento.
+- Control de múltiples almacenes y ubicaciones.
+- Registro de entradas, salidas, ajustes y transferencias con historial completo.
+- Alertas configurables de stock mínimo, máximo y próximos vencimientos.
+- Informes y exportación de datos en CSV y PDF.
+- Búsqueda y filtrado rápido por producto, categoría, proveedor y estado.
+- Escaneo de códigos de barras con la cámara del dispositivo.
+- Sincronización en la nube y modo offline para seguir trabajando sin conexión.
+- Roles y permisos de usuario para equipos.
+- Integración con proveedores y órdenes de compra.
+- Interfaz renovada, más rápida e intuitiva.
+
+Mejoras:
+- Mayor rendimiento al cargar inventarios grandes.
+- Optimización del consumo de batería y datos.
+- Correcciones de errores y estabilidad general.
+
+Actualiza ahora para llevar el control de tu stock al siguiente nivel.

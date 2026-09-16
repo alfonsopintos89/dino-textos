@@ -1,0 +1,69 @@
+Guía de inicio para la aplicación de facturación
+
+Bienvenido a la aplicación de facturación. Esta guía te acompañará durante tus primeros pasos para configurar tu cuenta, emitir facturas y gestionar tus ingresos de manera eficiente.
+
+1. Requisitos previos
+Antes de comenzar, asegúrate de contar con:
+- Conexión a internet.
+- Datos fiscales de tu empresa o actividad.
+- Correo electrónico válido.
+- Información de tus clientes y productos o servicios.
+
+2. Registro y acceso
+Ingresa a la aplicación y selecciona "Crear cuenta". Completa el formulario con tu nombre, correo electrónico y contraseña. Recibirás un correo de verificación; haz clic en el enlace para activar tu cuenta. Luego inicia sesión con tus credenciales.
+
+3. Configuración inicial de la empresa
+Ve a "Configuración" y completa el perfil de tu empresa:
+- Nombre o razón social.
+- Número de identificación fiscal (NIF, RUT, RFC, etc.).
+- Dirección fiscal.
+- Teléfono y correo de contacto.
+- Logotipo (opcional) para personalizar tus facturas.
+
+4. Datos fiscales y numeración
+Define el régimen fiscal, los impuestos aplicables (IVA, IGV, etc.) y las retenciones si corresponden. Configura la serie y el siguiente número de factura. La aplicación generará automáticamente los números de factura de forma consecutiva.
+
+5. Gestión de clientes
+Agrega tus clientes desde la sección "Clientes". Para cada uno, registra:
+- Nombre o razón social.
+- Número de identificación fiscal.
+- Dirección.
+- Correo electrónico.
+- Condiciones de pago (contado, crédito, días de plazo).
+Puedes importar clientes desde un archivo CSV o Excel.
+
+6. Catálogo de productos o servicios
+En "Productos" o "Servicios", crea los ítems que facturarás. Incluye:
+- Descripción.
+- Precio unitario.
+- Impuestos aplicables.
+- Unidad de medida.
+- Código interno (opcional).
+Esto agilizará la creación de facturas.
+
+7. Creación de la primera factura
+Selecciona "Nueva factura". Elige el cliente y agrega los productos o servicios. La aplicación calculará automáticamente subtotales, impuestos y total. Revisa los datos y guarda la factura. Puedes emitirla en PDF y enviarla por correo electrónico.
+
+8. Envío y pago
+Una vez emitida la factura, podrás enviarla al cliente desde la misma aplicación. Registra los pagos recibidos en "Pagos" o "Cobros". La factura cambiará a estado "Pagada" cuando se salde el total. Si manejas pagos parciales, la aplicación llevará el saldo pendiente.
+
+9. Reportes y seguimiento
+Consulta la sección "Reportes" para ver:
+- Facturas emitidas.
+- Ingresos por período.
+- Impuestos generados.
+- Clientes con saldos pendientes.
+- Productos más vendidos.
+Exporta los reportes en PDF o Excel para tu contabilidad.
+
+10. Consejos y buenas prácticas
+- Mantén actualizados tus datos fiscales y de clientes.
+- Revisa periódicamente los saldos pendientes.
+- Realiza copias de seguridad de tu información.
+- Utiliza contraseñas seguras y activa la verificación en dos pasos si está disponible.
+- Capacita a tu equipo en el uso de la aplicación.
+
+11. Soporte y contacto
+Si tienes dudas o problemas, consulta la sección "Ayuda" dentro de la aplicación. También puedes contactar a soporte por correo electrónico o chat en vivo. Nuestro equipo está disponible para ayudarte.
+
+¡Comienza a facturar de manera rápida y sencilla!

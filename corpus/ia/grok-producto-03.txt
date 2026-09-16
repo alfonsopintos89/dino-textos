@@ -1,0 +1,25 @@
+Notas de la versión 2.0
+
+¡La versión 2.0 ya está disponible! Una actualización mayor pensada para que gestiones tu inventario de forma más potente, rápida y sencilla.
+
+Novedades:
+• Gestión de múltiples almacenes y sucursales desde un único lugar.
+• Escáner de códigos de barras y QR integrado con la cámara.
+• Alertas personalizables de stock mínimo, máximo y productos próximos a vencer.
+• Control de lotes, números de serie y fechas de caducidad.
+• Informes avanzados con gráficos, filtros y exportación a PDF, Excel y CSV.
+• Roles de usuario (administrador, operador y visualizador) con permisos diferenciados.
+
+Mejoras:
+• Interfaz completamente renovada, más intuitiva y moderna.
+• Búsqueda inteligente y filtros avanzados.
+• Sincronización en la nube en tiempo real.
+• Rendimiento optimizado para catálogos grandes.
+• Modo oscuro.
+
+Correcciones:
+• Solucionados errores en el recálculo de existencias.
+• Corregidos fallos ocasionales de sincronización.
+• Mejorada la estabilidad general y la compatibilidad con distintos dispositivos.
+
+Actualiza ahora y lleva el control de tu stock al siguiente nivel.

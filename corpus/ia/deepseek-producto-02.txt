@@ -1,0 +1,283 @@
+Panel de control
+Resumen general
+Inicio
+Clientes
+Proveedores
+Productos
+Inventario
+Pedidos
+Facturación
+Pagos
+Informes
+Configuración
+Usuarios
+Roles y permisos
+Cerrar sesión
+Buscar…
+Notificaciones
+Perfil
+Ayuda
+Soporte
+Bienvenido, {nombre}
+Última actualización: {hora}
+Ver todo
+Ver detalles
+Editar
+Eliminar
+Guardar
+Guardar cambios
+Cancelar
+Crear nuevo
+Agregar
+Exportar
+Importar
+Filtrar
+Ordenar
+Buscar
+Limpiar filtros
+Aplicar
+Restablecer
+Anterior
+Siguiente
+Página {n} de {total}
+Mostrando {inicio}-{fin} de {total}
+No hay datos para mostrar
+No se encontraron resultados
+Cargando…
+Error al cargar los datos
+Reintentar
+Acción completada correctamente
+Ocurrió un error
+¿Estás seguro de que querés eliminar este elemento?
+Esta acción no se puede deshacer.
+Sí, eliminar
+No, cancelar
+Clientes
+Total de clientes
+Clientes activos
+Nuevos clientes
+Ventas
+Ventas totales
+Ingresos
+Gastos
+Balance
+Pedidos pendientes
+Pedidos completados
+Productos con stock bajo
+Tareas
+Tareas pendientes
+Tareas completadas
+Próximos vencimientos
+Actividad reciente
+Resumen
+Métricas
+Estadísticas
+Gráfico de ventas
+Gráfico de ingresos
+Gráfico de gastos
+Distribución por categoría
+Tendencia mensual
+Comparación anual
+Período
+Hoy
+Ayer
+Últimos 7 días
+Últimos 30 días
+Este mes
+Mes anterior
+Este año
+Personalizado
+Desde
+Hasta
+Aplicar rango
+Nombre
+Descripción
+Categoría
+Estado
+Fecha
+Monto
+Total
+Subtotal
+Impuestos
+Descuento
+Cantidad
+Precio unitario
+Precio total
+SKU
+Código
+Dirección
+Teléfono
+Correo electrónico
+Rol
+Permisos
+Activo
+Inactivo
+Pendiente
+Aprobado
+Rechazado
+En proceso
+Completado
+Cancelado
+Vencido
+Nuevo
+Ver
+Detalles
+Historial
+Comentarios
+Adjuntos
+Notas
+Responsable
+Asignado a
+Creado por
+Fecha de creación
+Última modificación
+Acciones
+Opciones
+Configuración general
+Preferencias
+Notificaciones
+Seguridad
+Cuenta
+Idioma
+Tema
+Modo claro
+Modo oscuro
+Guardar preferencias
+Cambiar contraseña
+Cerrar todas las sesiones
+Autenticación de dos factores
+Activar
+Desactivar
+Invitar usuario
+Nuevo usuario
+Editar usuario
+Eliminar usuario
+Reenviar invitación
+Restablecer contraseña
+Nombre completo
+Correo
+Contraseña
+Confirmar contraseña
+Rol de usuario
+Administrador
+Editor
+Visualizador
+Solo lectura
+Permisos de acceso
+Guardar usuario
+¿Eliminar usuario?
+Esta acción eliminará permanentemente al usuario.
+Eliminar usuario
+No hay notificaciones
+Marcar todas como leídas
+Ver todas
+Ajustes de notificaciones
+Recibir novedades por correo
+Notificaciones push
+Resumen semanal
+Alertas de stock
+Alertas de vencimiento
+Alertas de pago
+Monto total
+Cantidad de pedidos
+Ticket promedio
+Tasa de conversión
+Clientes recurrentes
+Productos más vendidos
+Categorías más vendidas
+Ventas por vendedor
+Rendimiento del equipo
+Objetivos
+Metas
+Progreso
+Cumplimiento
+En curso
+Finalizado
+Prioridad
+Alta
+Media
+Baja
+Urgente
+Etiquetas
+Agregar etiqueta
+Sin etiquetas
+Archivar
+Desarchivar
+Duplicar
+Mover
+Asignar
+Compartir
+Descargar
+Imprimir
+Vista rápida
+Vista detallada
+Vista de tabla
+Vista de tarjetas
+Vista de lista
+Agrupar por
+Filtrar por
+Ordenar por
+Ascendente
+Descendente
+Seleccionar todo
+Deseleccionar todo
+Eliminar seleccionados
+Exportar seleccionados
+Cambiar estado
+Actualizar
+Sincronizar
+Última sincronización
+Sincronizando…
+Todo está actualizado
+Conexión perdida
+Reconectando…
+Sin conexión
+Volver a intentar
+Ayuda y soporte
+Centro de ayuda
+Contactar soporte
+Enviar comentarios
+Términos y condiciones
+Política de privacidad
+Versión
+Cerrar
+Aceptar
+Confirmar
+Continuar
+Volver
+Finalizar
+Omitir
+Sí
+No
+Aceptar todo
+Rechazar todo
+Personalizar
+Agregar widget
+Quitar widget
+Mover widget
+Redimensionar
+Restablecer diseño
+Guardar diseño
+Resumen de ventas
+Ingresos mensuales
+Clientes nuevos
+Pedidos recientes
+Stock crítico
+Próximas tareas
+Calendario
+Recordatorios
+Anuncios
+Bienvenido de nuevo
+Tu resumen de hoy
+Todo listo
+No hay tareas pendientes
+¡Buen trabajo!
+Cargando panel…
+Preparando tu información…
+Estamos actualizando los datos…
+Algo salió mal
+No pudimos cargar el panel
+Volver a cargar
+¿Cerrar sesión?
+Se cerrará tu sesión actual.
+Sí, cerrar sesión

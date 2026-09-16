@@ -1,0 +1,84 @@
+Textos de Interfaz (UI Copy) para Panel de Control
+A continuación, te presento una propuesta de textos claros, concisos y orientados a la acción para el dashboard de una aplicación de gestión empresarial o financiera.
+
+1. Encabezado y Bienvenida
+El objetivo es recibir al usuario y contextualizar la información que está viendo.
+
+Saludo dinámico: "¡Hola, [Nombre del Usuario]! Así vienen tus números hoy."
+
+Subtítulo de contexto: "Resumen general actualizado al [Fecha y Hora]."
+
+Buscador global (Placeholder): "Buscar clientes, facturas o productos..."
+
+2. Menú de Navegación (Sidebar)
+Nombres cortos y descriptivos para las secciones principales.
+
+Inicio (o Dashboard)
+
+Ingresos (o Ventas)
+
+Gastos y Proveedores
+
+Inventario (o Control de Stock)
+
+Reportes y Analítica
+
+Configuración
+
+3. Acciones Rápidas (Botones Globales)
+Ubicados en la parte superior o en un botón flotante (FAB) para agilizar las tareas más frecuentes.
+
+[ + Nueva Venta ]
+
+[ + Registrar Gasto ]
+
+[ + Agregar Cliente ]
+
+[ Descargar Reporte ]
+
+4. Tarjetas de Métricas (Widgets del Dashboard)
+Textos para los bloques de información clave que el usuario necesita ver de un vistazo.
+
+Widget de Ingresos:
+
+Título: "Ingresos del Mes"
+
+Dato: "$ XX.XXX"
+
+Comparativa (Microcopy): "↑ 12% vs. el mes pasado"
+
+Widget de Cuentas por Cobrar:
+
+Título: "Pendiente de Cobro"
+
+Dato: "$ XX.XXX (X facturas)"
+
+Llamado a la acción (Link): "Ver detalle de deudores"
+
+Widget de Cuentas por Pagar:
+
+Título: "Próximos Vencimientos"
+
+Dato: "X gastos a vencer esta semana"
+
+Llamado a la acción (Link): "Pagar ahora"
+
+5. Estados Vacíos (Empty States)
+Textos amigables para cuando una sección aún no tiene información, incentivando al usuario a realizar una acción.
+
+En el gráfico de ventas: "Todavía no hay datos para mostrar en este período. Registrá tu primer ingreso para ver el gráfico."
+
+En la lista de actividad reciente: "Acá vas a ver el historial de tus últimos movimientos."
+
+En el módulo de tareas/alertas: "¡Todo al día! No tenés notificaciones pendientes."
+
+6. Alertas del Sistema (Toast Notifications / Feedbacks)
+Mensajes breves que confirman el resultado de una acción del usuario.
+
+🟢 Éxito: "El gasto se registró correctamente."
+
+🟢 Éxito (Edición): "Los cambios se guardaron con éxito."
+
+🔴 Error: "No pudimos guardar la información. Por favor, revisá tu conexión e intentá de nuevo."
+
+🟡 Advertencia: "Estás a punto de eliminar este registro. Esta acción no se puede deshacer."

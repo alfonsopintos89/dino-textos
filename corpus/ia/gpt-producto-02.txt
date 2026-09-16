@@ -1,0 +1,499 @@
+Panel de control
+
+Inicio
+
+Resumen
+
+Proyectos
+
+Tareas
+
+Clientes
+
+Equipo
+
+Calendario
+
+Reportes
+
+Configuración
+
+Buscar
+
+Notificaciones
+
+Ayuda
+
+Mi perfil
+
+Cerrar sesión
+
+Buen día, [Nombre]
+
+Aquí tenés un resumen de la actividad de tu equipo.
+
+Última actualización: hace unos minutos
+
+Resumen general
+
+Proyectos activos
+
+12
+
+Tareas pendientes
+
+48
+
+Tareas vencidas
+
+6
+
+Horas registradas
+
+324 h
+
+Ingresos del mes
+
+$245.800
+
+Actividad reciente
+
+Ver toda la actividad
+
+Nuevo proyecto creado
+
+El proyecto “Rediseño web” fue creado.
+
+Hace 10 minutos
+
+Tarea completada
+
+María López completó “Revisar propuesta comercial”.
+
+Hace 25 minutos
+
+Nuevo comentario
+
+Carlos Méndez comentó en “Campaña de lanzamiento”.
+
+Hace 1 hora
+
+Pago recibido
+
+Se registró un pago de $35.000 de Estudio Norte.
+
+Hace 2 horas
+
+Proyectos
+
+Todos los proyectos
+
+Mis proyectos
+
+Proyectos activos
+
+Proyectos archivados
+
+Nuevo proyecto
+
+Nombre del proyecto
+
+Descripción
+
+Cliente
+
+Responsable
+
+Fecha de inicio
+
+Fecha de entrega
+
+Estado
+
+Prioridad
+
+Presupuesto
+
+Guardar proyecto
+
+Cancelar
+
+Editar proyecto
+
+Eliminar proyecto
+
+Archivar proyecto
+
+Restaurar proyecto
+
+No hay proyectos para mostrar.
+
+Creá tu primer proyecto para empezar a organizar el trabajo.
+
+Tareas
+
+Todas las tareas
+
+Mis tareas
+
+Pendientes
+
+En progreso
+
+Completadas
+
+Vencidas
+
+Nueva tarea
+
+Título de la tarea
+
+Descripción
+
+Asignar a
+
+Proyecto
+
+Fecha límite
+
+Prioridad
+
+Baja
+
+Media
+
+Alta
+
+Urgente
+
+Agregar tarea
+
+Guardar cambios
+
+Marcar como completada
+
+Reabrir tarea
+
+Eliminar tarea
+
+No hay tareas pendientes.
+
+¡Buen trabajo! Completaste todas tus tareas.
+
+Clientes
+
+Todos los clientes
+
+Clientes activos
+
+Clientes inactivos
+
+Nuevo cliente
+
+Nombre o razón social
+
+Persona de contacto
+
+Correo electrónico
+
+Teléfono
+
+Dirección
+
+Notas
+
+Guardar cliente
+
+Editar cliente
+
+Eliminar cliente
+
+No hay clientes registrados.
+
+Agregá un cliente para comenzar a gestionar tus proyectos.
+
+Equipo
+
+Miembros del equipo
+
+Invitar miembro
+
+Nombre
+
+Correo electrónico
+
+Rol
+
+Administrador
+
+Gerente
+
+Colaborador
+
+Observador
+
+Enviar invitación
+
+Cambiar rol
+
+Quitar del equipo
+
+La invitación fue enviada correctamente.
+
+Este correo ya está registrado.
+
+Calendario
+
+Hoy
+
+Mes
+
+Semana
+
+Día
+
+Anterior
+
+Siguiente
+
+No hay eventos programados para este día.
+
+Nuevo evento
+
+Título del evento
+
+Fecha
+
+Hora de inicio
+
+Hora de finalización
+
+Ubicación
+
+Descripción
+
+Agregar evento
+
+Reportes
+
+Resumen de rendimiento
+
+Proyectos por estado
+
+Tareas por estado
+
+Horas trabajadas
+
+Ingresos y gastos
+
+Rendimiento del equipo
+
+Período
+
+Esta semana
+
+Este mes
+
+Este trimestre
+
+Este año
+
+Personalizado
+
+Desde
+
+Hasta
+
+Aplicar filtros
+
+Exportar reporte
+
+Descargar CSV
+
+Descargar PDF
+
+No hay datos suficientes para generar este reporte.
+
+Filtros
+
+Buscar
+
+Estado
+
+Responsable
+
+Cliente
+
+Fecha
+
+Limpiar filtros
+
+Aplicar filtros
+
+Ordenar por
+
+Más recientes
+
+Más antiguos
+
+Nombre
+
+Fecha de entrega
+
+Prioridad
+
+Acciones
+
+Ver detalles
+
+Editar
+
+Duplicar
+
+Compartir
+
+Eliminar
+
+Más opciones
+
+Seleccionar todo
+
+Seleccionados: 0
+
+Guardar
+
+Guardar cambios
+
+Cancelar
+
+Volver
+
+Continuar
+
+Confirmar
+
+Aceptar
+
+Sí, eliminar
+
+No, volver
+
+¿Querés eliminar este elemento?
+
+Esta acción no se puede deshacer.
+
+¿Querés archivar este proyecto?
+
+Podés restaurarlo más adelante desde la sección de proyectos archivados.
+
+Cambios guardados correctamente.
+
+El proyecto se creó correctamente.
+
+La tarea se creó correctamente.
+
+El elemento se eliminó correctamente.
+
+Ocurrió un error. Intentá nuevamente.
+
+No pudimos cargar la información.
+
+Revisá los campos obligatorios.
+
+El correo electrónico no es válido.
+
+La fecha de entrega debe ser posterior a la fecha de inicio.
+
+No tenés permisos para realizar esta acción.
+
+Cargando…
+
+Procesando…
+
+Sin resultados
+
+No encontramos resultados para tu búsqueda.
+
+Probá con otros términos o eliminá los filtros aplicados.
+
+Notificaciones
+
+Marcar todas como leídas
+
+No tenés notificaciones nuevas.
+
+Configuración
+
+Información de la cuenta
+
+Preferencias
+
+Notificaciones por correo
+
+Notificaciones dentro de la aplicación
+
+Zona horaria
+
+Idioma
+
+Seguridad
+
+Cambiar contraseña
+
+Sesiones activas
+
+Integraciones
+
+Facturación
+
+Guardar preferencias
+
+Contraseña actual
+
+Nueva contraseña
+
+Confirmar nueva contraseña
+
+La contraseña debe tener al menos 8 caracteres.
+
+Las contraseñas no coinciden.
+
+La contraseña se actualizó correctamente.
+
+Correo electrónico
+
+Contraseña
+
+Recordarme
+
+Iniciar sesión
+
+¿Olvidaste tu contraseña?
+
+Crear una cuenta
+
+Restablecer contraseña
+
+Enviar enlace
+
+Volver al inicio de sesión
+
+Revisá tu correo electrónico para continuar.
+
+Bienvenido a tu panel de control
+
+Organizá proyectos, tareas y equipos desde un solo lugar.
+
+Comenzar
+
+Ayuda y soporte
+
+Centro de ayuda
+
+Contactar soporte
+
+Enviar comentarios
+
+¿Necesitás ayuda?
+
+Estamos para ayudarte.

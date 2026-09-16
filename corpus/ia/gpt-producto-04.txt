@@ -1,0 +1,113 @@
+Preguntas frecuentes
+
+¿Qué es un servicio de hosting?
+
+El hosting, o alojamiento web, es un servicio que permite almacenar los archivos, bases de datos y correos de un sitio web en servidores conectados a Internet. De esta manera, tu página puede estar disponible para los visitantes en todo momento.
+
+¿Qué incluye el servicio de hosting?
+
+Nuestros planes incluyen espacio de almacenamiento, transferencia de datos, cuentas de correo corporativo, certificados SSL, copias de seguridad, acceso a panel de control y soporte técnico. Las características pueden variar según el plan contratado.
+
+¿Qué necesito para publicar mi sitio web?
+
+Necesitás un nombre de dominio y un plan de hosting. Si todavía no tenés un dominio, podés registrarlo con nosotros o transferir uno que ya poseas. También podés utilizar el servicio para crear tu sitio con un gestor de contenidos, como WordPress.
+
+¿Qué es un dominio?
+
+Un dominio es la dirección que las personas escriben en el navegador para visitar tu sitio web, por ejemplo, tusitio.com. El hosting almacena el contenido del sitio, mientras que el dominio funciona como su dirección en Internet.
+
+¿Puedo registrar un dominio con ustedes?
+
+Sí. Podés registrar nuevos dominios con distintas extensiones o transferir un dominio existente. La disponibilidad, los requisitos y el precio dependen de la extensión elegida.
+
+¿Puedo transferir mi dominio actual?
+
+Sí, podés transferir tu dominio a nuestro servicio. Para hacerlo, generalmente necesitás desbloquearlo en el proveedor actual y obtener el código de autorización correspondiente. El proceso puede variar según la extensión del dominio.
+
+¿El certificado SSL está incluido?
+
+Sí, nuestros planes incluyen certificado SSL para proteger la conexión entre tu sitio web y sus visitantes. El SSL permite utilizar HTTPS y ayuda a proteger la información intercambiada.
+
+¿Puedo instalar WordPress?
+
+Sí. Podés instalar WordPress y otras aplicaciones compatibles desde el panel de control o mediante los métodos de instalación disponibles en tu plan. Algunos planes ofrecen instalación automática.
+
+¿Puedo alojar varios sitios web en una sola cuenta?
+
+Depende del plan contratado. Algunos planes permiten alojar varios dominios y sitios web, mientras que otros están diseñados para un único sitio.
+
+¿Puedo crear cuentas de correo con mi dominio?
+
+Sí. Podés crear direcciones de correo profesionales, como contacto@tudominio.com, siempre que el plan incluya este servicio. La cantidad de cuentas y el espacio disponible dependen del plan.
+
+¿Puedo acceder a mi correo desde el celular?
+
+Sí. Podés configurar tus cuentas de correo en teléfonos, tabletas y computadoras mediante aplicaciones compatibles. También podés acceder al correo desde un webmail.
+
+¿Qué métodos de pago aceptan?
+
+Aceptamos los medios de pago disponibles durante el proceso de contratación. Las opciones pueden incluir tarjetas de crédito, tarjetas de débito, transferencias bancarias y otros medios electrónicos.
+
+¿Cuándo se activa mi cuenta?
+
+En la mayoría de los casos, la cuenta se activa automáticamente después de confirmar el pago. Algunos servicios, como el registro o la transferencia de dominios, pueden requerir un tiempo adicional de validación.
+
+¿Puedo cambiar de plan?
+
+Sí. Podés actualizar o modificar tu plan cuando lo necesites. El cambio puede realizarse desde el área de cliente o solicitándolo a nuestro equipo de soporte. Las condiciones dependen del plan elegido.
+
+¿Qué sucede si mi sitio supera los recursos del plan?
+
+Si tu sitio consume más recursos de los incluidos en el plan, podemos comunicarnos con vos para recomendarte una optimización o un plan más adecuado. También es posible que algunas funciones se vean limitadas temporalmente para proteger la estabilidad del servicio.
+
+¿Realizan copias de seguridad?
+
+Sí, realizamos copias de seguridad según la frecuencia y las condiciones establecidas para cada plan. Recomendamos conservar también una copia propia de los archivos y las bases de datos de tu sitio.
+
+¿Puedo restaurar una copia de seguridad?
+
+Sí, cuando el plan lo permite, podés solicitar la restauración de una copia de seguridad disponible. Antes de realizar cambios importantes en tu sitio, recomendamos verificar que exista una copia reciente.
+
+¿El servicio incluye soporte técnico?
+
+Sí. Nuestro equipo de soporte puede ayudarte con consultas relacionadas con el funcionamiento del hosting, la configuración del dominio, el correo electrónico y otros servicios incluidos en tu plan.
+
+¿El soporte técnico desarrolla o administra mi sitio web?
+
+El soporte técnico ayuda con la configuración y el funcionamiento del servicio de hosting. La creación de contenido, el diseño, el desarrollo y la administración diaria del sitio pueden requerir un servicio adicional.
+
+¿Qué hago si mi sitio no carga?
+
+Primero, verificá que el dominio esté activo, que la cuenta no tenga pagos pendientes y que los datos de conexión sean correctos. Si el problema continúa, contactá a nuestro equipo de soporte para que podamos revisarlo.
+
+¿Qué hago si olvidé mi contraseña?
+
+Podés restablecerla desde la opción de recuperación disponible en el área de cliente. Si no tenés acceso al correo asociado a la cuenta, contactá a soporte para validar tu identidad.
+
+¿El hosting es seguro?
+
+Implementamos medidas de seguridad para proteger la infraestructura y las cuentas alojadas. Sin embargo, también es importante mantener actualizados el sitio, los plugins y las contraseñas, además de utilizar prácticas seguras de acceso.
+
+¿Puedo instalar aplicaciones personalizadas?
+
+Depende del tipo de hosting y de los recursos disponibles. En los planes compartidos existen ciertas limitaciones, mientras que los servidores virtuales o dedicados ofrecen mayor nivel de configuración.
+
+¿Ofrecen hosting para tiendas online?
+
+Sí. Podés alojar tiendas online creadas con plataformas compatibles, como WooCommerce u otras soluciones de comercio electrónico. El plan adecuado dependerá del tamaño de la tienda, la cantidad de productos y el tráfico esperado.
+
+¿Puedo cancelar el servicio?
+
+Sí. Podés solicitar la cancelación desde el área de cliente o mediante los canales de atención disponibles. Te recomendamos revisar las condiciones de contratación y realizar una copia de seguridad antes de cancelar.
+
+¿Qué sucede con mis archivos al cancelar el servicio?
+
+Una vez cancelada la cuenta, los archivos, las bases de datos y los correos pueden eliminarse después del período establecido en las condiciones del servicio. Antes de cancelar, descargá toda la información que quieras conservar.
+
+¿Existe una garantía de reembolso?
+
+Las condiciones de reembolso dependen del plan y de la política vigente al momento de la contratación. Consultá los términos del servicio o contactá a nuestro equipo de atención para obtener información específica.
+
+¿Cómo puedo contactar al soporte?
+
+Podés comunicarte con nuestro equipo a través del área de cliente, el formulario de contacto o los canales de atención indicados en nuestro sitio web. Estamos disponibles para ayudarte con tus consultas.

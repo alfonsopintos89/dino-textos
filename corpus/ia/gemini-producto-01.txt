@@ -1,0 +1,60 @@
+
+Primeros pasos en FacturaPro: Tu guía de inicio rápido
+¡Te damos la bienvenida a tu nueva plataforma de facturación!
+
+Sabemos que querés empezar a emitir comprobantes y cobrar lo antes posible. Por eso, preparamos esta guía breve para que configures tu cuenta en menos de 10 minutos y puedas automatizar la administración de tu negocio.
+
+Paso 1: Configurá los datos de tu empresa
+Antes de emitir tu primera factura, necesitamos configurar la información legal y fiscal que aparecerá en tus comprobantes.
+
+Dirigite al menú lateral y hacé clic en Configuración > Datos de la Empresa.
+
+Completá el nombre legal o razón social, número de identificación tributaria (RUT/CUIT) y dirección comercial.
+
+Subí el logo de tu empresa (formato JPG o PNG, máximo 2MB) para que tus facturas tengan una presentación profesional.
+
+Hacé clic en Guardar cambios.
+
+Paso 2: Creá tu catálogo de productos o servicios
+Ahorrá tiempo al facturar teniendo tus ítems preconfigurados. No vas a tener que escribir los precios y descripciones cada vez que vendas.
+
+Navegá a la sección Catálogo > Nuevo Ítem.
+
+Ingresá el nombre, una breve descripción y el código interno (opcional).
+
+Definí el precio base y el tipo de impuesto aplicable (IVA básico, exento, etc.).
+
+Si manejás inventario, activá la opción "Controlar stock" para que la plataforma lo descuente automáticamente con cada venta.
+
+Paso 3: Registrá a tu primer cliente
+Tener tu base de datos de clientes organizada te permitirá enviar facturas por correo electrónico con un solo clic y analizar tu historial de ventas.
+
+Andá a Contactos > Clientes > Añadir Cliente.
+
+Ingresá su razón social, número fiscal y correo electrónico (fundamental para el envío automático de comprobantes).
+
+Podés asignar condiciones de pago predeterminadas (ej. contado, a 30 días, a 60 días) para este cliente en particular.
+
+Paso 4: Emití tu primera factura
+¡Ya tenés todo listo para empezar a facturar! Es el momento de generar tu primer comprobante.
+
+Hacé clic en el botón destacado + Nueva Factura en el panel principal.
+
+Buscá y seleccioná a tu cliente desde el menú desplegable.
+
+Añadí los productos o servicios que configuraste en el Paso 2. El sistema calculará los subtotales e impuestos automáticamente.
+
+Revisá que todos los datos estén correctos en la vista previa.
+
+Hacé clic en Emitir y Enviar. Tu cliente recibirá un PDF profesional en su casilla de correo al instante.
+
+¿Necesitás ayuda adicional?
+Nuestro centro de soporte está disponible 24/7 para acompañarte. Si tenés dudas sobre configuraciones avanzadas, integración con pasarelas de pago o reportes contables, podés consultar nuestros recursos:
+
+[ Videotutoriales ]: Guías paso a paso de todas las funciones.
+
+[ Base de Conocimiento ]: Artículos detallados y preguntas frecuentes.
+
+[ Contactar a Soporte ]: Hablá con nuestro equipo por chat o abrí un ticket técnico.
+
+¡Mucho éxito con tus ventas!

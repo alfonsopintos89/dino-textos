@@ -68,5 +68,33 @@ class TestQuitarPlantilla(unittest.TestCase):
         self.assertEqual(limpios, ['algo propio'])
 
 
+class TestOpenRouter(unittest.TestCase):
+
+    def test_lee_el_env_con_comillas_y_comentarios(self):
+        import tempfile
+        with tempfile.NamedTemporaryFile('w', suffix='.env', delete=False) as f:
+            f.write('# comentario\nOPENROUTER_API_KEY="sk-abc"\n\nOPENROUTER_TEXT_MODEL=openai/x\n')
+        env = construir.leer_env(f.name)
+        os.remove(f.name)
+        self.assertEqual(env['OPENROUTER_API_KEY'], 'sk-abc')
+        self.assertEqual(env['OPENROUTER_TEXT_MODEL'], 'openai/x')
+
+    def test_el_pedido_no_lleva_system_prompt(self):
+        """Nada de instrucciones de estilo: se mide lo que el modelo escribe por defecto.
+
+        Un system prompt, aunque sea neutro, ya es una instrucción que la gente
+        que pega un pedido en el chat no escribe.
+        """
+        cuerpo = construir.cuerpo_openrouter('openai/x', 'Escribí una landing.')
+        self.assertEqual(cuerpo['model'], 'openai/x')
+        self.assertEqual([m['role'] for m in cuerpo['messages']], ['user'])
+        self.assertIn('Escribí una landing.', cuerpo['messages'][0]['content'])
+
+    def test_el_error_nunca_muestra_la_clave(self):
+        mensaje = construir.describir_error(401, '{"error":"bad key sk-secreta"}', 'sk-secreta')
+        self.assertNotIn('sk-secreta', mensaje)
+        self.assertIn('401', mensaje)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

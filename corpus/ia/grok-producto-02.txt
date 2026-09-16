@@ -1,0 +1,63 @@
+Panel de control
+Inicio
+Resumen
+Usuarios
+Clientes
+Proyectos
+Tareas
+Informes
+Estadísticas
+Calendario
+Notificaciones
+Mensajes
+Configuración
+Perfil
+Cerrar sesión
+Buscar
+Filtros
+Aplicar
+Limpiar
+Nuevo
+Agregar
+Editar
+Eliminar
+Guardar
+Cancelar
+Confirmar
+Aceptar
+Ver detalles
+Exportar
+Importar
+Nombre
+Apellido
+Correo electrónico
+Teléfono
+Estado
+Activo
+Inactivo
+Pendiente
+Completado
+Fecha
+Desde
+Hasta
+Rol
+Administrador
+Usuario
+Contraseña
+Confirmar contraseña
+Iniciar sesión
+Registrarse
+Olvidé mi contraseña
+Bienvenido
+Última actividad
+Cargando...
+No hay datos
+Operación exitosa
+Ha ocurrido un error
+¿Estás seguro?
+Ayuda
+Acerca de
+Versión
+Idioma
+Tema oscuro
+Tema claro

@@ -1,0 +1,47 @@
+Preguntas Frecuentes (FAQ)
+Resolvemos tus dudas más comunes para que puedas poner tu proyecto en línea con total tranquilidad. Si no encontrás lo que buscás, nuestro equipo está listo para ayudarte.
+
+Primeros Pasos
+¿Qué es exactamente el web hosting y por qué lo necesito?
+El web hosting (o alojamiento web) es el espacio físico en un servidor donde se guardan todos los archivos, imágenes y bases de datos que componen tu sitio web. Para que tu página esté visible en internet las 24 horas, necesitás alquilar este espacio. Nosotros nos encargamos de mantener esos servidores seguros, rápidos y siempre conectados.
+
+¿Qué diferencia hay entre el hosting y el dominio?
+El hosting es el "terreno" donde construís tu casa (los archivos de tu web), y el dominio es la "dirección" que la gente escribe para encontrarte (por ejemplo, tuempresa.com). Para tener una web funcional, necesitás ambos.
+
+¿Los planes incluyen un dominio gratuito?
+Sí, todos nuestros planes anuales incluyen el registro de un dominio gratis (.com, .net, o .org) durante el primer año. A partir de la renovación, se cobrará el precio estándar del dominio.
+
+Migración y Soporte
+Ya tengo mi sitio alojado en otra empresa, ¿me ayudan a traerlo?
+¡Por supuesto! Ofrecemos servicio de migración web 100% gratuito. Una vez que contrates tu plan, solo tenés que enviarnos los datos de acceso de tu proveedor anterior y nuestros técnicos se encargarán de mudar tus archivos y bases de datos sin que tu página sufra caídas.
+
+¿En qué horarios atienden y por qué canales?
+Nuestro equipo de soporte técnico trabaja 24/7, los 365 días del año. Podés contactarnos a través de:
+
+Chat en vivo: Para consultas rápidas (tiempo de respuesta promedio: 3 minutos).
+
+Sistema de Tickets: Para problemas técnicos que requieren un análisis más profundo.
+
+Centro de Ayuda: Nuestra base de conocimientos con tutoriales paso a paso.
+
+Aspectos Técnicos y Seguridad
+¿Mi sitio web va a ser seguro? ¿Ofrecen certificados SSL?
+La seguridad es nuestra prioridad. Todos los planes incluyen certificados SSL gratuitos y autoinstalables. Esto garantiza que la información que viaja entre tu web y tus usuarios esté encriptada (mostrando el candadito verde en el navegador), lo cual es fundamental tanto para la confianza de tus clientes como para el posicionamiento en Google.
+
+¿Hacen copias de seguridad de mi información?
+Sí. Realizamos backups automáticos diarios y semanales de toda tu cuenta (archivos, correos y bases de datos). Si alguna vez cometés un error o borrás algo por accidente, podés restaurar una versión anterior con un solo clic desde tu panel de control.
+
+¿Qué pasa si mi sitio recibe un pico de visitas repentino?
+Nuestra infraestructura está diseñada para ser escalable. Si tu página experimenta un aumento inusual de tráfico (por ejemplo, por una campaña publicitaria), nuestros sistemas balancean la carga para mantenerla en línea. Si el tráfico alto se vuelve permanente, te recomendaremos pasar a un plan superior.
+
+Facturación y Planes
+¿Puedo cambiar de plan más adelante si mi negocio crece?
+Sí, podés hacer un upgrade (mejorar tu plan) en cualquier momento desde tu panel de cliente. El cambio se realiza de forma automática, sin tiempos de inactividad, y solo vas a pagar la diferencia proporcional por el tiempo restante de tu contrato.
+
+¿Tienen alguna política de reembolso si no estoy conforme?
+Queremos que te quedes por nuestro servicio, no por obligación. Ofrecemos una garantía de devolución del 100% del dinero durante los primeros 30 días si el servicio no cumple con tus expectativas (excluye el costo de registro de dominios, que ya quedarán a tu nombre).
+
+¿Te quedó alguna duda sin resolver?
+No te preocupes, estamos para asesorarte.
+
+[ Hablar con un Especialista por Chat ] | [ Abrir un Ticket de Consulta ]

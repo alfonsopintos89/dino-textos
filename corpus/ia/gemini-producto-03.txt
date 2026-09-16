@@ -1,0 +1,30 @@
+¡Llegó la versión 2.0! El control de tu inventario, llevado al siguiente nivel
+Escuchamos tus sugerencias y trabajamos para traerte la actualización más grande de nuestra historia. Ahora gestionar tu stock es más rápido, inteligente y colaborativo.
+
+Esta nueva versión está pensada para acompañar el crecimiento de tu negocio, con herramientas diseñadas para ahorrarte horas de trabajo manual cada semana.
+
+🚀 Nuevas Funcionalidades (Lo más pedido)
+📦 Gestión Multidepósito: ¡Por fin está acá! Ahora podés administrar el stock de múltiples sucursales o depósitos desde una sola cuenta. Transferí mercadería entre ubicaciones con un par de toques.
+
+📷 Escáner de Códigos de Barras Nativo: Usá la cámara de tu celular para escanear productos al instante. Ideal para hacer ingresos de mercadería o auditorías de inventario en tiempo récord.
+
+🤝 Roles y Permisos de Equipo: Ya no tenés que compartir tu contraseña. Invitá a tus empleados y asignales roles específicos (Ej: "Solo lectura", "Cajero", "Administrador") para mantener el control y la seguridad de tu información.
+
+📊 Reportes Inteligentes: Sumamos un nuevo panel de analítica donde podés ver tus productos más vendidos, los de menor rotación y alertas de quiebre de stock proyectadas.
+
+✨ Mejoras y Optimizaciones
+Rediseño visual completo: Renovamos la interfaz para que sea más moderna, limpia y fácil de navegar. Encontrar lo que buscás ahora requiere menos clics.
+
+Modo Oscuro: Para cuidar tu vista (y la batería de tu dispositivo) durante las jornadas largas de trabajo. Se activa automáticamente según la configuración de tu sistema.
+
+Sincronización ultrarrápida: Mejoramos nuestra infraestructura en la nube. Los cambios que hagas se reflejan en todos tus dispositivos conectados en menos de un segundo.
+
+🐛 Correcciones de Errores
+Solucionamos un problema que causaba cierres inesperados al exportar reportes en PDF muy pesados.
+
+Corregimos el filtro de búsqueda por fechas que a veces excluía el último día del mes.
+
+¿Qué te parece la nueva versión?
+Tu opinión es lo que nos ayuda a seguir mejorando. Si te gusta la versión 2.0, dejanos tus 5 estrellas en la tienda de aplicaciones. Si encontrás algún detalle o tenés ideas para futuras actualizaciones, escribinos a soporte@tuappdestock.com.
+
+[ ¡Actualizar Ahora! ]

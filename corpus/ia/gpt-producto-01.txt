@@ -1,0 +1,388 @@
+Documentación de onboarding
+
+Bienvenido a la app de facturación
+
+Esta guía te ayudará a configurar la cuenta, cargar la información de tu negocio y emitir tus primeras facturas.
+
+1. Crear una cuenta
+
+Para comenzar:
+
+1. Ingresá a la aplicación.
+2. Seleccioná “Crear cuenta”.
+3. Completá tu nombre, correo electrónico y contraseña.
+4. Confirmá tu dirección de correo.
+5. Iniciá sesión con tus credenciales.
+
+Usá una dirección de correo a la que tengas acceso, ya que recibirás notificaciones, comprobantes y enlaces para recuperar la cuenta.
+
+2. Configurar la empresa
+
+Después de crear la cuenta, completá los datos de tu empresa:
+
+- Nombre comercial.
+- Razón social.
+- Identificación fiscal.
+- Domicilio fiscal.
+- Teléfono.
+- Correo electrónico.
+- Sitio web, si corresponde.
+- Logotipo.
+- Moneda principal.
+- Zona horaria.
+
+Verificá que la información coincida con la registrada ante el organismo fiscal correspondiente. Estos datos aparecerán en los comprobantes y documentos emitidos.
+
+3. Configurar los datos fiscales
+
+Ingresá a Configuración y completá la sección Datos fiscales.
+
+Según tu país y régimen impositivo, es posible que debas indicar:
+
+- Tipo de contribuyente.
+- Régimen fiscal.
+- Punto de venta o serie.
+- Tipo de comprobante.
+- Categorías o alícuotas de impuestos.
+- Numeración inicial.
+- Certificados o credenciales fiscales.
+- Métodos de facturación electrónica.
+
+La configuración fiscal puede variar según la normativa local. Antes de emitir comprobantes, verificá que los datos sean correctos y estén habilitados para facturar.
+
+4. Configurar la numeración
+
+La app utiliza una numeración correlativa para identificar las facturas.
+
+Para configurar la numeración:
+
+1. Ingresá a Configuración.
+2. Seleccioná “Comprobantes” o “Numeración”.
+3. Elegí el tipo de comprobante.
+4. Indicá la serie o punto de venta.
+5. Confirmá el próximo número disponible.
+
+No modifiques la numeración sin verificar previamente los comprobantes emitidos. Una numeración incorrecta puede generar inconsistencias contables o fiscales.
+
+5. Agregar usuarios y permisos
+
+Podés invitar a otras personas para que trabajen en la cuenta.
+
+Para agregar un usuario:
+
+1. Ingresá a Configuración.
+2. Seleccioná “Usuarios y permisos”.
+3. Hacé clic en “Invitar usuario”.
+4. Ingresá su nombre y correo electrónico.
+5. Elegí el rol correspondiente.
+6. Enviá la invitación.
+
+Los roles pueden incluir:
+
+- Administrador: acceso total a la cuenta y configuración.
+- Facturación: puede crear, emitir y consultar comprobantes.
+- Ventas: puede administrar clientes y presupuestos.
+- Contabilidad: puede consultar facturas, pagos y reportes.
+- Consulta: acceso de solo lectura.
+
+Asigná a cada usuario únicamente los permisos que necesite para realizar su trabajo.
+
+6. Configurar productos y servicios
+
+Antes de emitir una factura, cargá los productos o servicios que ofrecés.
+
+Para agregar un producto o servicio:
+
+1. Ingresá a “Productos y servicios”.
+2. Seleccioná “Agregar”.
+3. Completá el nombre y la descripción.
+4. Indicá el precio.
+5. Elegí la unidad de medida.
+6. Configurá los impuestos aplicables.
+7. Guardá los cambios.
+
+También podés importar productos desde un archivo, si la app ofrece esta opción.
+
+Mantené actualizados los precios, las descripciones y las tasas de impuestos para evitar errores al facturar.
+
+7. Cargar clientes
+
+Para crear un cliente:
+
+1. Ingresá a “Clientes”.
+2. Seleccioná “Nuevo cliente”.
+3. Indicá si se trata de una persona o una empresa.
+4. Completá el nombre o razón social.
+5. Ingresá su identificación fiscal.
+6. Agregá domicilio, teléfono y correo electrónico.
+7. Guardá la información.
+
+Revisá especialmente la identificación fiscal y el correo electrónico. La identificación se utilizará en el comprobante y el correo será el destino de la factura.
+
+También podés importar una lista de clientes desde un archivo compatible.
+
+8. Configurar métodos de pago
+
+Configurá los medios de pago que aceptás, por ejemplo:
+
+- Efectivo.
+- Transferencia bancaria.
+- Tarjeta de crédito.
+- Tarjeta de débito.
+- Billeteras virtuales.
+- Cheques.
+- Otros medios personalizados.
+
+Para agregar un método:
+
+1. Ingresá a Configuración.
+2. Seleccioná “Métodos de pago”.
+3. Hacé clic en “Agregar método”.
+4. Ingresá el nombre.
+5. Configurá las condiciones, si corresponde.
+6. Guardá los cambios.
+
+Podés asociar cuentas bancarias o plataformas de cobro para facilitar la conciliación de pagos.
+
+9. Personalizar las facturas
+
+La aplicación permite personalizar la apariencia de los documentos.
+
+Podés configurar:
+
+- Logotipo.
+- Colores.
+- Datos de contacto.
+- Texto legal.
+- Condiciones de pago.
+- Pie de página.
+- Información bancaria.
+- Mensajes para el cliente.
+
+La personalización no debe ocultar ni alterar la información fiscal obligatoria.
+
+10. Emitir una factura
+
+Para crear una factura:
+
+1. Ingresá a “Facturas”.
+2. Seleccioná “Nueva factura”.
+3. Elegí el cliente.
+4. Seleccioná el tipo de comprobante.
+5. Agregá los productos o servicios.
+6. Indicá cantidades, precios y descuentos.
+7. Revisá los impuestos.
+8. Elegí la fecha de emisión y el vencimiento.
+9. Agregá notas o condiciones de pago.
+10. Verificá el total.
+11. Seleccioná “Emitir”.
+
+Antes de confirmar, revisá:
+
+- Datos del cliente.
+- Tipo de comprobante.
+- Fecha.
+- Numeración.
+- Productos o servicios.
+- Impuestos.
+- Total.
+- Medio de pago.
+- Correo de envío.
+
+Una vez emitida, la factura puede enviarse por correo electrónico o descargarse en formato PDF. Según la configuración fiscal, también puede generarse un archivo electrónico adicional.
+
+11. Guardar una factura como borrador
+
+Si todavía no querés emitir una factura, podés guardarla como borrador.
+
+Los borradores no tienen validez fiscal ni afectan la numeración oficial. Podés editarlos, completarlos y emitirlos más adelante.
+
+12. Anular o cancelar una factura
+
+Si necesitás corregir una factura emitida, utilizá la opción disponible según la normativa aplicable:
+
+- Anulación.
+- Cancelación.
+- Nota de crédito.
+- Nota de débito.
+- Reemplazo del comprobante.
+
+No elimines una factura emitida para corregir un error. Consultá con tu contador o asesor fiscal cuando no estés seguro del procedimiento correcto.
+
+13. Registrar pagos
+
+Para registrar un pago:
+
+1. Abrí la factura correspondiente.
+2. Seleccioná “Registrar pago”.
+3. Indicá el importe.
+4. Elegí el medio de pago.
+5. Ingresá la fecha.
+6. Agregá una referencia o comprobante, si corresponde.
+7. Confirmá el registro.
+
+Podés registrar pagos parciales o totales. El estado de la factura se actualizará automáticamente.
+
+Los estados más habituales son:
+
+- Borrador.
+- Emitida.
+- Enviada.
+- Parcialmente pagada.
+- Pagada.
+- Vencida.
+- Anulada.
+- Cancelada.
+
+14. Enviar recordatorios de pago
+
+La app puede ayudarte a realizar el seguimiento de facturas pendientes.
+
+Podés configurar recordatorios:
+
+- Antes del vencimiento.
+- El día del vencimiento.
+- Después del vencimiento.
+- Con una frecuencia personalizada.
+
+Personalizá el mensaje y verificá que el correo del cliente sea correcto antes de activar los envíos automáticos.
+
+15. Consultar reportes
+
+La sección de reportes permite analizar la actividad de tu negocio.
+
+Según el plan contratado, podés consultar:
+
+- Ventas por período.
+- Facturación por cliente.
+- Facturación por producto o servicio.
+- Impuestos.
+- Cuentas por cobrar.
+- Facturas vencidas.
+- Pagos recibidos.
+- Ingresos mensuales.
+- Comprobantes emitidos y anulados.
+
+Podés filtrar los reportes por fecha, cliente, estado, usuario o tipo de comprobante y exportarlos en distintos formatos.
+
+16. Importar información
+
+Si ya utilizás otra herramienta, podés importar datos para evitar cargarlos manualmente.
+
+Generalmente se pueden importar:
+
+- Clientes.
+- Productos y servicios.
+- Facturas históricas.
+- Saldos pendientes.
+
+Antes de importar:
+
+1. Descargá la plantilla correspondiente.
+2. Completá los campos obligatorios.
+3. Revisá el formato de fechas, importes e identificaciones.
+4. Eliminá filas duplicadas.
+5. Guardá el archivo en el formato indicado.
+6. Subilo a la aplicación.
+7. Revisá el resultado de la importación.
+
+Realizá una prueba con pocos registros antes de importar grandes volúmenes de información.
+
+17. Seguridad de la cuenta
+
+Para proteger tu información:
+
+- Usá una contraseña única y segura.
+- No compartas tus credenciales.
+- Activá la autenticación de dos factores, si está disponible.
+- Revisá periódicamente los usuarios con acceso.
+- Cerrá sesión en dispositivos compartidos.
+- No descargues archivos desde correos sospechosos.
+- Verificá el dominio de los mensajes recibidos.
+- Eliminá los accesos de personas que ya no trabajan en la empresa.
+
+18. Respaldo y conservación de documentos
+
+Conservá copias de tus facturas, notas de crédito, notas de débito y reportes importantes.
+
+Se recomienda:
+
+- Descargar periódicamente los documentos.
+- Mantener una copia en un almacenamiento seguro.
+- Organizar los archivos por año y período.
+- No modificar los archivos originales.
+- Consultar los plazos de conservación exigidos por la normativa local.
+
+19. Primeros pasos recomendados
+
+Para completar el onboarding, seguí este orden:
+
+1. Crear la cuenta.
+2. Completar los datos de la empresa.
+3. Configurar los datos fiscales.
+4. Revisar la numeración.
+5. Agregar usuarios y permisos.
+6. Cargar productos y servicios.
+7. Cargar clientes.
+8. Configurar métodos de pago.
+9. Personalizar las facturas.
+10. Emitir una factura de prueba, si la configuración fiscal lo permite.
+11. Revisar el documento generado.
+12. Emitir la primera factura real.
+13. Registrar el pago cuando corresponda.
+14. Consultar los reportes.
+
+20. Solución de problemas frecuentes
+
+No puedo emitir una factura
+
+Verificá que:
+
+- Los datos fiscales estén completos.
+- La numeración esté configurada.
+- El cliente tenga la información obligatoria.
+- Los productos tengan precio e impuestos definidos.
+- Las credenciales fiscales sean válidas.
+- La conexión con el servicio fiscal esté activa.
+
+La factura no se envió al cliente
+
+Verificá que:
+
+- El correo electrónico esté escrito correctamente.
+- La factura figure como emitida.
+- El archivo se haya generado correctamente.
+- El mensaje no esté en la carpeta de correo no deseado.
+- No exista un error temporal en el servicio de envío.
+
+El total de la factura es incorrecto
+
+Revisá:
+
+- Cantidades.
+- Precios unitarios.
+- Descuentos.
+- Impuestos.
+- Recargos.
+- Redondeos.
+- Moneda utilizada.
+
+No encuentro una factura
+
+Utilizá los filtros de búsqueda por número, cliente, fecha o estado. Si la factura fue anulada o cancelada, consultá también los comprobantes relacionados.
+
+21. Soporte
+
+Si necesitás ayuda, contactá al equipo de soporte desde la sección “Ayuda” de la aplicación.
+
+Incluí la siguiente información:
+
+- Correo asociado a la cuenta.
+- Nombre de la empresa.
+- Número de factura o comprobante.
+- Fecha y hora del inconveniente.
+- Descripción del problema.
+- Capturas de pantalla, si corresponde.
+- Mensaje de error exacto.
+
+No envíes contraseñas, códigos de autenticación ni credenciales fiscales por correo o chat.

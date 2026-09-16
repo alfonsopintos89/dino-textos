@@ -1,0 +1,198 @@
+# FechaJS
+
+FechaJS es una librería ligera, inmutable y sin dependencias para manejar fechas en JavaScript y TypeScript. Está diseñada para simplificar el parseo, formateo, manipulación y comparación de fechas con una API clara y en español.
+
+## Características
+
+- API intuitiva y en español.
+- Objetos inmutables: cada operación devuelve una nueva instancia.
+- Sin dependencias externas.
+- Soporte para JavaScript y TypeScript.
+- Parseo y formateo personalizado.
+- Operaciones aritméticas con días, semanas, meses, años, horas, minutos y segundos.
+- Comparaciones simples entre fechas.
+- Soporte de localización para distintos idiomas.
+- Tamaño reducido.
+
+## Instalación
+
+```bash
+npm install fecha-js
+```
+
+```bash
+yarn add fecha-js
+```
+
+También podés usarla directamente desde un CDN:
+
+```html
+<script src="https://unpkg.com/fecha-js/dist/fecha.min.js"></script>
+```
+
+## Uso rápido
+
+```js
+import { Fecha } from 'fecha-js';
+
+const hoy = Fecha.ahora();
+
+console.log(hoy.formatear('DD/MM/YYYY'));
+// 15/03/2024
+
+const reunion = Fecha.desde('2024-03-20 15:30');
+
+const nuevaFecha = reunion
+  .sumar(2, 'dias')
+  .restar(1, 'horas');
+
+console.log(nuevaFecha.formatear('dddd, D [de] MMMM [de] YYYY HH:mm'));
+// miércoles, 20 de marzo de 2024 14:30
+```
+
+## Crear fechas
+
+```js
+import { Fecha } from 'fecha-js';
+
+Fecha.ahora();
+Fecha.desde('2024-03-15');
+Fecha.desde('15/03/2024', 'DD/MM/YYYY');
+Fecha.desde(new Date());
+Fecha.desde(1710460800000);
+```
+
+## Formatear
+
+```js
+const fecha = Fecha.desde('2024-03-15T10:30:00');
+
+fecha.formatear('YYYY-MM-DD');
+// 2024-03-15
+
+fecha.formatear('DD/MM/YYYY HH:mm');
+// 15/03/2024 10:30
+
+fecha.formatear('dddd, D [de] MMMM [de] YYYY');
+// viernes, 15 de marzo de 2024
+```
+
+### Tokens de formato
+
+| Token | Descripción | Ejemplo |
+|-------|-------------|---------|
+| YYYY  | Año completo | 2024 |
+| YY    | Año corto | 24 |
+| MM    | Mes con ceros | 03 |
+| M     | Mes | 3 |
+| MMMM  | Nombre del mes | marzo |
+| MMM   | Nombre corto del mes | mar |
+| DD    | Día con ceros | 05 |
+| D     | Día | 5 |
+| dddd  | Nombre del día | viernes |
+| ddd   | Nombre corto del día | vie |
+| HH    | Hora en formato 24h | 15 |
+| hh    | Hora en formato 12h | 03 |
+| mm    | Minutos | 30 |
+| ss    | Segundos | 45 |
+| A     | AM/PM | PM |
+
+## Manipular fechas
+
+```js
+const fecha = Fecha.desde('2024-03-15');
+
+fecha.sumar(1, 'ano');
+fecha.sumar(2, 'meses');
+fecha.sumar(7, 'dias');
+fecha.sumar(3, 'horas');
+fecha.sumar(30, 'minutos');
+
+fecha.restar(1, 'semana');
+fecha.restar(5, 'dias');
+```
+
+Unidades soportadas:
+
+- `anos`
+- `meses`
+- `semanas`
+- `dias`
+- `horas`
+- `minutos`
+- `segundos`
+
+## Inicio y fin de período
+
+```js
+const fecha = Fecha.desde('2024-03-15T10:30:45');
+
+fecha.inicioDe('dia');   // 2024-03-15T00:00:00
+fecha.finDe('dia');      // 2024-03-15T23:59:59
+
+fecha.inicioDe('mes');   // 2024-03-01T00:00:00
+fecha.finDe('mes');      // 2024-03-31T23:59:59
+
+fecha.inicioDe('ano');   // 2024-01-01T00:00:00
+fecha.finDe('ano');      // 2024-12-31T23:59:59
+```
+
+## Comparar fechas
+
+```js
+const a = Fecha.desde('2024-03-15');
+const b = Fecha.desde('2024-03-20');
+
+a.esAntesDe(b);      // true
+b.esDespuesDe(a);    // true
+a.esMisma(b);        // false
+a.esMismoDia(b);     // false
+a.esMismoMes(b);     // true
+a.esMismoAno(b);     // true
+```
+
+## Diferencia entre fechas
+
+```js
+const inicio = Fecha.desde('2024-03-10');
+const fin = Fecha.desde('2024-03-15');
+
+fin.diferencia(inicio, 'dias');
+// 5
+
+fin.diferencia(inicio, 'horas');
+// 120
+```
+
+## Localización
+
+```js
+import { Fecha, configurarLocalizacion } from 'fecha-js';
+
+configurarLocalizacion('es');
+
+const fecha = Fecha.desde('2024-03-15');
+
+fecha.formatear('MMMM');
+// marzo
+```
+
+## TypeScript
+
+FechaJS incluye definiciones de tipos propias.
+
+```ts
+import { Fecha } from 'fecha-js';
+
+const fecha: Fecha = Fecha.ahora();
+
+const formateada: string = fecha.formatear('YYYY-MM-DD');
+```
+
+## Compatibilidad
+
+FechaJS funciona en navegadores modernos y en Node.js 14 o superior.
+
+## Licencia
+
+MIT

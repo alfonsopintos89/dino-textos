@@ -4,6 +4,8 @@
 
     python3 corpus/construir.py --ia 60         genera texto de IA con el CLI claude
     python3 corpus/construir.py --humano 200    baja prensa rioplatense pre-2023
+    python3 corpus/construir.py --openrouter gpt                 modelo de .env.local
+    python3 corpus/construir.py --openrouter grok x-ai/grok-4.6  cualquier otro
 
 El corpus de IA se versiona: es contenido generado y no hay derechos de nadie.
 El humano NO se versiona. Queda en cache/, que está en .gitignore, y al repo
@@ -318,8 +320,115 @@ def construir_ia(cuantos, en_paralelo=5):
     return 0
 
 
+
+# ── OpenRouter ───────────────────────────────────────────────────────────────
+# Para generar el corpus con modelos que no tienen CLI instalado. La clave vive
+# en .env.local, que está en .gitignore, y no se imprime nunca: ni en errores,
+# ni en el manifiesto.
+
+RAIZ = os.path.dirname(AQUI)
+OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions'
+
+
+def leer_env(ruta):
+    """Un .env mínimo: CLAVE=valor, con o sin comillas, ignorando comentarios."""
+    env = {}
+    for renglon in open(ruta, encoding='utf-8'):
+        renglon = renglon.strip()
+        if not renglon or renglon.startswith('#') or '=' not in renglon:
+            continue
+        clave, valor = renglon.split('=', 1)
+        env[clave.strip()] = valor.strip().strip('"').strip("'")
+    return env
+
+
+def cuerpo_openrouter(modelo, prompt):
+    """Un solo mensaje de usuario, sin system prompt.
+
+    Cualquier instrucción de estilo, aunque sea neutra, ya es algo que la gente
+    que pega un pedido en el chat no escribe, y el corpus mide ese default.
+    """
+    return {'model': modelo,
+            'messages': [{'role': 'user',
+                          'content': prompt + ' Escribilo en español. Solo el texto.'}]}
+
+
+def describir_error(codigo, cuerpo, clave):
+    """El error de la API, con la clave tachada si por algún motivo viniera adentro."""
+    texto = (cuerpo or '')[:200]
+    if clave:
+        texto = texto.replace(clave, '[clave]')
+    return 'HTTP %s: %s' % (codigo, texto)
+
+
+def _generar_openrouter(tarea):
+    genero, i, prompt, ruta, nombre, clave, modelo = tarea
+    if os.path.exists(ruta):
+        return None
+    datos = json.dumps(cuerpo_openrouter(modelo, prompt)).encode('utf-8')
+    pedido = urllib.request.Request(OPENROUTER_URL, data=datos, headers={
+        'Authorization': 'Bearer ' + clave,
+        'Content-Type': 'application/json',
+        'X-Title': 'dino-textos corpus'})
+    try:
+        respuesta = json.loads(urllib.request.urlopen(pedido, timeout=300).read().decode('utf-8'))
+        texto = respuesta['choices'][0]['message']['content'].strip()
+    except urllib.error.HTTPError as e:
+        cuerpo = e.read().decode('utf-8', 'replace')
+        sys.stderr.write('  falló %s — %s\n' % (nombre, describir_error(e.code, cuerpo, clave)))
+        return None
+    except (urllib.error.URLError, KeyError, IndexError, ValueError) as e:
+        sys.stderr.write('  falló %s — %s\n' % (nombre, type(e).__name__))
+        return None
+    if len(texto.split()) < 80:
+        sys.stderr.write('  descartado %s: %d palabras\n' % (nombre, len(texto.split())))
+        return None
+    with open(ruta, 'w', encoding='utf-8') as f:
+        f.write(texto)
+    sys.stderr.write('  listo %s (%d palabras)\n' % (nombre, len(texto.split())))
+    return {'archivo': nombre, 'genero': genero, 'prompt': prompt,
+            'modelo': modelo + ' (OpenRouter)', 'fecha': time.strftime('%Y-%m-%d'),
+            'palabras': len(texto.split())}
+
+
+def construir_openrouter(prefijo, modelo=None, en_paralelo=5):
+    """Genera los quince textos con un modelo de OpenRouter.
+
+    Sin `modelo` usa OPENROUTER_TEXT_MODEL de .env.local. Con él, cualquier otro
+    — así se suman familias al corpus sin tocar la configuración.
+    """
+    env = leer_env(os.path.join(RAIZ, '.env.local'))
+    clave = env.get('OPENROUTER_API_KEY')
+    modelo = modelo or env.get('OPENROUTER_TEXT_MODEL')
+    if not clave or not modelo:
+        sys.stderr.write('faltan OPENROUTER_API_KEY u OPENROUTER_TEXT_MODEL en .env.local\n')
+        return 2
+    destino = os.path.join(AQUI, 'ia')
+    tareas = []
+    for genero, prompts in GENEROS.items():
+        for i, prompt in enumerate(prompts):
+            nombre = '%s-%s-%02d.txt' % (prefijo, genero, i)
+            tareas.append((genero, i, prompt, os.path.join(destino, nombre), nombre,
+                           clave, modelo))
+    print('generando %d textos con %s' % (len(tareas), modelo))
+    manifiesto = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=en_paralelo) as pool:
+        for fila in pool.map(_generar_openrouter, tareas):
+            if fila:
+                manifiesto.append(fila)
+    ruta_manifiesto = os.path.join(destino, 'manifiesto.json')
+    previo = json.load(open(ruta_manifiesto, encoding='utf-8')) if os.path.exists(ruta_manifiesto) else []
+    with open(ruta_manifiesto, 'w', encoding='utf-8') as f:
+        json.dump(previo + manifiesto, f, ensure_ascii=False, indent=2)
+    print('%d textos nuevos' % len(manifiesto))
+    return 0 if manifiesto else 1
+
+
 if __name__ == '__main__':
     args = sys.argv[1:]
+    if args and args[0] == '--openrouter':
+        sys.exit(construir_openrouter(args[1] if len(args) > 1 else 'gpt',
+                                      args[2] if len(args) > 2 else None))
     cuantos = int(args[1]) if len(args) > 1 else 60
     if args and args[0] == '--limpiar':
         config = json.load(open(os.path.join(AQUI, 'fuentes.json'), encoding='utf-8'))

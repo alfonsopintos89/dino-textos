@@ -1,0 +1,13 @@
+Bienvenido a la aplicación de facturación. Esta guía de onboarding te orientará para configurar tu cuenta y comenzar a emitir facturas de forma profesional y eficiente.
+
+Regístrate con tu correo electrónico y una contraseña segura. Verifica tu cuenta mediante el enlace que recibirás. Una vez dentro, completa el perfil de tu empresa: nombre comercial, dirección, identificador fiscal, datos de contacto y logotipo. Estos datos aparecerán automáticamente en todas las facturas.
+
+Configura la moneda principal y las tasas de impuestos aplicables según tu jurisdicción. Agrega clientes desde la sección correspondiente: nombre, dirección, correo, teléfono e identificador fiscal. Puedes importar listados o crear categorías para organizarlos.
+
+Crea tu catálogo de productos o servicios indicando descripción, precio unitario, unidad de medida y código interno. Esto agilizará la emisión de documentos.
+
+Para generar tu primera factura selecciona el cliente, añade los ítems, aplica descuentos o impuestos, establece fecha de emisión y vencimiento. Revisa el documento, personaliza la plantilla si lo deseas y envíalo por correo electrónico o descárgalo en PDF.
+
+Registra los pagos recibidos y actualiza el estado de cada factura. Activa recordatorios automáticos para facturas vencidas. Consulta los reportes de ingresos, impuestos recaudados y facturas pendientes para llevar un control claro de tu negocio.
+
+Ajusta las notificaciones, realiza copias de seguridad periódicas y habilita la autenticación en dos pasos. Si necesitas asistencia adicional, utiliza el chat de soporte integrado o escribe a nuestro equipo de ayuda.
